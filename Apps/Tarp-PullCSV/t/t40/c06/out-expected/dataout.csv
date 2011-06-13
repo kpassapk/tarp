@@ -1,0 +1,11 @@
+MasterID,BookID,Chapter,Section,Problem
+00001,myBook,myChapter,foo,01
+00002,myBook,myChapter,foo,02
+00003,myBook,myChapter,foo,03a
+00004,myBook,myChapter,foo,03b
+00005,myBook,myChapter,foo,03c
+00006,myBook,myChapter,bar,01
+00007,myBook,myChapter,bar,02
+00008,myBook,myChapter,bar,03a
+00009,myBook,myChapter,bar,03b
+00010,myBook,myChapter,bar,03c

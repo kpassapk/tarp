@@ -1,0 +1,34 @@
+Revision history for Tarp-ExerciseExaminer
+
+0.8    Jun 24, 2009
+        t20 cleaned up & passes in linux
+
+0.26    Nov 14, 2008
+        - Fixes related to maxLevel()
+
+0.25	Sep 10, 2008
+	- find(), exerciseOnLine() wrapper methods
+
+0.24    Aug 17, 2008
+        - AUTOLOAD for Attribute and subclasses
+
+0.23     Jul 19, 2008
+        - Documentation additions
+
+0.22     July 01, 2008
+        - Added LaTeXtract wrapper methods
+        - Added StyleHelper wrapper methods
+        - Renamed hasAttribute() to attribute().
+
+0.21     May 29, 2008
+        - descriptor() pass-through from LaTextract
+        
+0.2     Early May 2008
+        - Now works more like a wrapper for LaTeXtract
+        - getExData() works like LaTeXtract's read()
+        - Attribute for line number (LineAttribute.pm)
+        - PassThruAttribute.pm for simple attributes with a single value
+        
+0.1     Feb. 2008
+        First version, released on an unsuspecting world.
+

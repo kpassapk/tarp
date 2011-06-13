@@ -1,0 +1,71 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+=head1 NAME
+
+talauncher - launch installed Tarp scripts
+
+=head1 SYNOPSIS
+
+talauncher [--app=taprogram] [options]
+
+talauncher [--app=taprogram] -- [program_arg1] ... [program_argN] 
+
+Options:
+
+    --docs  Show docs for this program
+    --test  Run tests for this program (test number or "all")
+    
+Examples:
+
+    talauncher --app=tagentex_gui --test=all
+
+    talauncher --app=tagentex_gui --docs
+    
+    talauncher --app=tagentex_gui -- file.pklist
+
+=head1 DESCRIPTION
+
+This is a simple launching script that loads an installed Tarp Toolkit script
+(copied over to the installation directory for your platform) by running it with
+the correct path and -I flags. Also, it can load test cases to verify GUI apps
+are working properly.
+
+=cut
+
+use Getopt::Long;
+use Pod::Usage;
+
+use Tarp::Launcher;
+
+my $prog = '';
+my $test = '';
+my $docs = '';
+my $debug = '';
+
+GetOptions(
+    'app=s' => \$prog,
+    'test=s' => \$test,
+    'docs'   => \$docs,
+    'debug'  => \$debug,
+) or pod2usage( 2 );
+
+pod2usage( 2 ) unless $prog;
+
+if ( $test ) {
+    pod2usage( 2 ) if $docs || ! ( $test =~ /^\d+|all$/ );
+}
+
+Tarp::Launcher->debug( $debug );
+my $l = Tarp::Launcher->new();
+
+$l->app( $prog );
+
+if ( $test ) {
+    $l->runTest( $test, @ARGV );
+} elsif ( $docs ) {
+    $l->showDocs();
+} else {
+    $l->launch( @ARGV );
+}

@@ -1,0 +1,161 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>&quot;talatextract in Komodo&quot;</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body style="background-color: white">
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#running_latextract_in_komodo">Running LaTeXtract in Komodo</a></li>
+	<ul>
+
+		<li><a href="#options">Options</a></li>
+		<li><a href="#tas_entries">TAS Entries</a></li>
+		<li><a href="#output">Output</a></li>
+	</ul>
+
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<center><img src="file:///C:\Program Files\Tarp/tarp.png"></center><p>
+</p>
+<hr />
+<h1><a name="running_latextract_in_komodo">Running LaTeXtract in Komodo</a></h1>
+<p>As with all Tarp scripts, <code>talatextract</code> is run in Komodo as an external
+command; double clicking one of the icons in the <code>LaTeXtract</code> folder in the
+<code>Tarp Toolkit</code> project will run the script with certain command-line
+options. Only a few of the most common options are available through Komodo;
+use the program directly from the command line for other combinations.</p>
+<p>In order to use this script from Komodo (with the exception of <a href="#readme"><code>README</code></a>,
+<a href="#version"><code>--version</code></a> and <a href="#help"><code>--help</code></a>), a <code>.tex</code> must be open and visible in the Komodo
+workspace, and there must be a Tarp Style (<code>TAS</code>) file called <code>TASfile</code>, <code>TASfile.txt</code> or <code>TASfile.tas</code>
+in the same directory as the <code>.tex</code> file.</p>
+<p>
+</p>
+<h2><a name="options">Options</a></h2>
+<center><img src="images/options.png"></center><dl>
+<dt><strong><a name="current_tex" class="item">[current .tex]</a></strong>
+
+<dd>
+<p>Equivalent to running the following in a command prompt:</p>
+</dd>
+<dd>
+<pre>
+    talatextract file.tex</pre>
+</dd>
+<dd>
+<p>where <code>file.tex</code> is the name of the currently open file.  The script is run
+in the directory where the current file resides.  If successful, a list of
+exercises will be shown in the &quot;Command Output&quot; pane in Komodo.</p>
+</dd>
+<dd>
+<p>Use this command if you have a <code>TAS</code> file called <code>TASfile</code>, <code>TASfile.txt</code>
+or <code>TASfile.tas</code> in the same directory as the currently open file.</p>
+</dd>
+</li>
+<dt><strong><a name="readme3" class="item">README,</a></strong>
+
+<dd>
+<p>Displays this help file.</p>
+</dd>
+</li>
+<dt><strong><a name="version3" class="item">--version</a></strong>
+
+<dd>
+<p>Equivalent to running the following in a command prompt:</p>
+</dd>
+<dd>
+<pre>
+    talatextract --version</pre>
+</dd>
+</li>
+<dt><strong><a name="help3" class="item">--help</a></strong>
+
+<dd>
+<p>Equivalent to running the following in a command prompt:</p>
+</dd>
+<dd>
+<pre>
+    talatextract --help</pre>
+</dd>
+</li>
+</dl>
+<p>
+</p>
+<h2><a name="tas_entries">TAS Entries</a></h2>
+<p>The starter TAS files provided as well as the <code>Tarp::LaTeXtract</code>
+documentation contain all the information you should need
+about the following <code>TAS</code> tags used by this program:</p>
+<ul>
+<li>
+<p>beginTag</p>
+</li>
+<li>
+<p>endTag</p>
+</li>
+<li>
+<p>exTag</p>
+</li>
+<li>
+<p>partTag</p>
+</li>
+<li>
+<p>subPartTag</p>
+</li>
+<li>
+<p>sequenceRestart</p>
+</li>
+</ul>
+<p>
+</p>
+<h2><a name="output">Output</a></h2>
+<p>Output of this program is usually for diagnostic purposes: it helps the user
+modify either the input file or the <code>TAS</code> file until exercises are correctly
+identified.  You can therefore think of this script as a &quot;test&quot; for whether
+the file is in the right format to be processed by other Toolkit scripts.</p>
+<p>The following kinds of output are shown in the &quot;Command Output&quot; pane while running
+LaTeXtract:</p>
+<ul>
+<li>
+<p>&quot;Helpful&quot; error messages:</p>
+<p>These will appear if there is a weird or unexpected tag in your file that the
+program can't understand, and it wants you (the user) to go and do something about
+it.  It will show a few &quot;good&quot; tags and then the bad one.  You can double click
+on the warning messages to go to the relevant line.</p>
+<p>An example of this output:</p>
+<center><img src="images/errormessage.png"></center></li>
+<li>
+<p>Line numbers</p>
+<p>If the program is successful a bunch of line numbers will be displayed, first
+for each numbering sequence and then for each exercise, as follows:</p>
+<center><img src="images/rawoutput.png"></center><p>Here we can see that there are two numbering sequences in the file; the second
+numbering sequence takes up lines 784 to 2097.  The first exercise, <code>01</code>, takes
+up lines 803 to 838, which encompasses the line ranges for <code>01a</code> and <code>01b</code>. This is
+called &quot;raw&quot; output, and is not double clickable.  In order to make this list
+double clickable, we switch to &quot;parsed&quot; output, as described below.</p>
+<p>To the far right of the &quot;Command Output&quot; pane there is an icon of a bulleted list,
+with a tooltip that says &quot;Toggle Raw/Parsed Output View&quot;.  When clicked, the
+original list of line numbers changes into the following:</p>
+<center><img src="images/parsedoutput.png"></center><p>The &quot;Line&quot; column contains the line numbers at the start of each exercise's range;
+the &quot;Content&quot; column contains the exercise.  Double clicking on a row will take
+open the right file in the Workspace and highlight the exercise line.  This is
+useful for checking that each exercise is where the program thinks it is.</p>
+</li>
+</ul>
+
+</body>
+
+</html>

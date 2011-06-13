@@ -1,0 +1,67 @@
+################################################################################
+#                                                                              #
+#                              TECHARTS STYLE FILE                             #
+#                                                                              #
+#                                    ansman.pl                                 #
+#                                                                              #
+################################################################################
+
+#  __________________
+#-/ beginTag, endTag \----------------------------------------------------------
+#
+# 1+ regexps
+#
+# Tags that begin and end an exercise list, part list or subpart list
+#
+#...............................................................................
+
+beginTag = \\begin{ExerciseList} 
+
+endTag = \\end{ExerciseList}
+
+#  ____________________________
+#-/ exTag, partTag, subPartTag \------------------------------------------------
+#
+# 1+ regexps
+#
+# Enumerated tags for exercises, parts and subparts, respectively.
+#
+#...............................................................................
+
+itemTag[0] = <illegal>-$ITM$
+
+itemTag[1] = \
+    "\\item\[\\hfill $ITM$\.\]"   \
+    \\item\[.*?$ITM$\.         \
+    \\QTR\{ssbold\}\{$ITM$.\} 
+
+itemTag[2] = \
+    \\item\[\($ITM$\)\]            \
+    \\item\[\($ITM$.*\)\]          \
+    \\hyperref\{\($ITM$\)          \
+    \\hspace\{\\fill\}\($ITM$\)    \
+    \\hspace\*\{\\fill\}\($ITM$\)  \
+    \\item\[\\hfill\s\($ITM$\)\]   \
+    \\item\[.*?\($ITM$.*?\) 
+
+itemTag[3] = \
+    \\item\[\($ITM$\)\]  \
+    \\hyperref\{\($ITM$\)
+
+#  __________________
+#-/ sequenceRestart  \----------------------------------------------------------
+#
+# 1+ regexps
+#
+# A tag that re starts the item counter to 1.
+#
+#...............................................................................
+
+sequenceRestart = \\QTP{MultColDiv}
+
+# I'm copying the contents of the input file up to the first line that
+# matches this pattern, as a preamble in the output file.  If you want to change
+# how much of the input file goes in, change this variable.  You can even put
+# a LaTeX comment in and match it below to give you complete control.
+
+preUntil = TCIMACRO  # Everything up to the first %TCIMACRO

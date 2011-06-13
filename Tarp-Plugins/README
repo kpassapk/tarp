@@ -1,0 +1,11 @@
+Tarp-Plugins
+
+This module has plugins for the various Toolkit apps and modules, bundled
+together and with some hopefully useful tests.  Somewhere down the road it
+should grow to be more comprehensive and maybe even branch off into more than
+one set of plugins to accomodate different types of source data.
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2009 Kyle Passarelli
+

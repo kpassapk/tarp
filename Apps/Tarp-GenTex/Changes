@@ -1,0 +1,30 @@
+Revision history for Tarp-GenTex
+
+0.41    Jun 29, 2009
+        Doc changes in Tarp::GenTex::Style
+
+0.4     Jun 24, 2009
+        Passes linux/activeperl10.0
+
+0.33    Aug 14, 2008
+        - 32-app-errors uses Tarp::Config for resource directory.
+        - fixed number of tests in above file.
+
+0.32    Aug 07, 2008
+        - 32-app-errors.t passes with three tests
+        - Context help in App.pm
+
+0.31    Jul 20, 2008
+        - Documentation changes
+        - New 32-app-errors.t
+
+0.3     Jun 04, 2008
+        - genTemplateFiles() method added
+
+0.2     May 30, 2008
+        - Documentation improved
+        - Reads DESCRIPTOR entry in TAS file using named capture buffers
+
+0.1    May 2008
+        First version, released on an unsuspecting world.
+

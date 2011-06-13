@@ -1,0 +1,40 @@
+################################################################################
+#                                                                              #
+#                            TARP STYLE FILE                               #
+#                                                                              #
+#                              PP and PPS                                          #
+#                                                                              #
+################################################################################
+
+filename = $book$$chapter$$section$(?:-new)?\.tex
+
+    filename::book    = \d\w+   # a digit and one or more letters (6et, 3c3 etc.)
+    filename::chapter = \d{2}   # two digits
+    filename::section = pps?    # "pp" or "pps"
+
+    filename::EXACT   = 1
+
+beginTag = \\begin{enumerate} 
+
+endTag   = \\end{enumerate}
+
+itemTag[1] = \
+    \\item\[\\hfill\s$ITM$.\]    \
+    \\item\[.*?$ITM$\.           \
+    \\QTR\{ssbold\}\{$ITM$.\}
+
+itemTag[2] = \
+    \\item\[\($ITM$\)\]          \
+    \\item\[\($ITM$.*\)\]        \
+    hyperref\{\($ITM$\)          \
+    \\hspace\{\\fill\}\($ITM$\)  \
+    \\hspace\*\{\\fill\}\($ITM$\)
+
+itemTag[3] = \
+    \\item\[\($ITM$\)\]          \
+    \\hyperref\{\($ITM$\)
+
+sequenceRestart = 
+
+masterRef = master\s$MASTER$ 
+    masterRef::MASTER = m?\d{5}[a-z]?

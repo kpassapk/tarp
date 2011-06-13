@@ -1,0 +1,19 @@
+CHUNK_START
+my standard preamble
+CHUNK_END
+
+CHUNK_START
+my canned macro
+
+CHUNK_END
+
+CHUNK_START
+my canned macro
+
+CHUNK_END
+
+CHUNK_START
+my canned macro
+
+CHUNK_END
+

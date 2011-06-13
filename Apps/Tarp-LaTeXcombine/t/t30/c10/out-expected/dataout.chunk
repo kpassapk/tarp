@@ -1,0 +1,10 @@
+CHUNK_START
+foo.tex preamble
+CHUNK_END
+
+CHUNK_START
+TCIMACRO
+Contents of foo 05, ms00005.tex
+EndExpansion
+CHUNK_END
+

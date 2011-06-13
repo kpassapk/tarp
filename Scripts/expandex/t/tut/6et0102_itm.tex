@@ -1,0 +1,2034 @@
+
+\documentclass{sebase}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{SECALCUL}
+\usepackage{lie}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Mon Dec 15 16:20:00 1997}
+%TCIDATA{LastRevised=Tuesday, March 25, 2008 11:30:47}
+%TCIDATA{<META NAME="ViewSettings" CONTENT="0">}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{CSTFile=SECALCUL.cst}
+
+\input tcilatex
+\newenvironment{instructions}{\STARTINSTR}{\ENDINSTR}
+\begin{document}
+
+
+\chapter{1\quad Functions and Models}
+
+\section{1.2\quad Mathematical Models:\ A Catalog of Essential Functions}
+
+%TCIMACRO{\TeXButton{noCCC}{\noCCC}}%
+%BeginExpansion
+\noCCC%
+%EndExpansion
+\setET%
+%TCIMACRO{\TeXButton{noRM}{\renewcommand{\RM}{0}}}%
+%BeginExpansion
+\renewcommand{\RM}{0}%
+%EndExpansion
+%TCIMACRO{\TeXButton{setRM}{\renewcommand{\RM}{1}}}%
+%BeginExpansion
+\renewcommand{\RM}{1}%
+%EndExpansion
+%TCIMACRO{%
+%\TeXButton{set page 18/ 15}{\ifnum\RM=1 \setcounter{page}{18}\else \setcounter{page}{15}\fi}}%
+%BeginExpansion
+\ifnum\RM=1 \setcounter{page}{18}\else \setcounter{page}{15}\fi%
+%EndExpansion
+
+A \textbf{mathematical model} is a mathematical description (often by means
+of a function or an equation) of a real-world phenomenon such as the size of
+a population, the demand for a product, the speed of a falling object, the
+concentration of a product in a chemical reaction, the life expectancy of a
+person at birth, or the cost of emission reductions. The purpose of the
+model is to understand the phenomenon and perhaps to make predictions about
+future behavior.
+
+Figure 1 illustrates the process of mathematical modeling. Given a
+real-world problem, our first task is to formulate a mathematical model by
+identifying and naming the independent and dependent variables and making
+assumptions that simplify the phenomenon enough to make it mathematically
+tractable. We use our knowledge of the physical situation and our
+mathematical skills to obtain equations that relate the variables. In
+situations where there is no physical law to guide us, we may need to
+collect data (either from a library or the Internet or by conducting our own
+experiments) and examine the data in the form of a table in order to discern
+patterns. From this numerical representation of a function we may wish to
+obtain a graphical representation by plotting the data. The graph might even
+suggest a suitable algebraic formula in some cases.
+
+%TCIMACRO{\TeXButton{graphicS}{\vspace{12pt}\hskip-190pt\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hskip-190pt\hfil%
+%EndExpansion
+\FRAME{itbpFU}{7.1915in}{0.8225in}{0in}{\Qcb{\QTR{FigureNumber}{FIGURE 1}%
+\quad The modeling process}}{\Qlb{FIGURE 1 The modeling process}}{%
+6et010201_00911.ai}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+7.1915in;height 0.8225in;depth 0in;original-width 7.0638in;original-height
+0.7831in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/6et010201_00911.ai';file-properties "XNPEU";}}%
+%TCIMACRO{\TeXButton{graphicE}{\vspace{12pt}\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hfil%
+%EndExpansion
+
+The second stage is to apply the mathematics that we know (such as the
+calculus that will be developed throughout this book) to the mathematical
+model that we have formulated in order to derive mathematical conclusions.
+Then, in the third stage, we take those mathematical conclusions and
+interpret them as information about the origi\-nal real-world phenomenon by
+way of offering explanations or making predictions. The final step is to
+test our predictions by checking against new real data. If the predictions
+don't compare well with reality, we need to refine our model or to formulate
+a new model and start the cycle again.
+
+A mathematical model is never a completely accurate representation of a
+physical situation---it is an \textit{idealization}. A good model simplifies
+reality enough to permit mathematical calculations but is accurate enough to
+provide valuable conclusions. It is important to realize the limitations of
+the model. In the end, Mother Nature has the final say.
+
+There are many different types of functions that can be used to model
+relationships observed in the real world. In what follows, we discuss the
+behavior and graphs of these functions and give examples of situations
+appropriately modeled by such functions.%
+%TCIMACRO{\TeXButton{longpage}{\enlargethispage{\baselineskip}}}%
+%BeginExpansion
+\enlargethispage{\baselineskip}%
+%EndExpansion
+
+\subsection{LINEAR MODELS}
+
+When we say that $y$ is a \textbf{linear function} of $x$, 
+\marginpar{
+The coordinate geometry of lines is reviewed in Appendix B.}we mean that the
+graph of the function is a line, so we can use the slope-intercept form of
+the equation of a line to write a formula for the function as 
+\begin{equation*}
+y=f(x)=mx+b
+\end{equation*}
+where $m$ is the slope of the line and $b$ is the $y$-intercept.
+
+A characteristic feature of linear functions is that they grow at a constant
+rate. For instance, Figure 2 shows a graph of the linear function $f(x)=3x-2$
+and a table of sample values. Notice that whenever \textit{x} increases by
+0.1, the value of $f(x)$ increases by 0.3. So $f(x)$ increases three times
+as fast as \textit{x}. Thus the slope of the graph $y=3x-2$, namely 3, can
+be interpreted as the rate of change of \textit{y} with respect to \textit{x}%
+.\bigskip
+
+$\hfill $\FRAME{itbpFU}{136.5pt}{112.5625pt}{48.1875pt}{\Qcb{%
+\QTR{FigureNumber}{FIGURE 2}}}{}{3c010202.wmf}{\special{language "Scientific
+Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file
+"F";width 136.5pt;height 112.5625pt;depth 48.1875pt;original-width
+136.5pt;original-height 112.5625pt;cropleft "0";croptop "1";cropright
+"1";cropbottom "0";filename 'graphics/3c010202.wmf';file-properties "XNPEU";}%
+}\hspace*{12pt}\qquad 
+\begin{tabular}{|c|c|}
+\hline
+\hspace*{12pt}$x$\hspace*{12pt} & \hspace*{12pt}$f(x)=3x-2%
+\rule[-6pt]{0pt}{17pt}$\hspace*{12pt} \\ \hline
+1.0 & 1.0 \\ 
+1.1 & 1.3 \\ 
+1.2 & 1.6 \\ 
+1.3 & 1.9 \\ 
+1.4 & 2.2 \\ 
+1.5 & 2.5 \\ \hline
+\end{tabular}
+$\hfill $
+
+\begin{Example}[1]
+%TECHARTS_DUMMY_ITEM_TAG-(1)
+%TCIMACRO{\TeXButton{VIDEO}{\VIDEO}}%
+%BeginExpansion
+\VIDEO%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{{\footnotesize Video 5et 010201 / 004}}\quad }{}{\fbox{{\footnotesize Video 5et 010201 / 004}}\quad }{}}%
+%BeginExpansion
+\msihyperref{\fbox{{\footnotesize Video 5et 010201 / 004}}\quad }{}{\fbox{{\footnotesize Video 5et 010201 / 004}}\quad }{}%
+%EndExpansion
+\thinspace \vspace{-6pt}
+
+\begin{enumerate}
+\item[(a)] As dry air moves upward, it expands and cools. If the ground
+temperature is $20^{\circ }$C and the temperature at a height of 1 km is $%
+10^{\circ }$C, express the temperature $T$ (in $^{\circ }$C) as a function
+of the height $h$ (in kilometers), assuming that a linear model is
+appropriate.
+
+\item[(b)] Draw the graph of the function in part (a). What does the slope
+represent?
+
+\item[(c)] What is the temperature at a height of 2.5 km?
+\end{enumerate}
+\end{Example}
+
+\begin{Solution}
+\thinspace \vspace{-6pt}
+
+\begin{enumerate}
+\item[(a)] Because we are assuming that $T$ is a linear function of $h$, we
+can write 
+\begin{equation*}
+T=mh+b
+\end{equation*}
+We are given that $T=20$ when $h=0$, so 
+\begin{equation*}
+20=m\cdot 0+b=b
+\end{equation*}
+\marginpar{\vspace{24pt}\FRAME{dtbpFU}{1.5558in}{1.5835in}{0pt}{\Qcb{%
+\QTR{FigureNumber}{FIGURE 3}}}{}{3c010203.wmf}{\special{language "Scientific
+Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file
+"F";width 1.5558in;height 1.5835in;depth 0pt;original-width
+1.5558in;original-height 1.5835in;cropleft "0";croptop "1";cropright
+"1";cropbottom "0";filename 'graphics/3c010203.wmf';file-properties "XNPEU";}%
+}}In other words, the $y$-intercept is $b=20$.
+
+\quad We are also given that $T=10$ when $h=1$, so 
+\begin{equation*}
+10=m\cdot 1+20
+\end{equation*}
+The slope of the line is therefore $m=10-20=-10$ and the required linear
+function is 
+\begin{equation*}
+T=-10h+20
+\end{equation*}
+
+\item[(b)] The graph is sketched in Figure 3. The slope is $m=-10^{\circ }$C$%
+/$km, and this represents the rate of change of temperature with respect to
+height.
+
+\item[(c)] At a height of $h=2.5$ km, the temperature is\bigskip
+
+$\hfill T=-10(2.5)+20=-5^{\circ }$C$\hfill \blacksquare $
+\end{enumerate}
+\end{Solution}
+
+If there is no physical law or principle to help us formulate a model, we
+construct an \textbf{empirical model}, which is based entirely on collected
+data. We seek a curve that ``fits'' the data in the sense that it captures
+the basic trend of the data points.\pagebreak
+
+\begin{Example}[2]
+%TECHARTS_DUMMY_ITEM_TAG-(2)
+%TCIMACRO{\TeXButton{VIDEO}{\VIDEO}}%
+%BeginExpansion
+\VIDEO%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{{\footnotesize Video 5et 010202 / 005}}\quad }{}{\fbox{{\footnotesize Video 5et 010202 / 005}}\quad }{}}%
+%BeginExpansion
+\msihyperref{\fbox{{\footnotesize Video 5et 010202 / 005}}\quad }{}{\fbox{{\footnotesize Video 5et 010202 / 005}}\quad }{}%
+%EndExpansion
+Table 1 lists the average carbon dioxide level in the atmosphere, meas-ured
+in parts per million at Mauna Loa Observatory from 1980 to 2002. Use the
+data in Table 1 to find a model for the carbon dioxide level.
+\end{Example}
+
+\begin{Solution}
+We use the data in Table 1 to make the scatter plot in Figure 4, where $t$
+represents time (in years) and $C$ represents CO$_{2}$ level (in parts per
+million, ppm).
+
+%TCIMACRO{\TeXButton{graphicS}{\vspace{12pt}\hskip-100pt\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hskip-100pt\hfil%
+%EndExpansion
+$%
+\begin{tabular}{|c|c||c|c|}
+\multicolumn{4}{c}{\QTR{FigureNumber}{TABLE 1}} \\ \hline
+& CO$_{2}$ level &  & CO$_{2}$ level \\ 
+Year & (in ppm) & Year & (in ppm) \\ \hline
+1980 & 338.7 & 1992 & 356.4 \\ 
+1982 & 341.1 & 1994 & 358.9 \\ 
+1984 & 344.4 & 1996 & 362.6 \\ 
+1986 & 347.2 & 1998 & 366.6 \\ 
+1988 & 351.5 & 2000 & 369.4 \\ 
+1990 & 354.2 & 2002 & 372.9 \\ \hline
+\end{tabular}%
+\hspace{36pt}$\FRAME{itbpFU}{3.1399in}{1.9409in}{0.946in}{\Qcb{%
+\QTR{FigureNumber}{FIGURE 4\quad }Scatter plot for the average CO$_{2}$ level%
+}}{}{3c010204.wmf}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+3.1399in;height 1.9409in;depth 0.946in;original-width
+3.1393in;original-height 1.9415in;cropleft "0";croptop "1";cropright
+"1";cropbottom "0";filename 'graphics/3c010204.wmf';file-properties "XNPEU";}%
+}\vspace{-15pt}%
+%TCIMACRO{\TeXButton{graphicE}{\vspace{12pt}\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hfil%
+%EndExpansion
+\end{Solution}
+
+Notice that the data points appear to lie close to a straight line, so it's
+natural to choose a linear model in this case. But there are many possible
+lines that approximate these data points, so which one should we use? From
+the graph, it appears that one possibility is the line that passes through
+the first and last data points. The slope of this line is \\[6pt]
+\hspace*{\fill}$\dfrac{372.9-338.7}{2002-1980}=\dfrac{34.2}{22}\approx
+1.5545 $\hspace*{\fill}\\[6pt]
+and its equation is \\[6pt]
+\hspace*{\fill}$C-338.7=1.5545(t-1980)$\hspace*{\fill}\\[6pt]
+or\medskip
+
+\QTR{BOXHEAD}{(1)}$\hspace{\stretch{2}}C=1.5545t-2739.21\hspace{\stretch{2}}$%
+\medskip
+
+Equation 1 gives one possible linear model for the carbon dioxide level; it
+is graphed in Figure 5.%
+%TCIMACRO{\TeXButton{longpage}{\enlargethispage{\baselineskip}}}%
+%BeginExpansion
+\enlargethispage{\baselineskip}%
+%EndExpansion
+\vspace{9pt}\FRAME{dtbpFU}{3.1393in}{1.9415in}{0pt}{\Qcb{\QTR{FigureNumber}{%
+FIGURE 5}\quad Linear model through first and last data points}}{}{%
+3c010205.wmf}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+3.1393in;height 1.9415in;depth 0pt;original-width 3.1393in;original-height
+1.9415in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/3c010205.wmf';file-properties "XNPEU";}}\vspace{9pt}
+
+Although%
+\marginpar{\vspace{-36pt}A computer or graphing calculator finds the
+regression line by the method of \textbf{least squares}, which is to
+minimize the sum of the squares of the vertical distances between the data
+points and the line. The details are explained in Section 14.7.} our model
+fits the data reasonably well, it gives values higher than most of the
+actual CO$_{2}$ levels. A better linear model is obtained by a procedure
+from statistics called \textit{linear regression}. If we use a graphing
+calculator, we enter the data from Table 1 into the data editor and choose
+the linear regression command. (With Maple we use the fit[leastsquare]
+command in the stats package; with Mathematica we use the Fit command.) The
+machine gives the slope and $y$-intercept of the regression line as \\[6pt]
+\hspace*{\fill}$m=1.55192\qquad \qquad b=-2734.55$\hspace*{\fill}\\[6pt]
+So our least squares model for the CO$_{2}$ level is\medskip
+
+\QTR{BOXHEAD}{(2)}$\hfill C=1.55192t-2734.55\hfill $\medskip
+
+In Figure 6 we graph the regression line as well as the data points.
+Comparing with Figure 5, we see that it gives a better fit than our previous
+linear model.\vspace{9pt}\newline
+\hspace*{\fill}\FRAME{itbpFU}{3.1393in}{1.9415in}{0in}{\Qcb{%
+\QTR{FigureNumber}{FIGURE 6}\quad The regression line}}{}{3c010206.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 3.1393in;height 1.9415in;depth
+0in;original-width 3.1393in;original-height 1.9415in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/3c010206.wmf';file-properties "XNPEU";}}\hspace*{\fill}$%
+\blacksquare $
+
+\begin{Example}[3]
+%TECHARTS_DUMMY_ITEM_TAG-(3)
+%TCIMACRO{\TeXButton{VIDEO}{\VIDEO}}%
+%BeginExpansion
+\VIDEO%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{{\footnotesize Video 5et 010203 / 006}}\quad }{}{\fbox{{\footnotesize Video 5et 010203 / 006}}\quad }{}}%
+%BeginExpansion
+\msihyperref{\fbox{{\footnotesize Video 5et 010203 / 006}}\quad }{}{\fbox{{\footnotesize Video 5et 010203 / 006}}\quad }{}%
+%EndExpansion
+Use the linear model given by Equation 2 to estimate the average CO$_{2}$
+level for 1987 and to predict the level for the year 2010. According to this
+model, when will the CO$_{2}$ level exceed 400 parts per million?
+\end{Example}
+
+\begin{Solution}
+Using Equation 2 with $t=1987,$ we estimate that the average CO$_{2}$ level
+in 1987 was\\[6pt]
+\hspace*{\fill}$C(1987)=(1.55192)(1987)-2734.55\approx 349.12$\hspace*{\fill}%
+\\[6pt]
+This is an example of \textit{interpolation} because we have estimated a
+value \textit{between} observed values. (In fact, the Mauna Loa Observatory
+reported that the average CO$_{2}$ level in 1987 was 348.93 ppm, so our
+estimate is quite accurate.)
+
+With $t=2010$, we get\\[6pt]
+\hspace*{\fill}$C(2010)=(1.55192)(2010)-2734.55\approx 384.81$\hspace*{\fill}%
+\\[6pt]
+So we predict that the average CO$_{2}$ level in the year 2010 will be 384.8
+ppm. This is an example of \textit{extrapolation} because we have predicted
+a value \textit{outside} the region of observations. Consequently, we are
+far less certain about the accuracy of our prediction.
+
+Using Equation 2, we see that the CO$_{2}$ level exceeds 400 ppm when\\[6pt]
+\hspace*{\fill}$1.55192t-2734.55>400$\hspace*{\fill}\\[6pt]
+Solving this inequality, we get \\[6pt]
+\hspace*{\fill}$t>\dfrac{3134.55}{1.55192}\approx 2019.79$\hspace*{\fill}\\[%
+6pt]
+We therefore predict that the CO$_{2}$ level will exceed 400 ppm by the year
+2019. This prediction is somewhat risky because it involves a time quite
+remote from our observations.$\blacksquare $
+\end{Solution}
+
+\subsection{POLYNOMIALS}
+
+\noindent A function $P$ is called a \textbf{polynomial} if\\[6pt]
+\hspace*{\fill}$P(x)=a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots
++a_{2}x^{2}+a_{1}x+a_{0}$\hspace*{\fill}\\[6pt]
+where $n$ is a nonnegative integer and the numbers $a_{0},a_{1},a_{2},$ $%
+...,a_{n}$ are constants called the \textbf{coefficients} of the polynomial.
+The domain of any polynomial is $\mathbb{R}=(-\infty ,\infty ).$ If the
+leading coefficient $a_{n}\neq 0$, then the \textbf{degree }of the
+polynomial is $n$. For example, the function\\[6pt]
+\hspace*{\fill}$P\!\left( x\right) =2x^{6}-x^{4}+\tfrac{2}{5}x^{3}+\sqrt{2}$%
+\hspace*{\fill}\\[6pt]
+is a polynomial of degree 6.
+
+A polynomial of degree 1 is of the form $P(x)=mx+b$ and so it is a linear
+function. A polynomial of degree 2 is of the form $P(x)=ax^{2}+bx+c$ and is
+called a \textbf{quadratic function}. Its graph is always a parabola
+obtained by shifting the parabola $y=ax^{2}$, as we will see in the next
+section. The parabola opens upward if $a>0$ and downward if $a<0$. (See
+Figure 7.)\\[6pt]
+\hspace*{\fill}\FRAME{itbpFU}{3.3055in}{1.5387in}{0in}{\Qcb{%
+\QTR{FigureNumber}{FIGURE 7}\quad The graphs of quadratic functions are
+parabolas.}}{}{6et010207_00059.ai}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+3.3055in;height 1.5387in;depth 0in;original-width 3.278in;original-height
+1.5112in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/6et010207_00059.ai';file-properties "XNPEU";}}\hspace*{\fill}%
+\vspace*{9pt}
+
+A polynomial of degree 3 is of the form\\[6pt]
+\hspace*{\fill}$P(x)=ax^{3}+bx^{2}+cx+d\qquad \left( a\neq 0\right) $%
+\hspace*{\fill}\\[6pt]
+and is called a \textbf{cubic function}. Figure 8 shows the graph of a cubic
+function in part~(a) and graphs of polynomials of degrees 4 and 5 in
+parts~(b) and (c). We will see later why the graphs have these shapes.%
+\vspace*{6pt}
+
+%TCIMACRO{\TeXButton{graphicS}{\vspace{12pt}\hskip-50pt\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hskip-50pt\hfil%
+%EndExpansion
+\FRAME{itbpFU}{4.7504in}{1.5714in}{0in}{\Qcb{\QTR{FigureNumber}{FIGURE 8}}}{%
+}{3c010208.wmf}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+4.7504in;height 1.5714in;depth 0in;original-width 365.4375pt;original-height
+118.4375pt;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/3c010208.wmf';file-properties "XNPEU";}}%
+%TCIMACRO{\TeXButton{graphicE}{\vspace{12pt}\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hfil%
+%EndExpansion
+
+Polynomials are commonly used to model various quantities that occur in the
+natural and social sciences. For instance, in Section 
+%TCIMACRO{%
+%\TeXButton{CCC 3.3 / 5ET 3.7 / 5E 3.7}{\ifnum\CCC=1 3.3\else 3.7\fi}}%
+%BeginExpansion
+\ifnum\CCC=1 3.3\else 3.7\fi%
+%EndExpansion
+\ we will explain why economists often use a polynomial $P(x)$ to represent
+the cost of producing $x$ units of a com\nolinebreak mod\nolinebreak ity. In
+the following example we use a quadratic function to model the fall of a
+ball.
+
+\begin{Example}[4]
+%TECHARTS_DUMMY_ITEM_TAG-(4)
+A ball is dropped from the upper observation deck of the CN Tower, 450 m
+above the ground, and its height $h$ above the ground is recorded at
+1-second \pagebreak \linebreak intervals in Table 2. 
+\marginpar{\hspace*{\fill}\QTR{FigureNumber}{TABLE 2}\vspace{-6pt}\hspace*{%
+\fill}\newline
+\hspace*{\fill}%
+\begin{tabular}[t]{|c|c|}
+\hline
+Time & Height \\ 
+(seconds) & (meters) \\ \hline
+0 & \multicolumn{1}{|r|}{450\hspace*{9pt}} \\ 
+1 & \multicolumn{1}{|r|}{445\hspace*{9pt}} \\ 
+2 & \multicolumn{1}{|r|}{431\hspace*{9pt}} \\ 
+3 & \multicolumn{1}{|r|}{408\hspace*{9pt}} \\ 
+4 & \multicolumn{1}{|r|}{375\hspace*{9pt}} \\ 
+5 & \multicolumn{1}{|r|}{332\hspace*{9pt}} \\ 
+6 & \multicolumn{1}{|r|}{279\hspace*{9pt}} \\ 
+7 & \multicolumn{1}{|r|}{216\hspace*{9pt}} \\ 
+8 & \multicolumn{1}{|r|}{143\hspace*{9pt}} \\ 
+9 & \multicolumn{1}{|r|}{61\hspace*{9pt}} \\ \hline
+\end{tabular}%
+\hspace*{\fill}}Find a model to fit the data and use the model to predict
+the time at which the ball hits the ground.
+\end{Example}
+
+\begin{Solution}
+We draw a scatter plot of the data in Figure 9 and observe that a linear
+model is inappropriate. But it looks as if the data points might lie on a
+parabola, so we try a quadratic model instead. Using a graphing calculator
+or computer algebra system (which uses the least squares method), we obtain
+the following quadratic model:\vspace{-15pt}
+\end{Solution}
+
+\QTR{BOXHEAD}{(3)}$\hspace{\stretch{2}}h=449.36+0.96t-4.90t^{2}\hspace{%
+\stretch{2}}$\vspace*{6pt}
+
+\noindent \hspace*{\fill}\FRAME{itbpFU}{2.3286in}{1.7059in}{0.0094in}{\Qcb{%
+\protect\begin{tabular}{l}
+\QTR{FigureNumber}{FIGURE 9}\protect \\ 
+Scatter plot for a falling ball%
+\protect\end{tabular}
+}}{}{6et010209_00061.ai}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+2.3286in;height 1.7059in;depth 0.0094in;original-width
+2.3003in;original-height 1.6785in;cropleft "0";croptop "1";cropright
+"1";cropbottom "0";filename 'graphics/6et010209_00061.ai';file-properties
+"XNPEU";}}$\hspace*{24pt}$\FRAME{itbpFU}{1.9864in}{1.7068in}{0in}{\Qcb{%
+\protect\begin{tabular}{l}
+\QTR{FigureNumber}{FIGURE 10}\protect \\ 
+Quadratic model for a falling ball%
+\protect\end{tabular}
+}}{}{6et010210_00062.eps}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+1.9864in;height 1.7068in;depth 0in;original-width 1.9589in;original-height
+1.6793in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/6et010210_00062.eps';file-properties "XNPEU";}}\hspace*{\fill}%
+\vspace*{6pt}
+
+In Figure 10 we plot the graph of Equation 3 together with the data points
+and see that the quadratic model gives a very good fit.%
+%TCIMACRO{\TeXButton{longpage}{\enlargethispage{\baselineskip}}}%
+%BeginExpansion
+\enlargethispage{\baselineskip}%
+%EndExpansion
+
+The ball hits the ground when $h=0$, so we solve the quadratic equation\\[6pt%
+]
+\hspace*{\fill}$-4.90t^{2}+0.96t+449.36=0$\hspace*{\fill}\\[6pt]
+The quadratic formula gives\\[6pt]
+$\hspace*{\fill}t=\dfrac{-0.96\pm \sqrt{(0.96)^{2}-4(-4.90)(449.36)}}{%
+2(-4.90)}\hfill $\\[6pt]
+The positive root is $t\approx 9.67$, so we predict that the ball will hit
+the ground after about 9.7 seconds.$\blacksquare $
+
+\subsection{POWER FUNCTIONS$\protect\vspace{-6pt}$}
+
+A function of the form $f(x)=x^{a}$, where $a$ is a constant, is called a 
+\textbf{power} \textbf{function}. We consider several cases.\medskip
+
+\noindent \QTR{CaseHead}{(i) }$%
+%TCIMACRO{\TeXButton{a}{\mbox{\boldmath $a$}}}%
+%BeginExpansion
+\mbox{\boldmath $a$}%
+%EndExpansion
+=%
+%TCIMACRO{\TeXButton{n}{\mbox{\boldmath $n$}}}%
+%BeginExpansion
+\mbox{\boldmath $n$}%
+%EndExpansion
+$\QTR{CaseTitle}{, where }$%
+%TCIMACRO{\TeXButton{n}{\mbox{\boldmath $n$}}}%
+%BeginExpansion
+\mbox{\boldmath $n$}%
+%EndExpansion
+$ \QTR{CaseTitle}{is a positive integer}\\[3pt]
+The graphs of $f(x)=x^{n}$ for $n=1$, $2$, $3$, $4$, and $5$ are shown in
+Figure 11. (These are polynomials with only one term.) We already know the
+shape of the graphs of $y=x$ (a line through the origin with slope 1) and $%
+y=x^{2}$ [a parabola, see Example 2(b) in Section 1.1].
+
+%TCIMACRO{\TeXButton{graphicS}{\vspace{12pt}\hskip-150pt\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hskip-150pt\hfil%
+%EndExpansion
+\FRAME{itbpFU}{6.7931in}{1.5134in}{0in}{\Qcb{\QTR{FigureNumber}{FIGURE 11}%
+\quad Graphs of $f\!\left( x\right) =x^{n}$ for $n=1$, $2$, $3$, $4$, $5$}}{%
+}{3c010211.wmf}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+6.7931in;height 1.5134in;depth 0in;original-width 474.875pt;original-height
+113.5pt;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/3c010211.wmf';file-properties "XNPEU";}}%
+%TCIMACRO{\TeXButton{graphicE}{\vspace{12pt}\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hfil%
+%EndExpansion
+\pagebreak
+
+The general shape of the graph of $f(x)=x^{n}$ depends on whether $n$ is
+even or odd. If $n$ is even, then $f(x)=x^{n}$ is an even function and its
+graph is similar to the parabola $y=x^{2}$. If $n$ is odd, then $f(x)=x^{n}$
+is an odd function and its graph is similar to that of $y=x^{3}$. Notice
+from Figure 12, however, that as $n$ increases, the graph of $y=x^{n}$
+becomes flatter near 0 and steeper when $\left\vert x\right\vert \geq 1$.
+(If $x$ is small, then $x^{2}$ is smaller, $x^{3}$ is even smaller, $x^{4}$
+is smaller still, and so on.)\\[4pt]
+\marginpar{\vspace{-24pt}\hspace*{\fill}%
+\begin{tabular}[b]{r}
+\QTR{FigureNumber}{FIGURE 12} \\ 
+Families of power functions%
+\end{tabular}%
+}\hspace*{\fill}\FRAME{itbpFU}{4.682in}{2.0318in}{0in}{\Qcb{}}{}{%
+6et010212_00064.ai}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+4.682in;height 2.0318in;depth 0in;original-width 4.6546in;original-height
+2.0044in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/6et010212_00064.ai';file-properties "XNPEU";}}\hspace*{\fill}%
+\vspace{8pt}
+
+\noindent \QTR{CaseHead}{(ii) }$%
+%TCIMACRO{\TeXButton{a}{\mbox{\boldmath $a$}}}%
+%BeginExpansion
+\mbox{\boldmath $a$}%
+%EndExpansion
+=\QTR{CaseTitle}{1}%
+%TCIMACRO{\TeXButton{/n}{\mbox{\boldmath $/n$}}}%
+%BeginExpansion
+\mbox{\boldmath $/n$}%
+%EndExpansion
+$\QTR{CaseTitle}{, where }$%
+%TCIMACRO{\TeXButton{n}{\mbox{\boldmath $n$}}}%
+%BeginExpansion
+\mbox{\boldmath $n$}%
+%EndExpansion
+$\QTR{CaseTitle}{\ is a positive integer}\\[2pt]
+The function $f(x)=x^{1/n}=\sqrt[n]{x}$ is a \textbf{root function}. For $%
+n=2 $ it is the square root function $f(x)=\sqrt{x}$, whose domain is $%
+[0,\infty )$ and whose graph is the upper half of the parabola $x=y^{2}$.
+[See Figure 13(a).] For other even values of $n$, the graph of $y=\sqrt[n]{x}
+$ is similar to that of $y=\sqrt{x}$. For $n=3$ we have the cube root
+function $f(x)=\sqrt[3]{x}$ whose domain is $\mathbb{R}$ (recall that every
+real number has a cube root) and whose graph is shown in Figure 13(b). The
+graph of $y=\sqrt[n]{x}$ for $n$ odd $(n>3)$ is similar to that of $y=\sqrt[3%
+]{x}$.\\[4pt]
+\marginpar{\vspace{-24pt}\hspace*{\fill}%
+\begin{tabular}[b]{r}
+\QTR{FigureNumber}{FIGURE 13} \\ 
+Graphs of root functions%
+\end{tabular}%
+}\hspace*{\fill}\FRAME{itbpFU}{3.9058in}{1.2899in}{0in}{\Qcb{}}{}{%
+3c010213.wmf}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+3.9058in;height 1.2899in;depth 0in;original-width 3.9444in;original-height
+1.2566in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/3c010213.wmf';file-properties "XNPEU";}}\hspace*{\fill}\vspace{8pt}
+
+\noindent \QTR{CaseHead}{(iii) }$%
+%TCIMACRO{\TeXButton{a}{\mbox{\boldmath $a$}}}%
+%BeginExpansion
+\mbox{\boldmath $a$}%
+%EndExpansion
+=\mathbf{-1}$\\[2pt]
+\marginpar{\vspace{-15pt}\FRAME{dtbpFU}{1.3889in}{1.3889in}{0pt}{\Qcb{%
+\QTR{FigureNumber}{FIGURE 14\quad }The reciprocal function}}{}{3c010214.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.3889in;height 1.3889in;depth
+0pt;original-width 104.375pt;original-height 106.375pt;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/3c010214.wmf';file-properties "XNPEU";}}}The graph of the \textbf{%
+reciprocal function} $f(x)=x^{-1}=1/x$ is shown in Figure 14. Its graph has
+the equation $y=1/x$, or $xy=1$, and is a hyperbola with the coordinate axes
+as its asymptotes. This function arises in physics and chemistry in
+connection with Boyle's Law, which says that, when the temperature is
+constant, the volume $V$ of a gas is inversely proportional to the pressure $%
+P$: \\[6pt]
+\hspace*{\fill}$V=\dfrac{C}{P}$\hspace*{\fill}\\[6pt]
+where $C$ is a constant. Thus the graph of $V$ as a function of $P$ (see
+Figure 15) has the same general shape as the right half of Figure 14. 
+%TCIMACRO{\TeXButton{longpage}{\enlargethispage{12pt}}}%
+%BeginExpansion
+\enlargethispage{12pt}%
+%EndExpansion
+\\[6pt]
+\marginpar{\vspace{-36pt}\hspace*{\fill}%
+\begin{tabular}[b]{r}
+\QTR{FigureNumber}{FIGURE 15} \\ 
+Volume as a function of \\ 
+pressure at constant temperature%
+\end{tabular}%
+}\hspace*{\fill}\FRAME{itbpFU}{1.3062in}{1.3062in}{0in}{\Qcb{}}{}{%
+3c010215.wmf}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+1.3062in;height 1.3062in;depth 0in;original-width 1.6527in;original-height
+1.6388in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/3c010215.wmf';file-properties "XNPEU";}}\hspace*{\fill}\pagebreak
+
+Another instance in which a power function is used to model a physical
+phenomenon is discussed in Exercise 26.\vspace*{9pt}
+
+\subsection{RATIONAL FUNCTIONS\protect\vspace{-6pt}}
+
+\marginpar{\hspace*{\fill}\FRAME{itbpFU}{94.3125pt}{97.25pt}{102.75pt}{\Qcb{%
+\hspace*{\fill}%
+\protect\begin{tabular}[t]{l}
+\QTR{FigureNumber}{FIGURE 16}\quad \protect \\ 
+$f(x)=\dfrac{2x^{4}-x^{2}+1}{x^{2}-4}$%
+\protect\end{tabular}%
+\hspace*{\fill}}}{}{3c010216.wmf}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+94.3125pt;height 97.25pt;depth 102.75pt;original-width
+1.3059in;original-height 1.3474in;cropleft "0";croptop "0.9984";cropright
+"0.9989";cropbottom "0";filename 'graphics/3c010216.wmf';file-properties
+"XNPEU";}}\hspace*{\fill}}A \textbf{rational function} $f$ is a ratio of two
+polynomials:\\[6pt]
+\hspace*{\fill}$f(x)=\dfrac{P(x)}{Q(x)}$\hspace*{\fill}\\[6pt]
+where $P$ and $Q$ are polynomials. The domain consists of all values of $x$
+such that $Q(x)\neq 0$. A simple example of a rational function is the
+function $f(x)=1/x$, whose domain is $\{x\mid x\neq 0\}$; this is the
+reciprocal function graphed in Figure 14. The function\\[6pt]
+\hspace*{\fill}$f(x)=\dfrac{2x^{4}-x^{2}+1}{x^{2}-4}$\hspace*{\fill}\\[8pt]
+is a rational function with domain $\{x\mid x\neq \pm 2\}$. Its graph is
+shown in Figure 16.\vspace*{9pt}
+
+\subsection{ALGEBRAIC FUNCTIONS\protect\vspace{-6pt}}
+
+A function $f$ is called an \textbf{algebraic function} if it can be
+constructed using algebraic operations (such as addition, subtraction,
+multiplication, division, and taking roots) starting with polynomials. Any
+rational function is automatically an algebraic function. Here are two more
+examples:\\[6pt]
+\hspace*{\fill}$f(x)=\sqrt{x^{2}+1}\qquad g(x)=\dfrac{x^{4}-16x^{2}}{x+\sqrt{%
+x}}+(x-2)\,\sqrt[3]{x+1}$\hspace*{\fill}\\[6pt]
+When we sketch algebraic functions in Chapter 4, we will see that their
+graphs can assume a variety of shapes. Figure 17 illustrates some of the
+possibilities.\vspace*{6pt}
+
+\FRAME{itbpFU}{4.712in}{1.4658in}{0in}{\Qcb{\QTR{FigureNumber}{FIGURE 17}}}{%
+}{6et010217_00069.ai}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+4.712in;height 1.4658in;depth 0in;original-width 4.6837in;original-height
+1.4383in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/6et010217_00069.ai';file-properties "XNPEU";}}\vspace*{6pt}
+
+An example of an algebraic function occurs in the theory of relativity. The
+mass of a particle with velocity $v$ is\\[6pt]
+\hspace*{\fill}$m=f(v)=\dfrac{m_{0}}{\sqrt{1-v^{2}/c^{2}}}$\hspace*{\fill}\\[%
+6pt]
+where $m_{0}$ is the rest mass of the particle and $c=3.0\times 10^{5}$ km$/$%
+s is the speed of light in a vacuum.%
+%TCIMACRO{\TeXButton{longpage}{\enlargethispage{\baselineskip}}}%
+%BeginExpansion
+\enlargethispage{\baselineskip}%
+%EndExpansion
+\vspace*{9pt}
+
+\subsection{TRIGONOMETRIC FUNCTIONS\protect\vspace{-6pt}}
+
+\marginpar{\vspace{6pt}
+\par
+The Reference Pages are located at the front and back of the book.}%
+Trigonometry and the trigonometric functions are reviewed on Reference Page
+2 and also in Appendix D. In calculus the convention is that radian measure
+is always \linebreak used (except when otherwise indicated). For example,
+when we use the function \linebreak $f(x)=\sin \,x$, it is understood that $%
+\sin \,x$ means the sine of the angle whose ra\nolinebreak dian measure is $%
+x $. Thus the graphs of the sine and cosine functions are as shown in
+Figure~18.\vspace{-6pt}
+
+%TCIMACRO{\TeXButton{graphicS}{\vspace{12pt}\hskip-180pt\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hskip-180pt\hfil%
+%EndExpansion
+\FRAME{itbpFU}{6.8208in}{1.2929in}{0in}{\Qcb{\QTR{FigureNumber}{FIGURE 18}}}{%
+}{3c010218.wmf}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+6.8208in;height 1.2929in;depth 0in;original-width 6.8208in;original-height
+1.2929in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/3c010218.wmf';file-properties "XNPEU";}}%
+%TCIMACRO{\TeXButton{graphicE}{\vspace{12pt}\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hfil%
+%EndExpansion
+
+Notice that for both the sine and cosine functions the domain is $(-\infty
+,\infty )$ and the range is the closed interval $[-1,1]$. Thus, for all
+values of $x$, we have\\[9pt]
+\hspace*{\fill}$\fbox{$\hspace{9pt}\rule[-7pt]{0pt}{20pt}-1\leq \sin \,x\leq
+1$\qquad $-1\leq \cos \,x\leq 1\hspace{9pt}$}$\hspace*{\fill}\\[9pt]
+or, in terms of absolute values,\\[6pt]
+\hspace*{\fill}$\left\vert \sin x\right\vert \leq 1\qquad \qquad \left\vert
+\cos x\right\vert \leq 1$\hspace*{\fill}\\[6pt]
+Also, the zeros of the sine function occur at the integer multiples of $\pi $%
+; that is,\\[6pt]
+\hspace*{\fill}$\sin \,x=0$ \qquad when\qquad $x=n\pi \quad $ $n$ an integer%
+\hspace*{\fill}\vspace*{6pt}
+
+An important property of the sine and cosine functions is that they are
+periodic functions and have period $2\pi $. This means that, for all values
+of $x$,\\[9pt]
+\hspace*{\fill}$\fbox{$\hspace{9pt}\rule[-7pt]{0pt}{20pt}\sin (x+2\pi )=\sin
+\,x$\qquad $\cos (x+2\pi )=\cos \,x\hspace{9pt}$}$\hspace*{\fill}\\[9pt]
+The periodic nature of these functions makes them suitable for modeling
+repetitive phenomena such as tides, vibrating springs, and sound waves. For
+instance, in Example 4 in Section 1.3 we will see that a reasonable model
+for the number of hours of daylight in Philadelphia $t$ days after January 1
+is given by the function\\[6pt]
+\hspace*{\fill}$L(t)=12+2.8\sin \left[ \dfrac{2\pi }{365}(t-80)\right] $%
+\hspace*{\fill}\vspace*{6pt}
+
+The tangent function is related to the sine and cosine functions by the
+equation\\[6pt]
+\hspace*{\fill}$\tan \,x=\dfrac{\sin \,x}{\cos \,x}$\hspace*{\fill}\\[6pt]
+\marginpar{\hspace*{\fill}\FRAME{itbpFU}{1.9726in}{1.5575in}{0in}{\Qcb{%
+\QTR{FigureNumber}{FIGURE 19}\quad $y=\tan \,x$}}{}{3c010219.wmf}{\special%
+{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.9726in;height 1.5575in;depth
+0in;original-width 363.0625pt;original-height 345.25pt;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/3c010219.wmf';file-properties "XNPEU";}}\hspace*{\fill}}and its
+graph is shown in Figure 19. It is undefined whenever $\cos \,x=0$, that is,
+when $x=\pm \pi /2$, $\pm 3\pi /2,\ldots $. Its range is $(-\infty ,\infty )$%
+. Notice that the tangent function has period $\pi $:\\[6pt]
+\hspace*{\fill}$\tan (x+\pi )=\tan \,x\qquad $for all $x$\hspace*{\fill}%
+\vspace*{6pt}
+
+The remaining three trigonometric functions (cosecant, secant, and
+cotangent) are the reciprocals of the sine, cosine, and tangent functions.
+Their graphs are shown in Appendix D.\vspace*{9pt}
+
+\subsection{EXPONENTIAL FUNCTIONS\protect\vspace*{-8pt}}
+
+The \textbf{exponential functions} are the functions of the form $f(x)=a^{x}$%
+, where the base $a$ is a positive constant. The graphs of $y=2^{x}$ and $%
+y=(0.5)^{x}$ are shown in Figure 20. In both cases the domain is $(-\infty
+,\infty )$ and the range is $(0,\infty )$.\\[6pt]
+\hspace*{\fill}\FRAME{itbpFU}{3.2077in}{1.5378in}{0in}{\Qcb{%
+\QTR{FigureNumber}{FIGURE 20}}}{}{3c010220.wmf}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 3.2077in;height 1.5378in;depth
+0in;original-width 178.6875pt;original-height 113.4375pt;cropleft
+"0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/3c010220.wmf';file-properties "XNPEU";}}\hspace*{\fill}\vspace*{6pt%
+}
+
+Exponential functions will be studied in detail in Section 1.5,\ and we will
+see that they are useful for modeling many natural phenomena, such as
+population growth (if $a>1$) and radioactive decay (if $a<1$).\vspace*{9pt}
+
+\subsection{LOGARITHMIC FUNCTIONS\protect\vspace*{-8pt}}
+
+The \textbf{logarithmic functions} $f(x)=\log _{a}\,x$, where the base $a$
+is a positive constant, are the inverse functions of the exponential
+functions. They will be studied in Section 1.6. Figure 21 shows the graphs
+of four logarithmic functions with various bases. In each case the domain is 
+$(0,\infty )$, the range is $(-\infty ,\infty )$, and the function increases
+slowly when $x>1$.\\[4pt]
+\hspace*{\fill}\FRAME{itbpFU}{1.9649in}{1.7462in}{0in}{\Qcb{%
+\QTR{FigureNumber}{FIGURE 21}}}{}{3c010221.wmf}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 1.9649in;height 1.7462in;depth
+0in;original-width 2.514in;original-height 1.7201in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/3c010221.wmf';file-properties "XNPEU";}}\hspace*{\fill}\vspace*{8pt%
+}
+
+\subsection{TRANSCENDENTAL FUNCTIONS\protect\vspace*{-8pt}}
+
+These are functions that are not algebraic. The set of transcendental
+functions includes the trigonometric, inverse trigonometric, exponential,
+and logarithmic functions, but it also includes a vast number of other
+functions that have never been named. In Chapter~%
+%TCIMACRO{%
+%\TeXButton{CCC 8 / 5ET 11 / 5E 12}{\ifnum\CCC=1 8\else \ifnum\ET=1 11\else 12\fi \fi}}%
+%BeginExpansion
+\ifnum\CCC=1 8\else \ifnum\ET=1 11\else 12\fi \fi%
+%EndExpansion
+~we will study transcendental functions that are defined as sums of infinite
+series.
+
+\begin{Example}[5]
+%TECHARTS_DUMMY_ITEM_TAG-(5)
+Classify the following functions as one of the types of functions that we
+have discussed.\vspace{-3pt}
+
+\begin{enumerate}
+\item[(a)]
+$f(x)=5^{x}\hspace{43pt}$\textbf{(b)\hspace{7pt}}%
+$g(x)=x^{5}$
+\item[(c)]
+$h(x)=\dfrac{1+x}{1-\sqrt{x}}\qquad $\textbf{(d)\hspace{7pt}}$%
+u(t)=1-t+5t^{4}$%
+%TCIMACRO{\TeXButton{longpage}{\enlargethispage{12pt}}}%
+%BeginExpansion
+\enlargethispage{12pt}%
+%EndExpansion
+\end{enumerate}
+\end{Example}
+
+\begin{Solution}
+$\,\,\vspace{-4pt}$
+
+\begin{enumerate}
+\item[(a)] $f(x)=$ $5^{x}$ is an exponential function. (The $x$ is the
+exponent.)
+
+\item[(b)] $g(x)=x^{5}$ is a power function. (The $x$ is the base.) We could
+also consider it to be a polynomial of degree 5.
+
+\item[(c)] $h(x)=\dfrac{1+x}{1-\sqrt{x}}$ is an algebraic function.
+
+\item[(d)] $u(t)=1-t+5t^{4}$ is a polynomial of degree 4.$\vspace{-12pt}%
+\blacksquare $
+\end{enumerate}
+\end{Solution}
+
+\QTP{MultColDiv}
+Exercises 1.2\vspace{-6pt}
+
+%TCIMACRO{%
+%\TeXButton{s2col}{\setlength{\columnsep}{24pt}
+%\advance \leftskip by -165pt
+%\advance\hsize by 165pt
+%\advance\linewidth by 165pt
+%\begin{multicols}{2}}}%
+%BeginExpansion
+\setlength{\columnsep}{24pt}
+\advance \leftskip by -165pt
+\advance\hsize by 165pt
+\advance\linewidth by 165pt
+\begin{multicols}{2}%
+%EndExpansion
+
+\begin{instructions}
+\hspace{9pt}\QTR{SpanExer}{1--2}{\small 
+%TCIMACRO{\TeXButton{SQR}{\hskip .5em\rule{4pt}{4pt}\hskip .5em}}%
+%BeginExpansion
+\hskip .5em\rule{4pt}{4pt}\hskip .5em%
+%EndExpansion
+Classify each function as a power function, root function, }\newline
+{\small polynomial (state its degree), rational function, algebraic
+function, }\newline
+{\small trigonometric function, exponential function, or logarithmic }%
+\newline
+{\small function.}
+\end{instructions}
+
+\begin{ExerciseList}
+\item[$\hfill $1.] 
+
+\begin{ExerciseList}
+\item[(a)] $f(x)=\sqrt[5]{x}$\qquad 
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00067}}}{}{\fbox{\textbf{master 00067}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00067}}}{}{\fbox{\textbf{master 00067}}}{}%
+%EndExpansion
+
+\item[(b)] $g(x)=\sqrt{1-x^{2}}$\qquad 
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00068}}}{}{\fbox{\textbf{master 00068}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00068}}}{}{\fbox{\textbf{master 00068}}}{}%
+%EndExpansion
+
+\item[(c)] $h(x)=x^{9}+x^{4}$\qquad 
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00069}}}{}{\fbox{\textbf{master 00069}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00069}}}{}{\fbox{\textbf{master 00069}}}{}%
+%EndExpansion
+
+\item[(d)] $r(x)=\dfrac{x^{2}+1}{x^{3}+x}$\qquad 
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00070}}}{}{\fbox{\textbf{master 00070}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00070}}}{}{\fbox{\textbf{master 00070}}}{}%
+%EndExpansion
+
+\item[(e)] $s(x)=\tan 2x$\qquad 
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00071}}}{}{\fbox{\textbf{master 00071}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00071}}}{}{\fbox{\textbf{master 00071}}}{}%
+%EndExpansion
+
+\item[(f)] $t(x)=\log _{10}x\vspace{3pt}$\qquad 
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00072}}}{}{\fbox{\textbf{master 00072}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00072}}}{}{\fbox{\textbf{master 00072}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:}\ (a)~Root\quad (b)~Algebraic\quad (c)~Polynomial (degree 9)\quad (d)~Rational\quad (e) ~Trigonometric\quad (f)~Logarithmic}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:}\ (a)~Root\quad (b)~Algebraic\quad (c)~Polynomial (degree 9)\quad (d)~Rational\quad (e) ~Trigonometric\quad (f)~Logarithmic}{}%
+%EndExpansion
+
+\item[$\hfill $2.] 
+
+\begin{ExerciseList}
+\item[(a)] $y=\dfrac{x-6}{x+6}$\qquad 
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00073}}}{}{\fbox{\textbf{master 00073}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00073}}}{}{\fbox{\textbf{master 00073}}}{}%
+%EndExpansion
+
+\item[(b)] $y=x+\dfrac{x^{2}}{\sqrt{x-1}}$\qquad 
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00074}}}{}{\fbox{\textbf{master 00074}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00074}}}{}{\fbox{\textbf{master 00074}}}{}%
+%EndExpansion
+
+\item[(c)] $y=10^{x}$\qquad 
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00075}}}{}{\fbox{\textbf{master 00075}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00075}}}{}{\fbox{\textbf{master 00075}}}{}%
+%EndExpansion
+
+\item[(d)] $y=x^{10}$\qquad 
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00076}}}{}{\fbox{\textbf{master 00076}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00076}}}{}{\fbox{\textbf{master 00076}}}{}%
+%EndExpansion
+
+\item[(e)] $y=2t^{6}+t^{4}-\pi $\qquad 
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00077}}}{}{\fbox{\textbf{master 00077}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00077}}}{}{\fbox{\textbf{master 00077}}}{}%
+%EndExpansion
+
+\item[(f)] $y=\cos \,\theta +\sin \,\theta $\qquad 
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00078}}}{}{\fbox{\textbf{master 00078}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00078}}}{}{\fbox{\textbf{master 00078}}}{}%
+%EndExpansion
+\vspace{-6pt}
+\end{ExerciseList}
+\end{ExerciseList}
+
+\begin{instructions}
+\FRAME{itbpF}{235.6875pt}{5.5pt}{0pt}{}{}{dots.wmf}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 235.6875pt;height 5.5pt;depth
+0pt;original-width 3.9167in;original-height 0.0735in;cropleft "0";croptop
+"0.9772";cropright "0.8327";cropbottom "0.0226";filename
+'graphics/dots.wmf';file-properties "XNPEU";}}\vspace{-6pt}
+\end{instructions}
+
+\begin{instructions}
+\QTR{SpanExer}{3--4}{\small 
+%TCIMACRO{\TeXButton{SQR}{\hskip .5em\rule{4pt}{4pt}\hskip .5em}}%
+%BeginExpansion
+\hskip .5em\rule{4pt}{4pt}\hskip .5em%
+%EndExpansion
+Match each equation with its graph. Explain your choices. (Don't use a
+computer or graphing calculator.)}
+\end{instructions}
+
+\begin{ExerciseList}
+\item[{\hfill \protect\fbox{3.\hspace{-2pt}}}] 
+
+\begin{ExerciseList}
+\item[(a)] $y=x^{2}$\hspace{36pt}\textbf{(b)}\hspace{5pt}$y=x^{5}$\hspace{%
+36pt}\textbf{(c)}\hspace{5pt}$y=x^{8}$\vspace*{6pt}
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:}\ (a)~$h$\quad (b)~$f$\quad (c)~$g$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:}\ (a)~$h$\quad (b)~$f$\quad (c)~$g$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00079}}}{}{\fbox{\textbf{master 00079}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00079}}}{}{\fbox{\textbf{master 00079}}}{}%
+%EndExpansion
+
+\hspace*{\fill}\FRAME{itbpF}{1.9726in}{1.8054in}{0in}{}{}{3c0102x03.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.9726in;height 1.8054in;depth
+0in;original-width 1.9441in;original-height 1.7772in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/3c0102x03.wmf';file-properties "XNPEU";}}\hspace*{\fill}
+
+\item[\hfill 4.] 
+
+\begin{ExerciseList}
+\item[(a)] $y=3x\hspace{15pt}$\textbf{(b)}\hspace{5pt}$y=3^{x}\hspace{15pt}$%
+\textbf{(c)}\hspace{5pt}$y=x^{3}\hspace{15pt}$\textbf{(d)}\hspace{5pt}$y=%
+\sqrt[3]{x}$\vspace*{6pt}
+\end{ExerciseList}
+
+\hspace*{\fill}\FRAME{itbpF}{1.9581in}{1.7771in}{0in}{}{}{3c0102x04.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.9581in;height 1.7771in;depth
+0in;original-width 1.9579in;original-height 1.7772in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/3c0102x04.wmf';file-properties "XNPEU";}}\hspace*{\fill}
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00080a}}}{}{\fbox{\textbf{master 00080a}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00080a}}}{}{\fbox{\textbf{master 00080a}}}{}%
+%EndExpansion
+\quad 
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00080a}}}{}{\fbox{\textbf{master 00080a}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00080a}}}{}{\fbox{\textbf{master 00080a}}}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00080c}}}{}{\fbox{\textbf{master 00080c}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00080c}}}{}{\fbox{\textbf{master 00080c}}}{}%
+%EndExpansion
+\quad 
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00080d}}}{}{\fbox{\textbf{master 00080d}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00080d}}}{}{\fbox{\textbf{master 00080d}}}{}%
+%EndExpansion
+\vspace{-24pt}
+\end{ExerciseList}
+
+\begin{instructions}
+\FRAME{itbpF}{235.6875pt}{5.5pt}{0pt}{}{}{dots.wmf}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 235.6875pt;height 5.5pt;depth
+0pt;original-width 3.9167in;original-height 0.0735in;cropleft "0";croptop
+"0.9772";cropright "0.8327";cropbottom "0.0226";filename
+'graphics/dots.wmf';file-properties "XNPEU";}}
+\end{instructions}
+
+\begin{ExerciseList}
+\item[{\hfill \protect\fbox{5.\hspace{-2pt}}}] 
+
+\begin{ExerciseList}
+\item[(a)] Find an equation for the family of linear functions with slope 2
+and sketch several members of the family.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:}\ (a)~$y=2x+b$, where $b$ is the \textit{y}-intercept\newline
+%\FRAME{itbpF}{1.2496in}{1.3197in}{1.0032in}{}{}{4a010205a.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.2496in;height 1.3197in;depth 1.0032in;original-width 6.1229in;original-height 6.4627in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename '../../../4c3/4c-SW-ch01/graphics/4a010205a.wmf';file-properties "XNPEU";}}\newline
+%}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:}\ (a)~$y=2x+b$, where $b$ is the \textit{y}-intercept\newline
+\FRAME{itbpF}{1.2496in}{1.3197in}{1.0032in}{}{}{4a010205a.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.2496in;height 1.3197in;depth 1.0032in;original-width 6.1229in;original-height 6.4627in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename '../../../4c3/4c-SW-ch01/graphics/4a010205a.wmf';file-properties "XNPEU";}}\newline
+}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00081a}}}{}{\fbox{\textbf{master 00081a}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00081a}}}{}{\fbox{\textbf{master 00081a}}}{}%
+%EndExpansion
+
+\item[(b)] Find an equation for the family of linear functions such that $%
+f(2)=1$ and sketch several members of the family.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:}\ \FRAME{itbpF}{1.2496in}{1.3197in}{1.0032in}{}{}{4a010205a.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.2496in;height 1.3197in;depth 1.0032in;original-width 6.1229in;original-height 6.4627in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename '../../../4c3/4c-SW-ch01/graphics/4a010205a.wmf';file-properties "XNPEU";}}\newline
+%(b)~$y=mx+1-2m$, where $m$ is the slope\newline
+%\FRAME{itbpF}{1.2081in}{1.2081in}{1.0032in}{}{}{4a010205b.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.2081in;height 1.2081in;depth 1.0032in;original-width 6.4627in;original-height 6.4627in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename '../../../4c3/4c-SW-ch01/graphics/4a010205b.wmf';file-properties "XNPEU";}}\newline
+%}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:}\ \FRAME{itbpF}{1.2496in}{1.3197in}{1.0032in}{}{}{4a010205a.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.2496in;height 1.3197in;depth 1.0032in;original-width 6.1229in;original-height 6.4627in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename '../../../4c3/4c-SW-ch01/graphics/4a010205a.wmf';file-properties "XNPEU";}}\newline
+(b)~$y=mx+1-2m$, where $m$ is the slope\newline
+\FRAME{itbpF}{1.2081in}{1.2081in}{1.0032in}{}{}{4a010205b.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.2081in;height 1.2081in;depth 1.0032in;original-width 6.4627in;original-height 6.4627in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename '../../../4c3/4c-SW-ch01/graphics/4a010205b.wmf';file-properties "XNPEU";}}\newline
+}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00081b}}}{}{\fbox{\textbf{master 00081b}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00081b}}}{}{\fbox{\textbf{master 00081b}}}{}%
+%EndExpansion
+
+\item[(c)] Which function belongs to both families?
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:}\ (c)~$y=2x-3$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:}\ (c)~$y=2x-3$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00081c}}}{}{\fbox{\textbf{master 00081c}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00081c}}}{}{\fbox{\textbf{master 00081c}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[\hfill 6.] What do all members of the family of linear functions 
+\newline
+$f(x)=1+m(x+3)$ have in common? Sketch several members of the family.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00082}}}{}{\fbox{\textbf{master 00082}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00082}}}{}{\fbox{\textbf{master 00082}}}{}%
+%EndExpansion
+
+\item[\hfill 7.] What do all members of the family of linear functions 
+\newline
+$f(x)=c-x$ have in common? Sketch several members of the family.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} Their graphs have slope $-1$.\newline
+%\FRAME{itbpF}{1.5143in}{1.2488in}{0in}{}{}{5et010207.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.5143in;height 1.2488in;depth 0in;original-width 1.5143in;original-height 1.2488in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename 'graphics/5et010207.wmf';file-properties "XNPEU";}}}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} Their graphs have slope $-1$.\newline
+\FRAME{itbpF}{1.5143in}{1.2488in}{0in}{}{}{5et010207.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.5143in;height 1.2488in;depth 0in;original-width 1.5143in;original-height 1.2488in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename 'graphics/5et010207.wmf';file-properties "XNPEU";}}}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00083}}}{}{\fbox{\textbf{master 00083}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00083}}}{}{\fbox{\textbf{master 00083}}}{}%
+%EndExpansion
+
+\item[\hfill 8.] Find expressions for the quadratic functions whose graphs
+are shown.
+
+\FRAME{dtbpF}{2.7492in}{0.9816in}{0pt}{}{}{6et0102x08_00076.ai}{\special%
+{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 2.7492in;height 0.9816in;depth
+0pt;original-width 2.7224in;original-height 0.9539in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/6et0102x08_00076.ai';file-properties "XNPEU";}}
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 30016}}}{}{\fbox{\textbf{master 30016}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 30016}}}{}{\fbox{\textbf{master 30016}}}{}%
+%EndExpansion
+
+\item[9.] Find an expression for a cubic function $f$ if $f(1)=6$ and
+
+$f(-1)=f(0)=f(2)=0$.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $f(x)=-3x(x+1)(x-2)$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $f(x)=-3x(x+1)(x-2)$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 30017}}}{}{\fbox{\textbf{master 30017}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 30017}}}{}{\fbox{\textbf{master 30017}}}{}%
+%EndExpansion
+
+\item[10.] Recent studies indicate that the average surface temperature of
+the earth has been rising steadily. Some scientists have modeled the
+temperature by the linear function $T=0.02t+8.50$, where $T$ is temperature
+in $^{\circ }\mathrm{C}$ and $t$ represents years since 1900.
+
+\begin{ExerciseList}
+\item[(a)] What do the slope and $T$-intercept represent?
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 30018a}}}{}{\fbox{\textbf{master 30018a}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 30018a}}}{}{\fbox{\textbf{master 30018a}}}{}%
+%EndExpansion
+
+\begin{ExerciseList}
+\item[(b)] Use the equation to predict the average global surface
+temperature in 2100.
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 30018b}}}{}{\fbox{\textbf{master 30018b}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 30018b}}}{}{\fbox{\textbf{master 30018b}}}{}%
+%EndExpansion
+
+\item[11.] If the recommended adult dosage for a drug is $D$ (in mg), then
+to determine the appropriate dosage $c$ for a child of age $a$, pharmacists
+use the equation $c=0.0417D(a+1)$. Suppose the dosage for an adult is 200 mg.
+
+\begin{ExerciseList}
+\item[(a)] Find the slope of the graph of $c$. What does it represent?
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 30019a}}}{}{\fbox{\textbf{master 30019a}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 30019a}}}{}{\fbox{\textbf{master 30019a}}}{}%
+%EndExpansion
+
+\begin{ExerciseList}
+\item[(b)] What is the dosage for a newborn?
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 30019b}}}{}{\fbox{\textbf{master 30019b}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 30019b}}}{}{\fbox{\textbf{master 30019b}}}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (a)~8.34, change in mg for every 1 year change\quad (b)~8.34 mg}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (a)~8.34, change in mg for every 1 year change\quad (b)~8.34 mg}{}%
+%EndExpansion
+
+\item[12.] The manager of a weekend flea market knows from past experience
+that if he charges $x$ dollars for a rental space at the flea market, then
+the number $y$ of spaces he can rent is given by the equation $y=200-4x$.%
+\vspace{-2pt}
+
+\begin{ExerciseList}
+\item[(a)] Sketch a graph of this linear function. (Remember that the rental
+charge per space and the number of spaces rented can't be negative
+quantities.)
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00084a}}}{}{\fbox{\textbf{master 00084a}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00084a}}}{}{\fbox{\textbf{master 00084a}}}{}%
+%EndExpansion
+
+\item[(b)] What do the slope, the $y$-intercept, and the $x$-intercept of
+the graph represent?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00084b}}}{}{\fbox{\textbf{master 00084b}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00084b}}}{}{\fbox{\textbf{master 00084b}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[13.] The relationship between the Fahrenheit ($F$) and Celsius ($C$)
+temperature scales is given by the linear function \newline
+$F=\frac{9}{5}C+32$.\vspace{-2pt}
+
+\begin{ExerciseList}
+\item[(a)] Sketch a graph of this function.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00085a}}}{}{\fbox{\textbf{master 00085a}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00085a}}}{}{\fbox{\textbf{master 00085a}}}{}%
+%EndExpansion
+
+\item[(b)] What is the slope of the graph and what does it represent? What
+is the $F$-intercept and what does it represent?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00085b}}}{}{\fbox{\textbf{master 00085b}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00085b}}}{}{\fbox{\textbf{master 00085b}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:}\ (a)~\FRAME{itbpF}{1.4382in}{1.2981in}{1.254in}{}{}{4a010207a.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.4382in;height 1.2981in;depth 1.254in;original-width 6.4627in;original-height 5.8237in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename 'graphics/4a010207a.wmf';file-properties "XNPEU";}}\newline
+%(b)~$\tfrac{9}{5}$, change in $^{\circ }$F for every 1$^{\circ }$C change; 32, Fahrenheit temperature corresponding to 0$^{\circ }$C}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:}\ (a)~\FRAME{itbpF}{1.4382in}{1.2981in}{1.254in}{}{}{4a010207a.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.4382in;height 1.2981in;depth 1.254in;original-width 6.4627in;original-height 5.8237in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename 'graphics/4a010207a.wmf';file-properties "XNPEU";}}\newline
+(b)~$\tfrac{9}{5}$, change in $^{\circ }$F for every 1$^{\circ }$C change; 32, Fahrenheit temperature corresponding to 0$^{\circ }$C}{}%
+%EndExpansion
+
+\item[14.] Jason leaves Detroit at 2:00 \textsc{pm} and drives at a constant
+speed west along I-96. He passes Ann Arbor, 40 mi from Detroit, at 2:50 
+\textsc{pm}.\textsc{\vspace{-2pt}}
+
+\begin{ExerciseList}
+\item[(a)] Express the distance traveled in terms of the time elapsed.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00086a}}}{}{\fbox{\textbf{master 00086a}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00086a}}}{}{\fbox{\textbf{master 00086a}}}{}%
+%EndExpansion
+
+\item[(b)] Draw the graph of the equation in part (a).
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00086b}}}{}{\fbox{\textbf{master 00086b}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00086b}}}{}{\fbox{\textbf{master 00086b}}}{}%
+%EndExpansion
+
+\item[(c)] What is the slope of this line? What does it represent?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00086c}}}{}{\fbox{\textbf{master 00086c}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00086c}}}{}{\fbox{\textbf{master 00086c}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[{\hfill \protect\fbox{\hspace{-2pt}15.\hspace{-2pt}}}] Biologists have
+noticed that the chirping rate of crickets of a certain species is related
+to temperature, and the relationship appears to be very nearly linear. A
+cricket produces 113 chirps per minute at $70^{\circ }$F and 173 chirps per
+minute at $80^{\circ }$F.\vspace{-2pt}
+
+\begin{ExerciseList}
+\item[(a)] Find a linear equation that models the temperature $T$ as a
+function of the number of chirps per minute $N$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00087a}}}{}{\fbox{\textbf{master 00087a}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00087a}}}{}{\fbox{\textbf{master 00087a}}}{}%
+%EndExpansion
+
+\item[(b)] What is the slope of the graph? What does it represent?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00087b}}}{}{\fbox{\textbf{master 00087b}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00087b}}}{}{\fbox{\textbf{master 00087b}}}{}%
+%EndExpansion
+
+\item[(c)] If the crickets are chirping at 150 chirps per minute, estimate
+the temperature.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00087c}}}{}{\fbox{\textbf{master 00087c}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00087c}}}{}{\fbox{\textbf{master 00087c}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:}\ (a)~$T=\tfrac{1}{6}N+\tfrac{307}{6}$\quad (b)~$\tfrac{1}{6}$, change in $^{\circ }$F for every chirp per minute change\quad (c)~76$^{\circ }$F}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:}\ (a)~$T=\tfrac{1}{6}N+\tfrac{307}{6}$\quad (b)~$\tfrac{1}{6}$, change in $^{\circ }$F for every chirp per minute change\quad (c)~76$^{\circ }$F}{}%
+%EndExpansion
+
+\item[16.] The manager of a furniture factory finds that it costs \$2200 to
+manufacture 100 chairs in one day and \$4800 to produce 300 chairs in one
+day.\vspace{-2pt}
+
+\begin{ExerciseList}
+\item[(a)] Express the cost as a function of the number of chairs produced,
+assuming that it is linear. Then sketch the graph.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00088a}}}{}{\fbox{\textbf{master 00088a}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00088a}}}{}{\fbox{\textbf{master 00088a}}}{}%
+%EndExpansion
+
+\item[(b)] What is the slope of the graph and what does it represent?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00088b}}}{}{\fbox{\textbf{master 00088b}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00088b}}}{}{\fbox{\textbf{master 00088b}}}{}%
+%EndExpansion
+
+\item[(c)] What is the $y$-intercept of the graph and what does it \newline
+represent?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00088c}}}{}{\fbox{\textbf{master 00088c}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00088c}}}{}{\fbox{\textbf{master 00088c}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[{\hfill \protect\fbox{\hspace{-2pt}17.\hspace{-2pt}}}] At the surface
+of the ocean, the water pressure is the same as the air pressure above the
+water, 15 lb$/$in$^{2}$. Below the surface, the water pressure increases by
+4.34 lb$/$in$^{2}$ for every 10 ft of descent.\vspace{-2pt}
+
+\begin{ExerciseList}
+\item[(a)] Express the water pressure as a function of the depth below the
+ocean surface.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00089a}}}{}{\fbox{\textbf{master 00089a}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00089a}}}{}{\fbox{\textbf{master 00089a}}}{}%
+%EndExpansion
+
+\item[(b)] At what depth is the pressure 100 lb$/$in$^{2}$?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00089b}}}{}{\fbox{\textbf{master 00089b}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00089b}}}{}{\fbox{\textbf{master 00089b}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:}\ (a)~$P=0.434d+15$\quad (b)~196~ft}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:}\ (a)~$P=0.434d+15$\quad (b)~196~ft}{}%
+%EndExpansion
+
+\item[18.] The monthly cost of driving a car depends on the number of miles
+driven. Lynn found that in May it cost her \$380 to drive 480 mi and in June
+it cost her \$460 to drive 800 mi.\vspace{-2pt}
+
+\begin{ExerciseList}
+\item[(a)] Express the monthly cost $C$ as a function of the distance driven 
+$d$, assuming that a linear relationship gives a suitable model.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00090a}}}{}{\fbox{\textbf{master 00090a}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00090a}}}{}{\fbox{\textbf{master 00090a}}}{}%
+%EndExpansion
+
+\item[(b)] Use part (a) to predict the cost of driving 1500 miles per month.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00090b}}}{}{\fbox{\textbf{master 00090b}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00090b}}}{}{\fbox{\textbf{master 00090b}}}{}%
+%EndExpansion
+
+\item[(c)] Draw the graph of the linear function. What does the slope
+represent?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00090c}}}{}{\fbox{\textbf{master 00090c}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00090c}}}{}{\fbox{\textbf{master 00090c}}}{}%
+%EndExpansion
+
+\item[(d)] What does the $y$-intercept represent?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00090d}}}{}{\fbox{\textbf{master 00090d}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00090d}}}{}{\fbox{\textbf{master 00090d}}}{}%
+%EndExpansion
+
+\item[(e)] Why does a linear function give a suitable model in this
+situation?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00090e}}}{}{\fbox{\textbf{master 00090e}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00090e}}}{}{\fbox{\textbf{master 00090e}}}{}%
+%EndExpansion
+\end{ExerciseList}
+\end{ExerciseList}
+
+\begin{instructions}
+\QTR{SpanExer}{19--20}{\small 
+%TCIMACRO{\TeXButton{SQR}{\hskip .5em\rule{4pt}{4pt}\hskip .5em}}%
+%BeginExpansion
+\hskip .5em\rule{4pt}{4pt}\hskip .5em%
+%EndExpansion
+For each scatter plot, decide what type of function you might choose as a
+model for the data. Explain your choices.}
+\end{instructions}
+
+\begin{ExerciseList}
+\item[19.] 
+
+\begin{ExerciseList}
+\item[(a)] \ \FRAME{itbpF}{1.4304in}{1.4304in}{1.305in}{}{}{4e0102x13a.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.4304in;height 1.4304in;depth
+1.305in;original-width 1.4304in;original-height 1.4304in;cropleft
+"0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/4e0102x13a.wmf';file-properties "XNPEU";}}\quad 
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00091}}}{}{\fbox{\textbf{master 00091}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00091}}}{}{\fbox{\textbf{master 00091}}}{}%
+%EndExpansion
+\vspace{6pt}
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:}\ (a)~Cosine}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:}\ (a)~Cosine}{}%
+%EndExpansion
+
+\item[(b)] \QTR{PartLetter}{\ }\FRAME{itbpF}{1.4304in}{1.4304in}{1.305in}{}{%
+}{4e0102x13b.wmf}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+1.4304in;height 1.4304in;depth 1.305in;original-width
+1.4304in;original-height 1.4304in;cropleft "0";croptop "1";cropright
+"1";cropbottom "0";filename 'graphics/4e0102x13b.wmf';file-properties
+"XNPEU";}}\quad 
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00092}}}{}{\fbox{\textbf{master 00092}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00092}}}{}{\fbox{\textbf{master 00092}}}{}%
+%EndExpansion
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:}\ (b)~Linear}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:}\ (b)~Linear}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[20.] 
+
+\begin{ExerciseList}
+\item[(a)] \ \FRAME{itbpF}{1.2635in}{1.2782in}{1.305in}{}{}{4e0102x14a.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.2635in;height 1.2782in;depth
+1.305in;original-width 1.2635in;original-height 1.2782in;cropleft
+"0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/4e0102x14a.wmf';file-properties "XNPEU";}}\quad 
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00093}}}{}{\fbox{\textbf{master 00093}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00093}}}{}{\fbox{\textbf{master 00093}}}{}%
+%EndExpansion
+\vspace{6pt}
+
+\item[(b)] \QTR{PartLetter}{\ }\FRAME{itbpF}{1.299in}{1.3128in}{1.305in}{}{}{%
+4e0102x14b.wmf}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+1.299in;height 1.3128in;depth 1.305in;original-width
+1.2635in;original-height 1.2782in;cropleft "0";croptop "1";cropright
+"1";cropbottom "0";filename 'graphics/4e0102x14b.wmf';file-properties
+"XNPEU";}}\quad 
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00094}}}{}{\fbox{\textbf{master 00094}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00094}}}{}{\fbox{\textbf{master 00094}}}{}%
+%EndExpansion
+\vspace{6pt}
+\end{ExerciseList}
+\end{ExerciseList}
+
+\begin{instructions}
+\FRAME{itbpF}{235.6875pt}{5.5pt}{0pt}{}{}{dots.wmf}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 235.6875pt;height 5.5pt;depth
+0pt;original-width 3.9167in;original-height 0.0735in;cropleft "0";croptop
+"0.9772";cropright "0.8327";cropbottom "0.0226";filename
+'graphics/dots.wmf';file-properties "XNPEU";}}
+\end{instructions}
+
+\begin{ExerciseList}
+\item[21.] 
+%TCIMACRO{\TeXButton{GCALCX}{\GCALCX}}%
+%BeginExpansion
+\GCALCX%
+%EndExpansion
+The table shows (lifetime) peptic ulcer rates (per 100 population) for
+various family incomes as reported by the National Health Interview
+Survey.\bigskip
+
+$\hfill ${\small $%
+\begin{tabular}{|c|c|}
+\hline
+& Ulcer rate \\ 
+Income & (per 100 population) \\ \hline
+\$\QTR{white}{\hspace*{4pt}}4,000 & 14.1 \\ 
+\$\QTR{white}{\hspace*{4pt}}6,000 & 13.0 \\ 
+\$\QTR{white}{\hspace*{4pt}}8,000 & 13.4 \\ 
+\$12,000 & 12.5 \\ 
+\$16,000 & 12.0 \\ 
+\$20,000 & 12.4 \\ 
+\$30,000 & 10.5 \\ 
+\$45,000 & \QTR{white}{\hspace*{4pt}}9.4 \\ 
+\$60,000 & \QTR{white}{\hspace*{4pt}}8.2 \\ \hline
+\end{tabular}%
+\ $}$\hfill $\bigskip
+
+\begin{ExerciseList}
+\item[(a)] Make a scatter plot of these data and decide whether a linear
+model is appropriate.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00095a}}}{}{\fbox{\textbf{master 00095a}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00095a}}}{}{\fbox{\textbf{master 00095a}}}{}%
+%EndExpansion
+
+\item[(b)] Find and graph a linear model using the first and last data
+points.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00095b}}}{}{\fbox{\textbf{master 00095b}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00095b}}}{}{\fbox{\textbf{master 00095b}}}{}%
+%EndExpansion
+
+\item[(c)] Find and graph the least squares regression line.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00095c}}}{}{\fbox{\textbf{master 00095c}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00095c}}}{}{\fbox{\textbf{master 00095c}}}{}%
+%EndExpansion
+
+\item[(d)] Use the linear model in part (c) to estimate the ulcer rate for
+an income of \$25,000.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00095d}}}{}{\fbox{\textbf{master 00095d}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00095d}}}{}{\fbox{\textbf{master 00095d}}}{}%
+%EndExpansion
+
+\item[(e)] According to the model, how likely is someone with an income of
+\$80,000 to suffer from peptic ulcers?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00095e}}}{}{\fbox{\textbf{master 00095e}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00095e}}}{}{\fbox{\textbf{master 00095e}}}{}%
+%EndExpansion
+
+\item[(f)] Do you think it would be reasonable to apply the model to someone
+with an income of \$200,000?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00095f}}}{}{\fbox{\textbf{master 00095f}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00095f}}}{}{\fbox{\textbf{master 00095f}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:}\ (a)~\FRAME{itbpF}{1.5696in}{0.9842in}{0.8786in}{}{}{4a010215a.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.5696in;height 0.9842in;depth 0.8786in;original-width 0pt;original-height 0pt;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename 'graphics/4a010215a.wmf';file-properties "XNPEU";}}\newline
+%Linear model is appropriate.\newline
+%(b)~$y=-0.000105x+14.521$\newline
+%\FRAME{itbpF}{1.5696in}{0.9842in}{0.8536in}{}{}{4a010215b.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.5696in;height 0.9842in;depth 0.8536in;original-width 0pt;original-height 0pt;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename 'graphics/4a010215b.wmf';file-properties "XNPEU";}}\newline
+%(c)~$y=-0.00009979x+13.951$ [See graph in (b).]\quad \newline
+%(d)~About 11.5 per 100 population\quad (e)~About 6\%\quad (f)~No}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:}\ (a)~\FRAME{itbpF}{1.5696in}{0.9842in}{0.8786in}{}{}{4a010215a.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.5696in;height 0.9842in;depth 0.8786in;original-width 0pt;original-height 0pt;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename 'graphics/4a010215a.wmf';file-properties "XNPEU";}}\newline
+Linear model is appropriate.\newline
+(b)~$y=-0.000105x+14.521$\newline
+\FRAME{itbpF}{1.5696in}{0.9842in}{0.8536in}{}{}{4a010215b.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.5696in;height 0.9842in;depth 0.8536in;original-width 0pt;original-height 0pt;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename 'graphics/4a010215b.wmf';file-properties "XNPEU";}}\newline
+(c)~$y=-0.00009979x+13.951$ [See graph in (b).]\quad \newline
+(d)~About 11.5 per 100 population\quad (e)~About 6\%\quad (f)~No}{}%
+%EndExpansion
+
+\item[22.] 
+%TCIMACRO{\TeXButton{GCALCX}{\GCALCX}}%
+%BeginExpansion
+\GCALCX%
+%EndExpansion
+Biologists have observed that the chirping rate of crickets of a certain
+species appears to be related to temperature. The table shows the chirping
+rates for various temperatures.\bigskip
+
+$\hfill ${\small $%
+\begin{tabular}{|c|c||c|c|}
+\hline
+\hspace*{-7pt}%
+\begin{tabular}[t]{c}
+Temperature \\ 
+($^{\circ }$F$)$%
+\end{tabular}%
+\hspace*{-7pt} & \hspace*{-7pt}%
+\begin{tabular}[t]{c}
+Chirping rate \\ 
+(chirps/min$)$%
+\end{tabular}%
+\hspace*{-7pt} & \hspace*{-7pt}%
+\begin{tabular}[t]{c}
+Temperature \\ 
+($^{\circ }$F$)$%
+\end{tabular}%
+\hspace*{-7pt} & \hspace*{-7pt}%
+\begin{tabular}[t]{c}
+Chirping rate \\ 
+(chirps/min$)$%
+\end{tabular}%
+\hspace*{-7pt} \\ \hline
+50 & 20 & 75 & 140 \\ 
+55 & 46 & 80 & 173 \\ 
+60 & 79 & 85 & 198 \\ 
+65 & 91 & 90 & 211 \\ 
+70 & 113 &  &  \\ \hline
+\end{tabular}%
+\ \ $}$\hfill $\bigskip
+
+\begin{ExerciseList}
+\item[(a)] Make a scatter plot of the data.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00096a}}}{}{\fbox{\textbf{master 00096a}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00096a}}}{}{\fbox{\textbf{master 00096a}}}{}%
+%EndExpansion
+
+\item[(b)] Find and graph the regression line.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00096b}}}{}{\fbox{\textbf{master 00096b}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00096b}}}{}{\fbox{\textbf{master 00096b}}}{}%
+%EndExpansion
+
+\item[(c)] Use the linear model in part (b) to estimate the chirping rate at 
+$100^{\circ }$F.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00096c}}}{}{\fbox{\textbf{master 00096c}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00096c}}}{}{\fbox{\textbf{master 00096c}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[23.] 
+%TCIMACRO{\TeXButton{GCALCX}{\GCALCX}}%
+%BeginExpansion
+\GCALCX%
+%EndExpansion
+The table gives the winning heights for the Olympic pole vault competitions
+in the 20th century.\bigskip
+
+$\hfill ${\small $%
+\begin{tabular}{|c|c||c|c|}
+\hline
+Year & Height (ft) & Year & Height (ft) \\ \hline
+1900 & 10.83 & 1956 & 14.96 \\ 
+1904 & 11.48 & 1960 & 15.42 \\ 
+1908 & 12.17 & 1964 & 16.73 \\ 
+1912 & 12.96 & 1968 & 17.71 \\ 
+1920 & 13.42 & 1972 & 18.04 \\ 
+1924 & 12.96 & 1976 & 18.04 \\ 
+1928 & 13.77 & 1980 & 18.96 \\ 
+1932 & 14.15 & 1984 & 18.85 \\ 
+1936 & 14.27 & 1988 & 19.77 \\ 
+1948 & 14.10 & 1992 & 19.02 \\ 
+1952 & 14.92 & 1996 & 19.42 \\ \hline
+\end{tabular}%
+$}$\hfill $\bigskip
+
+\begin{ExerciseList}
+\item[(a)] Make a scatter plot and decide whether a linear model is
+appropriate.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00097a}}}{}{\fbox{\textbf{master 00097a}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00097a}}}{}{\fbox{\textbf{master 00097a}}}{}%
+%EndExpansion
+
+\item[(b)] Find and graph the regression line.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00097b}}}{}{\fbox{\textbf{master 00097b}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00097b}}}{}{\fbox{\textbf{master 00097b}}}{}%
+%EndExpansion
+
+\item[(c)] Use the linear model to predict the height of the winning pole
+vault at the 2000 Olympics and compare with the actual winning height of
+19.36 feet.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00097c}}}{}{\fbox{\textbf{master 00097c}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00097c}}}{}{\fbox{\textbf{master 00097c}}}{}%
+%EndExpansion
+
+\item[(d)] Is it reasonable to use the model to predict the winning height
+at the 2100 Olympics?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00097d}}}{}{\fbox{\textbf{master 00097d}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00097d}}}{}{\fbox{\textbf{master 00097d}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:}\ (a)~\FRAME{itbpF}{1.8749in}{1.011in}{1.0032in}{}{}{4a010217a.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.8749in;height 1.011in;depth 1.0032in;original-width 0pt;original-height 0pt;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename 'graphics/4a010217a.wmf';file-properties "XNPEU";}}\newline
+%Linear model is appropriate.\newline
+%(b)~$y=0.08912x-158.24$\newline
+%\FRAME{itbpF}{1.8749in}{1.011in}{1.0032in}{}{}{4a010217b.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.8749in;height 1.011in;depth 1.0032in;original-width 0pt;original-height 0pt;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename 'graphics/4a010217b.wmf';file-properties "XNPEU";}}\newline
+%(c)~20~ft\quad (d)~No}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:}\ (a)~\FRAME{itbpF}{1.8749in}{1.011in}{1.0032in}{}{}{4a010217a.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.8749in;height 1.011in;depth 1.0032in;original-width 0pt;original-height 0pt;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename 'graphics/4a010217a.wmf';file-properties "XNPEU";}}\newline
+Linear model is appropriate.\newline
+(b)~$y=0.08912x-158.24$\newline
+\FRAME{itbpF}{1.8749in}{1.011in}{1.0032in}{}{}{4a010217b.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.8749in;height 1.011in;depth 1.0032in;original-width 0pt;original-height 0pt;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename 'graphics/4a010217b.wmf';file-properties "XNPEU";}}\newline
+(c)~20~ft\quad (d)~No}{}%
+%EndExpansion
+
+\item[24.] 
+%TCIMACRO{\TeXButton{GCALCX}{\GCALCX}}%
+%BeginExpansion
+\GCALCX%
+%EndExpansion
+A study by the US Office of Science and Technology in 1972 estimated the
+cost (in 1972 dollars) to reduce automobile emissions by certain
+percentages:\bigskip
+
+$\hfill ${\small $%
+\begin{tabular}{|c|c||c|c|}
+\hline
+\hspace*{-7pt}%
+\begin{tabular}[t]{c}
+Reduction in \\ 
+emissions (\%)%
+\end{tabular}%
+\hspace*{-7pt} & \hspace*{-7pt}%
+\begin{tabular}[t]{c}
+Cost per \\ 
+car (in \$)%
+\end{tabular}%
+\hspace*{-7pt} & \hspace*{-7pt}%
+\begin{tabular}[t]{c}
+Reduction in \\ 
+emissions (\%)%
+\end{tabular}%
+\hspace*{-7pt} & \hspace*{-7pt}%
+\begin{tabular}[t]{c}
+Cost per \\ 
+car (in \$)%
+\end{tabular}%
+\hspace*{-7pt} \\ \hline
+50 & 45 & 75 & \hspace{3pt}90 \\ 
+55 & 55 & 80 & 100 \\ 
+60 & 62 & 85 & 200 \\ 
+65 & 70 & 90 & 375 \\ 
+70 & 80 & 95 & 600 \\ \hline
+\end{tabular}%
+\ $}$\hfill $\bigskip
+
+Find a model that captures the \textquotedblleft diminishing
+returns\textquotedblright\ trend of these data.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00098}}}{}{\fbox{\textbf{master 00098}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00098}}}{}{\fbox{\textbf{master 00098}}}{}%
+%EndExpansion
+
+\item[25.] 
+%TCIMACRO{\TeXButton{GCALCX}{\GCALCX}}%
+%BeginExpansion
+\GCALCX%
+%EndExpansion
+Use the data in the table to model the population of the world in the 20th
+century by a cubic function. Then use your model to estimate the population
+in the year 1925.\bigskip
+
+$\hfill ${\small $%
+\begin{tabular}{|c|c||c|c|}
+\hline
+\begin{tabular}{l}
+\\ 
+Year%
+\end{tabular}
+& 
+\begin{tabular}{l}
+Population \\ 
+(millions)%
+\end{tabular}
+& 
+\begin{tabular}{l}
+\\ 
+Year%
+\end{tabular}
+& 
+\begin{tabular}{l}
+Population \\ 
+(millions)%
+\end{tabular}
+\\ \hline
+1900 & 1650 & 1960 & 3040 \\ 
+1910 & 1750 & 1970 & 3710 \\ 
+1920 & 1860 & 1980 & 4450 \\ 
+1930 & 2070 & 1990 & 5280 \\ 
+1940 & 2300 & 2000 & 6080 \\ 
+1950 & 2560 &  &  \\ \hline
+\end{tabular}%
+\ \ \ $}$\hfill $\vspace{3pt}
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:}\newline
+%\ $y=0.0012937x^{3}-7.06142x^{2}+12$,$823x-7$,$743$,$770$; \newline
+%\textbf{Answer:}\ 1914 million}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:}\newline
+\ $y=0.0012937x^{3}-7.06142x^{2}+12$,$823x-7$,$743$,$770$; \newline
+\textbf{Answer:}\ 1914 million}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00099}}}{}{\fbox{\textbf{master 00099}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00099}}}{}{\fbox{\textbf{master 00099}}}{}%
+%EndExpansion
+
+\item[26.] 
+%TCIMACRO{\TeXButton{GCALCX}{\GCALCX}}%
+%BeginExpansion
+\GCALCX%
+%EndExpansion
+The table shows the mean (average) distances $d$ of the planets from the sun
+(taking the unit of measurement to be the distance from earth to the sun)
+and their periods $T$ (time of revolution in years).\bigskip
+
+$\hfill ${\small $%
+\begin{tabular}{|c|c|c|}
+\hline
+Planet & $d$ & $T$ \\ \hline
+\multicolumn{1}{|l|}{Mercury} & \multicolumn{1}{|r|}{0.387} & 
+\multicolumn{1}{|r|}{0.241} \\ 
+\multicolumn{1}{|l|}{Venus} & \multicolumn{1}{|r|}{0.723} & 
+\multicolumn{1}{|r|}{0.615} \\ 
+\multicolumn{1}{|l|}{Earth} & \multicolumn{1}{|r|}{1.000} & 
+\multicolumn{1}{|r|}{1.000} \\ 
+\multicolumn{1}{|l|}{Mars} & \multicolumn{1}{|r|}{1.523} & 
+\multicolumn{1}{|r|}{1.881} \\ 
+\multicolumn{1}{|l|}{Jupiter} & \multicolumn{1}{|r|}{5.203} & 
+\multicolumn{1}{|r|}{11.861} \\ 
+\multicolumn{1}{|l|}{Saturn} & \multicolumn{1}{|r|}{9.541} & 
+\multicolumn{1}{|r|}{29.457} \\ 
+\multicolumn{1}{|l|}{Uranus} & \multicolumn{1}{|r|}{19.190} & 
+\multicolumn{1}{|r|}{84.008} \\ 
+\multicolumn{1}{|l|}{Neptune} & \multicolumn{1}{|r|}{30.086} & 
+\multicolumn{1}{|r|}{164.784} \\ \hline
+\end{tabular}%
+\ \ $}$\hfill $\bigskip
+
+\begin{ExerciseList}
+\item[(a)] Fit a power model to the data.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 81407}}}{}{\fbox{\textbf{master 81407}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 81407}}}{}{\fbox{\textbf{master 81407}}}{}%
+%EndExpansion
+
+\item[(b)] Kepler's Third Law of Planetary Motion states that \\[3pt]
+\hspace*{8pt}%
+\begin{tabular}[t]{p{175pt}}
+%TCIMACRO{\TeXButton{rr}{\raggedright}}%
+%BeginExpansion
+\raggedright%
+%EndExpansion
+\textquotedblleft The square of the period of revolution of a planet is
+proportional to the cube of its mean distance from the sun.\textquotedblright%
+\end{tabular}%
+\\[3pt]
+Does your model corroborate Kepler's Third Law?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00100b}}}{}{\fbox{\textbf{master 00100b}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00100b}}}{}{\fbox{\textbf{master 00100b}}}{}%
+%EndExpansion
+\end{ExerciseList}
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\TeXButton{e2col}{\end{multicols}
+%\advance \leftskip by 165pt
+%\advance\hsize by -165pt
+%\advance\linewidth by -165pt
+%}}%
+%BeginExpansion
+\end{multicols}
+\advance \leftskip by 165pt
+\advance\hsize by -165pt
+\advance\linewidth by -165pt
+%
+%EndExpansion
+
+\end{document}

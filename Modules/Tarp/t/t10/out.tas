@@ -1,0 +1,18 @@
+foo = \
+    foo\#$BAR$$BAT$ \
+    foofee \
+    foo$BAR$$BAR$$BAR$ \
+    foo$BAT$$BAT$$BAT$ \
+    $BAR$\ $BAR$\ $BAR$\ \"hello\" \
+    "$BAR$ $BAR$ $BAR$"
+
+    foo::BAR = \
+        pig \
+        pat \
+        paste
+
+    foo::BAT = bat$ty$\ $ty$
+
+        foo::BAT::ty = \
+            ty \
+            boo

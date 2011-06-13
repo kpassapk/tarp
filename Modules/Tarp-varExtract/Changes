@@ -1,0 +1,11 @@
+Revision history for Tarp-varExtract
+
+0.81    June 25, 2009
+        Strip trailing \n and \r in addition to chomp
+
+0.8     April 16, 2009
+        Migrated to .8
+
+0.01    Dec 09, 2008
+        First version, released on an unsuspecting world.
+

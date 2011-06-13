@@ -1,0 +1,5 @@
+LaTeXtract didn't like a tag in in/in.tex.
+Succesful matches prior to tag error: 
+(1) beginTag[0] {} at in/in.tex line 1
+(2) itemTag[1][0] { ITM => 1 } at in/in.tex line 2
+ERROR: Item stack not empty at EOF (missing endTag(s)), stopped at in/in.tex line 2

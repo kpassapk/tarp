@@ -1,0 +1,25 @@
+# The filename entry has "book", "chapter" and "section".
+# This is the same as the plugins in the "plugins" directory.
+# The specifications for each variable (below) match the filename foo0201.tex
+
+filename = $book$$chapter$$section$
+
+filename::book    = foo
+filename::chapter = \d\d # will get 02
+filename::section = \d\d # will get 01
+
+beginTag = begin
+
+endTag = end
+
+itemTag[0] = <illegal>-$ITM$
+itemTag[1] = $ITM$
+itemTag[2] = $ITM$
+itemTag[3] = $ITM$
+
+sequenceRestart = seq
+
+masterRef = $MASTER$
+
+masterRef::MASTER = \d{5}[a-z]?
+

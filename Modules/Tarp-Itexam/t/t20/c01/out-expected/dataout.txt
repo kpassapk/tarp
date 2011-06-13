@@ -1,0 +1,14 @@
+title: $FIRST$ $REST$
+
+subtitle: $SUBTITLE$
+
+begin
+$ITM$
+$ITM$
+$ITM$
+begin
+$ITM$
+$ITM$
+$ITM$
+end
+end

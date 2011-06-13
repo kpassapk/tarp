@@ -1,0 +1,64 @@
+Revision history for Tarp-LaTeXtract
+
+0.83    July 3, 2009
+        Loader/Level
+        Loader/endTag checks previous Loader/Level
+        new t15/c12
+
+0.82    June 24, 2009
+        t01/c14 had file in wrong case
+        \n and \r are stripped from variables in read()
+
+0.81    June 23, 2009
+        context() method and command line arg
+        t15/c10 and 11, t21/c04
+        Matches dumped by App() even when read() is not successful
+        New t22-exceptions.t
+        
+0.8     May 2008
+        Structure of Loaders is better now (no state, class data only)
+
+0.37    Sep 15, 2008
+        - find(), exerciseOnLine() methods added
+        - Removed TASspec() method.
+
+0.36    Aug 15, 2008
+        - AUTOLOAD, TASfile() and _reload() methods.
+        - _readTASfile() has wee help message.
+
+0.35    July 20, 2008
+        - Small documentation changes
+
+0.34    July 01, 2008
+        - Added wrapper methods:
+          * isInOrder()
+          * matchStr()
+          * sort()
+        - undef'd default values in constructor
+
+0.33    Jun 08, 2008
+        - Tests run on Linux
+        - New PODs (very basic) for the loader classes
+        - Fixed unreported error for missing $ITM$ variable in exTag, partTag, subPartTag
+
+0.32    Jun 02, 2008
+        - read() NO LONGER gets variables from the filename. User can do this
+          themselves if they want to.
+        - removed descriptor() method.
+        - read() now uses Tarp::Style for variable interpolation and capture buffers,
+          instead of convoluted approach used before.
+        - varsInTASentry() method added.
+        - Some documentation additions
+
+0.31    May 28, 2008
+        - Added descriptor() method
+        - read() method now gets variables from the filename
+
+0.3     April 22, 2008
+        Rewrote to allow for out-of-order exercises and matching in all
+        exercise levels simultaneously.
+
+0.2     April 8, 2008
+        Created new tests; getExData function now works per section and checks
+        argument.  Documentation changes.
+

@@ -1,0 +1,490 @@
+
+\documentclass{sebase}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{makeidx}
+\usepackage{SECALCUL}
+\usepackage{lie}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Mon Dec 15 16:20:00 1997}
+%TCIDATA{LastRevised=Tuesday, October 06, 2009 15:49:03}
+%TCIDATA{<META NAME="ViewSettings" CONTENT="25">}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{CSTFile=SECALCUL.cst}
+
+\input tcilatex
+\newenvironment{instructions}{\STARTINSTR}{\ENDINSTR}
+\begin{document}
+
+
+%TCIMACRO{%
+%\TeXButton{Int Fix}{\def\dint{\displaystyle \int}\def\diint{\displaystyle \iint}\def\diiint{\displaystyle \iiint}
+%\def\tint{\textstyle \int}\def\tiint{\textstyle \iint }\def\tiiint{{\textstyle \iiint }\def\tiiiint{\textstyle \iiiint }}}}%
+%BeginExpansion
+\def\dint{\displaystyle \int}\def\diint{\displaystyle \iint}\def\diiint{\displaystyle \iiint}
+\def\tint{\textstyle \int}\def\tiint{\textstyle \iint }\def\tiiint{{\textstyle \iiint }\def\tiiiint{\textstyle \iiiint }}%
+%EndExpansion
+%TCIMACRO{\TeXButton{noCCC}{\noCCC}}%
+%BeginExpansion
+\noCCC%
+%EndExpansion
+%TCIMACRO{\TeXButton{setET}{\renewcommand{\ET}{1}}}%
+%BeginExpansion
+\renewcommand{\ET}{1}%
+%EndExpansion
+%TCIMACRO{\TeXButton{noRM}{\renewcommand{\RM}{0}}}%
+%BeginExpansion
+\renewcommand{\RM}{0}%
+%EndExpansion
+%TCIMACRO{\TeXButton{setRM}{\renewcommand{\RM}{1}}}%
+%BeginExpansion
+\renewcommand{\RM}{1}%
+%EndExpansion
+%TCIMACRO{%
+%\TeXButton{set page 96 / 77}{\ifnum\RM=1 \setcounter{page}{96}\else \setcounter{page}{77}\fi}}%
+%BeginExpansion
+\ifnum\RM=1 \setcounter{page}{96}\else \setcounter{page}{77}\fi%
+%EndExpansion
+$\,\,$
+
+\chapter[Problems Plus]{}
+
+\section[Problems Plus]{Problems Plus\vspace*{-21pt}}
+
+%TCIMACRO{\TeXButton{graphicSpp}{\vspace{12pt}\hskip-160pt\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hskip-160pt\hfil%
+%EndExpansion
+\vspace{-6pt}$\rule{7in}{0.02in}$%
+%TCIMACRO{\TeXButton{graphicE}{\vspace{12pt}\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hfil%
+%EndExpansion
+\vspace*{-9pt}
+
+\begin{Example}[1]
+\thinspace 
+\marginpar{
+Cover up the solution to the example and try it yourself first.}
+
+\begin{enumerate}
+\item[(a)] 
+%TCIMACRO{%
+%\hyperref{\fbox{{\tiny EX 00437}}\quad }{}{\fbox{{\tiny EX 00437}}\quad }{}}%
+%BeginExpansion
+\msihyperref{\fbox{{\tiny EX 00437}}\quad }{}{\fbox{{\tiny EX 00437}}\quad }{}%
+%EndExpansion
+Prove that if $f$ is a continuous function, then 
+\begin{equation*}
+\dint\nolimits_{0}^{a}\,\,f(x)\,dx=\dint\nolimits_{0}^{a}\,\,f(a-x)\,dx
+\end{equation*}
+
+\item[(b)] 
+%TCIMACRO{%
+%\hyperref{\fbox{{\tiny EX 00438}}\quad }{}{\fbox{{\tiny EX 00438}}\quad }{}}%
+%BeginExpansion
+\msihyperref{\fbox{{\tiny EX 00438}}\quad }{}{\fbox{{\tiny EX 00438}}\quad }{}%
+%EndExpansion
+Use part (a) to show that 
+\begin{equation*}
+\dint\nolimits_{0}^{\pi /2}\frac{\sin ^{n}x}{\sin ^{n}x+\cos ^{n}x}\,dx=%
+\frac{\pi }{4}
+\end{equation*}%
+for all positive numbers $n$.
+\end{enumerate}
+\end{Example}
+
+\begin{Solution}
+\thinspace
+
+\begin{enumerate}
+\item[(a)] 
+\marginpar{\vspace{24pt}
+\par
+The principles of problem solving are discussed on page 76.}At first sight,
+the given equation may appear somewhat baffling. How is it possible to
+connect the left side to the right side? Connections can often be made
+through one of the principles of problem solving: \textit{introduce
+something extra.} Here the extra ingredient is a new variable. We often
+think of introducing a new variable when we use the Substitution Rule to
+integrate a specific function. But that technique is still useful in the
+present circumstance in which we have a general function $f$.
+
+\quad Once we think of making a substitution, the form of the right side
+suggests that it should be $u=a-x$. Then $du=-dx$. When $x=0$, $u=a$; when $%
+x=a$, $u=0$. So 
+\begin{equation*}
+\dint\nolimits_{0}^{a}\,\,f(a-x)\,dx=-\dint\nolimits_{a}^{0}\,\,f(u)\,du=%
+\dint\nolimits_{0}^{a}\,\,f(u)\,du
+\end{equation*}
+But this integral on the right side is just another way of writing $%
+\tint\nolimits_{0}^{a}\,\,f(x)\,dx$. So the given equation is proved.
+
+\item[(b)] 
+\marginpar{
+The computer graphs in Figure 1\ make it seem plausible that all of the
+integrals in the example have the same value. The graph of each integrand is
+labeled with the corresponding value of $n$.\FRAME{dtbpFU}{1.6527in}{1.2384in%
+}{0pt}{\Qcb{\label{F08pp01}\QTR{FigureNumber}{FIGURE 1}}}{}{4e08pp01.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.6527in;height 1.2384in;depth
+0pt;original-width 1.6527in;original-height 1.2384in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/4e08pp01.wmf';file-properties "XNPEU";}}}If we let the given
+integral be $I$ and apply part (a) with $a=\pi /2$, we get 
+\begin{equation*}
+I=\dint\nolimits_{0}^{\pi /2}\,\,\frac{\sin ^{n}x}{\sin ^{n}x+\cos ^{n}x}%
+\,dx=\dint\nolimits_{0}^{\pi /2}\,\,\frac{\sin ^{n}(\pi /2-x)}{\sin ^{n}(\pi
+/2-x)+\cos ^{n}(\pi /2-x)}\,dx
+\end{equation*}
+A well-known trigonometric identity tells us that $\sin (\pi /2-x)=\cos x$
+and $\cos (\pi /2-x)=\sin x$, so we get 
+\begin{equation*}
+I=\dint\nolimits_{0}^{\pi /2}\,\,\frac{\cos ^{n}x}{\cos ^{n}x+\sin ^{n}x}\,dx
+\end{equation*}
+Notice that the two expressions for $I$ are very similar. In fact, the
+integrands have the same denominator. This suggests that we should add the
+two expressions. If we do so, we get 
+\begin{equation*}
+2I=\dint\nolimits_{0}^{\pi /2}\,\,\frac{\sin ^{n}x+\cos ^{n}x}{\sin
+^{n}x+\cos ^{n}x}\,dx=\dint\nolimits_{0}^{\pi /2}\,\,1\,dx=\frac{\pi }{2}
+\end{equation*}
+Therefore, $I=\pi /4$.$\blacksquare $
+\end{enumerate}
+\end{Solution}
+
+\subsubsection{Problems\protect\vspace*{-9pt}}
+
+\begin{enumerate}
+\item[1.] 
+%TCIMACRO{\TeXButton{GCALCXTpp}{\GCALCXTpp}}%
+%BeginExpansion
+\GCALCXTpp%
+%EndExpansion
+\marginpar{\FRAME{dtbpFU}{1.3889in}{1.6094in}{0pt}{\Qcb{\label{F08pp02}%
+\QTR{FigureNumber}{FIGURE FOR PROBLEM 1}}}{}{4e08ppx01.wmf}{\special%
+{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.3889in;height 1.6094in;depth
+0pt;original-width 1.3889in;original-height 1.6094in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/4e08ppx01.wmf';file-properties "XNPEU";}}}Three mathematics
+students have ordered a 14-inch pizza. Instead of slicing it in the
+traditional way, they decide to slice it by parallel cuts, as shown in the
+figure. Being mathematics majors, they are able to determine where to slice
+so that each gets the same amount of pizza. Where are the cuts made?
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} About 1.85 inches from the center}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} About 1.85 inches from the center}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04105}}}{}{\fbox{\textbf{master 04105}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04105}}}{}{\fbox{\textbf{master 04105}}}{}%
+%EndExpansion
+
+\item[2.] Evaluate \hspace*{\fill}$\dint \,\,\dfrac{1}{x^{7}-x}\,dx$\hspace*{%
+\fill}\\[6pt]
+
+The straightforward approach would be to start with partial fractions, but
+that would be brutal. Try a substitution.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04106}}}{}{\fbox{\textbf{master 04106}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04106}}}{}{\fbox{\textbf{master 04106}}}{}%
+%EndExpansion
+
+\item[3.] Evaluate $\dint\nolimits_{0}^{1}\,\,\left( \sqrt[3]{1-x^{7}}-\sqrt[%
+7]{1-x^{3}}\right) dx$.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} 0}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} 0}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04107}}}{}{\fbox{\textbf{master 04107}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04107}}}{}{\fbox{\textbf{master 04107}}}{}%
+%EndExpansion
+
+\item[4.] The centers of two disks with radius 1 are one unit apart. Find
+the area of the union of the two disks.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80767}}}{}{\fbox{\textbf{master 80767}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80767}}}{}{\fbox{\textbf{master 80767}}}{}%
+%EndExpansion
+
+\item[5.] An ellipse is cut out of a circle with radius $a$. The major axis
+of the ellipse coincides with a diameter of the circle and the minor axis
+has length $2b$. Prove that the area of the remaining part of the circle is
+the same as the area of an ellipse with semiaxes $a$ and $a-b$.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} \textit{No text answer}}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} \textit{No text answer}}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80768}}}{}{\fbox{\textbf{master 80768}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80768}}}{}{\fbox{\textbf{master 80768}}}{}%
+%EndExpansion
+
+\item[6.] 
+\marginpar{\FRAME{dtbpFU}{2.0972in}{1.4468in}{0pt}{\Qcb{\QTR{FigureNumber}{%
+FIGURE FOR PROBLEM 6}}}{}{4e08ppx04.wmf}{\special{language "Scientific
+Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file
+"F";width 2.0972in;height 1.4468in;depth 0pt;original-width
+29.1779in;original-height 2.0496in;cropleft "0";croptop "1";cropright
+"1";cropbottom "0";filename 'graphics/4e08ppx04.wmf';file-properties
+"XNPEU";}}}A man initially standing at the point $O$ walks along a pier
+pulling a rowboat by a rope of length $L$. The man keeps the rope straight
+and taut. The path followed by the boat is a curve called a \textit{tractrix}
+and it has the property that the rope is always tangent to the curve (see
+the figure).
+
+\begin{enumerate}
+\item[(a)] Show that if the path followed by the boat is the graph of the
+function $y=f(x)$, then \\[4pt]
+\hspace*{\fill}$f^{\prime }(x)=\dfrac{dy}{dx}=\dfrac{-\sqrt{L^{2}-x^{2}}}{x}$%
+\hspace*{\fill}
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04108}}}{}{\fbox{\textbf{master 04108}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04108}}}{}{\fbox{\textbf{master 04108}}}{}%
+%EndExpansion
+
+\item[(b)] Determine the function $y=f(x)$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 06164}}}{}{\fbox{\textbf{master 06164}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 06164}}}{}{\fbox{\textbf{master 06164}}}{}%
+%EndExpansion
+\end{enumerate}
+
+\item[7.] A function $f$ is defined by \\[4pt]
+\hspace*{\fill}$f(x)=\dint\nolimits_{0}^{\pi }\,\,\cos t\,\cos (x-t)\,dt$%
+\qquad $0\leq x\leq 2\pi $\hspace*{\fill}\\[4pt]
+Find the minimum value of $f$.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $f\left( \pi \right) =-\pi /2$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $f\left( \pi \right) =-\pi /2$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04109}}}{}{\fbox{\textbf{master 04109}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04109}}}{}{\fbox{\textbf{master 04109}}}{}%
+%EndExpansion
+
+\item[8.] If $n$ is a positive integer, prove that $\dint\nolimits_{0}^{1}\,%
+\,(\ln x)^{n}\,dx=(-1)^{n}n!$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04110}}}{}{\fbox{\textbf{master 04110}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04110}}}{}{\fbox{\textbf{master 04110}}}{}%
+%EndExpansion
+
+\item[9.] Show that $\dint\nolimits_{0}^{1}\,\,(1-x^{2})^{n}\,dx=\dfrac{%
+2^{2n}(n!)^{2}}{(2n+1)!}$.\newline
+\textit{Hint:} Start by showing that if $I_{n}$ denotes the integral, then $%
+I_{k+1}=\dfrac{2k+2}{2k+3}\,I_{k}$
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER: }\textit{No text answer}}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER: }\textit{No text answer}}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04111}}}{}{\fbox{\textbf{master 04111}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04111}}}{}{\fbox{\textbf{master 04111}}}{}%
+%EndExpansion
+
+\item[10.] 
+%TCIMACRO{\TeXButton{GCALCXpp}{\GCALCXpp}}%
+%BeginExpansion
+\GCALCXpp%
+%EndExpansion
+Suppose that $f$ is a positive function such that $f^{\prime }$ is
+continuous.
+
+\begin{enumerate}
+\item[(a)] How is the graph of $y=f(x)\sin nx$ related to the graph of $%
+y=f(x)$? What happens as $n\rightarrow \infty $?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04112}}}{}{\fbox{\textbf{master 04112}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04112}}}{}{\fbox{\textbf{master 04112}}}{}%
+%EndExpansion
+
+\item[(b)] Make a guess as to the value of the limit $\lim\limits_{n%
+\rightarrow \infty }\,\,\dint\nolimits_{0}^{1}\,\,f(x)\sin nx\,dx$ based on
+graphs of the integrand.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 40593}}}{}{\fbox{\textbf{master 40593}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 40593}}}{}{\fbox{\textbf{master 40593}}}{}%
+%EndExpansion
+
+\item[(c)] Using integration by parts, confirm the guess that you made in
+part (b). [Use the fact that, since $f^{\prime }$ is continuous, there is a
+constant $M$ such that $\left\vert f^{\prime }(x)\right\vert \leq M$ for $%
+0\leq x\leq 1$.]
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 40594}}}{}{\fbox{\textbf{master 40594}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 40594}}}{}{\fbox{\textbf{master 40594}}}{}%
+%EndExpansion
+\end{enumerate}
+
+\item[11.] If $0<a<b$, find $\lim\limits_{t\rightarrow 0}\,\,\left\{
+\dint\nolimits_{0}^{1}\,\,[bx+a(1-x)]^{t}\,dx\right\} ^{1/t}$.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $\left( b^{b}a^{-a}\right) ^{1/\left( b-a\right) }e^{-1}$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\left( b^{b}a^{-a}\right) ^{1/\left( b-a\right) }e^{-1}$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04113}}}{}{\fbox{\textbf{master 04113}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04113}}}{}{\fbox{\textbf{master 04113}}}{}%
+%EndExpansion
+
+\item[12.] 
+%TCIMACRO{\TeXButton{GCALCXpp}{\GCALCXpp}}%
+%BeginExpansion
+\GCALCXpp%
+%EndExpansion
+Graph $f(x)=\sin (e^{x})$ and use the graph to estimate the value of $t$
+such that $\tint\nolimits_{t}^{t+1}\,\,f(x)\,dx$ is a maximum. Then find the
+exact value of $t$ that maximizes this integral.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04114}}}{}{\fbox{\textbf{master 04114}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04114}}}{}{\fbox{\textbf{master 04114}}}{}%
+%EndExpansion
+
+\item[13.] Evaluate $\dint\nolimits_{-1}^{\infty }\,\,\left( \dfrac{x^{4}}{%
+1+x^{6}}\right) ^{2}~dx$.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $\frac{1}{8}\pi -\frac{1}{12}$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\frac{1}{8}\pi -\frac{1}{12}$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 82091}}}{}{\fbox{\textbf{master 82091}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 82091}}}{}{\fbox{\textbf{master 82091}}}{}%
+%EndExpansion
+
+\item[14.] Evaluate $\dint ~\sqrt{\tan x}~dx$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 83341}}}{}{\fbox{\textbf{master 83341}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 83341}}}{}{\fbox{\textbf{master 83341}}}{}%
+%EndExpansion
+
+\item[15.] 
+\marginpar{\FRAME{dtbpFU}{1.7218in}{1.2912in}{0pt}{\Qcb{\QTR{FigureNumber}{%
+FIGURE FOR PROBLEM 15}}}{}{5et07ppx11.wmf}{\special{language "Scientific
+Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file
+"F";width 1.7218in;height 1.2912in;depth 0pt;original-width
+1.7218in;original-height 1.2912in;cropleft "0";croptop "1";cropright
+"1";cropbottom "0";filename 'graphics/5ET07ppx11.wmf';file-properties
+"XNPEU";}}}The circle with radius 1 shown in the figure touches the curve $%
+y=\left\vert 2x\right\vert $ twice. Find the area of the region that lies
+between the two curves.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER: }$2-\sin ^{-1}\left( 2/\sqrt{5}\right) $}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER: }$2-\sin ^{-1}\left( 2/\sqrt{5}\right) $}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04115}}}{}{\fbox{\textbf{master 04115}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04115}}}{}{\fbox{\textbf{master 04115}}}{}%
+%EndExpansion
+
+\item[16.] A rocket is fired straight up, burning fuel at the constant rate
+of $b$ kilograms per second. Let $v=v(t)$ be the velocity of the rocket at
+time $t$ and suppose that the velocity $u$ of the exhaust gas is constant.
+Let $M=M(t)$ be the mass of the rocket at time $t$ and note that $M$
+decreases as the fuel burns. If we neglect air resistance, it follows from
+Newton's Second Law that \\[4pt]
+\hspace*{\fill}$F=M\,\,\dfrac{dv}{dt}-ub$\hspace*{\fill}\\[4pt]
+where the force $F=-Mg$. Thus\\[4pt]
+\QTR{BOXHEAD}{(1)}$\hspace*{\fill}M\,\,\dfrac{dv}{dt}-ub=-Mg\hspace*{\fill}$%
+\\[4pt]
+Let $M_{1}$ be the mass of the rocket without fuel, $M_{2}$ the initial mass
+of the fuel, and $M_{0}=M_{1}+M_{2}$. Then, until the fuel runs out at time $%
+t=M_{2}b$, the mass is $M=M_{0}-bt$.
+
+\begin{enumerate}
+\item[(a)] Substitute $M=M_{0}-bt$ into Equation 1 and solve the resulting
+equation for $v$. Use the initial condition $v(0)=0$ to evaluate the
+constant.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04116}}}{}{\fbox{\textbf{master 04116}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04116}}}{}{\fbox{\textbf{master 04116}}}{}%
+%EndExpansion
+
+\item[(b)] Determine the velocity of the rocket at time $t=M_{2}/b$. This is
+called the \textit{burnout velocity}.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 40595}}}{}{\fbox{\textbf{master 40595}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 40595}}}{}{\fbox{\textbf{master 40595}}}{}%
+%EndExpansion
+
+\item[(c)] Determine the height of the rocket $y=y(t)$ at the burnout time.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 40596}}}{}{\fbox{\textbf{master 40596}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 40596}}}{}{\fbox{\textbf{master 40596}}}{}%
+%EndExpansion
+
+\item[(d)] Find the height of the rocket at any time $t$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 40597}}}{}{\fbox{\textbf{master 40597}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 40597}}}{}{\fbox{\textbf{master 40597}}}{}%
+%EndExpansion
+\end{enumerate}
+\end{enumerate}
+
+\end{document}

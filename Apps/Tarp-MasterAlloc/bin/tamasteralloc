@@ -1,0 +1,67 @@
+#!/usr/bin/perl -w
+
+=head1 NAME
+
+tamasteralloc - Allocate new master numbers and fix errors in manuscript files.
+
+=cut
+
+use strict;
+use warnings;
+use Tarp::MasterAlloc::App;
+
+Tarp::MasterAlloc::App->run;
+
+=head1 SYNOPSIS
+
+tamasteralloc --gen-tas | [options] file.tex
+
+Options:
+
+    --tas           Set the Tarp Style (TAS) file to use (optional)
+    --out           Set output file (see below)
+    --next-master   First value to allocate (requires --out)
+    --fix           Just fix (requires --out)
+    --help          Show this message
+    --version       Display version information
+
+Examples:
+
+    # Generate a compliant .tas file
+    tamasteralloc --gen-tas
+    
+    # Print problems and new refs in foo.tex
+    tamasteralloc foo.tex
+
+    # Fix foo.tex and write result to bar.tex
+    tamasteralloc --fix --out=bar.tex foo.tex
+
+    # Fix foo.tex and allocate masters starting at 12345.
+    tamasteralloc --tas=4c3.tas --out=bar.tex --next-master=12345 foo.tex
+
+=head1 DESCRIPTION
+
+C<tamasteralloc.pl> is a command-line program used to allcate new master numbers
+and apply fixes to SciWord manuscript files.  This is done by first C<LaTeXtract>ing
+the input file with the help of a Tarp Style C<TAS> file and examining the
+lines of the input file in each problem looking for input of the following form:
+
+    %TCIMACRO{\hyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}}%
+    %BeginExpansion
+    \msihyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}%
+    %EndExpansion
+
+When input of this type is found (i.e. starting in C<%TCIMACRO> and ending in
+C<%EndExpansion>), the program looks for instances of the word C<NEW> and/or
+master refs in the form C<master 12345a>, i.e. with five digits and possibly
+one trailing letter.
+
+Options --fix and --next-master are mutually exclusive and cannot be used
+in conjunction; actually, --next-master requires the file to be fixed first,
+prior to assigning master numbers, so you could say the --fix option is
+implied by the --next-master option.  If you use --fix or --next-master, you
+must also specify an output file with the --out switch.
+
+
+
+=cut

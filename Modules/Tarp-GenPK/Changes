@@ -1,0 +1,29 @@
+Revision history for Tarp-GenPK
+
+0.15    Sep 26, 2008
+        - Better error messages during parse error
+        - 31-app-errors.t has new test.
+
+0.14    Aug 17, 2008
+        - Had two meanings for $name in AUTOLOAD... changed to $v.
+
+0.13    Aug 04, 2008
+        - Komodo integration README.
+
+0.12    Jul 28, 2008
+        - Skipping tests in 31-app-errors.t for now. Documentation additions.
+           Sending this as release version to Kathi.
+
+0.11    July 20, 2008
+        - Tests should run: 10-simple, 30-app.  Removed boilerplate.t.
+        - Added 31-app-errors.t
+        - Inline help in GenPK.pm and App.pm for when execution stops
+
+0.1     July 04, 2008
+        - Happy fourth of july
+        - Moved from "Alpha"
+        - AUTOLOAD, DESTROY, constructor assigned fields
+
+0.01    Jun 9, 2008
+        First Module version of previous tagenproject.pl script
+

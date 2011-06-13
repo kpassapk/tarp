@@ -1,0 +1,21 @@
+beginTag[0] = begin
+beginTag[1] = antes
+beginTag[2] = <illegal>
+
+endTag[0] = <illegal>
+endTag[1] = end
+endTag[2] = despues
+
+itemTag[0] = <illegal>-$ITM$
+
+itemTag[1] = $ITM$
+itemTag[1]::EXACT = 1
+
+itemTag[2] = $ITM$
+itemTag[2]::EXACT = 1
+
+itemTag[3] = $ITM$
+itemTag[3]::EXACT = 1
+
+sequenceRestart = 
+

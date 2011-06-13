@@ -1,0 +1,2 @@
+No PACKLIST, and TASfile cannot parse datain.pklist filename, so the default
+files are foo.tex and bar.tex, both of which are found.  Should just OK.

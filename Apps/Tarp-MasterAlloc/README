@@ -1,0 +1,28 @@
+Tarp-MasterAlloc
+
+Allocate new master numbers and fix errors in manuscript files.
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Makefile.PL
+	make
+	make test
+	make install
+
+Depending on your Perl installation, make may be substituted by
+nmake or dmake.
+
+SUPPORT AND DOCUMENTATION
+
+After installing, you can find documentation for this module with the
+perldoc command.
+
+    perldoc Tarp::MasterAlloc
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2008 Kyle Passarelli
+
+

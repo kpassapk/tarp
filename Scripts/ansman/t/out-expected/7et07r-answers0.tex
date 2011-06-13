@@ -1,0 +1,67 @@
+
+\documentclass{sebase}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{makeidx}
+\usepackage{SECALCUL}
+\usepackage{lie}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Mon Dec 15 16:20:00 1997}
+%TCIDATA{LastRevised=Tuesday, September 29, 2009 15:08:30}
+%TCIDATA{<META NAME="ViewSettings" CONTENT="25">}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{CSTFile=SECALCUL.cst}
+
+\input tcilatex
+\newenvironment{instructions}{\STARTINSTR}{\ENDINSTR}
+\begin{document}
+
+
+
+
+%TCIMACRO{\TeXButton{setRM}{\renewcommand{\RM}{1}}}%
+%BeginExpansion
+\renewcommand{\RM}{1}%
+%EndExpansion
+%TCIMACRO{\TeXButton{set page2}{\setcounter{page}{2}}}%
+%BeginExpansion
+\setcounter{page}{2}%
+%EndExpansion
+%TCIMACRO{%
+%\TeXButton{s2col}{\setlength{\columnsep}{24pt}
+%\advance \leftskip by -165pt
+%\advance\hsize by 165pt
+%\advance\linewidth by 165pt
+%\begin{multicols}{2}}}%
+%BeginExpansion
+\setlength{\columnsep}{24pt}
+\advance \leftskip by -165pt
+\advance\hsize by 165pt
+\advance\linewidth by 165pt
+\begin{multicols}{2}%
+%EndExpansion
+
+
+
+%TCIMACRO{%
+%\TeXButton{e2col}{\end{multicols}
+%\advance \leftskip by 165pt
+%\advance\hsize by -165pt
+%\advance\linewidth by -165pt}}%
+%BeginExpansion
+\end{multicols}
+\advance \leftskip by 165pt
+\advance\hsize by -165pt
+\advance\linewidth by -165pt%
+%EndExpansion
+
+\end{document}
+
+

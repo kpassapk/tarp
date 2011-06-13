@@ -1,0 +1,113 @@
+################################################################################
+#                                                                              #
+#                               TARP STYLE FILE                                #
+#                                                                              #
+#                             solutions-starter.pl                             #
+#                                                                              #
+################################################################################
+
+heading_EX = $book$\s+problem
+    heading_EX::book = .+
+    heading_EX::EXACT = 1
+    heading_EX::CSENS = 0
+
+heading_PKEX = $book$\s+pickup
+    heading_PKEX::book = .+
+    heading_PKEX::EXACT = 1
+    heading_PKEX::CSENS = 0
+
+heading_MASTER = MasterID
+    heading_MASTER::EXACT = 1
+
+heading_NEW = NEW
+    heading_NEW::EXACT = 1
+
+#  ____________
+#-/ csv-string \----------------------------------------------------------------
+#
+# 1+ regular expression(s)
+#
+# Matches the source columns that contain exercises
+#
+# Must have two variables, although what they are called is not relevant.  The
+# first variable corresponds to the chapter, the second to the section.
+#
+# See "csvString" in Tarp::GenPK::Style for more.
+#...............................................................................
+
+csv_string = $chapter$\.$section$\.$itemString$
+
+    csv_string::EXACT = 1
+
+    csv_string::chapter = .*
+
+    csv_string::section = .*
+
+#  ____________
+#-/ flename    \----------------------------------------------------------------
+#
+# 1 regular expression
+# 
+# Corresponds to the stub of the output .pklist filename.
+#
+# See "filename" in Tarp::GenPK::Style for more.
+#...............................................................................
+
+filename = $book$$chapter$$section$
+
+    filename::book = \w+
+
+    filename::chapter = \w+
+
+    filename::section = \w+
+
+    
+#  ______________
+#-/ ms_filename  \--------------------------------------------------------------
+#
+# 1 regular expression
+# 
+# Manuscript file name
+#
+# See "filename" in Tarp::varExtract::Style for more.
+#...............................................................................
+
+ms_filename = \
+    $book$$chapt$$sect_0$\.tex   \ # e.g. 4c0100.tex
+    $book$$ch$$sect$\.tex        \ # e.g. 4c0101.tex
+    $book$$ch$$proj$\.tex        \ # e.g. 4c01ap01.tex
+    $book$$ch$$special$\.tex       # e.g. 4c01r
+
+    ms_filename::EXACT = 1
+    ms_filename::CSENS = 0
+    
+    ms_filename::book    = \w+
+
+    ms_filename::ch      = \d\d
+
+    ms_filename::chapt   = \d\d
+
+    ms_filename::sect_0  = 00
+
+    ms_filename::sect    = \d[1-9]
+
+    ms_filename::proj    = \d\d[a|d|l]p(\d\d)?  # ap, dp, ap01, dp01, dp02...
+
+    ms_filename::special = r|fps
+
+chapt_search = \\chapter{\d\d?\\quad\s$CHAP_TITLE$}
+
+    chapt_search::CHAP_TITLE = .*
+
+sect_search = \\section{.*\\quad\s$SECT_TITLE$}
+
+    sect_search::SECT_TITLE  = .*
+
+proj_search = \\section{.*Project:\s$PROJ_TITLE$}
+
+    proj_search::PROJ_TITLE = .*?
+
+itemTag[0] = <illegal>-$ITM$
+itemTag[1] = $ITM$
+itemTag[2] = $ITM$
+itemTag[3] = $ITM$

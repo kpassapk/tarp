@@ -1,0 +1,154 @@
+=head1 Running PullCSV in Komodo
+
+As with all Tarp scripts, C<tapullcsv> is run in Komodo as an external
+command; double clicking one of the icons in the C<PullSolns> folder in the
+C<Tarp Toolkit> project will run the script with certain command-line
+options. Only a few of the most common options are available through Komodo;
+use the program directly from the command line for other combinations. 
+
+In order to use this script from Komodo (with the exception of C<README>,
+C<--version> and C<--help>), a C<.tex> must be open and visible in the Komodo
+workspace, and there must be a Tarp Style (C<TAS>) file called C<TASfile>,
+C<TASfile.txt> or C<TASfile.tas> in the same directory as the C<.tex> file.
+
+=head2 Options
+
+=for html <center><img src="images/options.png"></center>
+
+=over
+
+=item [current .tex]
+
+B<USE THIS OPTION TO START YOUR .CSV FILE>.
+
+Equivalent to running the following in a command prompt:
+
+    tapullcsv foo0101.tex
+
+where C<foo0101.tex> is the name of the currently open file.  The script is run
+in the directory where the current file resides, and requires a C<TAS> file
+called C<TASfile>, C<TASfile.txt> or C<TASfile.tas> to exist in the same directory.
+
+The name of the output C<.csv> file depends on the C<OUTfile> command line option.
+By default this is specified in F< L</toolPrefs.yml> > as
+
+=for html <center><img src="images/toolprefs.png"></center>
+
+
+The filename C<foo0101.tex> must match the C< filename > entry in your C<TAS>
+file (see L< TAS Entries > below), which must in turn contain the variables
+C<$book$> and C<$chapter$> referred to above. Assuming $book$ catches "foo" and
+$chapter$ catches "01", the output is F<foo01.csv>. Column headings are printed
+with this command.
+
+=item --append [current .tex]
+
+B<USE THIS OPTION TO CONTINUE YOUR .CSV FILE>.
+
+This is equivalent to running the following in a command prompt:
+
+    tapullcsv --append foo0102.tex
+
+where C<foo0102.tex> is the name of the currently open file.
+
+This option is exactly the same as the previous one except it appends the output
+to the C<.csv> file. If this file does not exist, or is not writable, an error
+message will be printed. Column headings are not printed, since they should have
+been printed by the result of the [current .tex] command, which creates the
+C<.csv> file initially.
+
+=item README,
+
+Displays this help file.
+
+=item --version
+
+Equivalent to running the following in a command prompt:
+
+    tapullcsv --version
+
+=item --help
+
+Equivalent to running the following in a command prompt:
+
+    tapullcsv --help
+
+=back
+
+=head2 How do I Add/Remove Columns or Change the Column Order?
+
+The contents of csv columns is determined by column plugins: .pm files in the
+"plugins" subdirectory of your Tarp resource directory (the same directory as
+F< L</toolPrefs.yml> >).  There is one plugin per column.
+
+=over
+
+=item * Removing columns
+
+Delete the corresponding .pm plugin file.
+
+=item * Adding columns
+
+Duplicate one of the .pm plugin files (for example, tec.pm) and make it
+writeable. Open it and change the value() method to return something useful.
+Look at the documentation for value() in Tarp::PullCSV::Column to see what
+information from each exercise you have at your disposal.
+
+For example, if I am creating a column that contains the line number for each
+exercise plus 42, I would create a file called plus42.pm that contains the
+following:
+
+=for html <center><img src="images/plus42.png"></center>
+
+=item * Changing Column Order
+
+Open toolPrefs.yml and change the order of the column list.
+
+=back
+
+=head2 How do I Change the Headings?
+
+Locate and open the plugin C<.pm> file.  Change the heading() method.
+
+
+The output of this command contains column headings.
+
+
+=head2 TAS Entries
+
+=over
+
+=item *
+
+C<filename>
+
+Used for getting variables from the filename.  More than one value can be used.
+Variables in this entry should have the same name as some of the plugin columns
+and the C<OUTfile> option in F<toolPrefs.yml>.
+
+=item *
+
+C<beginTag>, C<endTag>, C<exTag>, C<partTag>, C<subPartTag>, C<sequenceRestart>
+
+The usual LaTeXtract tags
+
+=item *
+
+C<masterRef>
+
+Used for extracting the MasterID column.  Must contain a variable called
+C<$MASTER$>.
+
+=back
+
+=cut
+
+=head2 Output
+
+Output of this program is in Comma Separated Value (C<CSV>) format.
+Naming of the output files is discussed above, in L</Options>.
+
+=head2 toolPrefs.yml
+
+The file L</toolPrefs.yml> is located in Tarp's Resource Directory.  In Windows,
+there is a link to this directory on your desktop.

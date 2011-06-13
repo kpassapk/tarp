@@ -1,0 +1,27 @@
+Tarp-PullCSV
+
+Tarp::PullCSV - Get exercise data, access as (csv) table
+
+This module, and the associated tapullcsv application, are designed to flexibly
+get exercise data for output as a CSV table.
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Makefile.PL
+	make
+	make test
+	make install
+
+SUPPORT AND DOCUMENTATION
+
+After installing, you can find documentation for this module with the
+perldoc command.
+
+    perldoc Tarp::PullCSV
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2008 Kyle Passarelli
+

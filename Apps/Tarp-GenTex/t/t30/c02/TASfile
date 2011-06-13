@@ -1,0 +1,24 @@
+filename = $BOOK$$CHAP$$SECT$
+
+    filename::BOOK    = \d[a-z]+
+    filename::CHAP    = \d\d
+    filename::SECT    = \d\d
+
+texVars = $CHAP$ $SECT$
+    texVars::CHAP = \d+
+    texVars::SECT = \d+
+
+beginTag = begin
+
+endTag = end
+
+itemTag[0] = <illegal>-$ITM$
+itemTag[1] = $ITM$
+itemTag[2] = $ITM$
+itemTag[3] = $ITM$
+
+sequenceRestart = 
+
+masterRef = ms$MASTER$.tex
+
+masterRef::MASTER = \d{5}[a-z]?

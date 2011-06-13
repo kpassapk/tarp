@@ -1,0 +1,30 @@
+6et0101_itm.tex: 16e 5vid
+6et0101_examples.txt lines:
+seq0: 1 714
+01: 2 15
+01a: 12 13
+01b: 14 14
+02: 46 53
+02a: 50 51
+02b: 52 52
+03: 116 117
+04: 292 295
+05: 320 333
+06: 376 385
+06a: 381 382
+06b: 383 384
+07: 477 504
+08: 568 569
+09: 587 595
+10: 637 659
+11: 695 713
+11a: 709 709
+11b: 710 710
+11c: 711 712
+6et0102_itm.tex: 10e 5vid
+6et0102_examples.txt lines:
+seq0: 1 0
+Examples_6et01.csv: skipped
+expandex.pl: skipped
+expandex.tas: skipped
+tmpfile: skipped

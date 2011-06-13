@@ -1,0 +1,48 @@
+csv_string = $chapter$\.$section$\.$itemString$
+
+    csv_string::EXACT = 1
+
+    csv_string::chapter = .*
+
+    csv_string::section = .*
+
+filename = $book$$chapter$$section$
+
+    filename::book = .*
+
+    filename::chapter = .*
+
+    filename::section = .*
+
+heading_EX = $book$\s+problem
+
+    heading_EX::CSENS = 0
+
+    heading_EX::EXACT = 1
+
+    heading_EX::book = .+
+
+heading_MASTER = MasterID
+
+    heading_MASTER::EXACT = 1
+
+heading_NEW = NEW
+
+    heading_NEW::EXACT = 1
+
+heading_PKEX = $book$\s+pickup
+
+    heading_PKEX::CSENS = 0
+
+    heading_PKEX::EXACT = 1
+
+    heading_PKEX::book = .+
+
+itemTag[0] = <illegal>-$ITM$
+
+itemTag[1] = $ITM$
+
+itemTag[2] = $ITM$
+
+itemTag[3] = $ITM$
+

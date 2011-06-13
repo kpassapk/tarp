@@ -1,0 +1,20 @@
+csv_string = $chapter$\.$section$
+
+    csv_string::chapter = \d\d
+
+    csv_string::section = \d\d
+
+    csv_string::EXACT = 1
+
+filename = $book$$chapter$$section$
+
+    filename::book = \d\w+
+
+    filename::chapter = \d
+
+    filename::section = \d
+
+itemTag[0] = <illegal>-$ITM$
+itemTag[1] = $ITM$
+itemTag[2] = $ITM$
+itemTag[3] = $ITM$

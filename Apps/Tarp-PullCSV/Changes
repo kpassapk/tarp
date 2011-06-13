@@ -1,0 +1,7 @@
+Revision history for Tarp-PullCSV
+
+0.85    Jun 24, 2009
+        - t40/c01 passes: READDIR not alphabetically sorted in linux
+
+0.8     April 11 2009
+        First 0.8 version

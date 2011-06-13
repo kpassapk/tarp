@@ -1,0 +1,17 @@
+Revision history for Tarp-GenSkel
+
+0.42    Jun 23, 2009
+        Quotes and spaces in .tas entries
+
+0.41    Jul 21, 2008
+        - Passes test on linux
+
+0.4     May 08, 2008
+        Now picks up tags from TAS file as I said it would ages ago.
+
+0.2     Mar. 24, 2008
+        Corrected behavior with user-specified TAS file.
+
+0.1     Feb. 15, 2008
+        First version, released on an unsuspecting world.
+

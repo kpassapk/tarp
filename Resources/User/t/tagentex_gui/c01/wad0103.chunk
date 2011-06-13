@@ -1,0 +1,26 @@
+CHUNK_START
+$CHAP$$SECT$
+CHUNK_END
+
+CHUNK_START
+TCIMACRO
+Contents of foo 01a, ms00001a.tex
+EndExpansion
+CHUNK_END
+
+CHUNK_START
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{ms$MASTER$.tex}}}{\QSubDoc{Include ms$MASTER$}{\input{ms$MASTER$.tex}}}{}{ms$MASTER$.tex}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{ms$MASTER$.tex}}}{%
+\input{ms$MASTER$.tex}}{}{ms$MASTER$.tex}%
+%EndExpansion
+
+CHUNK_END
+
+CHUNK_START
+TCIMACRO
+Contents of foo 01c, ms00001c.tex
+EndExpansion
+CHUNK_END
+

@@ -1,0 +1,43 @@
+CHUNK_START
+foo.tex preamble
+CHUNK_END
+
+CHUNK_START
+begin
+$ITM$
+TCIMACRO
+Contents of foo 01a, ms00001a.tex
+EndExpansion
+$ITM$
+TCIMACRO
+Contents of foo 01b, ms00001b.tex
+EndExpansion
+$ITM$
+TCIMACRO
+Contents of foo 01c, ms00001c.tex
+EndExpansion
+end
+CHUNK_END
+
+CHUNK_START
+TCIMACRO
+Contents of foo 03, ms00003.tex
+EndExpansion
+CHUNK_END
+
+CHUNK_START
+my canned macro
+
+CHUNK_END
+
+CHUNK_START
+TCIMACRO
+Contents of foo 05, ms00005.tex
+EndExpansion
+CHUNK_END
+
+CHUNK_START
+my canned macro
+
+CHUNK_END
+

@@ -1,0 +1,167 @@
+#!/usr/bin/perl -w
+
+=head1 NAME
+
+tapullcsv - pull data from a TeX file to a CSV file
+
+=cut
+
+use strict;
+use warnings;
+use Tarp::PullCSV::App;
+
+Tarp::PullCSV::App->run();
+
+=head1 SYNOPSIS
+
+tapullcsv --gen-tas | [options] file.tex
+
+Options: (tP = loads from toolPrefs.yml)
+
+    --col=name[;opts]   Use plugin column (repeatable)                tP
+    --out=file.csv      Sets output file name                         tP
+    --append            Append to the output file                     tP
+    --tas=style.tas     Set name of Tarp Style (TAS) file to use.     tP
+    --style=plugs       Use these style plugins                       tP
+    --force             Obliterate existing output                    tP
+    --silent            Do not show progress                          tP                         tP
+    --help              Show this message.
+    --version           Display version information.
+
+Examples:
+
+    tapullcsv --gen-tas            # generate a compliant .tas file
+    
+    tapullcsv --col=chapter;3 --col=section;1 file.tex
+
+
+=head1 DESCRIPTION
+
+C<tapullcsv> is a command-line program that gathers data from an enumerated
+exercise list in a C<.tex> file and outputs it as a C<CSV> file. The
+L<Tarp::PullCSV> module is used to perform the extraction work. Additionally,
+the following facilities are provided:
+
+=over
+
+=item 1.
+
+B<Loading plugin attributes:>  If any plugin attributes are found in the
+plugin installation directory, they will be loaded at run time.  A column will
+be added for every plugin attribute in alphabetical order.  The name of the
+file will be used as the column heading by default (omitting the ".pm"),
+unless the heading() method is reimplemented within the plugin file.
+
+To change the column order, use the --col option:
+
+    tapullcsv --col=b --col=a --col=c
+
+outputs columns in the order b, a, c.
+
+=item 2.
+
+B<Setting column options from filename:> Some options (arguments) can be
+retrieved from the input filename, if you have a TAS file (which you will anyway
+because you need it to extract the exercise data) and the file contains a
+"filename" entry. This entry may contain several values to match different kinds
+of filenames. If one of the values matches, the variables will contain parts of
+this string (or parts of the file's path) which can then be used as default
+arguments to the plugin columns.
+
+=item 3.
+
+B<Appending output to a file> / creating a new file from scratch. This is
+controlled usig the --append switch.
+
+=back
+
+=head1 PLUGIN COLUMNS
+
+The stuff contained in each column of the output .csv file is controlled by a
+set of plugins, one per column.  These Plugin columns are in your resource
+directory (see L<Tarp::Config> and below.
+
+A plugin column is a Perl module with a special format that is called once for
+every exercise in the input file.  The job of the plugin column is, using some
+formula (it doesn't really matter which formula is actually used), give some
+value for each exercise in each column using its value() method.  Plugin
+columns inherit the L<Tarp::PulLCSV::Column> class.  See this class's
+documentation for more details.
+
+Plugins are searched for in the plugins installation directory. This defaults to
+your home directory, in a directory called
+".techarts-toolkit/plugins/Tarp/PullCSV". If this directory does not exist,
+or does not contain .pm files, no plugins are loaded (although a different
+directory may be used if specified by the TECHARTS_TOOLKIT_DIR environment
+variable. For example, if TECHARTS_TOOLKIT_DIR contains "foo",
+the plugins will be searched for in foo/plugins/PullSolns.)
+
+When instantiating each plugin using new(), an option string can be given.  This
+option string can be supplied in one of the following ways:
+
+=over
+
+=item *
+
+Using the col option
+
+Anything after a semicolon following the column name is treated as a column
+argument.  These can be either supplied directly or defined in toolPrefs.yml.
+
+=item *
+
+Using the input filename
+
+If the input filename matches the "filename" entry of the TAS file, and it
+contains variables with the same name as the column, submatch results
+corresponding to the portion of the filename caught by each variable is treated
+as the column argument.
+
+=back
+
+=head2 Creating a Plugin Column
+
+To create a plugin column called "foo", follow these steps:
+
+=over
+
+=item 1.
+
+Go to the plugin directory, as described above.  Note in UNIX systems this is
+usually invisible because it begins with a period (as it should).  In this case
+use a command prompt.
+
+=item 2.
+
+Copy one of the existing column modules and call it foo.pm.  Open the file and
+replace the old column name with "foo" where approriate.
+
+=item 3.
+
+Go to the value() method, and remove the return statement.  Instead, type
+'return "bar"'.
+
+=item 4.
+
+Save and close the file.
+
+=item 5.
+
+Run the program again on a test file.  You should have a column that has the
+heading "foo" with every row having the value "bar".
+
+=item 6.
+
+Replace "bappy" with something more relevant. See
+Tarp::Itexam::Attribute's value() method for the arguments that
+are automatically available to the method (e.g. exercise, line number, etc.)
+Using these values and a bit of Perl, come up with whatever you want the column
+to contain.
+
+=item 7.
+
+You're done!
+
+=back
+
+=cut

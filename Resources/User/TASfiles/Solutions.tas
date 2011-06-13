@@ -1,0 +1,161 @@
+################################################################################
+#                                                                              #
+#                              TECHARTS STYLE FILE                             #
+#                                                                              #
+#                              Solutions Generation                            #
+#                                                                              #
+################################################################################
+
+#  ____________
+#-/ flename    \----------------------------------------------------------------
+# 
+# 1+ regexps
+#
+# Matches the file base name
+#
+# See also: Tarp::GenTex::Style
+#...............................................................................
+
+filename = \                #    e.g...
+    \w+$CHAP$$SECT$ \       # 4foo0101.pklist
+    \w+\d{2}$REVIEW$ \      # 4foo01r.pklist
+    \w+\d{2}$PROJ$          # 4foopr1a.pklist
+
+    filename::CHAP   = \d{2}
+    filename::SECT   = \d{2}
+    filename::REVIEW = [rR]
+    filename::PROJ   = pr\d[a-z]
+
+    filename::EXCLUDE = 1   # Do not include this variable while matching file contents
+
+#  ____________
+#-/ texVars    \----------------------------------------------------------------
+# 
+# 1+ regexps
+#
+# Filters out variables in "filename" (above) that are subbed into the .tex file
+#
+# See also: Tarp::GenTex::Style
+#...............................................................................
+
+texVars = $CHAP$ $SECT$
+    texVars::CHAP = \d+     # turns "01" => "1"
+    texVars::SECT = \d+
+
+    texVars::EXCLUDE = 1    # See filename::EXCLUDE comment above
+
+#  ____________
+#-/ chapHead   \----------------------------------------------------------------
+#
+# Strips out the chapter heading
+# Used by: LaTeXcombine
+#...............................................................................
+
+chapHead = \\chaphead\[$CHAP$
+
+    chapHead::CHAP = \d\d?
+
+#  ____________
+#-/ sectHead   \----------------------------------------------------------------
+#
+# Strips out the section heading
+# Used by: LaTeXcombine
+#...............................................................................
+
+sectHead = \
+    \\secthead\[$CHAP$\.$SECT$ \
+    \\QTR{sechead}{$CHAP$\.$SECT$
+
+    sectHead::CHAP = \d\d?
+
+    sectHead::SECT = \d\d?
+
+#  __________________
+#-/ beginTag, endTag \----------------------------------------------------------
+#
+# 1+ regexps
+#
+# A LaTeX tag that goes down one exercise level
+#
+# Used by: LaTeXtract, LaTeXcombine, PullSolns, MasterAlloc, GenTex
+#
+# NOTE: The first value must be in printable format
+#...............................................................................
+
+beginTag = \\begin{enumerate}
+
+#  ____________
+#-/ endTag     \----------------------------------------------------------------
+#
+# 1+ regexps
+#
+# A LaTeX tag that goes up one exercise level
+#
+# Used by: LaTeXtract, LaTeXcombine, PullSolns, MasterAlloc, GenTex
+#
+# NOTE: The first value must be in printable format
+#...............................................................................
+
+endTag = \\end{enumerate}
+
+#  ________________________
+#-/ itemTag[0] .. [3]      \----------------------------------------------------
+#
+# 1+ regexps
+#
+# A LaTeX tag that matches exercises
+# Used by: LaTeXtract, LaTeXcombine, PullCSV, MasterAlloc, GenTex
+#
+# NOTE: The first value must be in printable format
+#...............................................................................
+
+itemTag[0] = <illegal>-$ITM$
+  
+itemTag[1] = \
+    "\\item\[\\hfill $ITM$\.\]"          \ # Prints as \item[\hfill 1.]
+    \\QTR\{ssbold\}\{$ITM$.\}            \
+    \\item\[\\hspace\*\{\\fill\}$ITM$.\] \
+    \\item\[.*?$ITM$\.
+
+itemTag[2] = \
+    \\item\[\($ITM$\)\]                  \ # prints as \item[(a)]
+    \\item\[\($ITM$.*\).*\]              \
+    \{\\hyperref\{\($ITM$\)              \
+    \\hspace.*\($ITM$.*\)                \
+    \\hspace\{\\fill\}\($ITM$\)          \
+    \\hspace\*\{\\fill\}\($ITM$\)        \
+    \\item\[\(\\thinspace\s$ITM$\)\]     \
+    \\item\[\(\\hspace{0.04cm}$ITM$\)\]  \
+    \\hspace\*\{\\fill\}\($ITM$\)        \
+    \\hfill\s\($ITM$\)
+
+itemTag[3] = \
+    \\item\[\($ITM$\)\] \
+    \\hyperref\{\($ITM$\)
+
+#  _________________
+#-/ sequenceRestart \----------------------------------------------------------
+#
+# 0+ regexps
+#
+# A LaTeX tag that restarts the numbering sequence (can be left blank)
+#
+# Used by: LaTeXtract, LaTeXcombine, PullSolns, MasterAlloc, GenTex
+#...............................................................................
+
+sequenceRestart = 
+
+#  _________________
+#-/ masterRef       \----------------------------------------------------------
+#
+# A master number reference
+# Type: Single Regular Expression
+# Used by: LaTeXcombine, PullSolns, MasterAlloc, GenTex
+# Required Variables:
+# - MASTER         Master number
+#...............................................................................
+
+#masterRef = ms$MASTER$\.tex
+masterRef = hyperref.*?ms$MASTER$\.tex
+
+masterRef::MASTER = m?\d{5}[a-z]?

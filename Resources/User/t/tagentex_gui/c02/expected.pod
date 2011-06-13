@@ -1,0 +1,15 @@
+
+=head1 Expected Output
+
+=head2 GUI
+
+=for html <center><img src="screenshot.png"></center>
+
+CHAPT-CONFIG.yml contains section 1 titles.  The TASfile gets the "1" from
+the filename and then the two titles are looked up.  
+
+=head2 Messages
+
+=for html <center><img src="terminal.png"></center>
+
+=cut

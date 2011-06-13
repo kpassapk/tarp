@@ -1,0 +1,22 @@
+beginTag = \\begin{enumerate}
+
+endTag = \\end{enumerate}
+
+filename = .*
+
+itemTag[0] = <illegal>-$ITM$
+
+itemTag[1] = $ITM$
+
+itemTag[2] = $ITM$
+
+itemTag[3] = $ITM$
+
+masterRef = $MASTER$
+
+    masterRef::MASTER = \d+
+
+sequenceRestart = 
+
+texVars = 
+

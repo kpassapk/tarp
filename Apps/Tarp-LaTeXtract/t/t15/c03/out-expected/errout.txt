@@ -1,0 +1,6 @@
+LaTeXtract didn't like a tag in in/in.tex.
+Succesful matches prior to tag error: 
+(1) itemTag[1][0] { ITM => 1 } at in/in.tex line 2
+(2) beginTag[0] {} at in/in.tex line 3
+(3) itemTag[2][0] { ITM => "a" } at in/in.tex line 4
+ERROR: sequenceRestart found at level 1, stopped at in/in.tex line 6

@@ -1,0 +1,12 @@
+sequenceRestart = 
+
+itemTag[0] = <illegal>-$ITM$
+itemTag[1] = $ITM$
+itemTag[3] = $ITM$
+itemTag[2] = $ITM$
+
+beginTag = begin
+
+endTag = end
+
+

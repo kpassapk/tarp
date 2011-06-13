@@ -1,0 +1,89 @@
+Revision history for Tarp
+
+0.992	GenSkel fix: prints just preamble if no chunks exist
+	ansman.pl fix for "r" files	
+
+0.991	ansman-pp.tas changed
+	ansman-pp.pl deleted
+	LaTeXtract & ItExam can relax(): ignore empty begin/end 
+        tags which is useful for checking pps files.  ansman uses
+	relaxed checking by default.
+
+0.990   Sept 28, 2009
+	ansman: tasfile selector, works on entire directory like
+	the rest of the scripts.
+        ItExam data() method finds sequence automatically
+        
+0.989	Sep 25, 2009
+	fix crash in LaTeXtract: isSequential has first element that is last
+	item in the input file.
+
+0.988	Sep 21, 2009
+	exitemize, expandex changed to work together
+	
+
+0.987   Sep 9, 2009
+       
+	exitemize script
+	Extra tests in PullCSV       
+	All mods and apps have same version number: easier
+	All Apps have a --gen-tas method for generating a compliant .tas file
+	ExExam is Itexam, $EX$ is $ITM$ in all .tas files. 
+	solutions-starter is not case sensitive.  Changes to solutions-starter.tas
+        Added ansman, expandex scripts
+	Script tests for ansman, expandex, solutions-starter.
+	changing "exercise" for "item", since we are using now for other kinds of lists
+        Lots more tests for most modules, pass on Linux and Windows
+	
+
+0.921	July 29, 2009
+	Changed solutions-starter.tas
+
+0.92    July 28, 2009
+        Removed exString_inl which I had put in 0.91.  Changed GenPK::Style and
+        GenPK to work without.  Also, varsIn now only returns dollar sign
+        variables and not the (?<foo>) ones.  Changed Spec::simple() to pattern
+        match for variables instead.
+        
+
+0.91	July 27, 2009
+	- itemTag[0] has to be provided by user now. 
+	- Putting <illegal> in any .tas subscripted ([n]) entry causes
+  	program to fall back to parent entry and print an error if the tag matches.
+	This is the new mechanism for outlawing tag matches at a certain item stack level.
+	- Style::EX has a few changes: exString now has three values and produces a proper stack
+	without trailing undefines when matching.  The old one is in exString_inl.  Some old
+	methods such as tex2split and split2tex have been removed.  There is a new .tas entry called
+	exSplit, however, equivalent to the old texSplit.  This can be used for convenience for converting
+	an exercise stack to a texSplit.
+	- Modified all .tas files in the distribution with itemTag[0] = <illegal>-$ITM$. 
+
+0.90	Jul 21, 2009
+	Merge 0.882: Tarp, LaTeXtract
+
+0.89    Jul 3, 2009
+        Installer fixes for Windows
+        LaTeXtract missing tag error
+        TAS reads subscript entries as underscores
+
+0.88    Jun 29, 2009
+        GenTex doc changes
+
+0.87    Jun 25, 2009
+        Require TK 1.04 not 1.05 b/c not available in ubuntu
+        All mods & apps pass in Linux
+        xform() checks EXACT on source and dest
+
+0.86    Jun 23, 2009
+        - GenSkel: quotes in .tas file
+        - Style: load bars class invocation
+
+0.85    Jun 23, 2009
+        Test::Exceptions gets class method test
+
+0.82    April 21, 2009
+        Renamed from Tarp::Helpers
+        Mostly rewritten for new Tarp::Style mechanism
+
+(earlier change history removed)
+

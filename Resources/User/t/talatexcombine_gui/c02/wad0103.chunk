@@ -1,0 +1,23 @@
+CHUNK_START
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{LaTeXparent=0,0,stewstyle.tex}
+                      
+
+\chaph
+TCIMACRO
+Contents of foo 01a, ms00001a.tex
+EndExpansion
+CHUNK_END
+
+CHUNK_START
+TCIMACRO
+Contents of bar 01b, ms00001b.tex
+EndExpansion
+CHUNK_END
+
+CHUNK_START
+TCIMACRO
+Contents of foo 01c, ms00001c.tex
+EndExpansion
+CHUNK_END
+

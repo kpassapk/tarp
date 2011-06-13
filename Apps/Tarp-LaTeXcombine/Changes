@@ -1,0 +1,24 @@
+Revision history for Tarp-LaTeXcombine
+
+0.8     Jun 24, 2009
+        - t30/templates/preambles in wrong case
+        - passes linux/activeperl10
+
+0.22  Aug 08, 2008
+        - Virtual pickup picks up canned content from template files.
+
+0.21  Jul 20, 2008
+        - Small documentation changes
+
+0.2   Jun 26, 2008
+
+        - New 31-app-errors.t and fixes to pass these tests
+        - Better error messages in case of incorrect pickup lists
+        - VirtualPickup contains trivial isLeaf() and exists() methods
+        - Removed _checkConnectivity and added _checkInstructions,
+        
+0.1     Follows new TAS file format
+
+0.01    Feb 2008
+        First version, released on an unsuspecting world.
+

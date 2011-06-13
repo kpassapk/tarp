@@ -1,0 +1,206 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Welcome to Tarp</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body style="background-color: white">
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#installation">INSTALLATION</a></li>
+	<li><a href="#what_s_included">WHAT'S INCLUDED</a></li>
+	<li><a href="#getting_started">GETTING STARTED</a></li>
+	<li><a href="#requirements">REQUIREMENTS</a></li>
+	<li><a href="#getting_help">GETTING HELP</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<center><img src="../Logo/tarp.png"></center><p>Welcome to the Tarp Toolkit. The Toolkit is a set of Perl scripts, applications
+and modules designed to manipulate and extract data from LaTeX files.</p>
+<p>
+</p>
+<hr />
+<h1><a name="installation">INSTALLATION</a></h1>
+<p>To install, unzip the arcihve to a temporary directory (e.g. c:\temp\tarp in
+Windows or ~/tmp/tarp in Linux. Open a command prompt and go to that directory.
+Type</p>
+<pre>
+    perl install.pl</pre>
+<p>That's it.</p>
+<p>Installation could fail if you don't have the required modules
+(see <a href="#requirements"> REQUIREMENTS </a> below).  Otherwise everything should be hunky dory.</p>
+<p>
+</p>
+<hr />
+<h1><a name="what_s_included">WHAT'S INCLUDED</a></h1>
+<p>These are the three kinds of tools in the Toolkit.  Here's how they work:</p>
+<dl>
+<dt><strong><a name="applications" class="item">Applications</a></strong>
+
+<ul>
+<li>
+<p>Stand alone command line program</p>
+</li>
+<li>
+<p>Tested and documented</p>
+</li>
+<li>
+<p>Not user editable (use plugins for flexibility)</p>
+</li>
+<li>
+<p>Flexible via command line options</p>
+</li>
+<li>
+<p>GUI applications: see &quot;perldoc talauncher&quot; for more.</p>
+</li>
+</ul>
+<p>An application has a name begining with &quot;ta&quot;. There is one application for
+every directory in &quot;Apps&quot;, for example &quot;talatextract&quot; and &quot;talatexcombine&quot;.</p>
+<p>You use applications by running them from the command line or through Komodo.</p>
+<dt><strong><a name="pl_scripts" class="item">.pl Scripts</a></strong>
+
+<ul>
+<li>
+<p>More automated, less flexible than applications</p>
+</li>
+</ul>
+<p>Scripts more automated than a regular application and therefore less
+flexible. Scripts are in the &quot;Scripts&quot; directory of your Resource directory
+(see <a href="#getting_started"> GETTING STARTED </a> below)</p>
+<p>To run a script, copy it over to your current working directory, open it to read
+the instructions and then execute it.</p>
+<dt><strong><a name="modules" class="item">Modules</a></strong>
+
+<ul>
+<li>
+<p>Shared common code btw apps &amp; scirpts</p>
+</li>
+<li>
+<p>Flexible, tested and documented</p>
+</li>
+<li>
+<p>Use to write your own script</p>
+</li>
+</ul>
+<p>A module provides helpful functionality bundled into a package that you can
+use in your own scripts. They are documented and tested with re-use in mind.
+There is one or more modules in every directory in &quot;Modules&quot;, for example
+&quot;Tarp::Itexam&quot;.</p>
+<p>To learn how to use a module, load its documentation (see <a href="#getting_help"> GETTING HELP </a>
+below).</p>
+</dl>
+<p>
+</p>
+<hr />
+<h1><a name="getting_started">GETTING STARTED</a></h1>
+In Windows, Tarp shortcuts are put on your desktop after installation:<center><img src="images/shorts.png"></center>The "Tarp Resources" directory is where your scripts and TAS files are kept,
+along with other files such as templates and plugins that are used by scripts
+and modules.  The "Tarp Toolkit" Komodo project gives you access to Tarp apps
+in Komodo.<p>The best way to get started is by:</p>
+<ol>
+<li>
+<p>Loading a tutorial in the Tutorials/ directory.</p>
+</li>
+<li>
+<p>Opening the Komodo integration and looking at the &quot;README&quot; pages of the
+installed applications.</p>
+</li>
+</ol>
+<p>
+</p>
+<hr />
+<h1><a name="requirements">REQUIREMENTS</a></h1>
+<ul>
+<li>
+<p>A working Perl 5.010+ installation.  Older Perl versions do not work b/c &quot;named
+capture buffers&quot; are not implemented.</p>
+</li>
+<li><strong><a name="third_party_perl_modules" class="item">Third Party Perl Modules:</a></strong>
+
+<dl>
+<dt><strong><a name="text_csv" class="item"><code>Text::CSV</code></a></strong>
+
+<dd>
+<p>Available from CPAN or through ActiveState's Perl Package Manager (ppm). See
+your Perl distribution's manual pages for help on installing Perl modules.</p>
+</dd>
+</li>
+<dt><strong><a name="file_copy_recursive" class="item"><code>File::Copy::Recursive</code></a></strong>
+
+<dd>
+<p>Available from CPAN and ppm.</p>
+</dd>
+</li>
+<dt><strong><a name="yaml_tiny" class="item"><code>YAML::Tiny</code></a></strong>
+
+<dd>
+<p>Available from CPAN and ppm.</p>
+</dd>
+</li>
+<dt><strong><a name="tkx" class="item"><code>Tkx</code></a></strong>
+
+<dd>
+<p>GUI toolkit (wrapper for Tcl actually). This is available from CPAN and included
+in ActivePerl 5.010.</p>
+</dd>
+</li>
+</dl>
+<li>
+<p>GNU make, Microsoft nmake (nmake for Win32 included in the Resources directory)</p>
+</li>
+<li>
+<p>Optional Third Party Perl Modules (for development):</p>
+<dl>
+<dt><strong><a name="test_differences" class="item"><code>Test::Differences</code></a></strong>
+
+<dd>
+<p>Available from CPAN and now included in ActivePerl 5.10. Check to make sure you have it though.</p>
+</dd>
+</li>
+<dt><strong><a name="test_pod" class="item"><code>Test::POD</code></a></strong>
+
+<dt><strong><a name="test_pod_coverage" class="item"><code>Test::POD::Coverage</code></a></strong>
+
+</dl>
+</ul>
+<p>
+</p>
+<hr />
+<h1><a name="getting_help">GETTING HELP</a></h1>
+<p>Scripts contain documentation in the script file itself.</p>
+<p>For applications and modules, you can access on-line documentation by using the
+perldoc command:</p>
+<pre>
+    perldoc Tarp::[module or application]</pre>
+<p>For example,</p>
+<pre>
+    perldoc Tarp::Style</pre>
+<p>or</p>
+<pre>
+    perldoc talatextract      (applications only)
+    perldoc Tarp::LaTeXtract</pre>
+<p>Depending on your installation, HTML documentation may also be available.  In
+ActivePerl under Windows, go to &quot;Documentation&quot; under the ActivePerl program
+group.</p>
+<p>Applications also have a brief <code>README</code> accessible through the Komodo
+integration.  Open <code>Techarts Toolkit.kpr</code> in your installation directory
+(or in Windows, double click the desktop icon) and look for the <code>README</code>
+item with a yellow star.</p>
+<p>Finally, there are tutorials for each main task under the Tutorials directory of
+the Tarp Toolkit distribution, and sample TAS files in the Resource directory.</p>
+
+</body>
+
+</html>

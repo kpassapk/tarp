@@ -1,0 +1,12 @@
+# itemTag[1] is empty
+
+itemTag[0] = <illegal>-$ITM$
+itemTag[1] = 
+itemTag[2] = $ITM$
+itemTag[3] = $ITM$
+
+sequenceRestart = 
+
+beginTag = a
+
+endTag = c

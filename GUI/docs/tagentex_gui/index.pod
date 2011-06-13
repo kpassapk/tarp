@@ -1,0 +1,114 @@
+=head1 Running GenTex in Komodo
+
+As with all Tarp scripts, C<tagentex> is run in Komodo as an external command;
+double clicking one of the icons in the C<GenTex> folder in the C<Tarp Toolkit>
+project will run the script with certain command-line options. Only a few of the
+most common options are available through Komodo; use the program directly from
+the command line for other combinations. 
+
+In order to use this script from Komodo (with the exception of C<README>,
+C<--version> and C<--help>), a C<.pklist> file must be open and visible in the
+Komodo workspace.
+
+These commands also require that you have a C<TAS> file called C<TASfile>,
+C<TASfile.txt> or C<TASfile.tas> in the same directory as the C<.pklist> file.
+If you need to use another C<TAS> file, you will need to run the program using
+the C<--tas> option from the command line.
+
+=head2 Options
+
+=for html <center><img src="images/options.png"></center>
+
+=over
+
+=item [current .pklist]
+
+Displays the following dialog box:
+
+=for html <center><img src="images/dialog1.png"></center>
+
+The dialog has a list of variables that were found in the file's preamble
+(before the exercises).  This dialog attempts to determine the variables' values
+in two ways:
+
+- Getting them from the pickup list's file name
+
+- Looking them up in a file called CHAPT-CONFIG.yml, also in the current directory.
+
+
+If "OK" is clicked, this is equivalent
+to running the following in a command prompt:
+
+    tagentex --var=SECT;3 --var=CHAP;1 wad0103.pklist
+
+where C<wad0103.pklist> is the name of the currently open file. The script is run
+in the directory where the current file resides. If successful, C<wad0103.tex> will
+be created using C<wad0103.skel> and C<wad0103.chunk>. Variables $CHAPT$ and $SECT$
+will be replaced with "3" and "1", respectively. This requires that your
+C<filename> field in the C<TAS> says something like the following:
+
+=for html <center><img src="images/filename.png"></center>
+
+In this case the match is successful because "wad" is in the C<$BOOK$> variable,
+and the chapter and section are two digits, matched by C<\d\d> in C<$CHAP$> and
+C<$SECT$>, respectively. Of these three variables, however, only C<$CHAP$> and
+C<$SECT$> are passed through to the final .tex file because all variable
+contents are filtered using the C<texVars> entry.
+
+=item README,
+
+Displays this help file.
+
+=item --version
+
+Equivalent to running the following in a command prompt:
+
+    taGenTex --version
+
+=item --help
+
+Equivalent to running the following in a command prompt:
+
+    taGenTex --help
+
+=back
+
+=head2 TAS Entries
+
+=over
+
+=item * C<filename>
+
+Used for getting variables from filename.  Must contain at least one
+variable.  The contents of the last variable is taken as a section name and
+looked up in CHAPT-CONFIG.yml.
+
+=item * C<texVars>
+
+This variable is used to filter the values from the previous entry.
+
+=item * C<beginTag>, C<endTag>, C<exTag>, C<partTag>, C<subPartTag>, C<sequenceRestart>
+
+The usual LaTeXtract tags.
+
+=item * C<masterRef>
+
+Used for replacing the $MASTER$ variable in the Chunk file.
+
+=back
+
+=head2 Output
+
+The output is a LaTeX file with the same name as the pickup list but with a ".tex"
+extension.
+
+=head2 More Information
+
+For more information on the script itself, use the command
+
+    perldoc tagentex
+
+or load the C<HTML> version in a browser.  In ActivePerl, this is found in the
+"Documentaion" link under the "ActivePerl" tab in the C<Start> menu.
+
+=cut

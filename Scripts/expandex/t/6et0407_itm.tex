@@ -1,0 +1,2328 @@
+
+\documentclass{sebase}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{makeidx}
+\usepackage{SECALCUL}
+\usepackage{lie}
+
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Mon Dec 15 16:20:00 1997}
+%TCIDATA{LastRevised=Monday, August 10, 2009 12:09:59}
+%TCIDATA{<META NAME="ViewSettings" CONTENT="16">}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{CSTFile=SECALCUL.cst}
+
+\input tcilatex
+\newenvironment{instructions}{\STARTINSTR}{\ENDINSTR}
+\begin{document}
+
+
+\chapter[4\quad Applications of Differentiation]{}
+
+\section{4.7\quad Optimization Problems}
+
+%TCIMACRO{\TeXButton{noCCC}{\noCCC}}%
+%BeginExpansion
+\noCCC%
+%EndExpansion
+%TCIMACRO{\TeXButton{setET}{\renewcommand{\ET}{1}}}%
+%BeginExpansion
+\renewcommand{\ET}{1}%
+%EndExpansion
+%TCIMACRO{\TeXButton{noRM}{\renewcommand{\RM}{0}}}%
+%BeginExpansion
+\renewcommand{\RM}{0}%
+%EndExpansion
+%TCIMACRO{\TeXButton{setRM}{\renewcommand{\RM}{1}}}%
+%BeginExpansion
+\renewcommand{\RM}{1}%
+%EndExpansion
+%TCIMACRO{%
+%\TeXButton{set page 70/57}{\ifnum \RM=1\setcounter{page}{70}\else \setcounter{page}{57}\fi}}%
+%BeginExpansion
+\ifnum \RM=1\setcounter{page}{70}\else \setcounter{page}{57}\fi%
+%EndExpansion
+
+The methods we have learned in this chapter for finding extreme values have
+practical applications in many areas of life. A businessperson wants to
+minimize costs and maximize profits. A traveler wants to minimize
+transportation time. Fermat's Principle in optics states that light follows
+the path that takes the least time. In this section and the next we solve
+such problems as maximizing areas, volumes, and profits and minimizing
+distances, times, and costs.
+
+In solving such practical problems the greatest challenge is often to
+convert the word problem into a mathematical optimization problem by setting
+up the function that is to be maximized or minimized. Let's recall the
+problem-solving principles discussed on page 
+%TCIMACRO{\TeXButton{76}{76} }%
+%BeginExpansion
+76
+%EndExpansion
+and adapt them to this situation:\vspace{12pt}
+
+\noindent \QTR{CaseHead}{STEPS IN SOLVING OPTIMIZATION PROBLEMS}
+
+\begin{enumerate}
+\item[1.] \textit{Understand the Problem}%
+%TCIMACRO{\TeXButton{en}{\enskip}}%
+%BeginExpansion
+\enskip%
+%EndExpansion
+The first step is to read the problem carefully until it is clearly
+understood. Ask yourself: What is the unknown? What are the given
+quantities? What are the given conditions?
+
+\item[2.] \textit{Draw a Diagram}%
+%TCIMACRO{\TeXButton{en}{\enskip}}%
+%BeginExpansion
+\enskip%
+%EndExpansion
+In most problems it is useful to draw a diagram and identify the given and
+required quantities on the diagram.
+
+\item[3.] \textit{Introduce Notation}%
+%TCIMACRO{\TeXButton{en}{\enskip}}%
+%BeginExpansion
+\enskip%
+%EndExpansion
+Assign a symbol to the quantity that is to be maximized or minimized (let's
+call it $Q$ for now). Also select symbols $(a,b,c,\ldots ,x,y)$ for other
+unknown quantities and label the diagram with these symbols. It may help to
+use initials as suggestive symbols---for example, $A$ for area, $h$ for
+height, $t$~for time.
+
+\item[4.] Express $Q$ in terms of some of the other symbols from Step 3.
+
+\item[5.] If $Q$ has been expressed as a function of more than one variable
+in Step 4, use the given information to find relationships (in the form of
+equations) among these variables. Then use these equations to eliminate all
+but one of the variables in the expression for $Q$. Thus $Q$ will be
+expressed as a function of \textit{one} variable $x$, say, $Q=f(x)$. Write
+the domain of this function.
+
+\item[6.] Use the methods of Sections 
+%TCIMACRO{\TeXButton{4.1}{4.1}}%
+%BeginExpansion
+4.1%
+%EndExpansion
+\ and 
+%TCIMACRO{\TeXButton{4.3}{4.3}}%
+%BeginExpansion
+4.3%
+%EndExpansion
+\ to find the \textit{absolute} maximum or minimum value of $f$. In
+particular, if the domain of $f$ is a closed interval, then the Closed
+Interval Method in Section 
+%TCIMACRO{\TeXButton{4.1}{4.1}}%
+%BeginExpansion
+4.1%
+%EndExpansion
+\ can be used.
+\end{enumerate}
+
+\begin{Example}[1]
+%TECHARTS_DUMMY_ITEM_TAG-(1)
+A farmer has 2400 ft of fencing and wants to fence off a rectangular field
+that borders a straight river. He needs no fence along the river. What are
+the dimensions of the field that has the largest area?
+\end{Example}
+
+\begin{Solution}
+\marginpar{$\hspace*{24pt}$%
+%TCIMACRO{\TeXButton{SQR}{\hskip .5em\protect\rule{4pt}{4pt}\hskip .5em}}%
+%BeginExpansion
+\hskip .5em\protect\rule{4pt}{4pt}\hskip .5em%
+%EndExpansion
+Understand the problem\\[-1pt]
+$\hspace*{24pt}$%
+%TCIMACRO{\TeXButton{SQR}{\hskip .5em\protect\rule{4pt}{4pt}\hskip .5em}}%
+%BeginExpansion
+\hskip .5em\protect\rule{4pt}{4pt}\hskip .5em%
+%EndExpansion
+Analogy: Try special cases\\[-1pt]
+$\hspace*{24pt}$%
+%TCIMACRO{\TeXButton{SQR}{\hskip .5em\protect\rule{4pt}{4pt}\hskip .5em}}%
+%BeginExpansion
+\hskip .5em\protect\rule{4pt}{4pt}\hskip .5em%
+%EndExpansion
+Draw diagrams}In order to get a feeling for what is happening in this
+problem, let's experiment with some special cases. Figure 1 (not to scale)
+shows three possible ways of laying out the 2400 ft of fencing. 
+%TCIMACRO{\TeXButton{longpage}{\enlargethispage{12pt}}}%
+%BeginExpansion
+\enlargethispage{12pt}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{graphicS}{\vspace{12pt}\hskip-160pt\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hskip-160pt\hfil%
+%EndExpansion
+\FRAME{itbpFU}{7.1537in}{1.3725in}{0in}{\Qcb{\QTR{FigureNumber}{FIGURE 1}}}{%
+}{4e040701.wmf}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+7.1537in;height 1.3725in;depth 0in;original-width 7.1537in;original-height
+1.3725in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/4e040701.wmf';file-properties "XNPEU";}}%
+%TCIMACRO{\TeXButton{graphicE}{\vspace{12pt}\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hfil%
+%EndExpansion
+
+We see that when we try shallow, wide fields or deep, narrow fields, we get
+relatively small areas. It seems plausible that there is some intermediate
+configuration that produces the largest area.
+
+Figure 2 illustrates the general case. We wish to maximize the area $A$ of
+the rect-\linebreak angle. 
+\marginpar{$\hspace*{24pt}$%
+%TCIMACRO{\TeXButton{SQR}{\hskip .5em\protect\rule{4pt}{4pt}\hskip .5em}}%
+%BeginExpansion
+\hskip .5em\protect\rule{4pt}{4pt}\hskip .5em%
+%EndExpansion
+Introduce notation\vspace*{9pt}\FRAME{dtbpFU}{2.0003in}{1.0464in}{0pt}{\Qcb{%
+\QTR{FigureNumber}{FIGURE 2}}}{}{4e040702.wmf}{\special{language "Scientific
+Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file
+"F";width 2.0003in;height 1.0464in;depth 0pt;original-width
+2.0003in;original-height 1.0464in;cropleft "0";croptop "1";cropright
+"1";cropbottom "0";filename 'graphics/4e040702.wmf';file-properties "XNPEU";}%
+}}Let $x$ and $y$ be the depth and width of the rectangle (in feet). Then we
+express $A$ in terms of $x$ and $y$:\\[6pt]
+\hspace*{\fill}$A=xy$\hspace*{\fill}\\[9pt]
+We want to express $A$ as a function of just one variable, so we eliminate $%
+y $ by expressing it in terms of $x$. To do this we use the given
+information that the total length of the fencing is 2400 ft. Thus\\[6pt]
+\hspace*{\fill}$2x+y=2400$\hspace*{\fill}\\[9pt]
+From this equation we have $y=2400-2x$, which gives\\[6pt]
+\hspace*{\fill}$A=x(2400-2x)=2400x-2x^{2}$\hspace*{\fill}\\[9pt]
+Note that $x\geq 0$ and $x\leq 1200$ (otherwise $A<0$). So the function that
+we wish to maximize is\\[6pt]
+\hspace*{\fill}$A(x)=2400x-2x^{2}\qquad \qquad 0\leq x\leq 1200$\hspace*{%
+\fill}\\[9pt]
+The derivative is $A^{\prime }\left( x\right) =2400-4x$, so to find the
+critical numbers we solve the equation\\[6pt]
+\hspace*{\fill}$2400-4x=0$\hspace*{\fill}\\[9pt]
+which gives $x=600$. The maximum value of $A$ must occur either at this
+critical number or at an endpoint of the interval. Since $A(0)=0$, $%
+A(600)=720$,$000$,\linebreak and $A(1200)=0$, the Closed Interval Method
+gives the maximum value as \newline
+$A(600)=720$,$000$.
+
+[Alternatively, we could have observed that $A^{\prime \prime }(x)=-4<0$ for
+all $x$, so $A$ is always concave downward and the local maximum at $x=600$
+must be an absolute maximum.]
+
+Thus the rectangular field should be 600 ft deep and 1200 ft wide.\vspace*{%
+-21pt}$\blacksquare $
+\end{Solution}
+
+\begin{Example}[2]
+%TECHARTS_DUMMY_ITEM_TAG-(2)
+%TCIMACRO{\TeXButton{VIDEO}{\VIDEO}}%
+%BeginExpansion
+\VIDEO%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\frame{{\footnotesize video 5et 040702}}\quad }{}{\frame{{\footnotesize video 5et 040702}}\quad }{}}%
+%BeginExpansion
+\msihyperref{\frame{{\footnotesize video 5et 040702}}\quad }{}{\frame{{\footnotesize video 5et 040702}}\quad }{}%
+%EndExpansion
+A cylindrical can is to be made to hold 1 L of oil. Find the dimensions that
+will minimize the cost of the metal to manufacture the can.
+\end{Example}
+
+\begin{Solution}
+\marginpar{\vspace*{-24pt}\FRAME{dtbpFU}{1.0421in}{1.3033in}{0pt}{\Qcb{%
+\QTR{FigureNumber}{FIGURE 3}}}{}{4e040703.wmf}{\special{language "Scientific
+Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file
+"F";width 1.0421in;height 1.3033in;depth 0pt;original-width
+1.0421in;original-height 1.3033in;cropleft "0";croptop "1";cropright
+"1";cropbottom "0";filename 'graphics/4e040703.wmf';file-properties "XNPEU";}%
+}\FRAME{dtbpFU}{1.8887in}{1.6674in}{0pt}{\Qcb{\QTR{FigureNumber}{FIGURE 4}}}{%
+}{4e040704.wmf}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+1.8887in;height 1.6674in;depth 0pt;original-width 1.8887in;original-height
+1.6674in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/4e040704.wmf';file-properties "XNPEU";}}}Draw the diagram as in
+Figure 3, where $r$ is the radius and $h$ the height (both in centimeters).
+In order to minimize the cost of the metal, we minimize the total surface
+area of the cylinder (top, bottom, and sides). From Figure 4 we see that the
+sides are made from a rectangular sheet with dimensions $2\pi r$ and $h$. So
+the surface area is\\[9pt]
+\hspace*{\fill}$A=2\pi r^{2}+2\pi rh$\hspace*{\fill}\vspace*{6pt}
+
+To eliminate $h$ we use the fact that the volume is given as 1 L, which we
+take to be 1000 $\mathrm{cm}^{3}$. Thus\\[6pt]
+\hspace*{\fill}$\pi r^{2}h=1000$\hspace*{\fill}\\[9pt]
+which gives $h=1000/(\pi r^{2})$. Substitution of this into the expression
+for $A$ gives\\[6pt]
+\hspace*{\fill}$A=2\pi r^{2}+2\pi r\left( \dfrac{1000}{\pi r^{2}}\right)
+=2\pi r^{2}+\dfrac{2000}{r}$\hspace*{\fill}\\[9pt]
+Therefore, the function that we want to minimize is \\[6pt]
+\hspace*{\fill}$A(r)=2\pi r^{2}+\frac{2000}{r}\qquad r>0$\hspace*{\fill}%
+\pagebreak \\[6pt]
+\marginpar{
+In the Applied Project on page 
+%TCIMACRO{\TeXButton{333}{333}}%
+%BeginExpansion
+333%
+%EndExpansion
+\ we investigate the most economical shape for a can by taking into account
+other manufacturing costs.\vspace*{9pt}\FRAME{dtbpFU}{1.7365in}{1.8057in}{0pt%
+}{\Qcb{\QTR{FigureNumber}{FIGURE 5}}}{}{4e040705.wmf}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 1.7365in;height 1.8057in;depth
+0pt;original-width 1.7365in;original-height 1.8057in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/4e040705.wmf';file-properties "XNPEU";}}}To find the critical
+numbers, we differentiate:\\[6pt]
+\hspace*{\fill}$A^{\prime }(r)=4\pi r-\dfrac{2000}{r^{2}}=\dfrac{4(\pi
+r^{3}-500)}{r^{2}}$\hspace*{\fill}\\[6pt]
+Then $A^{\prime }(r)=0$ when $\pi r^{3}=500$, so the only critical number is 
+$r=\sqrt[3]{500/\pi }$.
+
+Since the domain of $A$ is $(0,\infty )$, we can't use the argument of 
+%TCIMACRO{\hyperref{Example 1}{Example 1}{}{EX00240} }%
+%BeginExpansion
+\msihyperref{Example 1}{Example 1}{}{EX00240}
+%EndExpansion
+concerning endpoints. But we can observe that $A^{\prime }(r)<0$ for $r<\sqrt%
+[3]{500/\pi }${}\thinspace and $A^{\prime }(r)>0$ for $r>\sqrt[3]{500/\pi }$%
+, so $A$ is decreasing for \textit{all} $r$ to the left of the critical
+number and increasing for \textit{all} $r$ to the right. Thus $r=\sqrt[3]{%
+500/\pi }$ must give rise to an \textit{absolute} minimum.
+
+[Alternatively, we could argue that $A(r)\rightarrow \infty $ as $%
+r\rightarrow 0^{+}$ and $A(r)\rightarrow \infty $ as $r\rightarrow \infty $,
+so there must be a minimum value of $A(r)$, which must occur at the critical
+number. See Figure 5.]
+
+The value of $h$ corresponding to $r=\sqrt[3]{500/\pi }$ is\\[6pt]
+\hspace*{\fill}$h=\dfrac{1000}{\pi r^{2}}=\dfrac{1000}{\pi (500/\pi )^{2/3}}%
+=2\sqrt[3]{\dfrac{500}{\pi }}=2r$\hspace*{\fill}\\[6pt]
+Thus, to minimize the cost of the can, the radius should be $\sqrt[3]{%
+500/\pi }${}\thinspace cm and the height should be equal to twice the
+radius, namely, the diameter.$\blacksquare $
+\end{Solution}
+
+\marginpar{\vspace*{60pt}\FRAME{itbpF}{0.3347in}{0.1531in}{0in}{}{}{tec.ai}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 0.3347in;height 0.1531in;depth
+0in;original-width 0.3053in;original-height 0.1254in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename 'graphics/TEC.ai';file-properties
+"XNPEU";}}\hspace{3pt}\QTR{Author}{Module 4.7 takes you through six
+additional optimization problems, including animations of the physical
+situations.}}\QTR{Notehead}{NOTE 1}\quad The argument used in 
+%TCIMACRO{\hyperref{Example 2}{Example 2}{}{EX00241} }%
+%BeginExpansion
+\msihyperref{Example 2}{Example 2}{}{EX00241}
+%EndExpansion
+to justify the absolute minimum is a variant of the First Derivative Test
+(which applies only to \textit{local} maximum or minimum values) and is
+stated here for future reference.
+
+%TCIMACRO{\TeXButton{BOXSTART}{\STARTBOX}}%
+%BeginExpansion
+\STARTBOX%
+%EndExpansion
+\vspace{3pt}
+
+\QTR{BOXHEAD}{FIRST DERIVATIVE TEST FOR ABSOLUTE EXTREME VALUES}\vspace{3pt}
+
+Suppose that $c$ is a critical number of a continuous function $f$ defined
+on an interval.
+
+\begin{enumerate}
+\item[(a)] If $f^{\prime }(x)>0$ for all $x<c$ and $f^{\prime }(x)<0$ for
+all $x>c$, then $f(c)$ is the\newline
+absolute maximum value of $f$.
+
+\item[(b)] If $f^{\prime }(x)<0$ for all $x<c$ and $f^{\prime }(x)>0$ for
+all $x>c$, then $f(c)$ is the\newline
+absolute minimum value of $f$.
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{BOXEND}{\ENDBOX}}%
+%BeginExpansion
+\ENDBOX%
+%EndExpansion
+
+\QTR{Notehead}{NOTE 2\quad }An alternative method for solving optimization
+problems is to use implicit differentiation. Let's look at Example 2 again
+to illustrate the method. We work with the same equations\\[6pt]
+\hspace*{\fill}$A=2\pi r^{2}+2\pi rh\qquad \qquad \pi r^{2}h=100$\hspace*{%
+\fill}\\[6pt]
+but instead of eliminating $h$, we differentiate both equations implicitly
+with respect\linebreak to $r$:\\[6pt]
+\hspace*{\fill}$A^{\prime }=4\pi r+2\pi h+2\pi rh^{\prime }\qquad \qquad
+2\pi rh+\pi r^{2}h^{\prime }=0$\hspace*{\fill}\\[6pt]
+The minimum occurs at a critical number, so we set $A^{\prime }=0$,
+simplify, and arrive at the equations\\[6pt]
+\hspace*{\fill}$2r+h+rh^{\prime }=0\qquad \qquad 2h+rh^{\prime }=0$\hspace*{%
+\fill}\\[6pt]
+and subtraction gives $2r-h=0$ or $h=2r$.
+
+\begin{Example}[3]
+%TECHARTS_DUMMY_ITEM_TAG-(3)
+%TCIMACRO{\TeXButton{VIDEO}{\VIDEO}}%
+%BeginExpansion
+\VIDEO%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\frame{{\footnotesize video 5et 040703}}\quad }{}{\frame{{\footnotesize video 5et 040703}}\quad }{}}%
+%BeginExpansion
+\msihyperref{\frame{{\footnotesize video 5et 040703}}\quad }{}{\frame{{\footnotesize video 5et 040703}}\quad }{}%
+%EndExpansion
+Find the point on the parabola $y^{2}=2x$ that is closest to the point $%
+(1,4) $.
+\end{Example}
+
+\begin{Solution}
+The distance between the point $(1,4)$ and the point $(x,y)$ is\\[6pt]
+\hspace*{\fill}$d=\sqrt{(x-1)^{2}+(y-4)^{2}}$\hspace*{\fill}\\[6pt]
+\marginpar{\FRAME{dtbpFU}{1.7218in}{1.8057in}{0pt}{\Qcb{\QTR{FigureNumber}{%
+FIGURE 6}}}{}{4e040706.wmf}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+1.7218in;height 1.8057in;depth 0pt;original-width 1.7218in;original-height
+1.8057in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/4e040706.wmf';file-properties "XNPEU";}}}(See Figure 6.) But if $%
+(x,y)$ lies on the parabola, then $x=\tfrac{1}{2}y^{2}$, so the expression
+for $d$ becomes\\[6pt]
+\hspace*{\fill}$d=\sqrt{\left( \tfrac{1}{2}y^{2}-1\right) ^{2}+(y-4)^{2}}$%
+\hspace*{\fill}\\[6pt]
+(Alternatively, we could have substituted $y=\sqrt{2x}$ to get $d$ in terms
+of $x$ alone.) Instead of minimizing $d$, we minimize its square:\\[6pt]
+\hspace*{\fill}$d^{2}=f(y)=\left( \tfrac{1}{2}y^{2}-1\right) ^{2}+(y-4)^{2}$%
+\hspace*{\fill}\\[6pt]
+(You should convince yourself that the minimum of $d$ occurs at the same
+point as the minimum of $d^{2}$, but $d^{2}$ is easier to work with.)
+Differentiating, we obtain\\[6pt]
+\hspace*{\fill}$f^{\prime }(y)=2\!\left( \tfrac{1}{2}y^{2}-1\right)
+\!y+2(y-4)=y^{3}-8$\hspace*{\fill}\\[6pt]
+so $f^{\prime }(y)=0$ when $y=2$. Observe that $f^{\prime }(y)<0$ when $y<2$
+and $f^{\prime }(y)>0$ when $y>2$, so by the First Derivative Test for
+Absolute Extreme Values, the absolute minimum occurs when $y=2$. (Or we
+could simply say that because of the geometric nature of the problem, it's
+obvious that there is a closest point but not a farthest point.) The
+corresponding value of $x$ is $x=\tfrac{1}{2}y^{2}=2$. Thus the point on $%
+y^{2}=2x$ closest to $(1,4)$ is $(2,2)$.\vspace*{-18pt}$\blacksquare $
+\end{Solution}
+
+\begin{Example}[4]
+%TECHARTS_DUMMY_ITEM_TAG-(4)
+\marginpar{\FRAME{dtbpFU}{1.1251in}{2.642in}{0pt}{\Qcb{\QTR{FigureNumber}{%
+FIGURE 7}}}{}{4e040707.wmf}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+1.1251in;height 2.642in;depth 0pt;original-width 1.1251in;original-height
+2.642in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/4e040707.wmf';file-properties "XNPEU";}}}A man launches his boat
+from point $A$ on a bank of a straight river, 3 km wide, and wants to reach
+point $B$, 8 km downstream on the opposite bank, as quickly as possible (see
+Figure 7). He could row his boat directly across the river to point $C$ and
+then run to $B$, or he could row directly to $B$, or he could row to some
+point $D$ between $C$ and $B$ and then run to $B$. If he can row 6 km$/$h
+and run 8 km$/$h, where should he land to reach $B$ as soon as possible? (We
+assume that the speed of the water is negligible compared with the speed at
+which the man rows.)
+\end{Example}
+
+\begin{Solution}
+If we let $x$ be the distance from $C$ to $D$, then the running distance
+is\linebreak $\left\vert DB\right\vert =8-x$ and the Pythagorean Theorem
+gives the rowing distance as \newline
+$\left\vert AD\right\vert =\sqrt{x^{2}+9}$. We use the equation 
+\[
+\text{time}=\frac{\text{distance}}{\text{rate}} 
+\]%
+Then the rowing time is $\sqrt{x^{2}+9}/6$ and the running time is $(8-x)/8$%
+, so the total time $T$ as a function of $x$ is 
+\[
+T(x)=\frac{\sqrt{x^{2}+9}}{6}+\frac{8-x}{8} 
+\]%
+The domain of this function $T$ is $[0,8]$. Notice that if $x=0$, he rows to 
+$C$ and if $x=8$, he rows directly to $B$. The derivative of $T$ is 
+\[
+T^{\prime }(x)=\frac{x}{6\sqrt{x^{2}+9}}-\frac{1}{8} 
+\]%
+Thus, using the fact that $x\geq 0$, we have%
+%TCIMACRO{\TeXButton{longpage}{\enlargethispage{\baselineskip}}}%
+%BeginExpansion
+\enlargethispage{\baselineskip}%
+%EndExpansion
+\\[6pt]
+\hspace*{\fill}$%
+\begin{array}{lllll}
+T^{\prime }(x)=0 & \qquad \Leftrightarrow \qquad & \dfrac{x}{6\,\sqrt{x^{2}+9%
+}}=\dfrac{1}{8}\vspace{6pt} & \quad \Leftrightarrow \quad & 4x=3\,\sqrt{%
+x^{2}+9} \\ 
+& \qquad \Leftrightarrow \qquad & 16x^{2}=9(x^{2}+9) & \quad \Leftrightarrow
+\quad & 7x^{2}=81\vspace{6pt} \\ 
+& \qquad \Leftrightarrow \qquad & x=\dfrac{9}{\sqrt{7}} &  & 
+\end{array}%
+$\hspace*{\fill}\pagebreak \\[6pt]
+\marginpar{\vspace{-12pt}\FRAME{dtbpFU}{1.9164in}{1.5714in}{0pt}{\Qcb{%
+\QTR{FigureNumber}{FIGURE 8}}}{}{4e040708.wmf}{\special{language "Scientific
+Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file
+"F";width 1.9164in;height 1.5714in;depth 0pt;original-width
+1.9164in;original-height 1.5714in;cropleft "0";croptop "1";cropright
+"1";cropbottom "0";filename 'graphics/4e040708.wmf';file-properties "XNPEU";}%
+}}The only critical number is $x=9/\sqrt{7}$. To see whether the minimum
+occurs at this critical number or at an endpoint of the domain $[0,8]$, we
+evaluate $T$ at all three points: 
+\[
+T(0)=1.5\qquad T\left( \frac{9}{\sqrt{7}}\right) =1+\frac{\sqrt{7}}{8}%
+\approx 1.33\qquad T(8)=\frac{\sqrt{73}}{6}\approx 1.42 
+\]%
+Since the smallest of these values of $\,T$ occurs when $x=9/\sqrt{7}$, the
+absolute minimum value of $\,T$ must occur there. Figure 8 illustrates this
+calculation by showing the graph of $\,T$.
+
+Thus the man should land the boat at a point $9/\sqrt{7}$ km ($\approx \!3.4$
+km) downstream from his starting point.\vspace*{-18pt}$\blacksquare $
+\end{Solution}
+
+\begin{Example}[5]
+%TECHARTS_DUMMY_ITEM_TAG-(5)
+%TCIMACRO{\TeXButton{VIDEO}{\VIDEO}}%
+%BeginExpansion
+\VIDEO%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\frame{{\footnotesize video 5et 040705}}\quad }{}{\frame{{\footnotesize video 5et 040705}}\quad }{}}%
+%BeginExpansion
+\msihyperref{\frame{{\footnotesize video 5et 040705}}\quad }{}{\frame{{\footnotesize video 5et 040705}}\quad }{}%
+%EndExpansion
+Find the area of the largest rectangle that can be inscribed in a semicircle
+of radius $r$.
+\end{Example}
+
+\begin{SolutionOne}[1]
+\marginpar{\FRAME{dtbpFU}{1.9303in}{1.3085in}{0pt}{\Qcb{\QTR{FigureNumber}{%
+FIGURE 9}}}{}{4e040709.wmf}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+1.9303in;height 1.3085in;depth 0pt;original-width 1.9303in;original-height
+1.3085in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/4e040709.wmf';file-properties "XNPEU";}}}Let's take the semicircle
+to be the upper half of the circle $x^{2}+\,y^{2}=r^{2}$ with center the
+origin. Then the word \textit{inscribed} means that the rectangle has two
+vertices on the semicircle and two vertices on the $x$-axis as shown in
+Figure 9.
+
+Let $(x,y)$ be the vertex that lies in the first quadrant. Then the
+rectangle has sides of lengths $2x$ and $y$, so its area is\\[6pt]
+\hspace*{\fill}$A=2xy$\hspace*{\fill}\\[6pt]
+To eliminate $y$ we use the fact that $(x,y)$ lies on the circle $%
+x^{2}+y^{2}=r^{2}$ and so $y=\sqrt{r^{2}-x^{2}}$. Thus\\[6pt]
+\hspace*{\fill}$A=2x\sqrt{r^{2}-x^{2}}$\hspace*{\fill}\\[6pt]
+The domain of this function is $0\leq x\leq r$. Its derivative is \\[6pt]
+\hspace*{\fill}$A^{\prime }=2\sqrt{r^{2}-x^{2}}-\dfrac{2x^{2}}{\sqrt{%
+r^{2}-x^{2}}}=\dfrac{2(r^{2}-2x^{2})}{\sqrt{r^{2}-x^{2}}}$\hspace*{\fill}\\[%
+6pt]
+which is 0 when $2x^{2}=r^{2}$, that is, $x=r/\sqrt{2}$ (since $x\geq 0$).
+This value of $x$ gives a maximum value of $A$ since $A(0)=0$ and $A(r)=0$.
+Therefore the area of the largest inscribed rectangle is \\[5pt]
+\hspace*{\fill}$A\!\left( \dfrac{r}{\sqrt{2}}\right) =2\,\dfrac{r}{\sqrt{2}}%
+\sqrt{r^{2}-\dfrac{r^{2}}{2}}=r^{2}$\hspace*{\fill}$\vspace{-21pt}$
+\end{SolutionOne}
+
+\begin{SolutionOne}[2]
+\marginpar{\FRAME{dtbpFU}{1.9726in}{1.1147in}{0pt}{\Qcb{\QTR{FigureNumber}{%
+FIGURE 10}}}{}{4e040710.wmf}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+1.9726in;height 1.1147in;depth 0pt;original-width 1.9726in;original-height
+1.1147in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/4e040710.wmf';file-properties "XNPEU";}}}A simpler solution is
+possible if we think of using an angle as a variable. Let $\theta $ be the
+angle shown in Figure 10. Then the area of the rectangle is 
+\[
+A(\theta )=(2r\cos \theta )(r\sin \theta )=r^{2}(2\sin \theta \cos \theta
+)=r^{2}\sin 2\theta 
+\]%
+\noindent We know that $\sin \,2\theta $ has a maximum value of 1 and it
+occurs when $2\theta =\pi /2$. So $A(\theta )$ has a maximum value of $r^{2}$
+and it occurs when $\theta =\pi /4$.
+
+Notice that this trigonometric solution doesn't involve differentiation. In
+fact, we didn't need to use calculus at all.$\vspace{-12pt}\blacksquare $
+\end{SolutionOne}
+
+\subsection{APPLICATIONS TO BUSINESS AND ECONOMICS\protect\vspace*{-6pt}}
+
+%TCIMACRO{\TeXButton{longpage}{\enlargethispage{12pt}}}%
+%BeginExpansion
+\enlargethispage{12pt}%
+%EndExpansion
+In Section 3.7\ we introduced the idea of marginal cost. Recall that if $%
+C(x) $, the \textbf{cost function}, is the cost of producing $x$ units of a
+certain product, then the \textbf{marginal cost} is the rate of change of $C$
+with respect to $x$. In other words, the marginal cost function is the
+derivative, $C^{\prime }(x)$, of the cost function.
+
+Now let's consider marketing. Let $p(x)$ be the price per unit that the
+company can charge if it sells $x$ units. Then $p$ is called the \textbf{%
+demand function} (or \textbf{price function}) and we would expect it to be a
+decreasing function of $x$. If $x$ units are sold and the \pagebreak
+\linebreak price per unit is $p(x)$, then the total revenue is\\[6pt]
+\hspace*{\fill}$R(x)=xp(x)$\hspace*{\fill}\\[6pt]
+and $R$ is called the \textbf{revenue function}. The derivative $R^{\prime }$
+of the revenue function is called the \textbf{marginal revenue function} and
+is the rate of change of revenue with respect to the number of units sold.
+
+If $x$ units are sold, then the total profit is \\[6pt]
+\hspace*{\fill}$P(x)=R(x)-C(x)$\hspace*{\fill}\\[6pt]
+and $P$ is called the \textbf{profit function}.\textbf{\ }The \textbf{%
+marginal profit function} is $P^{\prime }$, the derivative of the profit
+function. In Exercises 53--58 you are asked to use the marginal cost,
+revenue, and profit functions to minimize costs and maximize revenues and
+profits.$\vspace{-6pt}$
+
+\begin{Example}[6]
+%TECHARTS_DUMMY_ITEM_TAG-(6)
+%TCIMACRO{\TeXButton{VIDEO}{\VIDEO}}%
+%BeginExpansion
+\VIDEO%
+%EndExpansion
+A store has been selling $200$ DVD burners a week at $\$350$ each. A market
+survey indicates that for each $\$10$ rebate offered to buyers, the number
+of units sold will increase by $20$ a week. Find the demand function and the
+revenue function. How large a rebate should the store offer to maximize its
+revenue?
+\end{Example}
+
+\begin{Solution}
+If $x$ is the number of DVD burners sold per week, then the weekly increase
+in sales is $x-200$. For each increase of $20$ units sold, the price is
+decreased by $\$10$. So for each additional unit sold, the decrease in price
+will be $\frac{1}{20}\times 10$ and the demand function is\\[6pt]
+\hspace*{\fill}$p(x)=350-\tfrac{10}{20}(x-200)=450-\tfrac{1}{2}x$\hspace*{%
+\fill}\\[6pt]
+The revenue function is \\[6pt]
+\hspace*{\fill}$R(x)=xp(x)=450x-\tfrac{1}{2}x^{2}$\hspace*{\fill}\\[6pt]
+Since $R^{\prime }(x)=450-x$, we see that $R^{\prime }(x)=0$ when $x=450$.
+This value of $x$ gives an absolute maximum by the First Derivative Test (or
+simply by observing that the graph of $R$ is a parabola that opens
+downward). The corresponding price is\\[6pt]
+\hspace*{\fill}$p(450)=450-\tfrac{1}{2}(450)=225$\hspace*{\fill}\\[6pt]
+and the rebate is $350-225=125$. Therefore, to maximize revenue, the store
+should offer a rebate of \$125.\vspace*{-27pt}$\blacksquare $
+\end{Solution}
+
+\QTP{MultColDiv}
+Exercises 4.7
+
+\vspace*{-9pt}%
+%TCIMACRO{%
+%\TeXButton{s2col}{\setlength{\columnsep}{24pt}
+%\advance \leftskip by -165pt
+%\advance\hsize by 165pt
+%\advance\linewidth by 165pt
+%\begin{multicols}{2}}}%
+%BeginExpansion
+\setlength{\columnsep}{24pt}
+\advance \leftskip by -165pt
+\advance\hsize by 165pt
+\advance\linewidth by 165pt
+\begin{multicols}{2}%
+%EndExpansion
+
+\begin{ExerciseList}
+\item[\hfill 1.] Consider the following problem: Find two numbers whose sum
+is 23 and whose product is a maximum.
+
+\begin{ExerciseList}
+\item[(a)] Make a table of values, like the following one, so that the sum
+of the numbers in the first two columns is always 23. On the basis of the
+evidence in your table, estimate the answer to the problem.\vspace{6pt}
+
+\begin{tabular}{|l|l|l|}
+\hline
+First number & Second number & Product \\ \hline
+\multicolumn{1}{|c|}{1} & \multicolumn{1}{|c|}{22} & \multicolumn{1}{|c|}{22}
+\\ 
+\multicolumn{1}{|c|}{2} & \multicolumn{1}{|c|}{21} & \multicolumn{1}{|c|}{42}
+\\ 
+\multicolumn{1}{|c|}{3} & \multicolumn{1}{|c|}{20} & \multicolumn{1}{|c|}{60}
+\\ 
+\multicolumn{1}{|c|}{$\vdots $} & \multicolumn{1}{|c|}{$\vdots $} & 
+\multicolumn{1}{|c|}{$\vdots $} \\ \hline
+\end{tabular}
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} (a) $11$, $12$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (a) $11$, $12$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02533}}}{}{\fbox{\textbf{master 02533}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02533}}}{}{\fbox{\textbf{master 02533}}}{}%
+%EndExpansion
+\vspace{6pt}
+
+\item[(b)] Use calculus to solve the problem and compare with your answer to
+part (a).
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} (b) $11.5$, $11.5$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (b) $11.5$, $11.5$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05074}}}{}{\fbox{\textbf{master 05074}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05074}}}{}{\fbox{\textbf{master 05074}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[\hfill 2.] Find two numbers whose difference is 100 and whose product
+is a minimum.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02534}}}{}{\fbox{\textbf{master 02534}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02534}}}{}{\fbox{\textbf{master 02534}}}{}%
+%EndExpansion
+
+\item[\hfill 3.] Find two positive numbers whose product is 100 and whose
+sum is a minimum.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $10$, $10$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $10$, $10$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02535}}}{}{\fbox{\textbf{master 02535}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02535}}}{}{\fbox{\textbf{master 02535}}}{}%
+%EndExpansion
+
+\item[\hfill 4.] Find a positive number such that the sum of the number and
+its reciprocal is as small as possible.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02536}}}{}{\fbox{\textbf{master 02536}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02536}}}{}{\fbox{\textbf{master 02536}}}{}%
+%EndExpansion
+
+\item[\hfill 5.] Find the dimensions of a rectangle with perimeter $100$ m
+whose area is as large as possible.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $25$ m by $25$ m}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $25$ m by $25$ m}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02537}}}{}{\fbox{\textbf{master 02537}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02537}}}{}{\fbox{\textbf{master 02537}}}{}%
+%EndExpansion
+
+\item[\hfill 6.] Find the dimensions of a rectangle with area $1000$ m$^{2}$
+whose perimeter is as small as possible.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02538}}}{}{\fbox{\textbf{master 02538}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02538}}}{}{\fbox{\textbf{master 02538}}}{}%
+%EndExpansion
+
+\item[\hfill 7.] A model used for the yield $Y$ of an agricultural crop as a
+function of the nitrogen level $N$ in the soil (measured in appropriate
+units) is\\[6pt]
+\hspace*{\fill}$Y=\dfrac{kN}{1+N^{2}}$\hspace*{\fill}\\[6pt]
+where $k$ is a positive constant. What nitrogen level gives the best yield?
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $N=1$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $N=1$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80365}}}{}{\fbox{\textbf{master 80365}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80365}}}{}{\fbox{\textbf{master 80365}}}{}%
+%EndExpansion
+
+\item[\hfill 8.] The rate (in mg $\mathrm{carbon}/\mathrm{m}^{3}/\mathrm{h}$%
+) at which photosynthesis takes place for a species of phytoplankton is
+modeled by the function\\[6pt]
+\hspace*{\fill}$P=\dfrac{100I}{I^{2}+I+4}$\hspace*{\fill}\\[6pt]
+where $I$ is the light intensity (measured in thousands of foot-candles).
+For what light intensity is $P$ a maximum?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80366}}}{}{\fbox{\textbf{master 80366}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80366}}}{}{\fbox{\textbf{master 80366}}}{}%
+%EndExpansion
+
+\item[\hfill 9.] Consider the following problem:\hspace{6pt}A farmer with
+750 ft of fencing wants to enclose a rectangular area and then divide it
+into four pens with fencing parallel to one side of the rectangle. What is
+the largest possible total area of the four pens?
+
+\begin{ExerciseList}
+\item[(a)] Draw several diagrams illustrating the situation, some with
+shallow, wide pens and some with deep, narrow pens. Find the total areas of
+these configurations. Does it appear that there is a maximum area? If so,
+estimate it.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} \newline
+%(a) \FRAME{itbpF}{2.6247in}{1.2254in}{1.1338in}{}{}{4a040701a.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 2.6247in;height 1.2254in;depth 1.1338in;original-width 6.4627in;original-height 3.0156in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename 'graphics/4a040701a.wmf';file-properties "XNPEU";}}\newline
+%}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} \newline
+(a) \FRAME{itbpF}{2.6247in}{1.2254in}{1.1338in}{}{}{4a040701a.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 2.6247in;height 1.2254in;depth 1.1338in;original-width 6.4627in;original-height 3.0156in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename 'graphics/4a040701a.wmf';file-properties "XNPEU";}}\newline
+}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02539}}}{}{\fbox{\textbf{master 02539}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02539}}}{}{\fbox{\textbf{master 02539}}}{}%
+%EndExpansion
+
+\item[(b)] Draw a diagram illustrating the general situation. Introduce
+notation and label the diagram with your symbols.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} \newline
+%(b) \FRAME{itbpF}{1.2635in}{0.7264in}{0.6028in}{}{}{4a040701b.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.2635in;height 0.7264in;depth 0.6028in;original-width 6.4627in;original-height 3.6988in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename 'graphics/4a040701b.wmf';file-properties "XNPEU";}}\newline
+%}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} \newline
+(b) \FRAME{itbpF}{1.2635in}{0.7264in}{0.6028in}{}{}{4a040701b.wmf}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 1.2635in;height 0.7264in;depth 0.6028in;original-width 6.4627in;original-height 3.6988in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename 'graphics/4a040701b.wmf';file-properties "XNPEU";}}\newline
+}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05075}}}{}{\fbox{\textbf{master 05075}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05075}}}{}{\fbox{\textbf{master 05075}}}{}%
+%EndExpansion
+
+\item[(c)] Write an expression for the total area.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} (c) $A=xy$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (c) $A=xy$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05076}}}{}{\fbox{\textbf{master 05076}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05076}}}{}{\fbox{\textbf{master 05076}}}{}%
+%EndExpansion
+
+\item[(d)] Use the given information to write an equation that relates the
+variables.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} (d) $5x+2y=750$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (d) $5x+2y=750$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05077}}}{}{\fbox{\textbf{master 05077}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05077}}}{}{\fbox{\textbf{master 05077}}}{}%
+%EndExpansion
+
+\item[(e)] Use part (d) to write the total area as a function of one
+variable.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (e)~$A(x)=375x-\tfrac{5}{2}x^{2}$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (e)~$A(x)=375x-\tfrac{5}{2}x^{2}$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05078}}}{}{\fbox{\textbf{master 05078}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05078}}}{}{\fbox{\textbf{master 05078}}}{}%
+%EndExpansion
+
+\item[(f)] Finish solving the problem and compare the answer with your
+estimate in part (a).
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (f) $14$,$062.5$ ft$^{2}$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (f) $14$,$062.5$ ft$^{2}$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05079}}}{}{\fbox{\textbf{master 05079}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05079}}}{}{\fbox{\textbf{master 05079}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[\hfill 10.] Consider the following problem:\hspace{6pt}A box with an
+open top is to be constructed from a square piece of cardboard, $3$ ft wide,
+by cutting out a square from each of the four corners and bending up the
+sides. Find the largest volume that such a box can have.
+
+\begin{ExerciseList}
+\item[(a)] Draw several diagrams to illustrate the situation, some short
+boxes with large bases and some tall boxes with small bases. Find the
+volumes of several such boxes. Does it appear that there is a maximum
+volume? If so, estimate it.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02540}}}{}{\fbox{\textbf{master 02540}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02540}}}{}{\fbox{\textbf{master 02540}}}{}%
+%EndExpansion
+
+\item[(b)] Draw a diagram illustrating the general situation. Introduce
+notation and label the diagram with your symbols.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05080}}}{}{\fbox{\textbf{master 05080}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05080}}}{}{\fbox{\textbf{master 05080}}}{}%
+%EndExpansion
+
+\item[(c)] Write an expression for the volume.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05081}}}{}{\fbox{\textbf{master 05081}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05081}}}{}{\fbox{\textbf{master 05081}}}{}%
+%EndExpansion
+
+\item[(d)] Use the given information to write an equation that relates the
+variables.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05082}}}{}{\fbox{\textbf{master 05082}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05082}}}{}{\fbox{\textbf{master 05082}}}{}%
+%EndExpansion
+
+\item[(e)] Use part (d) to write the volume as a function of one \linebreak
+variable.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05083}}}{}{\fbox{\textbf{master 05083}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05083}}}{}{\fbox{\textbf{master 05083}}}{}%
+%EndExpansion
+
+\item[(f)] Finish solving the problem and compare the answer with your
+estimate in part (a).
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05084}}}{}{\fbox{\textbf{master 05084}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05084}}}{}{\fbox{\textbf{master 05084}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[\hfill 11.] A farmer wants to fence an area of 1.5 million square feet
+in a rectangular field and then divide it in half with a fence parallel to
+one of the sides of the rectangle. How can he do this so as to minimize the
+cost of the fence?
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} 1000 ft by 1500 ft}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} 1000 ft by 1500 ft}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02541}}}{}{\fbox{\textbf{master 02541}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02541}}}{}{\fbox{\textbf{master 02541}}}{}%
+%EndExpansion
+
+\item[\hfill 12.] A box with a square base and open top must have a volume
+of 32,000 $\mathrm{cm}^{3}$. Find the dimensions of the box that minimize
+the amount of material used.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02542}}}{}{\fbox{\textbf{master 02542}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02542}}}{}{\fbox{\textbf{master 02542}}}{}%
+%EndExpansion
+
+\item[{\hfill {\protect\fbox{\hspace{-2pt}13.\hspace{-2pt}}}}] If 1200 $%
+\mathrm{cm}^{2}$ of material is available to make a box with a square base
+and an open top, find the largest possible volume of the box.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} 4000 cm$^{3}$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} 4000 cm$^{3}$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02543}}}{}{\fbox{\textbf{master 02543}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02543}}}{}{\fbox{\textbf{master 02543}}}{}%
+%EndExpansion
+
+\item[\hfill 14.] A rectangular storage container with an open top is to
+have a volume of 10 $\mathrm{m}^{3}$. The length of its base is twice the
+width. Material for the base costs $\$10$ per square meter. Material for the
+sides costs $\$6$ per square meter. Find the cost of materials for the
+cheapest such container.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02544}}}{}{\fbox{\textbf{master 02544}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02544}}}{}{\fbox{\textbf{master 02544}}}{}%
+%EndExpansion
+
+\item[\hfill 15.] Do Exercise 14 assuming the container has a lid that is
+made from the same material as the sides.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} \$191.28}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} \$191.28}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02545}}}{}{\fbox{\textbf{master 02545}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02545}}}{}{\fbox{\textbf{master 02545}}}{}%
+%EndExpansion
+
+\item[{\hfill {\protect\fbox{\hspace{-2pt}16.\hspace{-2pt}}}}] 
+
+\begin{ExerciseList}
+\item[(a)] Show that of all the rectangles with a given area, the one with
+smallest perimeter is a square.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02546}}}{}{\fbox{\textbf{master 02546}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02546}}}{}{\fbox{\textbf{master 02546}}}{}%
+%EndExpansion
+
+\item[(b)] Show that of all the rectangles with a given perimeter, the one
+with greatest area is a square.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05085}}}{}{\fbox{\textbf{master 05085}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05085}}}{}{\fbox{\textbf{master 05085}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[{\hfill {\protect\fbox{\hspace{-2pt}17.\hspace{-2pt}}}}] Find the point
+on the line $y=4x+7$ that is closest to the origin.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $\left( -\tfrac{28}{17},\tfrac{7}{17}\right) $}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\left( -\tfrac{28}{17},\tfrac{7}{17}\right) $}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02547}}}{}{\fbox{\textbf{master 02547}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02547}}}{}{\fbox{\textbf{master 02547}}}{}%
+%EndExpansion
+
+\item[\hfill 18.] Find the point on the line $6x+y=9$ that is closest to the
+point $(-3,1)$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02548}}}{}{\fbox{\textbf{master 02548}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02548}}}{}{\fbox{\textbf{master 02548}}}{}%
+%EndExpansion
+
+\item[\hfill 19.] Find the points on the ellipse $4x^{2}+y^{2}=4$ that are
+farthest away from the point $(1,0)$.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $\left( -\tfrac{1}{3},\pm \tfrac{4}{3}\sqrt{2}\right) $}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\left( -\tfrac{1}{3},\pm \tfrac{4}{3}\sqrt{2}\right) $}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02549}}}{}{\fbox{\textbf{master 02549}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02549}}}{}{\fbox{\textbf{master 02549}}}{}%
+%EndExpansion
+
+\item[\hfill 20.] 
+%TCIMACRO{\TeXButton{GCALCX}{\GCALCX}}%
+%BeginExpansion
+\GCALCX%
+%EndExpansion
+Find, correct to two decimal places, the coordinates of the point on the
+curve $y=\tan x$ that is closest to the point $(1,1)$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02550}}}{}{\fbox{\textbf{master 02550}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02550}}}{}{\fbox{\textbf{master 02550}}}{}%
+%EndExpansion
+
+\item[\hfill 21.] Find the dimensions of the rectangle of largest area that
+can be inscribed in a circle of radius $r$.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} Square, side $\sqrt{2}\,r$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} Square, side $\sqrt{2}\,r$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02551}}}{}{\fbox{\textbf{master 02551}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02551}}}{}{\fbox{\textbf{master 02551}}}{}%
+%EndExpansion
+
+\item[{\hfill {\protect\fbox{\hspace{-2pt}22.\hspace{-2pt}}}}] Find the area
+of the largest rectangle that can be inscribed in the ellipse $%
+x^{2}/a^{2}+y^{2}/b^{2}=1$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02552}}}{}{\fbox{\textbf{master 02552}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02552}}}{}{\fbox{\textbf{master 02552}}}{}%
+%EndExpansion
+
+\item[\hfill 23.] Find the dimensions of the rectangle of largest area that
+can be inscribed in an equilateral triangle of side $L$ if one side of the
+rectangle lies on the base of the triangle.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $L/2$, $\sqrt{3}L/4$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $L/2$, $\sqrt{3}L/4$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02553}}}{}{\fbox{\textbf{master 02553}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02553}}}{}{\fbox{\textbf{master 02553}}}{}%
+%EndExpansion
+
+\item[\hfill 24.] Find the dimensions of the rectangle of largest area that
+has its base on the $x$-axis and its other two vertices above the $x$-axis
+and lying on the parabola $y=8-x^{2}$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02554}}}{}{\fbox{\textbf{master 02554}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02554}}}{}{\fbox{\textbf{master 02554}}}{}%
+%EndExpansion
+
+\item[\hfill 25.] Find the dimensions of the isosceles triangle of largest
+area that can be inscribed in a circle of radius $r$.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} Base $\sqrt{3}$\thinspace $r$, height $3r/2$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} Base $\sqrt{3}$\thinspace $r$, height $3r/2$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02555}}}{}{\fbox{\textbf{master 02555}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02555}}}{}{\fbox{\textbf{master 02555}}}{}%
+%EndExpansion
+
+\item[\hfill 26.] Find the area of the largest rectangle that can be
+inscribed in a right triangle with legs of lengths 3 cm and 4 cm if two
+sides of the rectangle lie along the legs.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02556}}}{}{\fbox{\textbf{master 02556}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02556}}}{}{\fbox{\textbf{master 02556}}}{}%
+%EndExpansion
+
+\item[\hfill 27.] A right circular cylinder is inscribed in a sphere of
+radius $r$. Find the largest possible volume of such a cylinder.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $4\pi r^{3}/\left( 3\sqrt{3}\right) $}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $4\pi r^{3}/\left( 3\sqrt{3}\right) $}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02557}}}{}{\fbox{\textbf{master 02557}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02557}}}{}{\fbox{\textbf{master 02557}}}{}%
+%EndExpansion
+
+\item[\hfill 28.] A right circular cylinder is inscribed in a cone with
+height $h$ and base radius $r$. Find the largest possible volume of such a
+cylinder.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02558}}}{}{\fbox{\textbf{master 02558}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02558}}}{}{\fbox{\textbf{master 02558}}}{}%
+%EndExpansion
+
+\item[\hfill 29.] A right circular cylinder is inscribed in a sphere of
+radius $r$. Find the largest possible surface area of such a cylinder.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $\pi r^{2}\left( 1+\sqrt{5}\right) $}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\pi r^{2}\left( 1+\sqrt{5}\right) $}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02560}}}{}{\fbox{\textbf{master 02560}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02560}}}{}{\fbox{\textbf{master 02560}}}{}%
+%EndExpansion
+
+\item[{\hfill {\protect\fbox{\hspace{-2pt}30.\hspace{-2pt}}}}] A Norman
+window has the shape of a rectangle surmounted by a semicircle. (Thus the
+diameter of the semicircle is equal to the width of the rectangle. See
+Exercise 56 on page~%
+%TCIMACRO{\TeXButton{23}{23}}%
+%BeginExpansion
+23%
+%EndExpansion
+.) If the perimeter of the window is 30 ft, find the dimensions of the
+window so that the greatest possible amount of light is admitted.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02561}}}{}{\fbox{\textbf{master 02561}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02561}}}{}{\fbox{\textbf{master 02561}}}{}%
+%EndExpansion
+
+\item[\hfill 31.] The top and bottom margins of a poster are each 6 cm and
+the side margins are each 4 cm. If the area of printed material on the
+poster is fixed at 384 $\mathrm{cm}^{2}$, find the dimensions of the poster
+with the smallest area.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} 24 cm, 36 cm}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} 24 cm, 36 cm}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02562}}}{}{\fbox{\textbf{master 02562}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02562}}}{}{\fbox{\textbf{master 02562}}}{}%
+%EndExpansion
+
+\item[\hfill 32.] A poster is to have an area of 180 $\mathrm{in}^{2}$ with
+1-inch margins at the bottom and sides and a 2-inch margin at the top. What
+dimensions will give the largest printed area?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02563}}}{}{\fbox{\textbf{master 02563}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02563}}}{}{\fbox{\textbf{master 02563}}}{}%
+%EndExpansion
+
+\item[{\hfill {\protect\fbox{\hspace{-2pt}33.\hspace{-2pt}}}}] A piece of
+wire 10 m long is cut into two pieces. One piece is bent into a square and
+the other is bent into an equilateral tri-\linebreak angle. How should the
+wire be cut so that the total area enclosed is \QTR{PartLetter}{(a)} a
+maximum? \QTR{PartLetter}{(b)} A minimum?
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (a) Use all of the wire for the square\quad \newline
+%(b) $40\sqrt{3}/\left( 9+4\sqrt{3}\right) $ m for the square}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (a) Use all of the wire for the square\quad \newline
+(b) $40\sqrt{3}/\left( 9+4\sqrt{3}\right) $ m for the square}{}%
+%EndExpansion
+
+%
+%TECHARTS_DUMMY_BEGIN_TAG
+%TCIMACRO{\hyperref{(a) = }{}{(a) = }{}}%
+%BeginExpansion
+\msihyperref{(a) = }{}{(a) = }{}%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02564}}\quad }{}{\fbox{\textbf{master 02564}}\quad }{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02564}}\quad }{}{\fbox{\textbf{master 02564}}\quad }{}%
+%EndExpansion
+%TCIMACRO{\hyperref{(b) = }{}{(b) = }{}}%
+%BeginExpansion
+\msihyperref{(b) = }{}{(b) = }{}%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05086}}}{}{\fbox{\textbf{master 05086}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05086}}}{}{\fbox{\textbf{master 05086}}}{}%
+%EndExpansion
+%
+%
+%
+%TECHARTS_DUMMY_END_TAG
+
+\item[\hfill 34.] Answer Exercise 33 if one piece is bent into a square and
+the other into a circle.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02565}}}{}{\fbox{\textbf{master 02565}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02565}}}{}{\fbox{\textbf{master 02565}}}{}%
+%EndExpansion
+
+\item[\hfill 35.] A cylindrical can without a top is made to contain $V$ $%
+\mathrm{cm}^{3}$ of liquid. Find the dimensions that will minimize the cost
+of the metal to make the can.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $\mathrm{Height}=\mathrm{radius}=\sqrt[3]{V/\pi }$ cm}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\mathrm{Height}=\mathrm{radius}=\sqrt[3]{V/\pi }$ cm}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02566}}}{}{\fbox{\textbf{master 02566}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02566}}}{}{\fbox{\textbf{master 02566}}}{}%
+%EndExpansion
+
+\item[\hfill 36.] A fence 8 ft tall runs parallel to a tall building at a
+distance of 4 ft from the building. What is the length of the shortest
+ladder that will reach from the ground over the fence to the wall of the
+building?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02567}}}{}{\fbox{\textbf{master 02567}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02567}}}{}{\fbox{\textbf{master 02567}}}{}%
+%EndExpansion
+
+\item[\hfill 37.] A cone-shaped drinking cup is made from a circular piece
+of paper of radius $R$ by cutting out a sector and joining the edges $CA$
+and $CB$. Find the maximum capacity of such a cup.\\[4pt]
+\hspace*{\fill}\FRAME{itbpF}{1.0888in}{1.126in}{0in}{}{}{4e0407x35.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.0888in;height 1.126in;depth
+0in;original-width 1.1805in;original-height 1.222in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/4e0407x35.wmf';file-properties "XNPEU";}}\hspace*{\fill}
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $V=2\pi R^{3}/\left( 9\sqrt{3}\right) $}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $V=2\pi R^{3}/\left( 9\sqrt{3}\right) $}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02568}}}{}{\fbox{\textbf{master 02568}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02568}}}{}{\fbox{\textbf{master 02568}}}{}%
+%EndExpansion
+
+\item[\hfill 38.] A cone-shaped paper drinking cup is to be made to hold 27
+cm$^{3}$ of water. Find the height and radius of the cup that will use the
+smallest amount of paper.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02569}}}{}{\fbox{\textbf{master 02569}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02569}}}{}{\fbox{\textbf{master 02569}}}{}%
+%EndExpansion
+
+\item[\hfill 39.] A cone with height $h$ is inscribed in a larger cone with
+height $H$ so that its vertex is at the center of the base of the larger
+cone. Show that the inner cone has maximum volume when $h=\frac{1}{3}H$.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} \textit{No text answer}}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} \textit{No text answer}}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02570}}}{}{\fbox{\textbf{master 02570}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02570}}}{}{\fbox{\textbf{master 02570}}}{}%
+%EndExpansion
+
+\item[\hfill 40.] An object with weight $W$ is dragged along a horizontal
+plane by a force acting along a rope attached to the object. If the rope
+makes an angle $\theta $ with the plane, then the magnitude of the force is 
+\\[6pt]
+\hspace*{\fill}$F=\dfrac{\mu W}{\mu \,\sin \theta +\cos \theta }$\hspace*{%
+\fill}\\[6pt]
+where $\mu $ is a constant called the coefficient of friction. For what
+value of $\theta $ is $F$ smallest?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80367}}}{}{\fbox{\textbf{master 80367}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80367}}}{}{\fbox{\textbf{master 80367}}}{}%
+%EndExpansion
+
+\item[\hfill 41.] If a resistor of $R$ ohms is connected across a battery of 
+$E$ volts with internal resistance $r$ ohms, then the power (in watts) in
+the external resistor is\\[6pt]
+\hspace*{\fill}$P=\dfrac{E^{2}R}{(R+r)^{2}}$\hspace*{\fill}\\[6pt]
+If $E$ and $r$ are fixed but $R$ varies, what is the maximum value of the
+power?
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $E^{2}/(4r)$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $E^{2}/(4r)$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 30196}}}{}{\fbox{\textbf{master 30196}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 30196}}}{}{\fbox{\textbf{master 30196}}}{}%
+%EndExpansion
+
+\item[\hfill 42.] For a fish swimming at a speed $v$ relative to the water,
+the energy expenditure per unit time is proportional to $v^{3}$. It is
+believed that migrating fish try to minimize the total energy required to
+swim a fixed distance. If the fish are swimming against a current $u$ $(u<v)$%
+, then the time required to swim a distance $L$ is $L/(v-u)$ and the total
+energy $E$ required to swim the distance is given by\\[6pt]
+\hspace*{\fill}$E(v)=av^{3}\cdot \dfrac{L}{v-u}$\hspace*{\fill}\\[6pt]
+where $a$ is the proportionality constant.
+
+\begin{ExerciseList}
+\item[(a)] Determine the value of $v$ that minimizes $E$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02571}}}{}{\fbox{\textbf{master 02571}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02571}}}{}{\fbox{\textbf{master 02571}}}{}%
+%EndExpansion
+
+\item[(b)] Sketch the graph of $E$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05087}}}{}{\fbox{\textbf{master 05087}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05087}}}{}{\fbox{\textbf{master 05087}}}{}%
+%EndExpansion
+\vspace{6pt}
+\end{ExerciseList}
+
+\textit{Note:}\quad This result has been verified experimentally; migrating
+fish swim against a current at a speed $50\%$ greater than the current speed.
+
+\item[\hfill 43.] In a beehive, each cell is a regular hexagonal prism, open
+at one end with a trihedral angle at the other end as in the figure. It is
+believed that bees form their cells in such a way as to minimize the surface
+area for a given volume, thus using the least amount of wax in cell
+construction. Examination of these cells has shown that the measure of the
+apex angle $\theta $ is amazingly consistent. Based on the geometry of the
+cell, it can be shown that the surface area $S$ is given by\\[6pt]
+\hspace*{\fill}$S=6sh-\tfrac{3}{2}s^{2}\cot \theta +\left( 3s^{2}\sqrt{3}%
+/2\right) \csc \theta $\hspace*{\fill}\\[6pt]
+where $s$, the length of the sides of the hexagon, and $h$, the height, are
+constants.
+
+\begin{ExerciseList}
+\item[(a)] Calculate $dS/d\theta $.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $\tfrac{3}{2}s^{2}\,\csc \theta \left( \csc \theta -\sqrt{3}\cot \theta \right) $}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\tfrac{3}{2}s^{2}\,\csc \theta \left( \csc \theta -\sqrt{3}\cot \theta \right) $}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02572}}}{}{\fbox{\textbf{master 02572}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02572}}}{}{\fbox{\textbf{master 02572}}}{}%
+%EndExpansion
+
+\item[(b)] What angle should the bees prefer?
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $\cos ^{-1}\left( 1/\sqrt{3}\right) \approx 55\,^{\circ }$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\cos ^{-1}\left( 1/\sqrt{3}\right) \approx 55\,^{\circ }$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05088}}}{}{\fbox{\textbf{master 05088}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05088}}}{}{\fbox{\textbf{master 05088}}}{}%
+%EndExpansion
+
+\item[(c)] Determine the minimum surface area of the cell (in terms of $s$
+and $h$).
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $6s\left[ h+s/\left( 2\sqrt{2}\right) \right] $}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $6s\left[ h+s/\left( 2\sqrt{2}\right) \right] $}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05089}}}{}{\fbox{\textbf{master 05089}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05089}}}{}{\fbox{\textbf{master 05089}}}{}%
+%EndExpansion
+\vspace{4pt}
+\end{ExerciseList}
+
+\textit{Note:}\quad Actual measurements of the angle $\theta $ in beehives
+have been made, and the measures of these angles seldom differ from the
+calculated value by more than $2\,^{\circ }$.\\[6pt]
+\hspace*{\fill}\FRAME{itbpF}{1.3335in}{1.7478in}{0in}{}{}{4e0407x37.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.3335in;height 1.7478in;depth
+0in;original-width 1.3335in;original-height 1.7478in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/4e0407x37.wmf';file-properties "XNPEU";}}\hspace*{\fill}
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (a) $\tfrac{3}{2}s^{2}\csc \,\theta \left( \csc \,\theta -\sqrt{3}\cot \,\theta \right) $\quad \newline
+%(b) $\cos ^{-1}\left( 1/\sqrt{3}\right) \approx 55\,^{\circ }$\quad (c) $6s\left[ h+s/\left( 2\sqrt{2}\right) \right] $}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (a) $\tfrac{3}{2}s^{2}\csc \,\theta \left( \csc \,\theta -\sqrt{3}\cot \,\theta \right) $\quad \newline
+(b) $\cos ^{-1}\left( 1/\sqrt{3}\right) \approx 55\,^{\circ }$\quad (c) $6s\left[ h+s/\left( 2\sqrt{2}\right) \right] $}{}%
+%EndExpansion
+
+\item[\hfill 44.] A boat leaves a dock at 2:00 \textsc{pm\thinspace }and
+travels due south at a speed of 20 km$/$h. Another boat has been heading due
+east at 15 km$/$h and reaches the same dock at 3:00 \textsc{pm}. At what
+time were the two boats closest together?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02573}}}{}{\fbox{\textbf{master 02573}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02573}}}{}{\fbox{\textbf{master 02573}}}{}%
+%EndExpansion
+
+\item[\hfill 45.] Solve the problem in Example 4 if the river is 5 km wide
+and point $B$ is only 5 km downstream from $A$.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} Row directly to $B$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} Row directly to $B$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02574}}}{}{\fbox{\textbf{master 02574}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02574}}}{}{\fbox{\textbf{master 02574}}}{}%
+%EndExpansion
+%TCIMACRO{\TeXButton{longpage}{\enlargethispage{12pt}}}%
+%BeginExpansion
+\enlargethispage{12pt}%
+%EndExpansion
+
+\item[\hfill 46.] A woman at a point $A$ on the shore of a circular lake
+with radius 2 mi wants to arrive at the point $C$ diametrically opposite $A$
+on the other side of the lake in the shortest possible time. She can walk at
+the rate of 4 mi$/$h and row a boat at 2 mi$/$h. How should she proceed?\\[%
+6pt]
+\hspace*{\fill}\FRAME{itbpF}{1.4477in}{1.2306in}{0in}{}{}{4e0407x40.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.4477in;height 1.2306in;depth
+0in;original-width 1.5281in;original-height 1.2938in;cropleft "0";croptop
+"1";cropright "0.9986";cropbottom "0";filename
+'graphics/4e0407x40.wmf';file-properties "XNPEU";}}\hspace*{\fill}
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02575}}}{}{\fbox{\textbf{master 02575}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02575}}}{}{\fbox{\textbf{master 02575}}}{}%
+%EndExpansion
+
+\item[\hfill 47.] An oil refinery is located on the north bank of a straight
+river that is 2 km wide. A pipeline is to be constructed from the refinery
+to storage tanks located on the south bank of the river 6 km east of the
+refinery. The cost of laying pipe is \$400,000$/$km over land to a point $P$
+on the north bank and \$800,000$/$km under the river to the tanks. To
+minimize the cost of the pipeline, where should $P$ be located?
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $\approx 4.85$ km east of the refinery}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\approx 4.85$ km east of the refinery}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80368}}}{}{\fbox{\textbf{master 80368}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80368}}}{}{\fbox{\textbf{master 80368}}}{}%
+%EndExpansion
+
+\item[\hfill 48.] 
+%TCIMACRO{\TeXButton{GCALCX}{\GCALCX}}%
+%BeginExpansion
+\GCALCX%
+%EndExpansion
+Suppose the refinery in Exercise 47 is located 1 km north of the river.
+Where should $P$ be located?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80369}}}{}{\fbox{\textbf{master 80369}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80369}}}{}{\fbox{\textbf{master 80369}}}{}%
+%EndExpansion
+
+\item[{\hfill {\protect\fbox{\hspace{-2pt}49.\hspace{-2pt}}}}] The
+illumination of an object by a light source is directly proportional to the
+strength of the source and inversely proportional to the square of the
+distance from the source. If two light sources, one three times as strong as
+the other, are placed 10 ft apart, where should an object be placed on the
+line between the sources so as to receive the least illumination?
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $10\sqrt[3]{3}/\left( 1+\sqrt[3]{3}\right) $ ft from the stronger source}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $10\sqrt[3]{3}/\left( 1+\sqrt[3]{3}\right) $ ft from the stronger source}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02576}}}{}{\fbox{\textbf{master 02576}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02576}}}{}{\fbox{\textbf{master 02576}}}{}%
+%EndExpansion
+
+\item[{\hfill {\protect\fbox{\hspace{-2pt}50.\hspace{-2pt}}}}] Find an
+equation of the line through the point $(3,5)$ that cuts off the least area
+from the first quadrant.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02577}}}{}{\fbox{\textbf{master 02577}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02577}}}{}{\fbox{\textbf{master 02577}}}{}%
+%EndExpansion
+
+\item[\hfill 51.] Let $a$ and $b$ be positive numbers. Find the length of
+the shortest line segment that is cut off by the first quadrant and passes
+through the point $(a,b)$.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $\left( a^{2/3}+b^{2/3}\right) ^{3/2}$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\left( a^{2/3}+b^{2/3}\right) ^{3/2}$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02578}}}{}{\fbox{\textbf{master 02578}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02578}}}{}{\fbox{\textbf{master 02578}}}{}%
+%EndExpansion
+
+\item[\hfill 52.] At which points on the curve $y=1+40x^{3}-3x^{5}$ does the
+tangent line have the largest slope?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02579}}}{}{\fbox{\textbf{master 02579}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02579}}}{}{\fbox{\textbf{master 02579}}}{}%
+%EndExpansion
+
+\item[\hfill 53.] 
+
+\begin{ExerciseList}
+\item[(a)] If $C(x)$ is the cost of producing $x$ units of a commodity, then
+the \textbf{average cost} per unit is $c(x)=C(x)/x$. Show that if the
+average cost is a minimum, then the marginal cost equals the average cost.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 40579}}}{}{\fbox{\textbf{master 40579}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 40579}}}{}{\fbox{\textbf{master 40579}}}{}%
+%EndExpansion
+
+\item[(b)] If $C(x)=16$,$000+200x+4x^{3/2}$, in dollars, find{\small \ }(i)\
+the cost, average cost, and marginal cost at a production level of 1000
+units; (ii)\ the production level that will minimize the average cost; and
+(iii)\ the minimum average cost.
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (b) (i) $\$342$,$491$; $\$342/$unit; $\$390/$unit\quad \newline
+%(ii) 400\quad (iii) $\$320/$unit}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (b) (i) $\$342$,$491$; $\$342/$unit; $\$390/$unit\quad \newline
+(ii) 400\quad (iii) $\$320/$unit}{}%
+%EndExpansion
+
+%
+%TECHARTS_DUMMY_BEGIN_TAG
+%TCIMACRO{\hyperref{(i) = }{}{(i) = }{}}%
+%BeginExpansion
+\msihyperref{(i) = }{}{(i) = }{}%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02608}}\qquad }{}{\fbox{\textbf{master 02608}}\qquad }{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02608}}\qquad }{}{\fbox{\textbf{master 02608}}\qquad }{}%
+%EndExpansion
+%TCIMACRO{\hyperref{(ii) = }{}{(ii) = }{}}%
+%BeginExpansion
+\msihyperref{(ii) = }{}{(ii) = }{}%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05106}}}{}{\fbox{\textbf{master 05106}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05106}}}{}{\fbox{\textbf{master 05106}}}{}%
+%EndExpansion
+
+%TCIMACRO{\hyperref{(iii) = }{}{(iii) = }{}}%
+%BeginExpansion
+\msihyperref{(iii) = }{}{(iii) = }{}%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05107}}}{}{\fbox{\textbf{master 05107}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05107}}}{}{\fbox{\textbf{master 05107}}}{}%
+%EndExpansion
+%
+%
+%
+%TECHARTS_DUMMY_END_TAG
+
+\item[\hfill 54.] 
+
+\begin{ExerciseList}
+\item[(a)] Show that if the profit $P(x)$ is a maximum, then the marginal
+revenue equals the marginal cost.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 70077}}}{}{\fbox{\textbf{master 70077}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 70077}}}{}{\fbox{\textbf{master 70077}}}{}%
+%EndExpansion
+
+\item[(b)] If $C(x)=16$,$000+500x-1.6x^{2}+0.004x^{3}$ is the cost function
+and $p(x)=1700-7x$ is the demand function, find the production level that
+will maximize profit.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 70112}}}{}{\fbox{\textbf{master 70112}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 70112}}}{}{\fbox{\textbf{master 70112}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[{\hfill {\protect\fbox{\hspace{-2pt}55.\hspace{-2pt}}}}] A baseball
+team plays in a stadium that holds 55,000 spectators. With ticket prices at
+\$10, the average attendance had been 27,000. When ticket prices were
+lowered to \$8, the average attendance rose to 33,000.
+
+\begin{ExerciseList}
+\item[(a)] Find the demand function, assuming that it is linear.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (a) $p\left( x\right) =19-\tfrac{1}{3000}x$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (a) $p\left( x\right) =19-\tfrac{1}{3000}x$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02621}}}{}{\fbox{\textbf{master 02621}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02621}}}{}{\fbox{\textbf{master 02621}}}{}%
+%EndExpansion
+
+\item[(b)] How should ticket prices be set to maximize revenue?
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} (b) \$9.50}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (b) \$9.50}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05118}}}{}{\fbox{\textbf{master 05118}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05118}}}{}{\fbox{\textbf{master 05118}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[\hfill 56.] During the summer months Terry makes and sells necklaces
+on the beach. Last summer he sold the necklaces for \$10 each and his sales
+averaged 20 per day. When he increased the price by \$1, he found that the
+average decreased by two sales per day.
+
+\begin{ExerciseList}
+\item[(a)] Find the demand function, assuming that it is linear.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02622}}}{}{\fbox{\textbf{master 02622}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02622}}}{}{\fbox{\textbf{master 02622}}}{}%
+%EndExpansion
+
+\item[(b)] If the material for each necklace costs Terry \$6, what should
+the selling price be to maximize his profit?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05119}}}{}{\fbox{\textbf{master 05119}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05119}}}{}{\fbox{\textbf{master 05119}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[\hfill 57.] A manufacturer has been selling 1000 television sets a
+week at \$450 each. A market survey indicates that for each \$10 rebate
+offered to the buyer, the number of sets sold will increase by 100 per week.
+
+\begin{ExerciseList}
+\item[(a)] Find the demand function.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (a) $p\left( x\right) =550-\tfrac{1}{10}x$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (a) $p\left( x\right) =550-\tfrac{1}{10}x$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02623}}}{}{\fbox{\textbf{master 02623}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02623}}}{}{\fbox{\textbf{master 02623}}}{}%
+%EndExpansion
+
+\item[(b)] How large a rebate should the company offer the buyer in order to
+maximize its revenue?
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} (b) \$175}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (b) \$175}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05120}}}{}{\fbox{\textbf{master 05120}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05120}}}{}{\fbox{\textbf{master 05120}}}{}%
+%EndExpansion
+
+\item[(c)] If its weekly cost function is $C(x)=68$,$000+150x$, how should
+the manufacturer set the size of the rebate in order to maximize its profit?
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} (c) \$100}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (c) \$100}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05121}}}{}{\fbox{\textbf{master 05121}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05121}}}{}{\fbox{\textbf{master 05121}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[\hfill 58.] The manager of a 100-unit apartment complex knows from
+experience that all units will be occupied if the rent is \$800 per month. A
+market survey suggests that, on average, one additional unit will remain
+vacant for each \$10 increase in rent. What rent should the manager charge
+to maximize revenue?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02624}}}{}{\fbox{\textbf{master 02624}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02624}}}{}{\fbox{\textbf{master 02624}}}{}%
+%EndExpansion
+
+\item[\hfill 59.] Show that of all the isosceles triangles with a given
+perimeter, the one with the greatest area is equilateral.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} \textit{No answer}}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} \textit{No answer}}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02580}}}{}{\fbox{\textbf{master 02580}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02580}}}{}{\fbox{\textbf{master 02580}}}{}%
+%EndExpansion
+
+\item[\hfill 60.] 
+%TCIMACRO{\TeXButton{CASX}{\CASX}}%
+%BeginExpansion
+\CASX%
+%EndExpansion
+The frame for a kite is to be made from six pieces of wood. The four
+exterior pieces have been cut with the lengths indicated in the figure. To
+maximize the area of the kite, how long should the diagonal pieces be?\\[6pt]
+\hspace*{\fill}\FRAME{itbpF}{1.5835in}{1.0257in}{0in}{}{}{5et0407x48.ai}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.5835in;height 1.0257in;depth
+0in;original-width 1.5835in;original-height 1.0257in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/5et0407x48.ai';file-properties "XNPEU";}}\hspace*{\fill}
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02581}}}{}{\fbox{\textbf{master 02581}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02581}}}{}{\fbox{\textbf{master 02581}}}{}%
+%EndExpansion
+
+\item[\hfill 61.] 
+%TCIMACRO{\TeXButton{GCALCX}{\GCALCX}}%
+%BeginExpansion
+\GCALCX%
+%EndExpansion
+A point $P$ needs to be located somewhere on the line $AD$ so that the total
+length $L$ of cables linking $P$ to the points $A$, $B$, and $C$ is
+minimized (see the figure). Express $L$ as a function of $x=\left\vert
+AP\right\vert $ and use the graphs of $L$ and $dL/dx$ to estimate the
+minimum value.\\[6pt]
+\hspace*{\fill}\FRAME{itbpF}{1.6527in}{1.4589in}{0in}{}{}{4e0407x45.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.6527in;height 1.4589in;depth
+0in;original-width 1.6527in;original-height 1.4589in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/4e0407x45.wmf';file-properties "XNPEU";}}\hspace*{\fill}
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $9.35$ m}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $9.35$ m}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02582}}}{}{\fbox{\textbf{master 02582}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02582}}}{}{\fbox{\textbf{master 02582}}}{}%
+%EndExpansion
+
+\item[\hfill 62.] The graph shows the fuel consumption $c$ of a car
+(measured in gallons per hour) as a function of the speed $v$ of the car. At
+very low speeds the engine runs inefficiently, so initially $c$ decreases as
+the speed increases. But at high speeds the fuel consumption increases. You
+can see that $c(v)$ is minimized for this car when $v\approx 30$ mi$/$h.
+However, for fuel efficiency, what must be minimized is not the consumption
+in gallons per hour but rather the fuel consumption in gallons \textit{per
+mile.} Let's call this consumption $G$. Using the graph, estimate the speed
+at which $G$ has its minimum value.\\[6pt]
+\hspace*{\fill}\FRAME{itbpF}{1.5558in}{1.1416in}{0in}{}{}{4e0407x46.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.5558in;height 1.1416in;depth
+0in;original-width 1.5558in;original-height 1.1416in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/4e0407x46.wmf';file-properties "XNPEU";}}\hspace*{\fill}
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02583}}}{}{\fbox{\textbf{master 02583}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02583}}}{}{\fbox{\textbf{master 02583}}}{}%
+%EndExpansion
+
+\item[{\hfill {\protect\fbox{\hspace{-2pt}63.\hspace{-2pt}}}}] Let $v_{1}$ be
+the velocity of light in air and $v_{2}$ the velocity of light in water.
+According to Fermat's Principle, a ray of light will travel from a point $A$
+in the air to a point $B$ in the water by a path $ACB$ that minimizes the
+time taken. Show that\\[6pt]
+\hspace*{\fill}$\dfrac{\sin \theta _{1}}{\sin \theta _{2}}=\dfrac{v_{1}}{%
+v_{2}}$\hspace*{\fill}\\[6pt]
+where $\theta _{1}$ (the angle of incidence) and $\theta _{2}$ (the angle of
+refraction) are as shown. This equation is known as Snell's Law.\\[6pt]
+\hspace*{\fill}\FRAME{itbpF}{2.0003in}{1.4053in}{0in}{}{}{4e0407x47.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 2.0003in;height 1.4053in;depth
+0in;original-width 2.0003in;original-height 1.4053in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/4e0407x47.wmf';file-properties "XNPEU";}}\hspace*{\fill}
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} \textit{no answer}}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} \textit{no answer}}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02584}}}{}{\fbox{\textbf{master 02584}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02584}}}{}{\fbox{\textbf{master 02584}}}{}%
+%EndExpansion
+
+\item[\hfill 64.] Two vertical poles $PQ$ and $ST$ are secured by a rope $%
+PRS $ going from the top of the first pole to a point $R$ on the ground
+between the poles and then to the top of the second pole as in the figure.
+Show that the shortest length of such a rope occurs when $\theta _{1}=\theta
+_{2}$.\\[6pt]
+\hspace*{\fill}\FRAME{itbpF}{2.1525in}{1.4607in}{0in}{}{}{4e0407x48.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 2.1525in;height 1.4607in;depth
+0in;original-width 2.1525in;original-height 1.4607in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/4e0407x48.wmf';file-properties "XNPEU";}}\hspace*{\fill}
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02585}}}{}{\fbox{\textbf{master 02585}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02585}}}{}{\fbox{\textbf{master 02585}}}{}%
+%EndExpansion
+
+\item[\hfill 65.] The upper right-hand corner of a piece of paper, 12 in. by
+8 in., as in the figure, is folded over to the bottom edge. How would you
+fold it so as to minimize the length of the fold? In other words, how would
+you choose $x$ to minimize $y$?\\[6pt]
+\hspace*{\fill}\FRAME{itbpF}{1.8706in}{1.241in}{0in}{}{}{5et0407x53.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.8706in;height 1.241in;depth
+0in;original-width 1.8334in;original-height 1.2064in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/5et0407x53.wmf';file-properties "XNPEU";}}\hspace*{\fill}
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $x=6$ in.}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $x=6$ in.}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02586}}}{}{\fbox{\textbf{master 02586}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02586}}}{}{\fbox{\textbf{master 02586}}}{}%
+%EndExpansion
+
+\item[\hfill 66.] A steel pipe is being carried down a hallway 9 ft wide. At
+the end of the hall there is a right-angled turn into a narrower hallway 6
+ft wide. What is the length of the longest pipe that can be carried
+horizontally around the corner?\\[6pt]
+\hspace*{\fill}\FRAME{itbpF}{1.7167in}{1.1571in}{0in}{}{}{4e0407x50.ai}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.7167in;height 1.1571in;depth
+0in;original-width 1.6803in;original-height 1.1234in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'../../6eSWfiles/6eCh04/graphics/4e0407x50.ai';file-properties "XNPEU";}}%
+\hspace*{\fill}
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02587}}}{}{\fbox{\textbf{master 02587}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02587}}}{}{\fbox{\textbf{master 02587}}}{}%
+%EndExpansion
+
+\item[\hfill 67.] An observer stands at a point $P$, one unit away from a
+track. Two runners start at the point $S$ in the figure and run along the
+track. One runner runs three times as fast as the other. Find the maximum
+value of the observer's angle of sight $\theta $ between the runners. [%
+\textit{Hint:} Maximize $\tan \theta $.]\\[6pt]
+\hspace*{\fill}\FRAME{itbpF}{1.2081in}{1.2358in}{0in}{}{}{3c04rx42n.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.2081in;height 1.2358in;depth
+0in;original-width 1.2081in;original-height 1.2358in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/3c04rx42n.wmf';file-properties "XNPEU";}}\hspace*{\fill}
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $\pi /6$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\pi /6$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02588}}}{}{\fbox{\textbf{master 02588}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02588}}}{}{\fbox{\textbf{master 02588}}}{}%
+%EndExpansion
+
+\item[\hfill 68.] A rain gutter is to be constructed from a metal sheet of
+width 30~cm by bending up one-third of the sheet on each side through an
+angle $\theta $. How should $\theta $ be chosen so that the gutter will
+carry the maximum amount of water?\\[6pt]
+\hspace*{\fill}\FRAME{itbpF}{2.0141in}{0.7143in}{0in}{}{}{4e0407x52.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 2.0141in;height 0.7143in;depth
+0in;original-width 2.0141in;original-height 0.7143in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/4e0407x52.wmf';file-properties "XNPEU";}}\hspace*{\fill}
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02589}}}{}{\fbox{\textbf{master 02589}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02589}}}{}{\fbox{\textbf{master 02589}}}{}%
+%EndExpansion
+
+\item[{\hfill {\protect\fbox{\hspace{-2pt}69.\hspace{-2pt}}}}] Where should
+the point $P$ be chosen on the line segment $AB$ so as to maximize the angle 
+$\theta $?\\[6pt]
+\hspace*{\fill}\FRAME{itbpF}{1.7919in}{1.2202in}{0in}{}{}{5et0407x57.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.7919in;height 1.2202in;depth
+0in;original-width 1.7919in;original-height 1.2202in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/5et0407x57.wmf';file-properties "XNPEU";}}\hspace*{\fill}
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} At a distance $5-2\sqrt{5}$ from $A$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} At a distance $5-2\sqrt{5}$ from $A$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02590}}}{}{\fbox{\textbf{master 02590}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02590}}}{}{\fbox{\textbf{master 02590}}}{}%
+%EndExpansion
+
+\item[\hfill 70.] A painting in an art gallery has height $h$ and is hung so
+that its lower edge is a distance $d$ above the eye of an observer (as in
+the figure). How far from the wall should the observer stand to get the best
+view? (In other words, where should the observer stand so as to maximize the
+angle $\theta $ subtended at his eye by the painting?)\\[6pt]
+\hspace*{\fill}\FRAME{itbpF}{1.8196in}{0.742in}{0in}{}{}{5et0407x58.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.8196in;height 0.742in;depth
+0in;original-width 1.8196in;original-height 0.742in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/5et0407x58.wmf';file-properties "XNPEU";}}\hspace*{\fill}
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02591}}}{}{\fbox{\textbf{master 02591}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02591}}}{}{\fbox{\textbf{master 02591}}}{}%
+%EndExpansion
+
+\item[\hfill 71.] Find the maximum area of a rectangle that can be
+circumscribed about a given rectangle with length $L$ and width $W$. [%
+\textit{Hint:}%
+%TCIMACRO{\TeXButton{en}{\enskip}}%
+%BeginExpansion
+\enskip%
+%EndExpansion
+Express the area as a function of an angle $\theta $.]
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $\tfrac{1}{2}(L+W)^{2}$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\tfrac{1}{2}(L+W)^{2}$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02592}}}{}{\fbox{\textbf{master 02592}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02592}}}{}{\fbox{\textbf{master 02592}}}{}%
+%EndExpansion
+
+\item[\hfill 72.] The blood vascular system consists of blood vessels
+(arteries, arterioles, capillaries, and veins) that convey blood from the
+heart to the organs and back to the heart. This system should work so as to
+minimize the energy expended by the heart in pumping the blood. In
+particular, this energy is reduced when the resistance of the blood is
+lowered. One of Poiseuille's Laws gives the resistance $R$ of the blood as\\[%
+6pt]
+\hspace*{\fill}$R=C\dfrac{L}{r^{4}}$\hspace*{\fill}\\[6pt]
+where $L$ is the length of the blood vessel, $r$ is the radius, and $C$ is a
+positive constant determined by the viscosity of the blood. (Poiseuille
+established this law experimentally, but it also follows from Equation 
+%TCIMACRO{\TeXButton{9.4.2/ 8.4.2}{\ifnum\ET=0 9.4.2\else 8.4.2\fi}}%
+%BeginExpansion
+\ifnum\ET=0 9.4.2\else 8.4.2\fi%
+%EndExpansion
+.) The figure shows a main blood vessel with radius $r_{1}$ branching at an
+angle $\theta $ into a smaller vessel with radius $r_{2}$.\\[6pt]
+\hspace*{\fill}\FRAME{itbpF}{3.1799in}{1.6553in}{0in}{}{}{4e0407x54.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 3.1799in;height 1.6553in;depth
+0in;original-width 3.1799in;original-height 1.6553in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/4e0407x54.wmf';file-properties "XNPEU";}}\hspace*{\fill}
+
+\begin{ExerciseList}
+\item[(a)] Use Poiseuille's Law to show that the total resistance of the
+blood along the path $ABC$ is\\[6pt]
+\hspace*{\fill}$R=C\left( \dfrac{a-b\cot \theta }{r_{1}^{4}}+\dfrac{b\csc
+\theta }{r_{2}^{4}}\right) $\hspace*{\fill}\\[6pt]
+where $a$ and $b$ are the distances shown in the figure.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02593}}}{}{\fbox{\textbf{master 02593}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02593}}}{}{\fbox{\textbf{master 02593}}}{}%
+%EndExpansion
+
+\item[(b)] Prove that this resistance is minimized when\\[6pt]
+\hspace*{\fill}$\cos \theta =\dfrac{r_{2}^{4}}{r_{1}^{4}}$\hspace*{\fill}
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05093}}}{}{\fbox{\textbf{master 05093}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05093}}}{}{\fbox{\textbf{master 05093}}}{}%
+%EndExpansion
+
+\item[(c)] Find the optimal branching angle (correct to the nearest degree)
+when the radius of the smaller blood vessel is two-thirds the radius of the
+larger vessel.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05094}}}{}{\fbox{\textbf{master 05094}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05094}}}{}{\fbox{\textbf{master 05094}}}{}%
+%EndExpansion
+\vspace*{6pt}
+\end{ExerciseList}
+
+\hspace*{\fill}\FRAME{itbpF}{200.4375pt}{120.1875pt}{0pt}{}{}{6et0407x72.tif%
+}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 200.4375pt;height
+120.1875pt;depth 0pt;original-width 197.6961bp;original-height
+117.746bp;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/6et0407x72.tif';file-properties "XNPEU";}}\hspace*{\fill}
+
+\item[\hfill 73.] Ornithologists have determined that some species of birds
+tend to avoid flights over large bodies of water during daylight hours. It
+is believed that more energy is required to fly over water than over land
+because air generally rises over land and falls over water during the day. A
+bird with these tendencies is released from an island that is 5 km from the
+nearest point $B$ on a straight shoreline, flies to a point $C$ on the
+shoreline, and then flies along the shoreline to its nesting area $D$.
+Assume that the bird instinctively chooses a path that will minimize its
+energy expenditure. Points $B$ and $D$ are 13 km apart.
+
+\begin{ExerciseList}
+\item[(a)] In general, if it takes 1.4 times as much energy to fly over
+water as it does over land, to what point $C$ should the bird fly in order
+to minimize the total energy expended in returning to its nesting area?
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (a) About 5.1 km from $B$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (a) About 5.1 km from $B$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02594}}}{}{\fbox{\textbf{master 02594}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02594}}}{}{\fbox{\textbf{master 02594}}}{}%
+%EndExpansion
+
+\item[(b)] Let $W$ and $L$ denote the energy (in joules) per kilometer flown
+over water and land, respectively. What would a large value of the ratio $%
+W/L $ mean in terms of the bird's flight? What would a small value mean?
+Determine the ratio $W/L$ corresponding to the minimum expenditure of energy.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (b) $C$ is close to $B$; $C$ is close to $D$; $W/L=\sqrt{25+x^{2}}/x$, where $x=\left\vert BC\right\vert $}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (b) $C$ is close to $B$; $C$ is close to $D$; $W/L=\sqrt{25+x^{2}}/x$, where $x=\left\vert BC\right\vert $}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05090}}}{}{\fbox{\textbf{master 05090}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05090}}}{}{\fbox{\textbf{master 05090}}}{}%
+%EndExpansion
+
+\item[(c)] What should the value of $W/L$ be in order for the bird to fly
+directly to its nesting area $D$? What should the value of $W/L$ be for the
+bird to fly to $B$ and then along the shore to $D$?
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (c) $\approx 1.07$; no such value}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (c) $\approx 1.07$; no such value}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05091}}}{}{\fbox{\textbf{master 05091}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05091}}}{}{\fbox{\textbf{master 05091}}}{}%
+%EndExpansion
+
+\item[(d)] If the ornithologists observe that birds of a certain species
+reach the shore at a point 4~km from $B$, how many times more energy does it
+take a bird to fly over water than over land?
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (d) $\sqrt{41}/4\approx 1.6$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (d) $\sqrt{41}/4\approx 1.6$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05092}}}{}{\fbox{\textbf{master 05092}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05092}}}{}{\fbox{\textbf{master 05092}}}{}%
+%EndExpansion
+\vspace*{6pt}
+\end{ExerciseList}
+
+\hspace*{\fill}\FRAME{itbpF}{2.1932in}{1.484in}{0in}{}{}{6et0407x73_00566.wmf%
+}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 2.1932in;height 1.484in;depth
+0in;original-width 2.1664in;original-height 1.4563in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/6et0407x73_00566.wmf';file-properties "XNPEU";}}\hspace*{\fill}
+
+\item[\hfill 74.] 
+%TCIMACRO{\TeXButton{GCALCX}{\GCALCX}}%
+%BeginExpansion
+\GCALCX%
+%EndExpansion
+Two light sources of identical strength are placed 10 m apart. An object is
+to be placed at a point $P$ on a line $\ell $ parallel to the line joining
+the light sources and at a distance $d$ meters from it (see the figure). We
+want to locate $P$ on $\ell $ so that the intensity of illumination is
+minimized. We need to use the fact that the intensity of illumination for a
+single source is directly proportional to the strength of the source and
+inversely proportional to the square of the distance from the source.
+
+\begin{ExerciseList}
+\item[(a)] Find an expression for the intensity $I(x)$ at the point $P$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 02595}}}{}{\fbox{\textbf{master 02595}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 02595}}}{}{\fbox{\textbf{master 02595}}}{}%
+%EndExpansion
+
+\item[(b)] If $d=5$ m, use graphs of $I(x)$ and $I^{\prime }(x)$ to show
+that the intensity is minimized when $x=5$ m, that is, when $P$ is at the
+midpoint of $\ell $.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05097}}}{}{\fbox{\textbf{master 05097}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05097}}}{}{\fbox{\textbf{master 05097}}}{}%
+%EndExpansion
+
+\item[(c)] If $d=10$ m, show that the intensity (perhaps surprisingly) is 
+\textit{not} minimized at the midpoint.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05098}}}{}{\fbox{\textbf{master 05098}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05098}}}{}{\fbox{\textbf{master 05098}}}{}%
+%EndExpansion
+
+\item[(d)] Somewhere between $d=5$ m and $d=10$ m there is a transitional
+value of $d$ at which the point of minimal illumination abruptly changes.
+Estimate this value of $d$ by graphical methods. Then find the exact value
+of $d$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 05099}}}{}{\fbox{\textbf{master 05099}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 05099}}}{}{\fbox{\textbf{master 05099}}}{}%
+%EndExpansion
+\vspace*{6pt}
+\end{ExerciseList}
+
+\hspace*{\fill}\FRAME{itbpF}{2.6385in}{1.0092in}{0in}{}{}{6et0407x74_00567.ai%
+}{\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 2.6385in;height 1.0092in;depth
+0in;original-width 2.6109in;original-height 0.9816in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/6et0407x74_00567.ai';file-properties "XNPEU";}}\hspace*{\fill}
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\TeXButton{e2col}{\end{multicols}
+%\advance \leftskip by 165pt
+%\advance\hsize by -165pt
+%\advance\linewidth by -165pt
+%}}%
+%BeginExpansion
+\end{multicols}
+\advance \leftskip by 165pt
+\advance\hsize by -165pt
+\advance\linewidth by -165pt
+%
+%EndExpansion
+
+\end{document}

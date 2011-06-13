@@ -1,0 +1,15 @@
+
+=head1 C03 Expected Output
+
+=head2 GUI
+
+=for html <center><img src="screenshot.png"></center>
+
+Best of all possible worlds: the section "03" is extracted from the pickup list,
+and CHAPT-CONFIG.yml contains an entry for this section.  You can just click OK.
+
+=head2 Messages
+
+=for html <center><img src="terminal.png"></center>
+
+=cut

@@ -1,0 +1,6 @@
+LaTeXtract didn't like a tag in in/in.tex.
+Succesful matches prior to tag error: 
+(1) beginTag[0] {} at in/in.tex line 10
+(2) itemTag[2][0] { ITM => "a" } at in/in.tex line 12
+(3) itemTag[2][0] { ITM => "c" } at in/in.tex line 15
+ERROR: Missing tag between 02a and 02c, stopped at in/in.tex line 12

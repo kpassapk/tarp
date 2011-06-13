@@ -1,0 +1,6 @@
+LaTeXtract didn't like a tag in in/in.tex.
+Succesful matches prior to tag error: 
+(1) endTag[0] {} at in/in.tex line 9
+(2) sequenceRestart[0] {} at in/in.tex line 10
+(3) beginTag[0] {} at in/in.tex line 11
+ERROR: Unexpected tag: found 2, expected 1, stopped at in/in.tex line 12

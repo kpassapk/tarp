@@ -1,0 +1,238 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>&quot;talatexcombine in Komodo&quot;</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body style="background-color: white">
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#running_latexcombine_in_komodo">Running LaTeXcombine in Komodo</a></li>
+	<ul>
+
+		<li><a href="#options">Options</a></li>
+		<li><a href="#tas_entries">TAS Entries</a></li>
+		<li><a href="#output">Output</a></li>
+		<li><a href="#getting_the_preamble_from_a_pickup_file">Getting the Preamble from a Pickup File</a></li>
+		<li><a href="#see_also">SEE ALSO</a></li>
+	</ul>
+
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<center><img src="file:///C:\Program Files\Tarp/tarp.png"></center><p>
+</p>
+<hr />
+<h1><a name="running_latexcombine_in_komodo">Running LaTeXcombine in Komodo</a></h1>
+<p>As with all Tarp scripts, <code>talatexcombine</code> is run in Komodo as an external
+command; double clicking one of the icons in the <code>LaTeXcombine</code> folder in the
+<code>Tarp Toolkit</code> project will run the script with certain command-line
+options.  Only a few of the most common options are available through Komodo;
+use the program directly from the command line for other combinations.</p>
+<p>In order to use this script from Komodo (with the exception of <a href="#readme"><code>README</code></a>,
+<a href="#version"><code>--version</code></a> and <a href="#help"><code>--help</code></a>), a <code>.pklist</code> file must be open and visible in the
+Komodo workspace.</p>
+<p>These commands also require that you have a <code>TAS</code> file called <code>TASfile</code>, <code>TASfile.txt</code>
+or <code>TASfile.tas</code> in the same directory as the <code>.pklist</code> file.  If you need
+to use another <code>TAS</code> file, you will need to run the program using the <code>--tas</code>
+option from the command line.</p>
+<p>
+</p>
+<h2><a name="options">Options</a></h2>
+<center><img src="images/options.png"></center><dl>
+<dt><strong><a name="current_pklist2" class="item">[current .pklist]</a></strong>
+
+<dd>
+<p>Displays the following dialog:</p>
+</dd>
+<center><img src="images/screenshot1.png"></center><p>This dialog will help you pick which files are to be combined (merged) by the
+LaTeXcombine program using the instructions in your pickup list.</p>
+<p>The dialog is split into the &quot;Pickup Files&quot; and &quot;Preamble&quot; sections. The &quot;Pickup
+Files&quot; section contains one line per file in the pickup list. First, the pickup
+file ID is displayed (&quot;foo&quot; and &quot;bar&quot; in this example). Then, the amount of
+times each file appears in the pickup list appears, sorted in order of
+occurrence. (In the dialog above, the fileID &quot;foo&quot; appears twice in the piciup
+file, and &quot;bar&quot; once). A text field with the name of the pickup file follows. If
+the pickup file exists, the next column, labeled &quot;exists?&quot; displays &quot;yes&quot; (or if it
+doesn't, &quot;no&quot;). If the correct file does not appear in the text entry box, the
+&quot;Browse&quot; button allows you to choose a different file from somewhere in your
+computer.</p>
+<p>The &quot;Preamble&quot; section allows you to select where the preamble of the output
+.tex file will come from. If one of the names of the pickup lists is selected,
+the preamble will be taken from that file. In this case, the preamble is taken
+to be everything up to the first exercise. Also, at the bottom of the list the
+word &quot;new&quot; appears. If selected, a &quot;canned&quot; preamble will be inserted. See
+<a href="/Tarp/LaTeXcombine.html">the Tarp::LaTeXcombine manpage</a> for how to change the contents of the canned preamble,
+or the next section for more details about getting the preamble from a (non-new)
+pickup file.</p>
+<p>Once all of the pickup files have been specified (meaning that the &quot;exists?&quot; column
+contains &quot;yes&quot; for each pickup file), the OK button can be clicked to call the
+program <code>talatexcombine</code> with the correct command-line options.</p>
+<p>The script is run in the directory where the current file resides.
+If successful, a list of chunks of continuous input will be shown in the
+&quot;Command Output&quot; pane in Komodo.</p>
+</li>
+<dt><strong><a name="readme2" class="item">README</a></strong>
+
+<dd>
+<p>Displays this help file.</p>
+</dd>
+</li>
+<dt><strong><a name="version2" class="item">--version</a></strong>
+
+<dd>
+<p>Equivalent to running the following in a command prompt:</p>
+</dd>
+<dd>
+<pre>
+    talatexcombine --version</pre>
+</dd>
+</li>
+<dt><strong><a name="help2" class="item">--help</a></strong>
+
+<dd>
+<p>Equivalent to running the following in a command prompt:</p>
+</dd>
+<dd>
+<pre>
+    talatexcombine --help</pre>
+</dd>
+</li>
+</dl>
+<p>
+</p>
+<h2><a name="tas_entries">TAS Entries</a></h2>
+<ul>
+<li>
+<p><code>beginTag</code>, <code>endTag</code>, <code>exTag</code>, <code>partTag</code>, <code>subPartTag</code>, <code>sequenceRestart</code></p>
+<p>The usual LaTeXtract tags</p>
+</li>
+<li>
+<p><code>chapHead</code></p>
+<p>Used for stripping the chapter numbers of the chapter heading and
+replacing them with $CHAP$.  You can give multiple values, as long as they
+all contain $CHAP$. In the examples <a href="#getting_the_preamble_from_a_pickup_file">below</a>
+the following value was used:</p>
+<pre>
+    chapHead = \\chaphead\[$CHAP$</pre>
+<p>and the variable $CHAP$ was defined as follows:</p>
+<pre>
+    chapHead::CHAP = \d\d?</pre>
+</li>
+<li>
+<p><code>sectHead</code></p>
+<p>Used for stripping the chapter and section numbers of the chapter heading and
+replacing them with $CHAP$ and $SECT$, respectively.  You can give multiple
+values, as long as they all contain $CHAP$ and $SECT$.  For example, in the
+examples <a href="#getting_the_preamble_from_a_pickup_file">below</a>, the following values were used,</p>
+<pre>
+    <span class="variable">sectHead</span> <span class="operator">=</span> <span class="operator">\\</span><span class="variable">secthead</span><span class="operator">\</span><span class="operator">[</span><span class="variable">$CHAP$</span><span class="operator">\.</span><span class="variable">$SECT$</span> <span class="operator">\\</span><span class="variable">QTR</span><span class="operator">{</span><span class="variable">sechead</span><span class="operator">}</span><span class="operator">{</span><span class="variable">$CHAP$</span><span class="operator">\.</span><span class="variable">$SECT$</span>
+</pre>
+<p>and the variables $CHAP$ and $SECT$ were defined as follows:</p>
+<pre>
+    sectHead::CHAP = \d\d?</pre>
+<pre>
+    sectHead::SECT = \d\d?
+    
+in order to catch both forms of the section heading and both lots of chapter
+and section numbers.</pre>
+</li>
+</ul>
+<p>
+</p>
+<h2><a name="output">Output</a></h2>
+<p>If your input was called foo.tex, two files will be created:</p>
+<dl>
+<dt><strong><a name="foo_chunk" class="item">foo.chunk</a></strong>
+
+<dd>
+<p>Contains &quot;chunks&quot; copied over from your pickup TeX files or generated using the
+&quot;new&quot; virtual pickup file.  Chunks are delimited by CHUNK_START and CHUNK_END.</p>
+</dd>
+</li>
+<dt><strong><a name="foo_skel" class="item">foo.skel</a></strong>
+
+<dd>
+<p>Contains a &quot;skeleton&quot; for a TeX file with slots to insert the preamble and
+chunks in the Chunk file.  The skeleton file is generated by LaTeXcombine
+using the first entries in your TAS file tags <code>beginTag</code>, <code>endTag</code>, <code>exTag</code>,
+<code>partTag</code> and <code>subPartTag</code>.  This is why the first value in these tags must be
+in a printable (&quot;canonical&quot;) format - the most common way for such a tag to be
+written, without any wildcards or other weird and wonderful Regular Expression
+stuff.</p>
+</dd>
+<dd>
+<p>In other words, this is a canonical tag:</p>
+</dd>
+<dd>
+<pre>
+    \\item\[\\hfill\s$ITM$\.\]</pre>
+</dd>
+<dd>
+<p>because it can be printed as</p>
+</dd>
+<dd>
+<pre>
+    \item[\hfill $ITM$.]</pre>
+</dd>
+<dd>
+<p>but this is not a canonical tag:</p>
+</dd>
+<dd>
+<pre>
+    \\item\[.*?$ITM$\.\]</pre>
+</dd>
+<dd>
+<p>because, how would we print the <code>.*?</code> bit, which means &quot;any character&quot;?  It is
+ambiguous, and therefore &quot;not canonical&quot;. Others <strong>not</strong> permitted are <code>\w</code>
+(word characters), <code>\d</code> (digits), unescaped stars, parentheses, and pretty much
+everything else that makes a RX interesting.  The exception is <code>\b</code> (word
+boundaries, which are simply removed) and <code>\s</code> (whitespace, which is replaced
+by a single space as shown above).</p>
+</dd>
+</li>
+</dl>
+<p>
+</p>
+<h2><a name="getting_the_preamble_from_a_pickup_file">Getting the Preamble from a Pickup File</a></h2>
+<p>When using a preamble extracted from an existing file, everything up to the
+first <code>beginTag</code> of the source file is put into the first chunk in the chunk
+file. If possible, the chapter and section numbers are stripped and replaced
+with $CHAP$ and $SECT$, respectively; see chapHead and sectHead below.</p>
+<p><strong>IMPORTANT NOTE</strong>:  Only one occurrence of the chapter and section numbers will be
+stripped per line. This means that if the preamble of the pickup file contains this:</p>
+<center><img src="images/preamble1.png"></center><p>the result will be this:</p>
+<center><img src="images/preamble1_res.png"></center><p>which is probably not what you want, since the second &quot;2.5&quot; in the section heading
+still shows up.  Instead, modify the input file so it looks like this:</p>
+<center><img src="images/preamble2.png"></center><p>which is equivalent in LaTeX terms; the chapter and section can now be stripped
+correctly (given the correct values in chaptHead and sectHead, see below.)  The
+output will now look like this:</p>
+<center><img src="images/preamble2_res.png"></center><p>
+</p>
+<h2><a name="see_also">SEE ALSO</a></h2>
+<p>You can see the following documentation using the &quot;perldoc&quot; command or visiting
+the <code>HTML</code> docs which may have been produced during installation.</p>
+<ul>
+<li>
+<p><code>The Tarp::LaTeXcombine documentation</code></p>
+</li>
+<li>
+<p><code>The talatextract documentation</code></p>
+</li>
+</ul>
+
+</body>
+
+</html>

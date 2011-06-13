@@ -1,0 +1,41 @@
+
+# filename field.
+# The last variable in each entry is used as a nickname for the file in the
+# output list.
+
+filename = \                        # e.g.
+    $book$$chapt$$sect_0$\.tex \    # 6et0100.tex
+    $book$$ch$$sect$\.tex \
+    $book$$ch$$proj$\.tex \
+    $book$$ch$$special$\.tex
+
+    filename::CSENS = 0
+
+    filename::book = 4c
+
+    filename::ch = \d\d
+
+    filename::chapt = \d\d
+
+    filename::sect_0 = 00
+
+    filename::sect = \d[1-9]
+
+    filename::proj = \d\d[a|d|l]p(\d\d)?  # ap, dp, ap01, ap02, dp01, dp02...
+
+    filename::proj::CSENS = 0
+
+    filename::special = r|fps
+
+chapt_search = \\chapter{\d\d?\\quad\s$CHAP_TITLE$}
+
+chapt_search::CHAP_TITLE = .*
+
+sect_search = \\section{.*\\quad\s$SECT_TITLE$}
+
+sect_search::SECT_TITLE = .*
+
+proj_search = \\section{.*Project:\s$PROJ_TITLE$}
+
+proj_search::PROJ_TITLE = .*?
+

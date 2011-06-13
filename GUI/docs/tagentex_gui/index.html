@@ -1,0 +1,146 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>&quot;tagentex in Komodo&quot;</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body style="background-color: white">
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#running_gentex_in_komodo">Running GenTex in Komodo</a></li>
+	<ul>
+
+		<li><a href="#options">Options</a></li>
+		<li><a href="#tas_entries">TAS Entries</a></li>
+		<li><a href="#output">Output</a></li>
+		<li><a href="#more_information">More Information</a></li>
+	</ul>
+
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<center><img src="file:///C:\Program Files\Tarp/tarp.png"></center><p>
+</p>
+<hr />
+<h1><a name="running_gentex_in_komodo">Running GenTex in Komodo</a></h1>
+<p>As with all Tarp scripts, <code>tagentex</code> is run in Komodo as an external command;
+double clicking one of the icons in the <code>GenTex</code> folder in the <code>Tarp Toolkit</code>
+project will run the script with certain command-line options. Only a few of the
+most common options are available through Komodo; use the program directly from
+the command line for other combinations.</p>
+<p>In order to use this script from Komodo (with the exception of <a href="#readme"><code>README</code></a>,
+<a href="#version"><code>--version</code></a> and <a href="#help"><code>--help</code></a>), a <code>.pklist</code> file must be open and visible in the
+Komodo workspace.</p>
+<p>These commands also require that you have a <code>TAS</code> file called <code>TASfile</code>,
+<code>TASfile.txt</code> or <code>TASfile.tas</code> in the same directory as the <code>.pklist</code> file.
+If you need to use another <code>TAS</code> file, you will need to run the program using
+the <code>--tas</code> option from the command line.</p>
+<p>
+</p>
+<h2><a name="options">Options</a></h2>
+<center><img src="images/options.png"></center><dl>
+<dt><strong><a name="current_pklist" class="item">[current .pklist]</a></strong>
+
+<dd>
+<p>Displays the following dialog box:</p>
+</dd>
+<center><img src="images/dialog1.png"></center><p>The dialog has a list of variables that were found in the file's preamble
+(before the exercises).  This dialog attempts to determine the variables' values
+in two ways:</p>
+<p>- Getting them from the pickup list's file name</p>
+<p>- Looking them up in a file called CHAPT-CONFIG.yml, also in the current directory.</p>
+<p>If &quot;OK&quot; is clicked, this is equivalent
+to running the following in a command prompt:</p>
+<pre>
+    <span class="variable">tagentex</span> <span class="operator">--</span><span class="variable">var</span><span class="operator">=</span><span class="variable">SECT</span><span class="operator">;</span><span class="number">3</span> <span class="operator">--</span><span class="variable">var</span><span class="operator">=</span><span class="variable">CHAP</span><span class="operator">;</span><span class="number">1</span> <span class="variable">wad0103</span><span class="operator">.</span><span class="variable">pklist</span>
+</pre>
+<p>where <code>wad0103.pklist</code> is the name of the currently open file. The script is run
+in the directory where the current file resides. If successful, <code>wad0103.tex</code> will
+be created using <code>wad0103.skel</code> and <code>wad0103.chunk</code>. Variables $CHAPT$ and $SECT$
+will be replaced with &quot;3&quot; and &quot;1&quot;, respectively. This requires that your
+<a href="#filename"><code>filename</code></a> field in the <code>TAS</code> says something like the following:</p>
+<center><img src="images/filename.png"></center><p>In this case the match is successful because &quot;wad&quot; is in the <code>$BOOK$</code> variable,
+and the chapter and section are two digits, matched by <code>\d\d</code> in <code>$CHAP$</code> and
+<code>$SECT$</code>, respectively. Of these three variables, however, only <code>$CHAP$</code> and
+<code>$SECT$</code> are passed through to the final .tex file because all variable
+contents are filtered using the <a href="#texvars"><code>texVars</code></a> entry.</p>
+</li>
+<dt><strong><a name="readme" class="item">README,</a></strong>
+
+<dd>
+<p>Displays this help file.</p>
+</dd>
+</li>
+<dt><strong><a name="version" class="item">--version</a></strong>
+
+<dd>
+<p>Equivalent to running the following in a command prompt:</p>
+</dd>
+<dd>
+<pre>
+    taGenTex --version</pre>
+</dd>
+</li>
+<dt><strong><a name="help" class="item">--help</a></strong>
+
+<dd>
+<p>Equivalent to running the following in a command prompt:</p>
+</dd>
+<dd>
+<pre>
+    taGenTex --help</pre>
+</dd>
+</li>
+</dl>
+<p>
+</p>
+<h2><a name="tas_entries">TAS Entries</a></h2>
+<ul>
+<li><strong><a name="filename" class="item"><code>filename</code></a></strong>
+
+<p>Used for getting variables from filename.  Must contain at least one
+variable.  The contents of the last variable is taken as a section name and
+looked up in CHAPT-CONFIG.yml.</p>
+</li>
+<li><strong><a name="texvars" class="item"><code>texVars</code></a></strong>
+
+<p>This variable is used to filter the values from the previous entry.</p>
+</li>
+<li><strong><a name="begintag_endtag_extag_parttag_subparttag_sequencerestart" class="item"><code>beginTag</code>, <code>endTag</code>, <code>exTag</code>, <code>partTag</code>, <code>subPartTag</code>, <code>sequenceRestart</code></a></strong>
+
+<p>The usual LaTeXtract tags.</p>
+</li>
+<li><strong><a name="masterref" class="item"><code>masterRef</code></a></strong>
+
+<p>Used for replacing the $MASTER$ variable in the Chunk file.</p>
+</li>
+</ul>
+<p>
+</p>
+<h2><a name="output">Output</a></h2>
+<p>The output is a LaTeX file with the same name as the pickup list but with a &quot;.tex&quot;
+extension.</p>
+<p>
+</p>
+<h2><a name="more_information">More Information</a></h2>
+<p>For more information on the script itself, use the command</p>
+<pre>
+    perldoc tagentex</pre>
+<p>or load the <code>HTML</code> version in a browser.  In ActivePerl, this is found in the
+&quot;Documentaion&quot; link under the &quot;ActivePerl&quot; tab in the <code>Start</code> menu.</p>
+
+</body>
+
+</html>

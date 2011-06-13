@@ -1,0 +1,16 @@
+INSERT PREAMBLE HERE
+\begin{enumerate}
+\item[$ITM$.]
+\begin{enumerate}
+\item[($ITM$)]
+INSERT CHUNK HERE FOR 01a
+\begin{enumerate}
+\item[($ITM$)]
+INSERT CHUNK HERE FOR 01ai
+\item[($ITM$)]
+INSERT CHUNK HERE FOR 01aii
+\end{enumerate}
+\item[($ITM$)]
+INSERT CHUNK HERE FOR 01b
+\end{enumerate}
+\end{enumerate}

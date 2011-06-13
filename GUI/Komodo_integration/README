@@ -1,0 +1,21 @@
+Tarp Toolkit Komodo Integration
+
+The "Tarp Toolkit.kpf" project provides access to applications in the
+Tarp Toolkit from Komodo.
+
+The project contains one folder per application (e.g. LaTeXtract, GenTex).
+Each application folder contains shortcuts to common program features,
+plus a README page with help on each script.
+
+TECHARTS TAGS
+
+A folder called "TECHARTS TAGS" is also included.  This folder contains snippets
+for dummy tags that may be required while modifying source files in order for
+them to comply with Tarp Toolkit requirements.  See the manual pages or
+tutorials for additional information on using these tags.
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2008-2009 Kyle Passarelli
+
+

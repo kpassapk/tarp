@@ -1,0 +1,181 @@
+
+\documentclass{sebase}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{makeidx}
+\usepackage{SECALCUL}
+\usepackage{lie}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Mon Dec 15 16:20:00 1997}
+%TCIDATA{LastRevised=Tuesday, May 05, 2009 10:43:56}
+%TCIDATA{<META NAME="ViewSettings" CONTENT="25">}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{CSTFile=SECALCUL.cst}
+
+\input tcilatex
+\newenvironment{instructions}{\STARTINSTR}{\ENDINSTR}
+\begin{document}
+
+
+\chapter[2\quad Limits and Derivatives]{}
+
+\section{2.1\quad The Tangent and Velocity Problems}
+
+
+
+%TCIMACRO{\TeXButton{setRM}{\renewcommand{\RM}{1}}}%
+%BeginExpansion
+\renewcommand{\RM}{1}%
+%EndExpansion
+%TCIMACRO{\TeXButton{set page2}{\setcounter{page}{2}}}%
+%BeginExpansion
+\setcounter{page}{2}%
+%EndExpansion
+%TCIMACRO{%
+%\TeXButton{s2col}{\setlength{\columnsep}{24pt}
+%\advance \leftskip by -165pt
+%\advance\hsize by 165pt
+%\advance\linewidth by 165pt
+%\begin{multicols}{2}}}%
+%BeginExpansion
+\setlength{\columnsep}{24pt}
+\advance \leftskip by -165pt
+\advance\hsize by 165pt
+\advance\linewidth by 165pt
+\begin{multicols}{2}%
+%EndExpansion
+
+
+\begin{ExerciseList}
+
+\item[\hfill 1.]
+
+\begin{ExerciseList}
+
+\item[(a)]
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $-44.4$, $-38.8$, $-27.8$, $-22.2$, $-16.\overline{6}$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $-44.4$, $-38.8$, $-27.8$, $-22.2$, $-16.\overline{6}$}{}%
+%EndExpansion
+
+\item[(b)]
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $-33.3$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $-33.3$}{}%
+%EndExpansion
+
+\item[(c)]
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $-33\tfrac{1}{3}$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $-33\tfrac{1}{3}$}{}%
+%EndExpansion
+
+\end{ExerciseList}
+
+\item[\hfill 5.]
+
+\begin{ExerciseList}
+
+\item[(a)]
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (i) $-32$ ft$/$s\quad (ii) $-25.6$ ft$/$s\quad \newline
+%(iii) $-24.8$ ft$/$s\quad (iv) $-24.16$ ft$/$s}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (i) $-32$ ft$/$s\quad (ii) $-25.6$ ft$/$s\quad \newline
+(iii) $-24.8$ ft$/$s\quad (iv) $-24.16$ ft$/$s}{}%
+%EndExpansion
+
+\item[(b)]
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:}\hspace*{3pt}(b)~ $-24$ ft$/$s}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:}\hspace*{3pt}(b)~ $-24$ ft$/$s}{}%
+%EndExpansion
+
+\end{ExerciseList}
+
+\item[\hfill 7.]
+
+\begin{ExerciseList}
+
+\item[(a)]
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (a)~(i)~4.65~m$/$s\quad (ii)~5.6~m$/$s\quad \newline
+%(iii)~7.55~m$/$s\quad (iv)~7~m$/$s}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (a)~(i)~4.65~m$/$s\quad (ii)~5.6~m$/$s\quad \newline
+(iii)~7.55~m$/$s\quad (iv)~7~m$/$s}{}%
+%EndExpansion
+
+\item[(b)]
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} (b)~6.3~m$/$s}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (b)~6.3~m$/$s}{}%
+%EndExpansion
+
+\end{ExerciseList}
+
+\item[\hfill 9.]
+
+\begin{ExerciseList}
+
+\item[(a)]
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (a)~$0$, $1.7321$, $-1.0847$, $-2.7433$, $4.3301$, \newline
+%$-2.8173$, $0$, $-2.1651$, $-2.6061$, $-5$, $3.4202$; no}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (a)~$0$, $1.7321$, $-1.0847$, $-2.7433$, $4.3301$, \newline
+$-2.8173$, $0$, $-2.1651$, $-2.6061$, $-5$, $3.4202$; no}{}%
+%EndExpansion
+
+\item[(b)]
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (b) \textit{no text answer}}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (b) \textit{no text answer}}{}%
+%EndExpansion
+
+\item[(c)]
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} (c)~$-31.4$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (c)~$-31.4$}{}%
+%EndExpansion
+
+\end{ExerciseList}
+
+\end{ExerciseList}
+
+
+%TCIMACRO{%
+%\TeXButton{e2col}{\end{multicols}
+%\advance \leftskip by 165pt
+%\advance\hsize by -165pt
+%\advance\linewidth by -165pt}}%
+%BeginExpansion
+\end{multicols}
+\advance \leftskip by 165pt
+\advance\hsize by -165pt
+\advance\linewidth by -165pt%
+%EndExpansion
+
+\end{document}
+
+

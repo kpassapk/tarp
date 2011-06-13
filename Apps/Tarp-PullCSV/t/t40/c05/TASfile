@@ -1,0 +1,23 @@
+filename = $book$$chapter$$section$
+
+filename::book = foo
+
+filename::chapter = \d\d
+
+filename::section = \d\d
+
+beginTag = begin
+
+endTag = end
+
+itemTag[0] = <illegal>-$ITM$
+itemTag[1] = $ITM$
+itemTag[2] = $ITM$
+itemTag[3] = $ITM$
+
+sequenceRestart = seq
+
+masterRef = $MASTER$
+
+masterRef::MASTER = \d{5}[a-z]?
+

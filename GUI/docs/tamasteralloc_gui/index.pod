@@ -1,0 +1,104 @@
+=head1 Running MasterAlloc in Komodo
+
+As with all Tarp scripts, C<tamasteralloc> is run in Komodo as an external
+command; double clicking one of the icons in the C<MasterAlloc> folder in the
+C<Tarp Toolkit> project will run the script with certain command-line
+options. Only a few of the most common options are available through Komodo;
+use the program directly from the command line for other combinations. 
+
+In order to use this script from Komodo (with the exception of C<README>,
+C<--version> and C<--help>), a C<.tex> must be open and visible in the Komodo
+workspace, and there must be a Tarp Style (C<TAS>) file called C<TASfile>, C<TASfile.txt> or C<TASfile.tas>
+in the same directory as the C<.tex> file.
+
+=head2 Options
+
+=for html <center><img src="images/options.png"></center>
+
+=over
+
+=item [current .tex]
+
+Equivalent to running the following in a command prompt:
+
+    tamasteralloc file.tex
+
+where C<file.tex> is the name of the currently open file.  The script is run
+in the directory where the current file resides.  If successful, a list of
+exercises will be shown in the "Command Output" pane in Komodo.
+
+=item -next-master [current .tex]
+
+Pops up the following dialog:
+
+=for html <center><img src="images/nextmaster.png"></center>
+
+New master numbers are assigned starting at the entered value.
+
+=item --fix [current .tex]
+
+=for html <center><img src="images/fix.png"></center>
+
+=item README,
+
+Displays this help file.
+
+=item --version
+
+Equivalent to running the following in a command prompt:
+
+    tamasteralloc --version
+
+=item --help
+
+Equivalent to running the following in a command prompt:
+
+    tamasteralloc --help
+
+=back
+
+=head2 TAS Entries
+
+=over
+
+=item *
+
+C<beginTag>, C<endTag>, C<exTag>, C<partTag>, C<subPartTag>, C<sequenceRestart>
+
+The usual LaTeXtract tags
+
+=item *
+
+C<masterRef>
+
+Used for extracting the master number from each exercise.
+
+=back
+
+=head2 Output
+
+Aside from the same error output as LaTeXtract, this program produces additional
+error messages if master numbers are not where they are expected to be.  More
+details about the algorithms, errors and warnings in this program can be found
+in the C<Tarp::MasterAlloc> documentation.
+
+When the input file is parsed correctly, the output of this program is in three
+columns:
+
+=for html <center><img src="images/rawoutput.png"></center>
+
+Here, Sequence 0 has no exercises; Exercise 01a in Sequence 1 is found at line
+806 and has a MasterID of 01209, etc.  This is called "raw output", and is not
+double clickable.  In order to make this output double clickable, we swith to
+"parsed" output, as described below.
+
+To the far right of the "Command Output" pane there is an icon of a bulleted list,
+with a tooltip that says "Toggle Raw/Parsed Output View".  When clicked, the
+original list changes into the following:
+
+=for html <center><img src="images/parsedoutput.png"></center>
+
+The "Line" column contains the line numbers at the start of each exercise's range;
+the "Content" column contains the exercise and master number.
+Double clicking on a row will take open the right file in the Workspace and
+highlight the exercise line.

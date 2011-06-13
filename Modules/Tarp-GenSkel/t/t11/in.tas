@@ -1,0 +1,11 @@
+beginTag = \\begin{enumerate}
+
+endTag = \\end{enumerate}
+
+itemTag[0] = <illegal>-$ITM$
+itemTag[1] = "\\item[\\hfill $ITM$\.]"
+itemTag[2] = "\\item[\( $ITM$ \)]"
+itemTag[3] = \\item[\($ITM$\)]
+
+sequenceRestart = seq
+

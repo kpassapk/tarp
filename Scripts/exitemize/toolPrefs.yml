@@ -1,0 +1,12 @@
+---
+pullCSV:
+    OUTfile: $book$$chapter$examps.csv
+    col:
+        - master
+        - book
+        - chapter
+        - section
+        - example
+        - notes
+        - update_date
+        - video

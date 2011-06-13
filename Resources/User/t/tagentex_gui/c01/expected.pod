@@ -1,0 +1,14 @@
+
+=head1 Expected Output
+
+=head2 GUI
+
+=for html <center><img src="screenshot.png"></center>
+
+No CHAPT-CONFIG.yml, so variables CHAPT and SECT are loaded from filename.
+
+=head2 Messages
+
+=for html <center><img src="terminal.png"></center>
+
+=cut

@@ -1,0 +1,11 @@
+\begin{enumerate}
+1
+\begin{enumerate}
+a
+\end{enumerate}
+\begin{enumerate}
+b
+\end{enumerate}
+\end{enumerate}
+seq
+\end{enumerate}

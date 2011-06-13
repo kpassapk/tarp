@@ -1,0 +1,14 @@
+sequenceRestart = 
+
+itemTag[0] = <illegal>-$ITM$
+itemTag[1] = \\item\($ITM$\)
+itemTag[2] = \\item\($ITM$\)
+
+beginTag = \\begin{enumerate}
+
+itemTag[3] = \\item\($ITM$\)
+
+
+endTag = \\end{enumerate}
+
+

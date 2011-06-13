@@ -1,0 +1,10 @@
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{LaTeXparent=0,0,stewstyle.tex}
+                      
+
+\chaphead[$CHAP$, $CHAP_TITLE$]%
+\secthead[$CHAP$.$SECT$, $SECT_TITLE$]%
+\QTR{sechead}{$CHAP$.$SECT$\quad $SECT_TITLE$}
+
+$\rule[18pt]{474pt}{0.5pt}\vspace{-15pt}$
+

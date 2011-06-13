@@ -1,0 +1,9 @@
+'bad.tas' is not up to spec.
+
+-------------------- ----------------------------------------
+|      entry        |                error                  |
+-------------------- ----------------------------------------
+| foo               | Regexp Error
+Perl didn't like a regular expression in 'foo'.
+hint:
+Unmatched ( in regex; marked by <-- HERE in m/.*( <-- HERE /

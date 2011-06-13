@@ -1,0 +1,29 @@
+Tarp-GenPK
+
+Tarp::GenPK - Generate Pickup Lists from Chapter CSV file
+
+This module creates a series of pickup lists from a correlation CSV.
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Makefile.PL
+	make
+	make test
+	make install
+
+SUPPORT AND DOCUMENTATION
+
+After installing, you can find documentation for this module with the
+perldoc command.
+
+    perldoc Tarp::GenPK
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2008 Kyle Passarelli
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+

@@ -1,0 +1,3 @@
+%FIRST LINE GETS IGNORED
+my canned macro
+

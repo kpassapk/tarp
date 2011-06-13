@@ -1,0 +1,17 @@
+---
+Manuscript master file: 4foo0100.tex
+Pickup files:
+  01:
+    3bar: 3bar0101.tex
+    3bar_2: 3bar0102.tex
+    3foo: 3foo0101.tex
+    new: '(virtual)'
+  02:
+    3foo_2: 3foo0102.tex
+titles:
+  01:
+    CHAP_TITLE: 'Differential Equations'
+    SECT_TITLE: 'Modeling with Differential Equations'
+  02:
+    CHAP_TITLE: 'Differential Equations'
+    SECT_TITLE: "Direction Fields and Euler's Method"

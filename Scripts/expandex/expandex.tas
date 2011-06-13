@@ -1,0 +1,47 @@
+################################################################################
+#                                                                              #
+#                              TECHARTS STYLE FILE                             #
+#                                                                              #
+#                                  expandex.pl                                 #
+#                                                                              #
+################################################################################
+
+filename = $bookch$$section$_itm\.tex
+    
+    filename::bookch = \d\w+\d\d
+
+    filename::section = \d\d|r|pps
+    filename::section::CSENS = 0
+
+# output file will be $bookch$$section$-new.tex
+
+texVars = 
+
+beginTag[0]       = \\begin{$what$}
+    beginTag[0]::what     = Example
+
+beginTag[1]       = \\begin{enumerate}
+
+beginTag[2]       = <illegal>
+
+endTag[0]         = <illegal>
+endTag[1]         = \\end{$what$}
+    endTag[1]::what       = Example
+
+endTag[2]         = \\end{enumerate}
+
+itemTag[0] = <illegal>-$ITM$
+
+itemTag[1] = TARP_ITEM-$ITM$
+
+itemTag[2] = \
+    \\item\[\($ITM$\)\]\s$inline$ \ # catch the rest of the line in $inline$...
+    \\item\[\($ITM$\)\] \
+    \\textbf\{\($ITM$\)
+
+    itemTag[2]::inline = .+
+
+itemTag[3] = $ITM$ # we don't need these, right?
+
+sequenceRestart = \\QTP{MultColDiv}
+

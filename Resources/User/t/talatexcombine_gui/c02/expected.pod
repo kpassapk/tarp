@@ -1,0 +1,17 @@
+
+=head1 Expected Output
+
+=head2 GUI
+
+=for html <center><img src="screenshot.png"></center>
+
+CHAPT-CONFIG.yml is not found, so the pickups are guessed using the pklist.
+These files do not exist.  Click on "Browse" and select the files foo.tex and
+bar.tex in this directory.  Then select a "new" preamble and one of the values
+from the list.  Click "OK". 
+
+=head2 Messages
+
+=for html <center><img src="terminal.png"></center>
+
+=cut

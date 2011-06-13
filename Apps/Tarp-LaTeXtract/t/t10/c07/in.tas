@@ -1,0 +1,53 @@
+filename = $book$$CHAP$$SECT$
+
+    filename::book = \d[a-z]+
+
+    filename::CHAP = \d\d|DT
+
+    filename::SECT = \d\d|[rR]|pr\d[a-z]
+
+    filename::EXCLUDE = 1
+
+chapHead = \\chaphead\[$CHAP$
+
+    chapHead::CHAP = \d\d?
+
+sectHead = \\secthead\[$CHAP$\.$SECT$ \\QTR{sechead}{$CHAP$\.$SECT$
+
+    sectHead::CHAP = \d\d?
+
+    sectHead::SECT = \d\d?
+
+beginTag = \\begin{enumerate} 
+
+endTag = \\end{enumerate}
+
+itemTag[0] = <illegal>-$ITM$
+
+itemTag[1] = \
+    \\item\[\\hfill\s$ITM$\.\] \
+    \\QTR\{ssbold\}\{$ITM$.\}  \
+    \\item\[\\hspace\*\{\\fill\}$ITM$.\] \
+    \\item\[.*?$ITM$\.
+
+itemTag[2] = \
+    \\item\[\($ITM$\)\] \
+    \\item\[\($ITM$.*\).*\] \
+    \{\\hyperref\{\($ITM$\) \
+    \\hspace.*\($ITM$.*\) \
+    \\hspace\{\\fill\}\($ITM$\)  \
+    \\hspace\*\{\\fill\}\($ITM$\)  \
+    \\item\[\(\\thinspace\s$ITM$\)\]  \
+    \\item\[\(\\hspace{0.04cm}$ITM$\)\]  \
+    \\hspace\*\{\\fill\}\($ITM$\) \
+    \\hfill\s\($ITM$\)
+
+itemTag[3] = \
+    \\item\[\($ITM$\)\] \
+    \\hyperref\{\($ITM$\)
+
+sequenceRestart = 
+
+masterRef = hyperref.*?ms$MASTER$\.tex
+
+masterRef::MASTER = m?\d{5}[a-z]?

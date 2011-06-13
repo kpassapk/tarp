@@ -1,0 +1,5 @@
+-------------------- ----------------------------------------
+|      entry        |                error                  |
+-------------------- ----------------------------------------
+| foo               | Your value 'bar' should contain '$b$'
+| foo               | Multiple values not allowed

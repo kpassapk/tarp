@@ -1,0 +1,153 @@
+#!/usr/bin/perl -w
+
+=head1 NAME
+
+talatexcombine - Collect exercises from one or more pickup files
+
+=cut
+
+use strict;
+use warnings;
+use Tarp::LaTeXcombine::App;
+
+Tarp::LaTeXcombine::App->run;
+
+=head1 SYNOPSIS
+
+talatexcombine [gen-tas] | [options] pickupList
+
+Options:
+
+    --tas=style.tas     Set name of Tarp Style (TAS) file to use
+    --pk=ID;file[;seq]  Define a pickup file (repeatable)
+    --info              Do not produce any output, just print chunk info
+    --chunk=file        The output chunk file (optional, see below)
+    --skel=file         The output skeleton file (optional, see below)
+    --dump-matches      Dump match information for each pickup file
+    --preamble-from=ID  Get the preamble from the file with this ID.
+    --help              Show this message
+    --version           Display version information
+
+If a chunk or skeleton file name is not supplied, the name of the pickup list
+will be used, with C<.chunk> and C<.skel> in place of its extension.
+
+Examples:
+
+    talatexcombine --gen-tas              # generate a compliant .tas file
+
+    # Create 4c0101.chunk and 4c0101.skel from two pickup files:
+    #                  (ID)  (file)       (ID)  (file)   (seq)
+    #                   |     |             |     |        |
+    talatexcombine --pk=6et;6et0101.tex --pk=3c3;3c0101.tex;1 4c0101.pklist
+
+=head1 DESCRIPTION
+
+C<talatexcombine> is a command-line interface to L</Tarp::LaTeXcombine>, which
+combines one or more pickup files into a "chunk" file and creates a skeleton
+file according to instructions contained in a pickup list.  These can then be
+joined to create a new C<.tex> file using C<tagentex>. 
+
+The format of the pickup list is as follows:
+
+    ITM, PKFILE, PKEX, MASTER
+
+For example,
+
+    01, file1,  03,  12345
+    02, new,    ..,  12346
+    03, file1,  01,  12347
+    ...  ...     ...   ...
+
+The first column, C<ITM>, contains the new file exercise number. The second,
+C<PKFILE>, contains an ID for the pickup file where the exercise
+is to be picked up from.  This file ID must be one of the values given as
+arguments to the program.  The next column, C<PKEX>, contains the exercise within
+the pickup file to be copied over.  Finally, the C<MASTER>
+column contains a master number corresponding to that exercise.  Commas or spaces
+may be used as field delimiters, as long as there are always four fields per line.
+
+=head3 Extraction of Exercises
+
+Upon loading, the program looks for each of the pickup files given in the
+command line.  It then parses each of those files in order to determine which
+exercises they contain.  If all pickup files were loaded and parsed correctly,
+the program proceeds to read the pickup list.  For each instruction in the pickup list,
+the program looks in the specified pickup file and copies its contents over
+to a new file - the "chunk" file.  The "chunk" file is an ordered list of chunks,
+or bits of LaTeX, inserted in lines between the words CHUNK_START and CHUNK_END.
+
+When the pickup list specifies contiguous pickup exercises - i.e. sequential
+exercisesin the same numbering sequence of the same pickup file - these are
+copied over to the chunk file as a single "chunk" (hence the name).
+This is in order to preserve special formatting in the input file,
+such as in problems with parts or subparts in columns, which exercise-by-exercise
+copying would probably destroy.  Also, when all parts and subparts of a problem
+are copied over in a one-to-one fashion to the new file, then the entire problem
+gets copied over in one go.  For example, suppose a part of the pickup list
+contained the following:
+
+    03a foo 02a 00002
+    03b foo 02b 00003
+    03c foo 02c 00004
+
+Here exercise 2, parts (a), (b) and (c) is being copied over one-to-one into
+exercise 3, parts (a), (b), and (c).  This input is "collapsed" into a single
+instruction that copies exercise 2 into exercise 3.  This has the advantage of
+copying over any TeX tags that belong to exercise 2 but not to 2a, 2b or 2c.
+
+As a special case, the C<PKBOOK> column may contain the word "new", in which case
+a standard canned entry with the specified master number is printed in the
+chunk file.  In this case the C<PKEX> column is ignored.  An example could be,
+
+    42a new .. 01425
+
+The input file does not contain column headings.  These are used in this manual
+page for convenience.
+
+=head3 Extraction of Preamble
+
+The first chunk in the Chunk file is set to the preamble of the first pickup
+file given as a command-line argument.  The preamble is the contents of the file
+up to the first C<beginTag> (this tag is specified in your C<TAS> file.)  If no
+pickup files are given (for example if the pickup list contains only "new"
+references), then a canned preamble is generated and put into the first chunk.
+
+The --preamble-from switch can be used to select a different file to extract the
+preamble from.  For example, if you want a canned preamble even when pickup files
+exist, then you could use:
+
+    talatexcombine --preamble-from="new" --pk=... ...
+
+
+
+=head2 Output
+
+The program outputs two files:
+
+=over
+
+=item 1. CHUNK file
+
+Contains all the chunks copied over from the pickup file.
+Exercise numbers within a chunk (if any) are stripped and replaced with C<$ITM$>.
+The extension for chunk files is C<.chunk>.  By default, the name of the
+pickup list is used, replacing its extension from C<.pklist> to C<.chunk>.
+If the pickup list does not have an extension, the extension C<.chunk> is appended
+to the name of the pickup list.
+
+=item 2. SKEL file
+
+Short for "skeleton" file, it contains a LaTeX exercise
+list constructed using the pickup file.    The extension for skeleton files is
+C<.skel>.  A line containing the words "INSERT CHUNK HERE" denotes where each
+chunk in the C<.chunk> file is to be inserted in order to create a full C<.tex>
+file. Note that since each chunk can have several exercises and LaTeX tags
+corresponding to the exercise list, a C<.skel> file is not a legal C<.tex> file
+by itself.  By default, the name of the pickup list is used,
+replacing its extension from C<.pklist> to C<.skel>.  If the pickup list
+does not end in C<.pklist>, the extension C<.skel> is appended to the
+name of the pickup list.
+
+=back
+
+=cut

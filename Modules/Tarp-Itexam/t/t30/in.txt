@@ -1,0 +1,6 @@
+\begin{enumerate}
+1
+TCIMACRO
+m42
+EndExpansion
+\end{enumerate}

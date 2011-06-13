@@ -1,0 +1,26 @@
+Tarp-LaTeXtract
+
+Extract item data from LaTeX file.
+
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Makefile.PL
+	make
+	make test
+	make install
+
+SUPPORT AND DOCUMENTATION
+
+After installing, you can find documentation for this module with the
+perldoc command.
+
+    perldoc Tarp::LaTeXtract
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2008 Kyle Passarelli
+
+

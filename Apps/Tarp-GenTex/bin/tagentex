@@ -1,0 +1,103 @@
+#!/usr/bin/perl -w
+
+=head1 NAME
+
+tagentex - Generate a LaTeX file from flat and skeleton files.
+
+=cut
+
+use strict;
+use warnings;
+use Tarp::GenTex::App;
+
+Tarp::GenTex::App->run;
+
+=head1 SYNOPSIS
+
+    tagentex [options] pickupList
+
+Options:
+
+    --tas=style.tas         Tarp Style (TAS) file to use.
+    --gen-tas               Generates a compliant .tas file
+    --out=bat.tex           Output file (see below)
+    --skel=foo.skel         Skeleton file to use (see below)
+    --chunk=bar.chunk       Chunk file to use (see below)
+    --var=name;value        Variable substitution (repeatable)
+    --master-templates      Generate master templates
+    --template-dir          Directory for master templates (req. --master-templates)
+    --help                  Show this message.
+    --version               Display version information.
+
+Examples:
+
+    # Generate 4c0501.tex using 4c0501.skel and 4c0501.chunk
+    
+    tagentex 4c0501.pklist
+    
+    # As above, but replace $CHAP_TITLE$ and $SECT_TITLE$ in preamble:
+    
+    tagentex 4c0501.pklist --var="CHAPT_TITLE;LaTeX For Dummies" \
+                           --var="SECT_TITLE;Getting Started"
+    
+    # Generate master templates and put them in "masters" subdirectory.
+    
+    tagentex 4c0501.pklist --master-templates --template-dir=masters
+
+=head1 DESCRIPTION
+
+The main function of this program is to create a C<LaTeX> file by inserting
+chunks in a C<.chunk> file into slots in a C<.skel> file.  It can also generate
+"master templates" - starter files for every "new" reference in the pickup
+list.
+
+After merging the C<.chunk> and C<.skel> files, $ITM$ and $MASTER$ variables
+are replaced with exercise and master numbers, respectively. Other variables in
+the first chunk in the chunk file, which contains the preamble of the output
+C<LaTeX> file, are also replaced with the values specified by the user in the
+--var argument(s).
+
+It is important that the pickup list and the C<TAS> file are the same as those that
+were used to generate the skeleton and chunk files; otherwise, the LaTeX file
+will not be generated successfully.  See L<Tarp::GenTex> for more information.
+
+If the skeleton and chunk files are not specified (with the C<--skel> and
+C<--chunk> options, respectively), the name of the pickup list will be used as
+follows: If the pickup list name has an extension, it is replaced with C<.skel>
+and C<.chunk>, respectively. Otherwise, the extension C<.skel> or C<.chunk> is
+appended after the name of the pickup list.
+
+Some variables can be guessed from the filename by matching the C<filename> tag
+in the C<TAS> file against the pickup list basename, and translating them to
+C<texVars> context (see L<Tarp::Style/xformVars> for more). For example, if the
+C<filename> tag and its variables contain the following:
+
+    filename = $book$CHAPT$$SECT$\.pklist
+        filename::book = \w+
+        filename::CHAPT = \d{2}
+        filename::SECT = \d{2}
+
+    texVars = $CHAPT$ $SECT$
+        texVars::CHAPT = \d+
+        texVars::SECT  = \d+
+
+and the pickup list is C<foo0201.pklist>, then the chapter will be "2" and the
+section "1".  Notice the leading zeroes are removed in case this value is
+numeric; if not, the value will be put as-is into the $CHAP$ and $SECT$ fields,
+respectively.  Also note that the $book$ variable is not used.
+
+If the C<--master-templates> option is given, template or starter files C<ms$MASTER$.tex>
+will be created instead of the output C<LaTeX> file, with C<$MASTER$> being replaced
+with the master numbers of all "new" pickups in the pickup list.
+In order to generate these files, multiple copies of a file called F<ms_template.tex>
+are made.  The program looks for C<ms_template.tex> first in the current directory.
+If it does not exist, it will look in C<$HOME/.tarp/templates/ms_template.txt>,
+but if the TECHARTS_TOOLKIT_DIR environment variable is set, C<tagentex> will look for
+F<ms_template.tex> in that directory.
+
+If a directory is specified using the C<--template-dir> option, master files will be
+put in that directory.  Otherwise they will be put in the current directory.  If
+F<ms_template.tex> contains the string C<$MASTER$>, it will get replaced with the
+actual master number that appears int he file name.
+
+=cut

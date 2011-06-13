@@ -1,0 +1,8 @@
+(first line is discarded)
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{ms$MASTER$.tex}}}{\QSubDoc{Include ms$MASTER$}{\input{ms$MASTER$.tex}}}{}{ms$MASTER$.tex}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{ms$MASTER$.tex}}}{%
+\input{ms$MASTER$.tex}}{}{ms$MASTER$.tex}%
+%EndExpansion
+

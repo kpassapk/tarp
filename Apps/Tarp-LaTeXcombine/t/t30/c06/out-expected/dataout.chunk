@@ -1,0 +1,21 @@
+CHUNK_START
+foo.tex preamble
+CHUNK_END
+
+CHUNK_START
+TCIMACRO
+Contents of foo 01a, ms00001a.tex
+EndExpansion
+CHUNK_END
+
+CHUNK_START
+TCIMACRO
+Contents of bar 01b, ms00001b.tex
+EndExpansion
+CHUNK_END
+
+CHUNK_START
+my canned macro
+
+CHUNK_END
+

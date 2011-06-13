@@ -1,0 +1,13 @@
+
+=head1 Expected Output
+
+=head2 GUI
+
+=for html <center><img src="screenshot.png"></center>
+
+
+=head2 Messages
+
+=for html <center><img src="terminal.png"></center>
+
+=cut

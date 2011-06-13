@@ -1,0 +1,11 @@
+---
+pullCSV:
+    OUTfile: $book$$chapter$.csv
+    col:
+        - master
+        - book
+        - chapter
+        - section
+        - exercise
+        - tec
+        - gcalc

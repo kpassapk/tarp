@@ -1,0 +1,12 @@
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{LaTeXparent=0,0,stewstyle.tex}
+                      
+
+\revhead[$CHAP$,$CHAP_TITLE$]\hspace*{\fill}\FRAME{itbpF}{0.8337in}{%
+0.1237in}{0in}{}{}{tfquiz.ai}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+0.8337in;height 0.1237in;depth 0in;original-width 0.8051in;original-height
+0.0951in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/TFQUIZ.ai';file-properties "XNPEU";}}\hspace*{\fill}
+
+$\rule[18pt]{474pt}{0.5pt}\vspace{-18pt}$

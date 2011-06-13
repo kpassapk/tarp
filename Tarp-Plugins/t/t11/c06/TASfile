@@ -1,0 +1,15 @@
+filename = .*\/$book$\.tex
+
+filename::book = .*
+
+beginTag = begin
+
+endTag = end
+
+itemTag[0] = <illegal>-$ITM$
+itemTag[1] = $ITM$
+itemTag[2] = $ITM$
+itemTag[3] = $ITM$b
+
+sequenceRestart = seq
+

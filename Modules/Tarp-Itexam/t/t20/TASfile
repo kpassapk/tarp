@@ -1,0 +1,28 @@
+# DESCRIPTOR = $BOOK$$CHAPTER$$SECTION$
+
+# DESCRIPTOR::BOOK = foo
+
+# DESCRIPTOR::CHAPTER = \d\d
+
+# DESCRIPTOR::SECTION = \d\d
+
+beginTag = begin
+
+endTag = end
+
+itemTag[0] = <illegal>-$ITM$
+itemTag[1] = $ITM$
+itemTag[2] = $ITM$
+itemTag[3] = $ITM$
+
+sequenceRestart = seq
+
+title = ^title:\s$FIRST$\s$REST$$
+
+title::FIRST = \w+
+
+title::REST = .+
+
+subTitle = ^subtitle:\s$SUBTITLE$$
+
+subTitle::SUBTITLE = .+

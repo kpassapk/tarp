@@ -1,0 +1,1664 @@
+
+\documentclass{sebase}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{makeidx}
+\usepackage{SECALCUL}
+\usepackage{lie}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Mon Dec 15 16:20:00 1997}
+%TCIDATA{LastRevised=Tuesday, September 22, 2009 17:18:01}
+%TCIDATA{<META NAME="ViewSettings" CONTENT="25">}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{CSTFile=SECALCUL.cst}
+
+\input tcilatex
+\newenvironment{instructions}{\STARTINSTR}{\ENDINSTR}
+\begin{document}
+
+
+%TCIMACRO{%
+%\TeXButton{Int Fix}{\def\dint{\displaystyle \int}\def\diint{\displaystyle \iint}\def\diiint{\displaystyle \iiint}
+%\def\tint{\textstyle \int}\def\tiint{\textstyle \iint }\def\tiiint{{\textstyle \iiint }\def\tiiiint{\textstyle \iiiint }}}}%
+%BeginExpansion
+\def\dint{\displaystyle \int}\def\diint{\displaystyle \iint}\def\diiint{\displaystyle \iiint}
+\def\tint{\textstyle \int}\def\tiint{\textstyle \iint }\def\tiiint{{\textstyle \iiint }\def\tiiiint{\textstyle \iiiint }}%
+%EndExpansion
+%TCIMACRO{\TeXButton{noCCC}{\noCCC}}%
+%BeginExpansion
+\noCCC%
+%EndExpansion
+%TCIMACRO{\TeXButton{setET}{\renewcommand{\ET}{1}}}%
+%BeginExpansion
+\renewcommand{\ET}{1}%
+%EndExpansion
+%TCIMACRO{\TeXButton{setRM}{\renewcommand{\RM}{1}}}%
+%BeginExpansion
+\renewcommand{\RM}{1}%
+%EndExpansion
+%TCIMACRO{\TeXButton{noRM}{\renewcommand{\RM}{0}}}%
+%BeginExpansion
+\renewcommand{\RM}{0}%
+%EndExpansion
+%TCIMACRO{\TeXButton{set page 73}{\setcounter{page}{73}}}%
+%BeginExpansion
+\setcounter{page}{73}%
+%EndExpansion
+
+\chapter{%
+%TCIMACRO{\TeXButton{8/ 7}{\ifnum\ET=0 8\else 7\fi}}%
+%BeginExpansion
+\ifnum\ET=0 8\else 7\fi%
+%EndExpansion
+\quad Techniques of Integration}
+
+\section{%
+%TCIMACRO{\TeXButton{8/ 7}{\ifnum\ET=0 8\else 7\fi}}%
+%BeginExpansion
+\ifnum\ET=0 8\else 7\fi%
+%EndExpansion
+\quad Review\protect\vspace*{-21pt}}
+
+\QTP{MultColDiv}
+CONCEPT CHECK\vspace{-18pt}
+
+%TCIMACRO{\TeXButton{graphicSr}{\vspace{12pt}\hskip-170pt\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hskip-170pt\hfil%
+%EndExpansion
+\vspace{-6pt}$\rule{7.15in}{0.02in}$%
+%TCIMACRO{\TeXButton{graphicE}{\vspace{12pt}\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hfil%
+%EndExpansion
+
+\vspace*{-9pt}%
+%TCIMACRO{%
+%\TeXButton{s2col}{\setlength{\columnsep}{24pt}
+%\advance \leftskip by -165pt
+%\advance\hsize by 165pt
+%\advance\linewidth by 165pt
+%\begin{multicols}{2}}}%
+%BeginExpansion
+\setlength{\columnsep}{24pt}
+\advance \leftskip by -165pt
+\advance\hsize by 165pt
+\advance\linewidth by 165pt
+\begin{multicols}{2}%
+%EndExpansion
+
+\begin{ExerciseList}
+\item[\hfill 1.] State the rule for integration by parts. In practice, how
+do you use it?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03890}}}{}{\fbox{\textbf{master 03890}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03890}}}{}{\fbox{\textbf{master 03890}}}{}%
+%EndExpansion
+
+\item[\hfill 2.] How do you evaluate $\tint \,\sin ^{m}x\,\cos ^{n}x\,dx$ if 
+$m$ is odd? What if $n$ is odd? What if $m$ and $n$ are both even?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03891}}}{}{\fbox{\textbf{master 03891}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03891}}}{}{\fbox{\textbf{master 03891}}}{}%
+%EndExpansion
+
+\item[\hfill 3.] If the expression $\sqrt{a^{2}-x^{2}}$ occurs in an
+integral, what substitution might you try? What if $\sqrt{a^{2}+x^{2}}$
+occurs? What if $\sqrt{x^{2}-a^{2}}$ occurs?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03892}}}{}{\fbox{\textbf{master 03892}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03892}}}{}{\fbox{\textbf{master 03892}}}{}%
+%EndExpansion
+
+\item[\hfill 4.] What is the form of the partial fraction expansion of a
+rational function $P\left( x\right) /Q\left( x\right) $ if the degree of $P$
+is less than the degree of $Q$ and $Q\left( x\right) $ has only distinct
+linear factors? What if a linear factor is repeated? What if $Q\left(
+x\right) $ has an irreducible quadratic factor (not repeated)? What if the
+quadratic factor is repeated?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03893}}}{}{\fbox{\textbf{master 03893}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03893}}}{}{\fbox{\textbf{master 03893}}}{}%
+%EndExpansion
+
+\item[\hfill 5.] State the rules for approximating the definite integral 
+\newline
+$\int_{a}^{b}\,\,f\left( x\right) \,dx$ with the Midpoint Rule, the
+Trapezoidal Rule, and Simpson's Rule. Which would you expect to give the
+best estimate? How do you approximate the error for each rule?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03894}}}{}{\fbox{\textbf{master 03894}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03894}}}{}{\fbox{\textbf{master 03894}}}{}%
+%EndExpansion
+
+\item[\hfill 6.] Define the following improper integrals.
+
+\begin{ExerciseList}
+\item[(a)] $\int_{a}^{\infty }\,\,f\left( x\right) \,dx$\hspace{12pt}\textbf{%
+(b)}\hspace{3pt}$\int_{-\infty }^{b}\,\,f\left( x\right) \,dx$\hspace{12pt}%
+\textbf{(c)}\hspace{3pt}$\int_{-\infty }^{\infty }\,\,f\left( x\right) \,dx$
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03895 for all 3 parts}}}{}{\fbox{\textbf{master 03895 for all 3 parts}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03895 for all 3 parts}}}{}{\fbox{\textbf{master 03895 for all 3 parts}}}{}%
+%EndExpansion
+
+\item[\hfill 7.] Define the improper integral $\int_{a}^{b}\,\,f\left(
+x\right) \,dx$ for each of the following cases.
+
+\begin{ExerciseList}
+\item[(a)] $f$ has an infinite discontinuity at $a$.
+
+\item[(b)] $f$ has an infinte discontinuity at $b$.
+
+\item[(c)] $f$ has an infinite discontinuity at $c$, where $a<c<b$.
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03896 for all 3 parts}}}{}{\fbox{\textbf{master 03896 for all 3 parts}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03896 for all 3 parts}}}{}{\fbox{\textbf{master 03896 for all 3 parts}}}{}%
+%EndExpansion
+
+\item[\hfill 8.] State the Comparison Theorem for improper integrals.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03897}}}{}{\fbox{\textbf{master 03897}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03897}}}{}{\fbox{\textbf{master 03897}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\TeXButton{e2col}{\end{multicols}
+%\advance \leftskip by 165pt
+%\advance\hsize by -165pt
+%\advance\linewidth by -165pt}}%
+%BeginExpansion
+\end{multicols}
+\advance \leftskip by 165pt
+\advance\hsize by -165pt
+\advance\linewidth by -165pt%
+%EndExpansion
+\vspace*{-9pt}
+
+\QTP{MultColDiv}
+TRUE-FALSE QUIZ\vspace{-18pt}
+
+%TCIMACRO{\TeXButton{graphicSr}{\vspace{12pt}\hskip-170pt\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hskip-170pt\hfil%
+%EndExpansion
+\vspace{-6pt}$\rule{7.15in}{0.02in}$%
+%TCIMACRO{\TeXButton{graphicE}{\vspace{12pt}\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hfil%
+%EndExpansion
+
+\vspace*{-9pt}%
+%TCIMACRO{%
+%\TeXButton{s2col}{\setlength{\columnsep}{24pt}
+%\advance \leftskip by -165pt
+%\advance\hsize by 165pt
+%\advance\linewidth by 165pt
+%\begin{multicols}{2}}}%
+%BeginExpansion
+\setlength{\columnsep}{24pt}
+\advance \leftskip by -165pt
+\advance\hsize by 165pt
+\advance\linewidth by 165pt
+\begin{multicols}{2}%
+%EndExpansion
+
+\begin{instructions}
+{\small Determine whether the statement is true or false. If it is true,
+explain why. If it is false, explain why or give an example that disproves
+the statement.}
+\end{instructions}
+
+\begin{ExerciseList}
+\item[\hfill 1.] $\dfrac{x(x^{2}+4)}{x^{2}-4}$ can be put in the form $%
+\dfrac{A}{x+2}+\dfrac{B}{x-2}$.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} False}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} False}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03898}}}{}{\fbox{\textbf{master 03898}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03898}}}{}{\fbox{\textbf{master 03898}}}{}%
+%EndExpansion
+
+\item[\hfill 2.] $\dfrac{x^{2}+4}{x(x^{2}-4)}$ can be put in the form $%
+\dfrac{A}{x}+\dfrac{B}{x+2}+\dfrac{C}{x-2}$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03899}}}{}{\fbox{\textbf{master 03899}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03899}}}{}{\fbox{\textbf{master 03899}}}{}%
+%EndExpansion
+
+\item[\hfill 3.] $\dfrac{x^{2}+4}{x^{2}(x-4)}$ can be put in the form $%
+\dfrac{A}{x^{2}}+\dfrac{B}{x-4}$.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} False}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} False}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03900}}}{}{\fbox{\textbf{master 03900}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03900}}}{}{\fbox{\textbf{master 03900}}}{}%
+%EndExpansion
+
+\item[\hfill 4.] $\dfrac{x^{2}-4}{x(x^{2}+4)}$ can be put in the form $%
+\dfrac{A}{x}+\dfrac{B}{x^{2}+4}$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03901}}}{}{\fbox{\textbf{master 03901}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03901}}}{}{\fbox{\textbf{master 03901}}}{}%
+%EndExpansion
+
+\item[\hfill 5.] $\dint\nolimits_{0}^{4}\,\,\dfrac{x}{x^{2}-1}\,dx=\tfrac{1}{%
+2}\,\ln \,15$
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} False}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} False}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03902}}}{}{\fbox{\textbf{master 03902}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03902}}}{}{\fbox{\textbf{master 03902}}}{}%
+%EndExpansion
+
+\item[\hfill 6.] $\dint\nolimits_{1}^{\infty }\,\,\dfrac{1}{x^{\sqrt{2}}}%
+\,dx $ is convergent.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03903}}}{}{\fbox{\textbf{master 03903}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03903}}}{}{\fbox{\textbf{master 03903}}}{}%
+%EndExpansion
+
+\item[\hfill 7.] If $f$ is continuous, then $\tint_{-\infty }^{\infty
+}\,\,f(x)\,dx=\lim\nolimits_{t\rightarrow \infty
+}\,\,\tint_{-t}^{t}\,\,f(x)\,dx$.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} False}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} False}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03904}}}{}{\fbox{\textbf{master 03904}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03904}}}{}{\fbox{\textbf{master 03904}}}{}%
+%EndExpansion
+
+\item[\hfill 8.] The Midpoint Rule is always more accurate than the \newline
+Trapezoidal Rule.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03905}}}{}{\fbox{\textbf{master 03905}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03905}}}{}{\fbox{\textbf{master 03905}}}{}%
+%EndExpansion
+
+\item[\hfill 9.] 
+
+\begin{ExerciseList}
+\item[(a)] Every elementary function has an elementary derivative.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER: }True}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER: }True}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03906}}}{}{\fbox{\textbf{master 03906}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03906}}}{}{\fbox{\textbf{master 03906}}}{}%
+%EndExpansion
+
+\item[(b)] Every elementary function has an elementary anti-\newline
+derivative.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER} False}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER} False}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 40578}}}{}{\fbox{\textbf{master 40578}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 40578}}}{}{\fbox{\textbf{master 40578}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[\hfill 10.] If $f$ is continuous on $[0,\infty )$ and $%
+\int_{1}^{\infty }f\left( x\right) \,dx$ is convergent, then $%
+\int_{0}^{\infty }f\left( x\right) \,dx$ is convergent.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03907}}}{}{\fbox{\textbf{master 03907}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03907}}}{}{\fbox{\textbf{master 03907}}}{}%
+%EndExpansion
+
+\item[\hfill 11.] If $f$ is a continuous, decreasing function on $[1,\infty
+) $ and
+
+$\lim_{x\rightarrow \infty }f(x)=0$, then $\int_{1}^{\infty }f\left(
+x\right) \,dx$ is convergent.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER: }False}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER: }False}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03908}}}{}{\fbox{\textbf{master 03908}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03908}}}{}{\fbox{\textbf{master 03908}}}{}%
+%EndExpansion
+
+\item[\hfill 12.] If $\int_{a}^{\infty }f\left( x\right) \,dx$ and $%
+\int_{a}^{\infty }g\left( x\right) \,dx$ are both convergent, then $%
+\int_{a}^{\infty }[f\left( x\right) +g(x)]\,\,dx$ is convergent.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03909}}}{}{\fbox{\textbf{master 03909}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03909}}}{}{\fbox{\textbf{master 03909}}}{}%
+%EndExpansion
+
+\item[\hfill 13.] If $\int_{a}^{\infty }f\left( x\right) \,dx$ and $%
+\int_{a}^{\infty }g\left( x\right) \,dx$ are both divergent, then
+
+$\int_{a}^{\infty }[f\left( x\right) +g(x)]\,\,dx$ is divergent.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER: }False}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER: }False}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03910}}}{}{\fbox{\textbf{master 03910}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03910}}}{}{\fbox{\textbf{master 03910}}}{}%
+%EndExpansion
+
+\item[\hfill 14.] If $f\left( x\right) \leq g\left( x\right) $ and $%
+\int_{0}^{\infty }g\left( x\right) \,dx$ diverges, then $\int_{0}^{\infty
+}f\left( x\right) \,dx$ also diverges.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03911}}}{}{\fbox{\textbf{master 03911}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03911}}}{}{\fbox{\textbf{master 03911}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\TeXButton{e2col}{\end{multicols}
+%\advance \leftskip by 165pt
+%\advance\hsize by -165pt
+%\advance\linewidth by -165pt}}%
+%BeginExpansion
+\end{multicols}
+\advance \leftskip by 165pt
+\advance\hsize by -165pt
+\advance\linewidth by -165pt%
+%EndExpansion
+\vspace*{-9pt}
+
+\QTP{MultColDiv}
+EXERCISES\vspace{-18pt}
+
+%TCIMACRO{\TeXButton{graphicSr}{\vspace{12pt}\hskip-170pt\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hskip-170pt\hfil%
+%EndExpansion
+\vspace{-6pt}$\rule{7.15in}{0.02in}$%
+%TCIMACRO{\TeXButton{graphicE}{\vspace{12pt}\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hfil%
+%EndExpansion
+
+\vspace*{-9pt}%
+%TCIMACRO{%
+%\TeXButton{s2col}{\setlength{\columnsep}{24pt}
+%\advance \leftskip by -165pt
+%\advance\hsize by 165pt
+%\advance\linewidth by 165pt
+%\begin{multicols}{2}}}%
+%BeginExpansion
+\setlength{\columnsep}{24pt}
+\advance \leftskip by -165pt
+\advance\hsize by 165pt
+\advance\linewidth by 165pt
+\begin{multicols}{2}%
+%EndExpansion
+
+\begin{instructions}
+\QTR{PartLetter}{Note:}{\small \quad Additional practice in techniques of
+integration is provided in Exercises 
+%TCIMACRO{\TeXButton{8.5/ 7.5}{\ifnum\ET=0 8.5\else 7.5\fi}}%
+%BeginExpansion
+\ifnum\ET=0 8.5\else 7.5\fi%
+%EndExpansion
+.}\vspace{-12pt}
+\end{instructions}
+
+\begin{instructions}
+\QTR{SpanExer}{1--40}{\small 
+%TCIMACRO{\TeXButton{SQR}{\hskip .5em\rule{4pt}{4pt}\hskip .5em}}%
+%BeginExpansion
+\hskip .5em\rule{4pt}{4pt}\hskip .5em%
+%EndExpansion
+Evaluate the integral.}
+\end{instructions}
+
+\begin{ExerciseList}
+\item[\hfill 1.] $\dint\nolimits_{1}^{2}\,\,\dfrac{(x+1)^{2}}{x}\,dx$
+
+%TCIMACRO{\hyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}%
+%EndExpansion
+
+\item[\hfill 2.] $\dint\nolimits_{1}^{2}\,\dfrac{x}{(x+1)^{2}}\,dx$
+
+%TCIMACRO{\hyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}%
+%EndExpansion
+
+\item[\hfill 3.] $\dint\nolimits_{0}^{\pi /2}\,\,\sin \theta ~e^{\cos \theta
+}\,d\theta $
+
+%TCIMACRO{\hyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}%
+%EndExpansion
+
+\item[\hfill 4.] $\dint\nolimits_{1}^{\pi /6}\,\,t\sin 2t~dt$
+
+%TCIMACRO{\hyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}%
+%EndExpansion
+
+\item[\hfill 5.] $\dint \,\,\dfrac{dt}{2t^{2}+3t+1}$
+
+%TCIMACRO{\hyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}%
+%EndExpansion
+
+\item[\hfill 6.] $\dint\nolimits_{1}^{2}\,\,x^{5}\ln x\,dx$
+
+%TCIMACRO{\hyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}%
+%EndExpansion
+
+\item[\hfill 7.] $\dint_{0}^{\pi /2}\,\sin ^{3}\theta ~\cos ^{2}\theta
+\,d\theta $
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER: }$\frac{2}{15}$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER: }$\frac{2}{15}$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80770}}}{}{\fbox{\textbf{master 80770}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80770}}}{}{\fbox{\textbf{master 80770}}}{}%
+%EndExpansion
+
+\item[\hfill 8.] $\dint \,\,\dfrac{dx}{\sqrt{e^{x}-1}}$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80771}}}{}{\fbox{\textbf{master 80771}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80771}}}{}{\fbox{\textbf{master 80771}}}{}%
+%EndExpansion
+
+\item[\hfill 9.] $\dint \,\,\dfrac{\sin (\ln t)}{t}\,dt$
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER: }$-\cos (\ln t)+C$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER: }$-\cos (\ln t)+C$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03918}}}{}{\fbox{\textbf{master 03918}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03918}}}{}{\fbox{\textbf{master 03918}}}{}%
+%EndExpansion
+
+\item[\hfill 10.] $\dint\nolimits_{0}^{1}\,\,\dfrac{\sqrt{\arctan x}}{1+x^{2}%
+}\,dx$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03921}}}{}{\fbox{\textbf{master 03921}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03921}}}{}{\fbox{\textbf{master 03921}}}{}%
+%EndExpansion
+
+\item[\hfill 11.] $\dint\nolimits_{1}^{2}\,\,\dfrac{\sqrt{x^{2}-1}}{x}\,dx$
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $\sqrt{3}-\left( \pi /3\right) $}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\sqrt{3}-\left( \pi /3\right) $}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03922}}}{}{\fbox{\textbf{master 03922}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03922}}}{}{\fbox{\textbf{master 03922}}}{}%
+%EndExpansion
+
+\item[\hfill 12.] $\dint_{{}}^{{}}\,\dfrac{e^{2x}}{1+e^{4x}}\,dx$
+
+%TCIMACRO{\hyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}%
+%EndExpansion
+
+\item[\hfill 13.] $\dint \,\,e^{\sqrt[3]{x}}~dx$
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $3e^{\sqrt[3]{x}}(x^{2/3}-2x^{1/3}+2)+C$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $3e^{\sqrt[3]{x}}(x^{2/3}-2x^{1/3}+2)+C$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 30286}}}{}{\fbox{\textbf{master 30286}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 30286}}}{}{\fbox{\textbf{master 30286}}}{}%
+%EndExpansion
+
+\item[\hfill 14.] $\dint \,\,\dfrac{x^{2}+2}{x+2}\,dx$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03925}}}{}{\fbox{\textbf{master 03925}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03925}}}{}{\fbox{\textbf{master 03925}}}{}%
+%EndExpansion
+
+\item[\hfill 15.] $\dint \,\,\dfrac{x-1}{x^{2}+2x}\,dx$
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $-\frac{1}{2}\ln \left\vert x\right\vert +\frac{3}{2}\ln \left\vert x+2\right\vert +C$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $-\frac{1}{2}\ln \left\vert x\right\vert +\frac{3}{2}\ln \left\vert x+2\right\vert +C$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80773}}}{}{\fbox{\textbf{master 80773}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80773}}}{}{\fbox{\textbf{master 80773}}}{}%
+%EndExpansion
+
+\item[\hfill 16.] $\dint \,\,\dfrac{\sec ^{6}\theta }{\tan ^{2}\theta }%
+\,d\theta $
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03927}}}{}{\fbox{\textbf{master 03927}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03927}}}{}{\fbox{\textbf{master 03927}}}{}%
+%EndExpansion
+
+\item[\hfill 17.] $\dint \,\,x\,\sec x\,\tan x\,dx$
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $x\sec x-\ln \,\left\vert \sec x+\tan x\right\vert +C$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $x\sec x-\ln \,\left\vert \sec x+\tan x\right\vert +C$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03928}}}{}{\fbox{\textbf{master 03928}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03928}}}{}{\fbox{\textbf{master 03928}}}{}%
+%EndExpansion
+
+\item[\hfill 18.] $\dint \,\,\dfrac{x^{2}+8x-3}{x^{3}+3x^{2}}\,dx$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03929}}}{}{\fbox{\textbf{master 03929}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03929}}}{}{\fbox{\textbf{master 03929}}}{}%
+%EndExpansion
+
+\item[\hfill 19.] $\dint \,\,\dfrac{x+1}{9x^{2}+6x+5}\,dx$
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER: }$\tfrac{1}{18}\ln (9x^{2}+6x+5)+\tfrac{1}{9}\tan ^{-1}\left( \tfrac{1}{2}(3x+1)\right) +C$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER: }$\tfrac{1}{18}\ln (9x^{2}+6x+5)+\tfrac{1}{9}\tan ^{-1}\left( \tfrac{1}{2}(3x+1)\right) +C$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03930}}}{}{\fbox{\textbf{master 03930}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03930}}}{}{\fbox{\textbf{master 03930}}}{}%
+%EndExpansion
+
+\item[\hfill 20.] $\dint \,\,\tan ^{5}\theta ~\sec ^{3}\theta ~d\theta $
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80774}}}{}{\fbox{\textbf{master 80774}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80774}}}{}{\fbox{\textbf{master 80774}}}{}%
+%EndExpansion
+
+\item[\hfill 21.] $\dint \,\,\dfrac{dx}{\sqrt{x^{2}-4x}}$
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $\ln \,\left\vert x-2+\sqrt{x^{2}-4x}\right\vert +C$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\ln \,\left\vert x-2+\sqrt{x^{2}-4x}\right\vert +C$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03932}}}{}{\fbox{\textbf{master 03932}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03932}}}{}{\fbox{\textbf{master 03932}}}{}%
+%EndExpansion
+
+\item[\hfill 22.] $\dint \,\,te^{\sqrt{t}}\,dt$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80775}}}{}{\fbox{\textbf{master 80775}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80775}}}{}{\fbox{\textbf{master 80775}}}{}%
+%EndExpansion
+
+\item[\hfill 23.] $\dint \,\,\dfrac{dx}{x\sqrt{x^{2}+1}}\,$
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $\ln \left\vert \dfrac{\sqrt{x^{2}+1}-1}{x}\right\vert +C$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\ln \left\vert \dfrac{\sqrt{x^{2}+1}-1}{x}\right\vert +C$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80776}}}{}{\fbox{\textbf{master 80776}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80776}}}{}{\fbox{\textbf{master 80776}}}{}%
+%EndExpansion
+
+\item[\hfill 24.] $\dint \,\,e^{x}\,\cos x\,dx$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03935}}}{}{\fbox{\textbf{master 03935}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03935}}}{}{\fbox{\textbf{master 03935}}}{}%
+%EndExpansion
+
+\item[\hfill 25.] $\dint \,\,\dfrac{3x^{3}-x^{2}+6x-4}{(x^{2}+1)(x^{2}+2)}%
+\,dx$
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} \newline
+%$\tfrac{3}{2}\ln \left( x^{2}+1\right) -3\tan ^{-1}x+\sqrt{2}\tan ^{-1}\left( x/\sqrt{2}\right) +C$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} \newline
+$\tfrac{3}{2}\ln \left( x^{2}+1\right) -3\tan ^{-1}x+\sqrt{2}\tan ^{-1}\left( x/\sqrt{2}\right) +C$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03936}}}{}{\fbox{\textbf{master 03936}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03936}}}{}{\fbox{\textbf{master 03936}}}{}%
+%EndExpansion
+
+\item[\hfill 26.] $\dint \,\,x~\sin x~\cos x~dx$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80777}}}{}{\fbox{\textbf{master 80777}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80777}}}{}{\fbox{\textbf{master 80777}}}{}%
+%EndExpansion
+
+\item[\hfill 27.] $\dint\nolimits_{0}^{\pi /2}\,\,\cos ^{3}x\,\sin \,2x\,dx$
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $\tfrac{2}{5}$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\tfrac{2}{5}$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03938}}}{}{\fbox{\textbf{master 03938}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03938}}}{}{\fbox{\textbf{master 03938}}}{}%
+%EndExpansion
+
+\item[\hfill 28.] $\dint \,\,\dfrac{\sqrt[3]{x}+1}{\sqrt[3]{x}-1}\,dx$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03939}}}{}{\fbox{\textbf{master 03939}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03939}}}{}{\fbox{\textbf{master 03939}}}{}%
+%EndExpansion
+
+\item[\hfill 29.] $\dint\nolimits_{-3}^{3}\,\,\dfrac{x}{1+\left\vert
+x\right\vert }\,dx$
+
+%TCIMACRO{\hyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}%
+%EndExpansion
+
+\item[\hfill 30.] $\dint \,\,\dfrac{dx}{e^{x}\sqrt{1-e^{-2x}}}$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03941}}}{}{\fbox{\textbf{master 03941}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03941}}}{}{\fbox{\textbf{master 03941}}}{}%
+%EndExpansion
+
+\item[\hfill 31.] $\dint\nolimits_{0}^{\ln 10}\,\,\dfrac{e^{x}\sqrt{e^{x}-1}%
+}{e^{x}+8}\,dx$
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER: }$6-3\pi /2$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER: }$6-3\pi /2$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03942}}}{}{\fbox{\textbf{master 03942}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03942}}}{}{\fbox{\textbf{master 03942}}}{}%
+%EndExpansion
+
+\item[\hfill 32.] $\dint\nolimits_{0}^{\pi /4}\,\,\dfrac{x\sin x}{\cos ^{3}x}%
+\,dx$
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER: New answer to come}}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER: New answer to come}}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03943}}}{}{\fbox{\textbf{master 03943}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03943}}}{}{\fbox{\textbf{master 03943}}}{}%
+%EndExpansion
+
+\item[\hfill 33.] $\dint \,\,\dfrac{x^{2}}{\left( 4-x^{2}\right) ^{3/2}}\,dx$
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $\left( x/\sqrt{4-x^{2}}\right) -\sin ^{-1}\left( x/2\right) +C$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\left( x/\sqrt{4-x^{2}}\right) -\sin ^{-1}\left( x/2\right) +C$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03944}}}{}{\fbox{\textbf{master 03944}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03944}}}{}{\fbox{\textbf{master 03944}}}{}%
+%EndExpansion
+
+\item[\hfill 34.] $\dint \,\,(\arcsin \,x)^{2}\,dx$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03945}}}{}{\fbox{\textbf{master 03945}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03945}}}{}{\fbox{\textbf{master 03945}}}{}%
+%EndExpansion
+
+\item[\hfill 35.] $\dint \,\,\dfrac{1}{\sqrt{x+x^{3/2}}}\,dx$
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER: }$4\sqrt{1+\sqrt{x}}+C$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER: }$4\sqrt{1+\sqrt{x}}+C$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03946}}}{}{\fbox{\textbf{master 03946}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03946}}}{}{\fbox{\textbf{master 03946}}}{}%
+%EndExpansion
+
+\item[\hfill 36.] $\dint \,\,\dfrac{1-\tan \theta }{1+\tan \theta }\,d\theta 
+$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03947}}}{}{\fbox{\textbf{master 03947}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03947}}}{}{\fbox{\textbf{master 03947}}}{}%
+%EndExpansion
+
+\item[\hfill 37.] $\dint \,\,(\cos x+\sin x)^{2}\cos \,2x\,dx$
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $\tfrac{1}{2}\sin 2x-\tfrac{1}{8}\cos 4x+C$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\tfrac{1}{2}\sin 2x-\tfrac{1}{8}\cos 4x+C$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03948}}}{}{\fbox{\textbf{master 03948}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03948}}}{}{\fbox{\textbf{master 03948}}}{}%
+%EndExpansion
+
+\item[\hfill 38.] $\dint \,\,\dfrac{2^{\sqrt{x}}}{\sqrt{x}}\,dx$
+
+%TCIMACRO{\hyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}%
+%EndExpansion
+
+\item[\hfill 39.] $\dint\nolimits_{0}^{1/2}\,\,\dfrac{xe^{2x}}{(1+2x)^{2}}%
+\,dx$
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER: }$\tfrac{1}{8}e-\tfrac{1}{4}$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER: }$\tfrac{1}{8}e-\tfrac{1}{4}$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03950}}}{}{\fbox{\textbf{master 03950}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03950}}}{}{\fbox{\textbf{master 03950}}}{}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{longpage}{\enlargethispage{\baselineskip}}}%
+%BeginExpansion
+\enlargethispage{\baselineskip}%
+%EndExpansion
+
+\item[\hfill 40.] $\dint\nolimits_{\pi /4}^{\pi /3}\,\,\dfrac{\sqrt{\tan
+\theta }}{\sin 2\theta }\,d\theta $
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03951}}}{}{\fbox{\textbf{master 03951}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03951}}}{}{\fbox{\textbf{master 03951}}}{}%
+%EndExpansion
+\vspace*{-9pt}
+\end{ExerciseList}
+
+\begin{instructions}
+\FRAME{itbpF}{237.375pt}{6.6875pt}{0pt}{}{}{dots.wmf}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 237.375pt;height 6.6875pt;depth
+0pt;original-width 3.9167in;original-height 0.0735in;cropleft "0";croptop
+"0.9532";cropright "0.8216";cropbottom "0.0468";filename
+'graphics/dots.wmf';file-properties "XNPEU";}}
+\end{instructions}
+
+\begin{instructions}
+\QTR{SpanExer}{41--50}{\small 
+%TCIMACRO{\TeXButton{SQR}{\hskip .5em\rule{4pt}{4pt}\hskip .5em}}%
+%BeginExpansion
+\hskip .5em\rule{4pt}{4pt}\hskip .5em%
+%EndExpansion
+Evaluate the integral or show that it is divergent.}
+\end{instructions}
+
+\begin{ExerciseList}
+\item[\hfill 41.] $\dint\nolimits_{1}^{\infty }\,\,\dfrac{1}{(2x+1)^{3}}\,dx$
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $\tfrac{1}{36}$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\tfrac{1}{36}$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03952}}}{}{\fbox{\textbf{master 03952}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03952}}}{}{\fbox{\textbf{master 03952}}}{}%
+%EndExpansion
+
+\item[\hfill 42.] $\dint\nolimits_{1}^{\infty }\,\,\dfrac{\ln x}{x^{4}}\,dx$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80779}}}{}{\fbox{\textbf{master 80779}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80779}}}{}{\fbox{\textbf{master 80779}}}{}%
+%EndExpansion
+
+\item[\hfill 43.] $\dint\nolimits_{2}^{\infty }\,\,\dfrac{dx}{x\ln x}$
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER: }D}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER: }D}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03954}}}{}{\fbox{\textbf{master 03954}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03954}}}{}{\fbox{\textbf{master 03954}}}{}%
+%EndExpansion
+
+\item[\hfill 44.] $\dint\nolimits_{2}^{6}\,\,\dfrac{y}{\sqrt{y-2}}\,dy$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03955}}}{}{\fbox{\textbf{master 03955}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03955}}}{}{\fbox{\textbf{master 03955}}}{}%
+%EndExpansion
+
+\item[\hfill 45.] $\dint\nolimits_{0}^{4}\,\,\dfrac{\ln x}{\sqrt{x}}\,dx$
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $4\ln 4-8$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $4\ln 4-8$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03956}}}{}{\fbox{\textbf{master 03956}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03956}}}{}{\fbox{\textbf{master 03956}}}{}%
+%EndExpansion
+
+\item[\hfill 46.] $\dint\nolimits_{0}^{1}\,\,\dfrac{1}{2-3x}\,dx$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03957}}}{}{\fbox{\textbf{master 03957}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03957}}}{}{\fbox{\textbf{master 03957}}}{}%
+%EndExpansion
+
+\item[\hfill 47.] $\dint\nolimits_{0}^{1}\,\,\dfrac{x-1}{\sqrt{x}}~dx$
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $-\frac{4}{3}$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $-\frac{4}{3}$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80780}}}{}{\fbox{\textbf{master 80780}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80780}}}{}{\fbox{\textbf{master 80780}}}{}%
+%EndExpansion
+
+\item[\hfill 48.] $\dint\nolimits_{-1}^{1}\,\,\dfrac{dx}{x^{2}-2x}$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80781}}}{}{\fbox{\textbf{master 80781}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80781}}}{}{\fbox{\textbf{master 80781}}}{}%
+%EndExpansion
+
+\item[\hfill 49.] $\dint\nolimits_{-\infty }^{\infty }\,\,\dfrac{dx}{%
+4x^{2}+4x+5}$
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $\pi /4$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\pi /4$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03960}}}{}{\fbox{\textbf{master 03960}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03960}}}{}{\fbox{\textbf{master 03960}}}{}%
+%EndExpansion
+
+\item[\hfill 50.] $\dint\nolimits_{1}^{\infty }\,\,\dfrac{\tan ^{-1}x}{x^{2}}%
+\,dx$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03961}}}{}{\fbox{\textbf{master 03961}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03961}}}{}{\fbox{\textbf{master 03961}}}{}%
+%EndExpansion
+\vspace*{-9pt}
+\end{ExerciseList}
+
+\begin{instructions}
+\FRAME{itbpF}{237.375pt}{6.6875pt}{0pt}{}{}{dots.wmf}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 237.375pt;height 6.6875pt;depth
+0pt;original-width 3.9167in;original-height 0.0735in;cropleft "0";croptop
+"0.9532";cropright "0.8216";cropbottom "0.0468";filename
+'graphics/dots.wmf';file-properties "XNPEU";}}\pagebreak
+\end{instructions}
+
+\begin{instructions}
+%TCIMACRO{\TeXButton{GCALCI}{\GCALCI}}%
+%BeginExpansion
+\GCALCI%
+%EndExpansion
+\QTR{SpanExer}{51--52}{\small 
+%TCIMACRO{\TeXButton{SQR}{\hskip .5em\rule{4pt}{4pt}\hskip .5em}}%
+%BeginExpansion
+\hskip .5em\rule{4pt}{4pt}\hskip .5em%
+%EndExpansion
+Evaluate the indefinite integral. Illustrate and check that your answer is
+reasonable by graphing both the function and its antiderivative (take $C=0).$%
+}
+\end{instructions}
+
+\begin{ExerciseList}
+\item[\hfill 51.] $\dint \,\,\ln (x^{2}+2x+2)\,dx$
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} \newline
+%$\left( x+1\right) \ln \left( x^{2}+2x+2\right) +2\arctan \left( x+1\right) -2x+C$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} \newline
+$\left( x+1\right) \ln \left( x^{2}+2x+2\right) +2\arctan \left( x+1\right) -2x+C$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03962}}}{}{\fbox{\textbf{master 03962}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03962}}}{}{\fbox{\textbf{master 03962}}}{}%
+%EndExpansion
+
+\item[\hfill 52.] $\dint \,\,\dfrac{x^{3}}{\sqrt{x^{2}+1}}\,dx$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 12157}} - same as 03963}{}{\fbox{\textbf{master 12157}} - same as 03963}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 12157}} - same as 03963}{}{\fbox{\textbf{master 12157}} - same as 03963}{}%
+%EndExpansion
+\vspace*{-9pt}
+\end{ExerciseList}
+
+\begin{instructions}
+\FRAME{itbpF}{237.375pt}{6.6875pt}{0pt}{}{}{dots.wmf}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 237.375pt;height 6.6875pt;depth
+0pt;original-width 3.9167in;original-height 0.0735in;cropleft "0";croptop
+"1";cropright "0.8216";cropbottom "0";filename
+'graphics/dots.wmf';file-properties "XNPEU";}}
+\end{instructions}
+
+\begin{ExerciseList}
+\item[\hfill 53.] 
+%TCIMACRO{\TeXButton{GCALCX}{\GCALCX}}%
+%BeginExpansion
+\GCALCX%
+%EndExpansion
+Graph the function $f(x)=\cos ^{2}x\,\sin ^{3}x$ and use the graph to guess
+the value of the integral $\int_{0}^{2\pi }f(x)\,dx$. Then evaluate the
+integral to confirm your guess.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $0$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $0$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 12158}} - same as 03964}{}{\fbox{\textbf{master 12158}} - same as 03964}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 12158}} - same as 03964}{}{\fbox{\textbf{master 12158}} - same as 03964}{}%
+%EndExpansion
+
+\item[\hfill 54.] 
+
+\begin{ExerciseList}
+\item[(a)] 
+%TCIMACRO{\TeXButton{CASXT}{\CASXT}}%
+%BeginExpansion
+\CASXT%
+%EndExpansion
+How would you evaluate $\int \,\,x^{5}e^{-2x}\,dx$ by hand? \newline
+(Don't actually carry out the integration.)
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03965}}}{}{\fbox{\textbf{master 03965}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03965}}}{}{\fbox{\textbf{master 03965}}}{}%
+%EndExpansion
+
+\item[(b)] How would you evaluate $\int \,\,x^{5}e^{-2x}\,dx$ using tables? 
+\newline
+(Don't actually do it.)
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 06154}}}{}{\fbox{\textbf{master 06154}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 06154}}}{}{\fbox{\textbf{master 06154}}}{}%
+%EndExpansion
+
+\item[(c)] Use a CAS to evaluate $\int \,\,x^{5}e^{-2x}\,dx$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 06155}}}{}{\fbox{\textbf{master 06155}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 06155}}}{}{\fbox{\textbf{master 06155}}}{}%
+%EndExpansion
+
+\item[(d)] Graph the integrand and the indefinite integral on the same
+screen.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 06156}}}{}{\fbox{\textbf{master 06156}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 06156}}}{}{\fbox{\textbf{master 06156}}}{}%
+%EndExpansion
+\vspace*{-9pt}
+\end{ExerciseList}
+\end{ExerciseList}
+
+\begin{instructions}
+\QTR{SpanExer}{55--58}{\small 
+%TCIMACRO{\TeXButton{SQR}{\hskip .5em\rule{4pt}{4pt}\hskip .5em}}%
+%BeginExpansion
+\hskip .5em\rule{4pt}{4pt}\hskip .5em%
+%EndExpansion
+Use the Table of Integrals on the Reference Pages to evaluate the integral.}
+\end{instructions}
+
+\begin{ExerciseList}
+\item[\hfill 55.] $\dint \sqrt{4x^{2}-4x-3}\,dx$
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $\frac{1}{4}(2x-1)\sqrt{4x^{2}-4x-3}-\newline
+%\ln \left\vert 2x-1+\sqrt{4x^{2}-4x-3}\right\vert +C$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\frac{1}{4}(2x-1)\sqrt{4x^{2}-4x-3}-\newline
+\ln \left\vert 2x-1+\sqrt{4x^{2}-4x-3}\right\vert +C$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80782}}}{}{\fbox{\textbf{master 80782}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80782}}}{}{\fbox{\textbf{master 80782}}}{}%
+%EndExpansion
+
+\item[\hfill 56.] $\dint \csc ^{5}t\,dt$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03967}}}{}{\fbox{\textbf{master 03967}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03967}}}{}{\fbox{\textbf{master 03967}}}{}%
+%EndExpansion
+
+\item[\hfill 57.] $\dint \cos x~\sqrt{4+\sin ^{2}x}\,dx$
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $\frac{1}{2}\sin x\sqrt{4+\sin ^{2}x}+2\ln \!\left( \sin x+\sqrt{4+\sin ^{2}x}\right) +C$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\frac{1}{2}\sin x\sqrt{4+\sin ^{2}x}+2\ln \!\left( \sin x+\sqrt{4+\sin ^{2}x}\right) +C$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80783}}}{}{\fbox{\textbf{master 80783}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80783}}}{}{\fbox{\textbf{master 80783}}}{}%
+%EndExpansion
+
+\item[\hfill 58.] $\dint \dfrac{\cot \,x}{\sqrt{1+2\sin \,x}}\,dx$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03969}}}{}{\fbox{\textbf{master 03969}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03969}}}{}{\fbox{\textbf{master 03969}}}{}%
+%EndExpansion
+\vspace*{-9pt}
+\end{ExerciseList}
+
+\begin{instructions}
+\FRAME{itbpF}{237.375pt}{6.6875pt}{0pt}{}{}{dots.wmf}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 237.375pt;height 6.6875pt;depth
+0pt;original-width 3.9167in;original-height 0.0735in;cropleft "0";croptop
+"0.9532";cropright "0.8216";cropbottom "0.0468";filename
+'graphics/dots.wmf';file-properties "XNPEU";}}
+\end{instructions}
+
+\begin{ExerciseList}
+\item[\hfill 59.] Verify Formula 33 in the Table of Integrals 
+\QTR{PartLetter}{(a)} by differentiation and \QTR{PartLetter}{(b)} by using
+a trigonometric substitution.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} \textit{No answer}}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} \textit{No answer}}{}%
+%EndExpansion
+
+%TCIMACRO{\hyperref{(a) = }{}{(a) = }{}}%
+%BeginExpansion
+\msihyperref{(a) = }{}{(a) = }{}%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03970}}}{}{\fbox{\textbf{master 03970}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03970}}}{}{\fbox{\textbf{master 03970}}}{}%
+%EndExpansion
+\quad 
+%TCIMACRO{\hyperref{(b) = }{}{(b) = }{}}%
+%BeginExpansion
+\msihyperref{(b) = }{}{(b) = }{}%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 40582}}}{}{\fbox{\textbf{master 40582}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 40582}}}{}{\fbox{\textbf{master 40582}}}{}%
+%EndExpansion
+
+\item[\hfill 60.] Verify Formula 62 in the Table of Integrals.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03971}}}{}{\fbox{\textbf{master 03971}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03971}}}{}{\fbox{\textbf{master 03971}}}{}%
+%EndExpansion
+
+\item[\hfill 61.] Is it possible to find a number $n$ such that $%
+\int_{0}^{\infty }\,\,x^{n}\,dx$ is \newline
+convergent?
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} No}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} No}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03972}}}{}{\fbox{\textbf{master 03972}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03972}}}{}{\fbox{\textbf{master 03972}}}{}%
+%EndExpansion
+
+\item[\hfill 62.] For what values of $a$ is $\int_{0}^{\infty }e^{ax}\cos
+x\,dx$ convergent? Evaluate the integral for those values of $a$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03973}}}{}{\fbox{\textbf{master 03973}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03973}}}{}{\fbox{\textbf{master 03973}}}{}%
+%EndExpansion
+\vspace*{-6pt}
+\end{ExerciseList}
+
+\begin{instructions}
+\QTR{SpanExer}{63--64}{\small 
+%TCIMACRO{\TeXButton{SQR}{\hskip .5em\rule{4pt}{4pt}\hskip .5em}}%
+%BeginExpansion
+\hskip .5em\rule{4pt}{4pt}\hskip .5em%
+%EndExpansion
+Use }\QTR{PartLetter}{(a)}{\small \ the Trapezoidal Rule, }\QTR{PartLetter}{%
+(b)}{\small \ the Midpoint Rule, and }\QTR{PartLetter}{(c)}{\small \
+Simpson's Rule with $n=10$ to approximate the given integral. Round your
+answers to six decimal places.}
+\end{instructions}
+
+\begin{ExerciseList}
+\item[\hfill 63.] $\dint\nolimits_{2}^{4}\,\,\dfrac{1}{\ln x}\,dx$
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (a)$\QTR{sechead}{~1.925444}$\quad (b)$\QTR{sechead}{~1.920915}$\quad (c)$\QTR{sechead}{~1.922470}$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (a)$\QTR{sechead}{~1.925444}$\quad (b)$\QTR{sechead}{~1.920915}$\quad (c)$\QTR{sechead}{~1.922470}$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80784}}}{}{\fbox{\textbf{master 80784}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80784}}}{}{\fbox{\textbf{master 80784}}}{}%
+%EndExpansion
+
+\item[\hfill 64.] $\dint\nolimits_{1}^{4}\,\,\sqrt{x}\,\cos x\,dx$
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80785}}}{}{\fbox{\textbf{master 80785}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80785}}}{}{\fbox{\textbf{master 80785}}}{}%
+%EndExpansion
+\vspace*{-9pt}
+\end{ExerciseList}
+
+\begin{instructions}
+\FRAME{itbpF}{237.375pt}{6.6875pt}{0pt}{}{}{dots.wmf}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 237.375pt;height 6.6875pt;depth
+0pt;original-width 3.9167in;original-height 0.0735in;cropleft "0";croptop
+"0.9532";cropright "0.8216";cropbottom "0.0468";filename
+'graphics/dots.wmf';file-properties "XNPEU";}}%
+%TCIMACRO{\TeXButton{longpage}{\enlargethispage{12pt}}}%
+%BeginExpansion
+\enlargethispage{12pt}%
+%EndExpansion
+\end{instructions}
+
+\begin{ExerciseList}
+\item[\hfill 65.] Estimate the errors involved in Exercise 63, parts (a) and
+(b). How large should $n$ be in each case to guarantee an error of less than 
+$0.00001$?
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (a)$\QTR{sechead}{~0.01348}$, $n\geq 368$\quad (b)$\QTR{sechead}{~0.00674}$, $n\geq 260$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (a)$\QTR{sechead}{~0.01348}$, $n\geq 368$\quad (b)$\QTR{sechead}{~0.00674}$, $n\geq 260$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80786}}}{}{\fbox{\textbf{master 80786}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80786}}}{}{\fbox{\textbf{master 80786}}}{}%
+%EndExpansion
+
+\item[\hfill 66.] Use Simpson's Rule with $n=6$ to estimate the area under
+the curve $y=e^{x}/x$ from $x=1$ to $x=4$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03977}}}{}{\fbox{\textbf{master 03977}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03977}}}{}{\fbox{\textbf{master 03977}}}{}%
+%EndExpansion
+
+\item[\hfill 67.] The speedometer reading ($v$) on a car was observed at 
+\newline
+1-minute intervals and recorded in the chart. Use Simpson's Rule to estimate
+the distance traveled by the car.\\[6pt]
+$\hspace*{\fill}%
+\begin{tabular}[t]{|c|c||c|c|}
+\hline
+\ $t$ (min)\  & \ $v$ (mi$/$h)\  & \ $t$ (min)\  & \ $v$ (mi$/$h) \\ \hline
+0 & 40 & \hspace{3pt}6 & 56 \\ 
+1 & 42 & \hspace{3pt}7 & 57 \\ 
+2 & 45 & \hspace{3pt}8 & 57 \\ 
+3 & 49 & \hspace{3pt}9 & 55 \\ 
+4 & 52 & 10 & 56 \\ 
+5 & 54 &  &  \\ \hline
+\end{tabular}%
+\ \hspace*{\fill}$
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} 8.6 mi}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} 8.6 mi}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03978}}}{}{\fbox{\textbf{master 03978}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03978}}}{}{\fbox{\textbf{master 03978}}}{}%
+%EndExpansion
+
+\item[\hfill 68.] A population of honeybees increased at a rate of $r\left(
+t\right) $ bees per week, where the graph of $r$ is as shown. Use Simpson's
+Rule with six subintervals to estimate the increase in the bee population
+during the first 24 weeks.\\[4pt]
+\hspace*{\fill}\FRAME{itbpF}{2.7501in}{1.7807in}{0in}{}{}{4e08rx68.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 2.7501in;height 1.7807in;depth
+0in;original-width 2.7501in;original-height 1.7807in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/4e08rx68.wmf';file-properties "XNPEU";}}\hspace*{\fill}\vspace*{%
+-6pt}
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03979}}}{}{\fbox{\textbf{master 03979}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03979}}}{}{\fbox{\textbf{master 03979}}}{}%
+%EndExpansion
+
+\item[\hfill 69.] 
+
+\begin{ExerciseList}
+\item[(a)] 
+%TCIMACRO{\TeXButton{CASXT}{\CASXT}}%
+%BeginExpansion
+\CASXT%
+%EndExpansion
+If $f(x)=\sin (\sin \,x)$, use a graph to find an upper bound for $%
+\left\vert f^{(4)}(x)\right\vert $.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} (a) $3.8$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (a) $3.8$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03980}}}{}{\fbox{\textbf{master 03980}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03980}}}{}{\fbox{\textbf{master 03980}}}{}%
+%EndExpansion
+
+\item[(b)] Use Simpson's Rule with $n=10$ to approximate \newline
+$\int_{0}^{\pi }f(x)\,dx$ and use part (a) to estimate the error.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} (b) $1.7867$, $0.000646$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (b) $1.7867$, $0.000646$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 06152}}}{}{\fbox{\textbf{master 06152}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 06152}}}{}{\fbox{\textbf{master 06152}}}{}%
+%EndExpansion
+
+\item[(c)] How large should $n$ be to guarantee that the size of the error
+in using $S_{n}$ is less than $0.00001$?
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} (c) $n\geq 30$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (c) $n\geq 30$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 06153}}}{}{\fbox{\textbf{master 06153}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 06153}}}{}{\fbox{\textbf{master 06153}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[\hfill 70.] Suppose you are asked to estimate the volume of a
+football. You measure and find that a football is 28 cm long. You use a
+piece of string and measure the circumference at its widest point to be $53$
+cm. The circumference $7$ cm from each end is $45$ cm. Use Simpson's Rule to
+make your estimate.\\[4pt]
+\hspace*{\fill}\FRAME{itbpF}{1.5835in}{1.2375in}{0in}{}{}{4e08rx70.wmf}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.5835in;height 1.2375in;depth
+0in;original-width 1.5835in;original-height 1.2375in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/4e08rx70.wmf';file-properties "XNPEU";}}\hspace*{\fill}
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03981}}}{}{\fbox{\textbf{master 03981}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03981}}}{}{\fbox{\textbf{master 03981}}}{}%
+%EndExpansion
+
+\item[\hfill 71.] Use the Comparison Theorem to determine whether the
+integral is convergent or divergent.
+
+\begin{ExerciseList}
+\item[(a)] $\dint\nolimits_{1}^{\infty }\,\,\dfrac{2+\sin x}{\sqrt{x}}\,dx$
+
+\item[(b)] $\dint\nolimits_{1}^{\infty }\,\,\dfrac{1}{\sqrt{1+x^{4}}}\,dx$
+\end{ExerciseList}
+
+%TCIMACRO{\hyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}%
+%EndExpansion
+
+\item[\hfill 72.] Find the area of the region bounded by the hyperbola 
+\newline
+$y^{2}-x^{2}=1$ and the line $y=3$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03983}}}{}{\fbox{\textbf{master 03983}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03983}}}{}{\fbox{\textbf{master 03983}}}{}%
+%EndExpansion
+
+\item[\hfill 73.] Find the area bounded by the curves $y=\cos \,x$ and $%
+y=\cos ^{2}x$ between $x=0$ and $x=\pi $.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $2$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $2$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03984}}}{}{\fbox{\textbf{master 03984}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03984}}}{}{\fbox{\textbf{master 03984}}}{}%
+%EndExpansion
+
+\item[\hfill 74.] Find the area of the region bounded by the curves \newline
+$y=1/(2+\sqrt{x})$, $y=1/(2-\sqrt{x})$, and $x=1$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03985}}}{}{\fbox{\textbf{master 03985}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03985}}}{}{\fbox{\textbf{master 03985}}}{}%
+%EndExpansion
+
+\item[\hfill 75.] The region under the curve $y=\cos ^{2}x,0\leq x\leq \pi /2
+$, is rotated about the $x$-axis. Find the volume of the resulting solid.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $\tfrac{3}{16}\pi ^{2}$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $\tfrac{3}{16}\pi ^{2}$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03986}}}{}{\fbox{\textbf{master 03986}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03986}}}{}{\fbox{\textbf{master 03986}}}{}%
+%EndExpansion
+
+\item[\hfill 76.] The region in Exercise 75 is rotated about the $y$-axis.
+Find the volume of the resulting solid.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03987}}}{}{\fbox{\textbf{master 03987}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03987}}}{}{\fbox{\textbf{master 03987}}}{}%
+%EndExpansion
+
+\item[\hfill 77.] If $f^{\prime }$ is continuous on $[0,\infty )$ and $%
+\lim_{x\rightarrow \infty }f(x)=0$, show that\\[4pt]
+$\hspace*{\fill}\dint\nolimits_{0}^{\infty }\,\,f^{\prime }(x)\,dx=-f(0)%
+\hspace*{\fill}$
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER: }\textit{No answer}}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER: }\textit{No answer}}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03988}}}{}{\fbox{\textbf{master 03988}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03988}}}{}{\fbox{\textbf{master 03988}}}{}%
+%EndExpansion
+
+\item[\hfill 78.] We can extend our definition of average value of a
+continuous function to an infinite interval by defining the average value of 
+$f$ on the interval $\left[ a,\infty \right) $ to be \\[4pt]
+$\hspace*{\fill}\underset{t\rightarrow \infty }{\lim }\,\dfrac{1}{t-a}%
+\,\dint\nolimits_{a}^{t}\,\,f\left( x\right) \,dx$\vspace{6pt}$\hspace*{\fill%
+}$
+
+\begin{ExerciseList}
+\item[(a)] Find the average value of $y=\tan ^{-1}x$ on the interval $\left[
+0,\infty \right) $.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03989}}}{}{\fbox{\textbf{master 03989}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03989}}}{}{\fbox{\textbf{master 03989}}}{}%
+%EndExpansion
+
+\item[(b)] If $f\left( x\right) \geq 0$ and $\int_{a}^{\infty }\,f(x)\,dx$
+is divergent, show that the average value of $f$ on the interval $\left[
+a,\infty \right) $ is $\lim\nolimits_{x\rightarrow \infty }\,f\left(
+x\right) $, if this limit exists.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 40589}}}{}{\fbox{\textbf{master 40589}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 40589}}}{}{\fbox{\textbf{master 40589}}}{}%
+%EndExpansion
+
+\item[(c)] If $\int_{a}^{\infty }\,f(x)\,dx$ is convergent, what is the
+average value of $f$ on the interval $\left[ a,\infty \right) $?
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 40590}}}{}{\fbox{\textbf{master 40590}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 40590}}}{}{\fbox{\textbf{master 40590}}}{}%
+%EndExpansion
+
+\item[(d)] Find the average value of $y=\sin x$ on the interval $\left[
+0,\infty \right) $.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 40591}}}{}{\fbox{\textbf{master 40591}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 40591}}}{}{\fbox{\textbf{master 40591}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[\hfill 79.] Use the substitution $u=1/x$ to show that\\[4pt]
+$\hspace*{\fill}\dint\nolimits_{0}^{\infty }\dfrac{\ln x}{1+x^{2}}\,dx=0%
+\hspace*{\fill}$
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER: }\textit{No answer}}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER: }\textit{No answer}}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03990}}}{}{\fbox{\textbf{master 03990}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03990}}}{}{\fbox{\textbf{master 03990}}}{}%
+%EndExpansion
+
+\item[\hfill 80.] The magnitude of the repulsive force between two point
+charges with the same sign, one of size 1 and the other of size $q$, is\\[4pt%
+]
+$\hspace*{\fill}F=\dfrac{q}{4\pi \varepsilon _{0}r^{2}}\hspace*{\fill}$\\[4pt%
+]
+where $r$ is the distance between the charges and $\varepsilon _{0}$ is a
+constant. The \textit{potential }$V$ at a point $P$ due to the charge $q$ is
+defined to be the work expended in bringing a unit charge to $P$ from
+infinity along the straight line that joins $q$ and $P$. Find a formula for $%
+V$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 03991}}}{}{\fbox{\textbf{master 03991}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 03991}}}{}{\fbox{\textbf{master 03991}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\TeXButton{e2col}{\end{multicols} \advance \leftskip by 165pt \advance\hsize by -165pt \advance\linewidth by -165pt }}%
+%BeginExpansion
+\end{multicols} \advance \leftskip by 165pt \advance\hsize by -165pt \advance\linewidth by -165pt %
+%EndExpansion
+
+\end{document}

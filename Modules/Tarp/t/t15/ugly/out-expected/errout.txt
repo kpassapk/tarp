@@ -1,0 +1,10 @@
+'ugly.tas' is not up to spec.
+
+-------------------- ----------------------------------------
+|      entry        |                error                  |
+-------------------- ----------------------------------------
+| bar               | Regexp Error
+| foo               | Regexp Error
+Perl didn't like a regular expression in 'bar'.
+hint:
+Unmatched ( in regex; marked by <-- HERE in m/( <-- HERE /

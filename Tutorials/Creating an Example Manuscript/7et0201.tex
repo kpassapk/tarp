@@ -1,0 +1,931 @@
+
+\documentclass{sebase}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{makeidx}
+\usepackage{SECALCUL}
+\usepackage{lie}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Mon Dec 15 16:20:00 1997}
+%TCIDATA{LastRevised=Tuesday, May 05, 2009 10:43:56}
+%TCIDATA{<META NAME="ViewSettings" CONTENT="25">}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{CSTFile=SECALCUL.cst}
+
+\input tcilatex
+\newenvironment{instructions}{\STARTINSTR}{\ENDINSTR}
+\begin{document}
+
+
+\chapter[2\quad Limits and Derivatives]{}
+
+\section{2.1\quad The Tangent and Velocity Problems}
+
+%TCIMACRO{\TeXButton{setET}{\renewcommand{\ET}{1}}}%
+%BeginExpansion
+\renewcommand{\ET}{1}%
+%EndExpansion
+%TCIMACRO{\TeXButton{noCCC}{\noCCC}}%
+%BeginExpansion
+\noCCC%
+%EndExpansion
+%TCIMACRO{\TeXButton{setRM}{\renewcommand{\RM}{1}}}%
+%BeginExpansion
+\renewcommand{\RM}{1}%
+%EndExpansion
+%TCIMACRO{\TeXButton{noRM}{\renewcommand{\RM}{0}}}%
+%BeginExpansion
+\renewcommand{\RM}{0}%
+%EndExpansion
+%TCIMACRO{\TeXButton{set page2}{\setcounter{page}{2}}}%
+%BeginExpansion
+\setcounter{page}{2}%
+%EndExpansion
+
+In this section we see how limits arise when we attempt to find the tangent
+to a curve or the velocity of an object.
+
+\subsection{THE TANGENT PROBLEM}
+
+\marginpar{\hspace*{\fill}\FRAME{itbpFU}{134.5pt}{194.9375pt}{201.5pt}{\Qcb{%
+\QTR{FigureNumber}{FIGURE 1}}}{}{6et020101m_00190.ai}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 134.5pt;height 194.9375pt;depth
+201.5pt;original-width 1.8311in;original-height 2.6751in;cropleft
+"0";croptop "0.9981";cropright "1.0015";cropbottom "0";filename
+'graphics/6et020101m_00190.ai';file-properties "XNPEU";}}\hspace*{\fill}}The
+word \textit{tangent} is derived from the Latin word\textit{\ tangens},
+which means \textquotedblleft touching.\textquotedblright\ Thus a tangent to
+a curve is a line that touches the curve. In other words, a tangent line
+should have the same direction as the curve at the point of contact. How can
+this idea be made precise?
+
+For a circle we could simply follow Euclid and say that a tangent is a line
+that intersects the circle once and only once, as in Figure 1(a). For more
+complicated curves this definition is inadequate. Figure l(b) shows two
+lines $l$ and $t$ passing through a point $P$ on a curve $C$. The line $l$
+intersects $C$ only once, but it certainly does not look like what we think
+of as a tangent. The line $t$, on the other hand, looks like a tangent but
+it intersects $C$ twice.
+
+To be specific, let's look at the problem of trying to find a tangent line $%
+t $ to the parabola $y=x^{2}$ in the following example.%
+%TCIMACRO{\TeXButton{longpage}{\enlargethispage{\baselineskip}}}%
+%BeginExpansion
+\enlargethispage{\baselineskip}%
+%EndExpansion
+
+\begin{Example}[1]
+%TCIMACRO{\TeXButton{VIDEO}{\VIDEO}}%
+%BeginExpansion
+\VIDEO%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{{\footnotesize Video 5et 020101 / 019}}\quad }{}{\fbox{{\footnotesize Video 5et 020101 / 019}}\quad }{}}%
+%BeginExpansion
+\msihyperref{\fbox{{\footnotesize Video 5et 020101 / 019}}\quad }{}{\fbox{{\footnotesize Video 5et 020101 / 019}}\quad }{}%
+%EndExpansion
+Find an equation of the tangent line to the parabola $y=x^{2}$ at the point $%
+P(1,1)$.
+\end{Example}
+
+\begin{Solution}
+We will be able to find an equation of the tangent line $t$ as soon as we
+know its slope $m$. The difficulty is that we know only one point, $P$, on $%
+t $, whereas we need two points to compute the slope. But observe that we
+can compute an approximation to $m$ by choosing a nearby point $Q(x,x^{2})$
+on the parabola (as in Figure 2) 
+\marginpar{\hspace*{\fill}\FRAME{itbpFU}{124.75pt}{95.8125pt}{87.625pt}{\Qcb{%
+\QTR{FigureNumber}{FIGURE 2}}}{}{4e020102.wmf}{\special{language "Scientific
+Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file
+"F";width 124.75pt;height 95.8125pt;depth 87.625pt;original-width
+1.7365in;original-height 1.3223in;cropleft "0";croptop "1.0021";cropright
+"1.0024";cropbottom "0";filename 'graphics/4e020102.wmf';file-properties
+"XNPEU";}}\hspace*{\fill}}and computing the slope $m_{PQ}$ of the secant
+line $PQ$. [A \textbf{secant line}, from the Latin word \textit{secans},
+meaning cutting, is a line that cuts (intersects) a curve more than once.]
+
+We choose $x\neq 1$ so that $Q\neq P$. Then\\[6pt]
+\hspace*{\fill}$m_{PQ}=\dfrac{x^{2}-1}{x-1}$\hspace*{\fill}\\[6pt]
+For instance, for the point $Q(1.5,2.25)$ we have\\[6pt]
+\hspace*{\fill}$m_{PQ}=\dfrac{2.25-1}{1.5-1}=\dfrac{1.25}{0.5}=2.5$\hspace*{%
+\fill}\\[6pt]
+\marginpar{\hspace*{\fill}$%
+\begin{tabular}[t]{|c|c|}
+\hline
+$x$ & $m_{PQ}\rule[-5pt]{0pt}{12.24pt}$ \\ \hline
+\multicolumn{1}{|l|}{$2$} & \multicolumn{1}{|l|}{$3$} \\ 
+\multicolumn{1}{|l|}{$1.5$} & \multicolumn{1}{|l|}{$2.5$} \\ 
+\multicolumn{1}{|l|}{$1.1$} & \multicolumn{1}{|l|}{$2.1$} \\ 
+\multicolumn{1}{|l|}{$1.01$} & \multicolumn{1}{|l|}{$2.01$} \\ 
+\multicolumn{1}{|l|}{$1.001$} & \multicolumn{1}{|l|}{$2.001$} \\ \hline
+\end{tabular}%
+$\hspace*{\fill}}The tables in the margin show the values of $m_{PQ}$ for
+several values of $x$ close to 1. The closer $Q$ is to $P$, the closer $x$
+is to 1 and, it appears from the tables, the closer $m_{PQ}$ is to~2. This
+suggests that the slope of the tangent line $t$ should be $m=2$.
+
+We say that the slope of the tangent line is the \textit{limit} of the
+slopes of the secant lines, and we express this symbolically by
+writing\bigskip
+
+$\hfill \hspace{13pt}\lim\limits_{Q\rightarrow P}m_{PQ}=m\qquad $and$\qquad
+\lim\limits_{x\rightarrow 1}\dfrac{x^{2}-1}{x-1}=2\hfill $\bigskip
+
+\marginpar{\hspace*{\fill}$%
+\begin{tabular}[t]{|c|c|}
+\hline
+$x$ & $m_{PQ}\rule[-5pt]{0pt}{12.24pt}$ \\ \hline
+\multicolumn{1}{|l|}{$0$} & \multicolumn{1}{|l|}{$1$} \\ 
+\multicolumn{1}{|l|}{$0.5$} & \multicolumn{1}{|l|}{$1.5$} \\ 
+\multicolumn{1}{|l|}{$0.9$} & \multicolumn{1}{|l|}{$1.9$} \\ 
+\multicolumn{1}{|l|}{$0.99$} & \multicolumn{1}{|l|}{$1.99$} \\ 
+\multicolumn{1}{|l|}{$0.999$} & \multicolumn{1}{|l|}{$1.999$} \\ \hline
+\end{tabular}%
+$\hspace*{\fill}}Assuming that the slope of the tangent line is indeed 2, we
+use the point-slope form of the equation of a line (see Appendix B) to write
+the equation of the tangent line through $(1,1)$ as 
+\begin{equation*}
+y-1=2(x-1)\text{ \qquad or \qquad }y=2x-1
+\end{equation*}
+
+Figure 3 illustrates the limiting process that occurs in this example. As $Q$
+approaches $P$ along the parabola, the corresponding secant lines rotate
+about $P$ and approach the tangent line $t$.
+
+%TCIMACRO{\TeXButton{graphicS}{\vspace{12pt}\hskip-190pt\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hskip-190pt\hfil%
+%EndExpansion
+\FRAME{itbpFU}{6.7507in}{3.8647in}{0in}{\Qcb{\QTR{FigureNumber}{FIGURE 3}}}{%
+}{6et020103_00192.ai}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+6.7507in;height 3.8647in;depth 0in;original-width 6.7233in;original-height
+3.8372in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename
+'graphics/6et020103_00192.ai';file-properties "XNPEU";}}%
+%TCIMACRO{\TeXButton{graphicE}{\vspace{12pt}\hfil}}%
+%BeginExpansion
+\vspace{12pt}\hfil%
+%EndExpansion
+\vspace{-24pt}
+
+$\hfill \vspace{-12pt}\blacksquare $
+\end{Solution}
+
+\marginpar{\FRAME{itbpF}{0.3347in}{0.1531in}{0in}{}{}{tec.ai}{\special%
+{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 0.3347in;height 0.1531in;depth
+0in;original-width 0.3053in;original-height 0.1254in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename 'graphics/TEC.ai';file-properties
+"XNPEU";}}\hspace{3pt}\QTR{Author}{In Visual 2.1 you can see how the process
+in Figure 3 works for additional functions.}}Many functions that occur in
+science are not described by explicit equations; they are defined by
+experimental data. The next example shows how to estimate the slope of the
+tangent line to the graph of such a function.
+
+\begin{Example}[2]
+%TCIMACRO{\TeXButton{VIDEO}{\VIDEO}}%
+%BeginExpansion
+\VIDEO%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{{\footnotesize Video 5et 020102 / 020}}\quad }{}{\fbox{{\footnotesize Video 5et 020102 / 020}}\quad }{}}%
+%BeginExpansion
+\msihyperref{\fbox{{\footnotesize Video 5et 020102 / 020}}\quad }{}{\fbox{{\footnotesize Video 5et 020102 / 020}}\quad }{}%
+%EndExpansion
+The flash unit on a camera operates by storing charge on a capacitor and
+releasing it suddenly when the flash is set off. The data in the table
+describe the charge \textit{Q} remaining on the capacitor (measured in
+microcoulombs) at time $t$ (measured in seconds after the flash goes off).
+Use the data to draw the graph of this function and estimate the slope of
+the tangent%
+\marginpar{
+\qquad \qquad $%
+\begin{tabular}{|c|c|}
+\hline
+$t$ & $Q$ \\ \hline
+\multicolumn{1}{|r|}{$0.00$} & \multicolumn{1}{|r|}{$100.00$} \\ 
+\multicolumn{1}{|r|}{$0.02$} & \multicolumn{1}{|r|}{$81.87$} \\ 
+\multicolumn{1}{|r|}{$0.04$} & \multicolumn{1}{|r|}{$67.03$} \\ 
+\multicolumn{1}{|r|}{$0.06$} & \multicolumn{1}{|r|}{$54.88$} \\ 
+\multicolumn{1}{|r|}{$0.08$} & \multicolumn{1}{|r|}{$44.93$} \\ 
+\multicolumn{1}{|r|}{$0.10$} & \multicolumn{1}{|r|}{$36.76$} \\ \hline
+\end{tabular}%
+\ $} line at the point where $t=0.04$. [\textit{Note:\ }The slope of the
+tangent line represents the electric current flowing from the capacitor to
+the flash bulb (measured in microamperes).]
+\end{Example}
+
+\begin{Solution}
+In Figure 4 we plot the given data and use them to sketch a curve that
+approximates the graph of the function.\\[8pt]
+\hspace*{\fill}\FRAME{itbpFU}{244.9375pt}{132.125pt}{0pt}{\Qcb{%
+\QTR{FigureNumber}{FIGURE 4}}}{}{6et020104_00193.ai}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 244.9375pt;height 132.125pt;depth
+0pt;original-width 3.3612in;original-height 1.8011in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/6et020104_00193.ai';file-properties "XNPEU";}}\hspace*{\fill}%
+\pagebreak
+\end{Solution}
+
+Given the points $P(0.04,67.03)$ and $R(0.00,100.00)$ on the graph, we find
+that the slope of the secant line $PR$ is\\[5pt]
+\hspace*{\fill}$m_{PR}=\dfrac{100.00-67.03}{0.00-0.04}=-824.25$\hspace*{\fill%
+}\\[5pt]
+\marginpar{\hspace*{\fill}$%
+\begin{tabular}[t]{|c|c|}
+\hline
+$R$ & $m_{PR}\rule[-5pt]{0pt}{12.24pt}$ \\ \hline
+\multicolumn{1}{|l|}{$\left( 0.00,100.00\right) $} & \multicolumn{1}{|l|}{$%
+-824.25$} \\ 
+\multicolumn{1}{|l|}{$\left( 0.02,81.87\right) $} & \multicolumn{1}{|l|}{$%
+-742.00$} \\ 
+\multicolumn{1}{|l|}{$\left( 0.06,54.88\right) $} & \multicolumn{1}{|l|}{$%
+-607.50$} \\ 
+\multicolumn{1}{|l|}{$\left( 0.08,44.93\right) $} & \multicolumn{1}{|l|}{$%
+-552.50$} \\ 
+\multicolumn{1}{|l|}{$\left( 0.10,36.76\right) $} & \multicolumn{1}{|l|}{$%
+-504.50$} \\ \hline
+\end{tabular}%
+$\hspace*{\fill}}The table at the left shows the results of similar
+calculations for the slopes of other secant lines. From this table we would
+expect the slope of the tangent line at $t=0.04$ to lie somewhere between $%
+-742$ and $-607.5$. In fact, the average of the slopes of the two closest
+secant lines is\\[8pt]
+\hspace*{\fill}$\tfrac{1}{2}(-742-607.5)=-674.75$\hspace*{\fill}\\[8pt]
+So, by this method, we estimate the slope of the tangent line to be $-675$.
+
+Another method is to draw an appproximation to the tangent line at $P$ and
+measure the sides of the triangle $ABC$, as in Figure 4. This gives an
+estimate of the slope of the tangent line as%
+\marginpar{\vspace{-0.3in}The physical meaning of the answer in Example 2 is
+that the electric current flowing from the capacitor to the flash bulb after
+0.04 second is about $-670$ microamperes.}\\[8pt]
+$\hspace*{\fill}-\dfrac{\left\vert AB\right\vert }{\left\vert BC\right\vert }%
+\approx -\dfrac{80.4-53.6}{0.06-0.02}=-670\hfill $%
+\begin{tabular}{l}
+\\ 
+$\blacksquare $%
+\end{tabular}%
+\vspace{15pt}
+
+\subsection{THE VELOCITY PROBLEM}
+
+If you watch the speedometer of a car as you travel in city traffic, you see
+that the nee\nolinebreak dle doesn't stay still for very long; that is, the
+velocity of the car is not constant. We assume from watching the speedometer
+that the car has a definite velocity at each moment, but how is the
+\textquotedblleft instantaneous\textquotedblright\ velocity defined? Let's
+investigate the ex\nolinebreak ample of a falling ball.
+
+\begin{Example}[3]
+%TCIMACRO{\TeXButton{VIDEO}{\VIDEO}}%
+%BeginExpansion
+\VIDEO%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{{\footnotesize Video 5et 020103 / 021}}\quad }{}{\fbox{{\footnotesize Video 5et 020103 / 021}}\quad }{}}%
+%BeginExpansion
+\msihyperref{\fbox{{\footnotesize Video 5et 020103 / 021}}\quad }{}{\fbox{{\footnotesize Video 5et 020103 / 021}}\quad }{}%
+%EndExpansion
+\marginpar{\vspace{6pt}\FRAME{itbpFU}{165.4375pt}{220.9375pt}{201.5pt}{\Qcb{%
+{}}}{}{4c30201un01_01527.tif}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width
+165.4375pt;height 220.9375pt;depth 201.5pt;original-width
+2.2615in;original-height 3.0303in;cropleft "0";croptop "1";cropright
+"1";cropbottom "0";filename 'graphics/4c30201un01_01527.tif';file-properties
+"XNPEU";}}\vspace*{6pt}\newline
+The CN Tower in Toronto was the tallest freestanding building in the world
+for 32~years.}Suppose that a ball is dropped from the upper observation deck
+of the CN Tower in Toronto, 450 m above the ground. Find the velocity of the
+ball after 5~seconds.
+\end{Example}
+
+\begin{Solution}
+Through experiments carried out four centuries ago, Galileo discovered that
+the distance fallen by any freely falling body is proportional to the square
+of the time it has been falling. (This model for free fall neglects air
+resistance.) If the distance fallen after $t$ seconds is denoted by $s(t)$
+and measured in meters, then Galileo's law is expressed by the equation\\[4pt%
+]
+\hspace*{\fill}$s(t)=4.9t^{2}$\hspace*{\fill}\vspace{4pt}
+
+\hspace*{12pt}The difficulty in finding the velocity after 5 s is that we
+are dealing with a single instant of time $(t=5)$, so no time interval is
+involved. However, we can approximate the desired quantity by computing the
+average velocity over the brief time interval of a tenth of a second from $%
+t=5$ to $t=5.1$:%
+\begin{eqnarray*}
+\text{average velocity\hspace{3pt}} &=&\dfrac{\text{change in position}}{%
+\text{time elapsed}} \\
+&=&\dfrac{s(5.1)-s(5)}{0.1} \\
+&=&\dfrac{4.9(5.1)^{2}-4.9(5)^{2}}{0.1}=49.49\text{ m}/\text{s}
+\end{eqnarray*}%
+The following table shows the results of similar calculations of the average
+velocity over successively smaller time periods.\\[6pt]
+\hspace*{\fill}$%
+\begin{tabular}{|c|c|}
+\hline
+$\text{Time interval}$ & $\text{Average velocity (m}/\text{s)}$ \\ \hline
+\multicolumn{1}{|l|}{$5\leq t\leq 6$} & $53.9\hspace{14pt}$ \\ 
+\multicolumn{1}{|l|}{$5\leq t\leq 5.1$} & $49.49\hspace{9pt}$ \\ 
+\multicolumn{1}{|l|}{$5\leq t\leq 5.05$} & $49.245\hspace{5pt}$ \\ 
+\multicolumn{1}{|l|}{$5\leq t\leq 5.01$} & $49.049\hspace{4pt}$ \\ 
+\multicolumn{1}{|l|}{$5\leq t\leq 5.001$} & $49.0049$ \\ \hline
+\end{tabular}%
+$\hspace*{\fill}\\[6pt]
+It appears that as we shorten the time period, the average velocity is
+becoming closer to 49 m$/$s. The \textbf{instantaneous velocity} when $t=5$
+is defined to be the limiting value of these average velocities over shorter
+and shorter time periods that start at $t=5$. Thus the (instantaneous)
+velocity after 5 s is\\[6pt]
+$\hspace*{\stretch{2}}v=49\ $m$/$s$\hfill \vspace{-15pt}\blacksquare $
+\end{Solution}
+
+You may have the feeling that the calculations used in solving this problem
+are very similar to those used earlier in this section to find tangents. In
+fact, there is a close connection between the tangent problem and the
+problem of finding velocities. If we draw the graph of the distance function
+of the ball (as in Figure 5) and we consider the points $P(a,4.9a^{2})$ and $%
+Q(a+h,4.9(a+h)^{2})$ on the graph, then the slope of the secant line $PQ$ is%
+\\[4pt]
+\hspace*{\fill}$m_{PQ}=\dfrac{4.9(a+h)^{2}-4.9a^{2}}{(a+h)-a}$\hspace*{\fill}%
+\\[6pt]
+which is the same as the average velocity over the time interval $[a,a+h]$.
+Therefore the velocity at time $t=a$ (the limit of these average velocities
+as $h$ approaches 0) must be equal to the slope of the tangent line at $P$
+(the limit of the slopes of the secant lines).\\[6pt]
+\hspace*{\fill}\FRAME{itbpFU}{4.4157in}{1.772in}{0in}{\Qcb{%
+\QTR{FigureNumber}{FIGURE 5}}}{}{4c3020105_00194.wmf}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 4.4157in;height 1.772in;depth
+0in;original-width 4.3881in;original-height 1.7443in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'graphics/4c3020105_00194.wmf';file-properties "XNPEU";}}\hspace*{\fill}%
+\vspace*{9pt}
+
+Examples 1 and 3 show that in order to solve tangent and velocity problems
+we must be able to find limits. After studying methods for computing limits
+in the next\ four\ sections, we will return to the problems of finding
+tangents and velocities in Sec\nolinebreak tion~2.7.\vspace{-12pt}
+
+\QTP{MultColDiv}
+Exercises 2.1
+
+\vspace{-6pt}%
+%TCIMACRO{%
+%\TeXButton{s2col}{\setlength{\columnsep}{24pt}
+%\advance \leftskip by -165pt
+%\advance\hsize by 165pt
+%\advance\linewidth by 165pt
+%\begin{multicols}{2}}}%
+%BeginExpansion
+\setlength{\columnsep}{24pt}
+\advance \leftskip by -165pt
+\advance\hsize by 165pt
+\advance\linewidth by 165pt
+\begin{multicols}{2}%
+%EndExpansion
+
+\begin{ExerciseList}
+\item[\hfill 1.] A tank holds 1000 gallons of water, which drains from the
+bottom of the tank in half an hour. The values in the table show the volume~$%
+V$ of water remaining in the tank (in gallons) after $t$~minutes.\\[9pt]
+$\hspace*{\fill}${\small $%
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$t$ (min) & $5$ & $10$ & $15$ & $20$ & $25$ & $30$ \\ \hline
+$V$ (gal) & $694$ & $444$ & $250$ & $111$ & $28$ & $0$ \\ \hline
+\end{tabular}%
+\ $}$\hfill $\vspace{9pt}
+
+\begin{ExerciseList}
+\item[(a)] If $P$ is the point $(15,250)$ on the graph of $V$, find the
+slopes of the secant lines $PQ$ when $Q$ is the point on the graph with $t=5$%
+, $10$, $20$, $25$, and $30$.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} $-44.4$, $-38.8$, $-27.8$, $-22.2$, $-16.\overline{6}$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $-44.4$, $-38.8$, $-27.8$, $-22.2$, $-16.\overline{6}$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00410}}}{}{\fbox{\textbf{master 00410}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00410}}}{}{\fbox{\textbf{master 00410}}}{}%
+%EndExpansion
+
+\item[(b)] Estimate the slope of the tangent line at $P$ by averaging the
+slopes of two secant lines.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $-33.3$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $-33.3$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04482}}}{}{\fbox{\textbf{master 04482}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04482}}}{}{\fbox{\textbf{master 04482}}}{}%
+%EndExpansion
+
+\item[(c)] Use a graph of the function to estimate the slope of the tangent
+line at~$P$. (This slope represents the rate at which the water is flowing
+from the tank after 15 minutes.)
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04483}}}{}{\fbox{\textbf{master 04483}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04483}}}{}{\fbox{\textbf{master 04483}}}{}%
+%EndExpansion
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} $-33\tfrac{1}{3}$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} $-33\tfrac{1}{3}$}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[\hfill 2.] A cardiac monitor is used to measure the heart rate of a
+patient after surgery. It compiles the number of heartbeats after $t$%
+~minutes. When the data in the table are graphed, the slope of the tangent
+line represents the heart rate in beats per minute.\\[6pt]
+$\hspace*{\fill}${\small $%
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+$t$ (min) & 36 & 38 & 40 & 42 & 44 \\ \hline
+Heartbeats & \multicolumn{1}{|r|}{2530} & \multicolumn{1}{|r|}{2661} & 
+\multicolumn{1}{|r|}{2806} & \multicolumn{1}{|r|}{2948} & 
+\multicolumn{1}{|r|}{3080} \\ \hline
+\end{tabular}%
+\ $}$\hfill $\\[6pt]
+The monitor estimates this value by calculating the slope of a secant line.
+Use the data to estimate the patient's heart rate after 42 minutes using the
+secant line between the points with the given values of \textit{t}.
+
+\begin{ExerciseList}
+\item[(a)] $t=36$\quad and\quad $t=42\hspace{18pt}$%
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00411}}}{}{\fbox{\textbf{master 00411}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00411}}}{}{\fbox{\textbf{master 00411}}}{}%
+%EndExpansion
+
+\item[(b)] $t=38$\quad and\quad $t=42$\quad 
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04484}}}{}{\fbox{\textbf{master 04484}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04484}}}{}{\fbox{\textbf{master 04484}}}{}%
+%EndExpansion
+
+\item[(c)] $t=40$\quad and\quad $t=42\hspace{18pt}$%
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04485}}}{}{\fbox{\textbf{master 04485}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04485}}}{}{\fbox{\textbf{master 04485}}}{}%
+%EndExpansion
+
+\item[(d)] $t=42$\quad and\quad $t=44$\quad \vspace*{3pt}%
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04486}}}{}{\fbox{\textbf{master 04486}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04486}}}{}{\fbox{\textbf{master 04486}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+What are your conclusions?
+
+\item[{\hfill \protect\fbox{3.\hspace{-2pt}}}] The point $P(2,-1)$ lies on
+the curve $y=1/(1-x)$.
+
+\begin{ExerciseList}
+\item[(a)] If $Q$ is the point $(x,1/(1-x))$, use your calculator to find
+the slope of the secant line $PQ$ (correct to six decimal places) for the
+following values of $x$:\vspace{4pt}
+
+%TCIMACRO{\TeXButton{table3pt}{\setlength\tabcolsep{3pt}}}%
+%BeginExpansion
+\setlength\tabcolsep{3pt}%
+%EndExpansion
+$%
+\begin{tabular}{rlrlrl}
+\textbf{(i)} & 1.5 & \textbf{(ii)} & 1.9 & \textbf{(iii)} & 1.99\vspace*{6pt}
+\\ 
+\textbf{(iv)} & 1.999$\hspace*{24pt}$ & \textbf{(v)} & 2.5 & \textbf{(vi)} & 
+2.1\vspace*{6pt} \\ 
+\textbf{(vii)} & 2.01 & \textbf{(viii)} & 2.001$\hspace*{24pt}$ &  & 
+\vspace*{6pt}%
+\end{tabular}%
+$%
+%TCIMACRO{\TeXButton{table6pt}{\setlength\tabcolsep{6pt}}}%
+%BeginExpansion
+\setlength\tabcolsep{6pt}%
+%EndExpansion
+
+\item[(b)] Using the results of part (a), guess the value of the slope of
+the tangent line to the curve at $P(2,-1)$.
+
+\item[(c)] Using the slope from part (b), find an equation of the tangent
+line to the curve at $P(2,-1)$.
+
+%TCIMACRO{\hyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{NEW}}}{}{\fbox{\textbf{NEW}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[$\hfill $4.] The point $P(0.5,0)$ lies on the curve $y=\cos \pi x$.
+
+\begin{ExerciseList}
+\item[(a)] If $Q$ is the point $(x,\cos \pi x)$, use your calculator to find
+the slope of the secant line $PQ$ (correct to six decimal places) for the
+following values of $x$:\vspace{4pt}
+
+%TCIMACRO{\TeXButton{table3pt}{\setlength\tabcolsep{3pt}}}%
+%BeginExpansion
+\setlength\tabcolsep{3pt}%
+%EndExpansion
+$%
+\begin{tabular}{rlrlrl}
+\textbf{(i)} & 0 & \textbf{(ii)} & 0.4 & \textbf{(iii)} & 0.49\vspace*{3pt}
+\\ 
+\textbf{(iv)} & 0.499$\hspace*{24pt}$ & \textbf{(v)} & 1 & \textbf{(vi)} & 
+0.6\vspace*{3pt} \\ 
+\textbf{(vii)} & 0.51 & \textbf{(viii)} & 0.501$\hspace*{24pt}$ &  & 
+\vspace*{3pt}%
+\end{tabular}%
+$%
+%TCIMACRO{\TeXButton{table6pt}{\setlength\tabcolsep{6pt}}}%
+%BeginExpansion
+\setlength\tabcolsep{6pt}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 81825}}}{}{\fbox{\textbf{master 81825}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 81825}}}{}{\fbox{\textbf{master 81825}}}{}%
+%EndExpansion
+
+\item[(b)] Using the results of part (a), guess the value of the slope of
+the tangent line to the curve at $P(0.5,0)$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 81826}}}{}{\fbox{\textbf{master 81826}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 81826}}}{}{\fbox{\textbf{master 81826}}}{}%
+%EndExpansion
+
+\item[(c)] Using the slope from part (b), find an equation of the tangent
+line to the curve at $P(0.5,0)$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 81827}}}{}{\fbox{\textbf{master 81827}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 81827}}}{}{\fbox{\textbf{master 81827}}}{}%
+%EndExpansion
+
+\item[(d)] Sketch the curve, two of the secant lines, and the tangent line.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 81828}}}{}{\fbox{\textbf{master 81828}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 81828}}}{}{\fbox{\textbf{master 81828}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[{\hfill \protect\fbox{5.\hspace{-2pt}}}] If a ball is thrown into the
+air with a velocity of 40 ft$/$s, its height in feet $t$~seconds later is
+given by $y=40t-16t^{2}$.
+
+\begin{ExerciseList}
+\item[(a)] Find the average velocity for the time period beginning when $t=2$
+and lasting\vspace{4pt}
+
+%TCIMACRO{\TeXButton{table3pt}{\setlength\tabcolsep{3pt}}}%
+%BeginExpansion
+\setlength\tabcolsep{3pt}%
+%EndExpansion
+\begin{tabular}{rlrl}
+\textbf{(i)} & 0.5~second & \textbf{(ii)} & 0.1~second\vspace*{3pt} \\ 
+\textbf{(iii)} & 0.05~second$\hspace*{24pt}$ & \textbf{(iv)} & 0.01~second%
+\vspace*{3pt}%
+\end{tabular}%
+%TCIMACRO{\TeXButton{table6pt}{\setlength\tabcolsep{6pt}}}%
+%BeginExpansion
+\setlength\tabcolsep{6pt}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (i) $-32$ ft$/$s\quad (ii) $-25.6$ ft$/$s\quad \newline
+%(iii) $-24.8$ ft$/$s\quad (iv) $-24.16$ ft$/$s}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (i) $-32$ ft$/$s\quad (ii) $-25.6$ ft$/$s\quad \newline
+(iii) $-24.8$ ft$/$s\quad (iv) $-24.16$ ft$/$s}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00414}}}{}{\fbox{\textbf{master 00414}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00414}}}{}{\fbox{\textbf{master 00414}}}{}%
+%EndExpansion
+
+\item[(b)] Estimate the instantaneous velocity when $t=2$.
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:}\hspace*{3pt}(b)~ $-24$ ft$/$s}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:}\hspace*{3pt}(b)~ $-24$ ft$/$s}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04499}}}{}{\fbox{\textbf{master 04499}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04499}}}{}{\fbox{\textbf{master 04499}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[\hfill 6.] If a rock is thrown upward on the planet Mars with a
+velocity of 10~m$/$s, its height in meters $t$ seconds later is given by
+\linebreak $y=10t-1.86t^{2}.$
+
+\begin{ExerciseList}
+\item[(a)] Find the average velocity over the given time intervals:\\[3pt]
+%TCIMACRO{\TeXButton{table3pt}{\setlength\tabcolsep{3pt}}}%
+%BeginExpansion
+\setlength\tabcolsep{3pt}%
+%EndExpansion
+$%
+\begin{tabular}[t]{rlrlrl}
+\textbf{(i)} & $[1,2]$ & \textbf{(ii)} & $[1,1.5]$ & \textbf{(iii)} & $%
+[1,1.1]$.\vspace*{3pt} \\ 
+\textbf{(iv)} & $[1,1.01]\hspace*{24pt}$ & \textbf{(v)} & $[1,1.001]\hspace*{%
+24pt}$ & \vspace*{3pt} & 
+\end{tabular}%
+$%
+%TCIMACRO{\TeXButton{table6pt}{\setlength\tabcolsep{6pt}}}%
+%BeginExpansion
+\setlength\tabcolsep{6pt}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80046}}}{}{\fbox{\textbf{master 80046}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80046}}}{}{\fbox{\textbf{master 80046}}}{}%
+%EndExpansion
+
+\item[(b)] Estimate the instantaneous velocity when $t=1$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 80051}}}{}{\fbox{\textbf{master 80051}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 80051}}}{}{\fbox{\textbf{master 80051}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[\hfill 7.] The table shows the position of a cyclist.\\[6pt]
+$\hspace*{\fill}${\small $%
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+$t\text{ (seconds)}$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ \\ \hline
+$s\text{ (meters)}$ & $0$ & $1.4$ & $5.1$ & $10.7$ & $17.7$ & $25.8$ \\ 
+\hline
+\end{tabular}%
+\ $}$\hspace*{\fill}$\vspace{12pt}
+
+\begin{ExerciseList}
+\item[(a)] Find the average velocity for each time period:\vspace{3pt}
+
+%TCIMACRO{\TeXButton{table3pt}{\setlength\tabcolsep{3pt}}}%
+%BeginExpansion
+\setlength\tabcolsep{3pt}%
+%EndExpansion
+$%
+\begin{tabular}[t]{rlrl}
+\textbf{(i)} & $[1,3]$ & \textbf{(ii)} & $[2,3]$\vspace*{6pt} \\ 
+\textbf{(iii)} & $[3,5]$\hspace*{36pt} & \textbf{(iv)} & $[3,4]$\vspace*{6pt}%
+\end{tabular}%
+$%
+%TCIMACRO{\TeXButton{table6pt}{\setlength\tabcolsep{6pt}}}%
+%BeginExpansion
+\setlength\tabcolsep{6pt}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (a)~(i)~4.65~m$/$s\quad (ii)~5.6~m$/$s\quad \newline
+%(iii)~7.55~m$/$s\quad (iv)~7~m$/$s}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (a)~(i)~4.65~m$/$s\quad (ii)~5.6~m$/$s\quad \newline
+(iii)~7.55~m$/$s\quad (iv)~7~m$/$s}{}%
+%EndExpansion
+
+%TECHARTS_DUMMY_BEGIN_TAG
+
+%TCIMACRO{\hyperref{(i) = }{}{(i) = }{}}%
+%BeginExpansion
+\msihyperref{(i) = }{}{(i) = }{}%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 30062}}\quad }{}{\fbox{\textbf{master 30062}}\quad }{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 30062}}\quad }{}{\fbox{\textbf{master 30062}}\quad }{}%
+%EndExpansion
+%TCIMACRO{\hyperref{(ii) = }{}{(ii) = }{}}%
+%BeginExpansion
+\msihyperref{(ii) = }{}{(ii) = }{}%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 30212}}}{}{\fbox{\textbf{master 30212}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 30212}}}{}{\fbox{\textbf{master 30212}}}{}%
+%EndExpansion
+
+%TCIMACRO{\hyperref{(iii) = }{}{(iii) = }{}}%
+%BeginExpansion
+\msihyperref{(iii) = }{}{(iii) = }{}%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 30213}}\quad }{}{\fbox{\textbf{master 30213}}\quad }{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 30213}}\quad }{}{\fbox{\textbf{master 30213}}\quad }{}%
+%EndExpansion
+%TCIMACRO{\hyperref{(iv) = }{}{(iv) = }{}}%
+%BeginExpansion
+\msihyperref{(iv) = }{}{(iv) = }{}%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 30214}}}{}{\fbox{\textbf{master 30214}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 30214}}}{}{\fbox{\textbf{master 30214}}}{}%
+%EndExpansion
+
+%TECHARTS_DUMMY_END_TAG
+
+\item[(b)] Use the graph of $s$ as a function of $t$ to estimate the
+instantaneous velocity when $t=3$.
+
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} (b)~6.3~m$/$s}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (b)~6.3~m$/$s}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 30215}}}{}{\fbox{\textbf{master 30215}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 30215}}}{}{\fbox{\textbf{master 30215}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[\hfill 8.] The displacement (in centimeters) of a particle moving back
+and forth along a straight line is given by the equation of motion $s=2\sin
+\pi t+3\cos \pi t$, where $t$ is measured in seconds.
+
+\begin{ExerciseList}
+\item[(a)] Find the average velocity during each time period:\vspace{3pt}
+
+%TCIMACRO{\TeXButton{table3pt}{\setlength\tabcolsep{3pt}}}%
+%BeginExpansion
+\setlength\tabcolsep{3pt}%
+%EndExpansion
+$%
+\begin{tabular}[t]{rlrl}
+\textbf{(i)} & $[1,2]$ & \textbf{(ii)} & $[1,1.1]$\vspace{3pt}\vspace*{6pt}
+\\ 
+\textbf{(iii)} & $[1,1.01]$\hspace*{36pt} & \textbf{(iv)} & $[1,1.001]$%
+\vspace*{6pt}%
+\end{tabular}%
+$%
+%TCIMACRO{\TeXButton{table6pt}{\setlength\tabcolsep{6pt}}}%
+%BeginExpansion
+\setlength\tabcolsep{6pt}%
+%EndExpansion
+
+%TECHARTS_DUMMY_BEGIN_TAG
+
+%TCIMACRO{\hyperref{(i) = }{}{(i) = }{}}%
+%BeginExpansion
+\msihyperref{(i) = }{}{(i) = }{}%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 30063}}\quad }{}{\fbox{\textbf{master 30063}}\quad }{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 30063}}\quad }{}{\fbox{\textbf{master 30063}}\quad }{}%
+%EndExpansion
+%TCIMACRO{\hyperref{(ii) = }{}{(ii) = }{}}%
+%BeginExpansion
+\msihyperref{(ii) = }{}{(ii) = }{}%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 30216}}}{}{\fbox{\textbf{master 30216}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 30216}}}{}{\fbox{\textbf{master 30216}}}{}%
+%EndExpansion
+
+%TCIMACRO{\hyperref{(iii) = }{}{(iii) = }{}}%
+%BeginExpansion
+\msihyperref{(iii) = }{}{(iii) = }{}%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 30217}}\quad }{}{\fbox{\textbf{master 30217}}\quad }{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 30217}}\quad }{}{\fbox{\textbf{master 30217}}\quad }{}%
+%EndExpansion
+%TCIMACRO{\hyperref{(iv) = }{}{(iv) = }{}}%
+%BeginExpansion
+\msihyperref{(iv) = }{}{(iv) = }{}%
+%EndExpansion
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 30218}}}{}{\fbox{\textbf{master 30218}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 30218}}}{}{\fbox{\textbf{master 30218}}}{}%
+%EndExpansion
+
+%TECHARTS_DUMMY_END_TAG
+\item[(b)] Estimate the instantaneous velocity of the particle when $t=1$.
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 30219}}}{}{\fbox{\textbf{master 30219}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 30219}}}{}{\fbox{\textbf{master 30219}}}{}%
+%EndExpansion
+\end{ExerciseList}
+
+\item[{\hfill \protect\fbox{9.\hspace{-2pt}}}] The point $P\left( 1,0\right) $
+lies on the curve $y=\sin \left( 10\pi /x\right) $.
+
+\begin{ExerciseList}
+\item[(a)] If $Q$ is the point $\left( x,\sin \left( 10\pi /x\right) \right) 
+$, find the slope of the secant line $PQ$ (correct to four decimal places)
+for \newline
+$x=2$, $1.5$, $1.4$, $1.3$, $1.2$, $1.1$, $0.5$, $0.6$, $0.7$, $0.8$, and $%
+0.9$. Do the slopes appear to be approaching a limit?\\[3pt]
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (a)~$0$, $1.7321$, $-1.0847$, $-2.7433$, $4.3301$, \newline
+%$-2.8173$, $0$, $-2.1651$, $-2.6061$, $-5$, $3.4202$; no}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (a)~$0$, $1.7321$, $-1.0847$, $-2.7433$, $4.3301$, \newline
+$-2.8173$, $0$, $-2.1651$, $-2.6061$, $-5$, $3.4202$; no}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 00418}}}{}{\fbox{\textbf{master 00418}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 00418}}}{}{\fbox{\textbf{master 00418}}}{}%
+%EndExpansion
+
+\item[(b)] 
+%TCIMACRO{\TeXButton{GCALCXT}{\GCALCXT}}%
+%BeginExpansion
+\GCALCXT%
+%EndExpansion
+Use a graph of the curve to explain why the slopes of the secant lines in
+part (a) are not close to the slope of the tangent line at $P$.\\[3pt]
+%TCIMACRO{%
+%\hyperref{ANSWER}{}{\textbf{ANSWER:} (b) \textit{no text answer}}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (b) \textit{no text answer}}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04505}}}{}{\fbox{\textbf{master 04505}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04505}}}{}{\fbox{\textbf{master 04505}}}{}%
+%EndExpansion
+
+\item[(c)] By choosing appropriate secant lines, estimate the slope of the
+tangent line at $P$.\\[3pt]
+%TCIMACRO{\hyperref{ANSWER}{}{\textbf{ANSWER:} (c)~$-31.4$}{}}%
+%BeginExpansion
+\msihyperref{ANSWER}{}{\textbf{ANSWER:} (c)~$-31.4$}{}%
+%EndExpansion
+
+%TCIMACRO{%
+%\hyperref{\fbox{\textbf{master 04506}}}{}{\fbox{\textbf{master 04506}}}{}}%
+%BeginExpansion
+\msihyperref{\fbox{\textbf{master 04506}}}{}{\fbox{\textbf{master 04506}}}{}%
+%EndExpansion
+\end{ExerciseList}
+\end{ExerciseList}
+
+%TCIMACRO{%
+%\TeXButton{e2col}{\end{multicols}
+%\advance \leftskip by 165pt
+%\advance\hsize by -165pt
+%\advance\linewidth by -165pt
+%}}%
+%BeginExpansion
+\end{multicols}
+\advance \leftskip by 165pt
+\advance\hsize by -165pt
+\advance\linewidth by -165pt
+%
+%EndExpansion
+
+\end{document}

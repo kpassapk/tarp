@@ -1,0 +1,19 @@
+# DESCRIPTOR = $BOOK$$CHAPTER$$SECTION$
+
+# DESCRIPTOR::BOOK = foo
+
+# DESCRIPTOR::CHAPTER = \d\d
+
+# DESCRIPTOR::SECTION = \d\d
+
+beginTag = \\begin{enumerate}
+
+endTag = \\end{enumerate}
+
+itemTag[0] = <illegal>-$ITM$
+itemTag[1] = \\item[$ITM$\.]
+itemTag[2] = \\item[\($ITM$\)]
+itemTag[3] = \\item[\($ITM$\)]
+
+sequenceRestart = seq
+

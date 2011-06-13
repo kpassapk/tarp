@@ -1,0 +1,186 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>&quot;tapullcsv in Komodo&quot;</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body style="background-color: white">
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#running_pullcsv_in_komodo">Running PullCSV in Komodo</a></li>
+	<ul>
+
+		<li><a href="#options">Options</a></li>
+		<li><a href="#how_do_i_add_remove_columns_or_change_the_column_order">How do I Add/Remove Columns or Change the Column Order?</a></li>
+		<li><a href="#how_do_i_change_the_headings">How do I Change the Headings?</a></li>
+		<li><a href="#tas_entries">TAS Entries</a></li>
+		<li><a href="#output">Output</a></li>
+	</ul>
+
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<center><img src="file:///C:\Program Files\Tarp/tarp.png"></center><p>
+</p>
+<hr />
+<h1><a name="running_pullcsv_in_komodo">Running PullCSV in Komodo</a></h1>
+<p>As with all Tarp scripts, <code>tapullcsv</code> is run in Komodo as an external
+command; double clicking one of the icons in the <code>PullSolns</code> folder in the
+<code>Tarp Toolkit</code> project will run the script with certain command-line
+options. Only a few of the most common options are available through Komodo;
+use the program directly from the command line for other combinations.</p>
+<p>In order to use this script from Komodo (with the exception of <a href="#readme"><code>README</code></a>,
+<a href="#version"><code>--version</code></a> and <a href="#help"><code>--help</code></a>), a <code>.tex</code> must be open and visible in the Komodo
+workspace, and there must be a Tarp Style (<code>TAS</code>) file called <code>TASfile</code>,
+<code>TASfile.txt</code> or <code>TASfile.tas</code> in the same directory as the <code>.tex</code> file.</p>
+<p>
+</p>
+<h2><a name="options">Options</a></h2>
+<center><img src="images/options.png"></center><dl>
+<dt><strong><a name="current_tex3" class="item">[current .tex]</a></strong>
+
+<dd>
+<p><strong>USE THIS OPTION TO START YOUR .CSV FILE</strong>.</p>
+</dd>
+<dd>
+<p>Equivalent to running the following in a command prompt:</p>
+</dd>
+<dd>
+<pre>
+    tapullcsv foo0101.tex</pre>
+</dd>
+<dd>
+<p>where <code>foo0101.tex</code> is the name of the currently open file.  The script is run
+in the directory where the current file resides, and requires a <code>TAS</code> file
+called <code>TASfile</code>, <code>TASfile.txt</code> or <code>TASfile.tas</code> to exist in the same directory.</p>
+</dd>
+<dd>
+<p>The name of the output <code>.csv</code> file depends on the <code>OUTfile</code> command line option.
+By default this is specified in <code>toolPrefs.yml</code> as</p>
+</dd>
+<center><img src="images/toolprefs.png"></center><p>The filename <code>foo0101.tex</code> must match the <code>filename</code> entry, which must in
+turn contain the variables <code>$book$</code> and <code>$chapter$</code> referred to above.  Assuming
+$book$ catches &quot;foo&quot; and $chapter$ catches &quot;01&quot;, the output is <em class="file">foo01.csv</em>.
+Column headings are printed with this command.</p>
+</li>
+<dt><strong><a name="append_current_tex" class="item">--append [current .tex]</a></strong>
+
+<dd>
+<p><strong>USE THIS OPTION TO CONTINUE YOUR .CSV FILE</strong>.</p>
+</dd>
+<dd>
+<p>This is equivalent to running the following in a command prompt:</p>
+</dd>
+<dd>
+<pre>
+    tapullcsv --append foo0102.tex</pre>
+</dd>
+<dd>
+<p>where <code>foo0102.tex</code> is the name of the currently open file.</p>
+</dd>
+<dd>
+<p>This option is exactly the same as the previous one except it appends the output
+to the <code>.csv</code> file. If this file does not exist, or is not writable, an error
+message will be printed. Column headings are not printed, since they should have
+been printed by the result of the [current .tex] command, which creates the
+<code>.csv</code> file initially.</p>
+</dd>
+</li>
+<dt><strong><a name="readme5" class="item">README,</a></strong>
+
+<dd>
+<p>Displays this help file.</p>
+</dd>
+</li>
+<dt><strong><a name="version5" class="item">--version</a></strong>
+
+<dd>
+<p>Equivalent to running the following in a command prompt:</p>
+</dd>
+<dd>
+<pre>
+    tapullcsv --version</pre>
+</dd>
+</li>
+<dt><strong><a name="help5" class="item">--help</a></strong>
+
+<dd>
+<p>Equivalent to running the following in a command prompt:</p>
+</dd>
+<dd>
+<pre>
+    tapullcsv --help</pre>
+</dd>
+</li>
+</dl>
+<p>
+</p>
+<h2><a name="how_do_i_add_remove_columns_or_change_the_column_order">How do I Add/Remove Columns or Change the Column Order?</a></h2>
+<p>The contents of csv columns is determined by column plugins: .pm files in the
+&quot;plugins&quot; subdirectory of your Tarp resource directory (by default this is in
+your home directory; see <a href="/Tarp/Config.html">the Tarp::Config manpage</a>).  There is one plugin per column.</p>
+<ul>
+<li><strong><a name="removing_columns" class="item">Removing columns</a></strong>
+
+<p>Delete the corresponding .pm plugin file.</p>
+</li>
+<li><strong><a name="adding_columns" class="item">Adding columns</a></strong>
+
+<p>Duplicate one of the .pm plugin files (for example, tec.pm) and make it writeable.
+Open it and change the <code>value()</code> method to return something useful.  Look at the
+documentation for <code>value()</code> in Tarp::PullCSV to see what information from each exercise
+you have at your disposal.</p>
+<p>For example, if I am creating a column that contains the line number for each
+exercise plus 42, I would create a file called plus42.pm that contains the
+following:</p>
+<center><img src="images/plus42.png"></center></li>
+<li><strong><a name="changing_column_order" class="item">Changing Column Order</a></strong>
+
+<p>Open toolPrefs.yml and change the order of the column list.</p>
+</li>
+</ul>
+<p>
+</p>
+<h2><a name="how_do_i_change_the_headings">How do I Change the Headings?</a></h2>
+<p>Locate and open the plugin file (a .pm file in the plugins/ subdirectory of
+Tarp's Resource directory).  Change the <code>heading()</code> method.</p>
+<p>The output of this command contains column headings.</p>
+<p>
+</p>
+<h2><a name="tas_entries">TAS Entries</a></h2>
+<ul>
+<li>
+<p><code>filename</code></p>
+<p>Used for getting variables from the filename.  More than one values can be used.
+Variables in this entry should have the same name as some of the plugin columns.</p>
+</li>
+<li>
+<p><code>beginTag</code>, <code>endTag</code>, <code>exTag</code>, <code>partTag</code>, <code>subPartTag</code>, <code>sequenceRestart</code></p>
+<p>The usual LaTeXtract tags</p>
+</li>
+<li>
+<p><code>masterRef</code></p>
+<p>Used for extracting the MasterID column.  Must contain a variable called $MASTER$.</p>
+</li>
+</ul>
+<p>
+</p>
+<h2><a name="output">Output</a></h2>
+<p>Output of this program is in Comma Separated Value (<code>CSV</code>) format.
+Naming of the output files is discussed above, in <a href="#options">Options</a>.</p>
+
+</body>
+
+</html>

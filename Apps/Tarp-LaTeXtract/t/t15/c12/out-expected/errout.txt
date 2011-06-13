@@ -1,0 +1,7 @@
+LaTeXtract didn't like a tag in in/in.tex.
+Succesful matches prior to tag error: 
+(1) itemTag[2][0] { ITM => "b" } at in/in.tex line 6
+(2) endTag[0] {} at in/in.tex line 8
+(3) endTag[0] {} at in/in.tex line 10
+(4) beginTag[0] {} at in/in.tex line 12
+ERROR: endTag after beginTag with no item tags in between, stopped at in/in.tex line 14

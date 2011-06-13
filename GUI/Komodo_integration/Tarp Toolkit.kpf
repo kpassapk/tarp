@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="c8ea868b-ace5-46b7-a97b-3722a8ca7c75" kpf_version="4" name="Tarp Toolkit.kpf">
+<command cwd="" doNotOpenOutputWindow="0" env="" icon="chrome://komodo/content/icons/help.png" id="1e5d0baf-7035-4227-9bb6-1bf1af7e1db4" idref="49988b2b-58b4-499f-893c-78451a8ca559" insertOutput="0" keyboard_shortcut="" name="  --help" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+tagentex --help</command>
+<command cwd="" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/weather_sun.png" id="535749a7-3171-45b3-aac7-1d97c1d6c1c1" idref="49988b2b-58b4-499f-893c-78451a8ca559" insertOutput="0" keyboard_shortcut="" name="  README" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="no-console" showParsedOutputList="0">
+talauncher --app=tagentex_gui --docs</command>
+<command cwd="%D" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/application_form_edit.png" id="7290a442-0c07-445c-9db3-42a9925d1b7e" idref="49988b2b-58b4-499f-893c-78451a8ca559" insertOutput="0" keyboard_shortcut="" name="[current .pklist]" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+talauncher --app=tagentex_gui --  %f</command>
+<command cwd="" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/anchor.png" id="f91deff6-d80b-43cf-974d-ecaece4703b2" idref="49988b2b-58b4-499f-893c-78451a8ca559" insertOutput="0" keyboard_shortcut="" name="  --version" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+tagentex --version</command>
+<command cwd="" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/anchor.png" id="3b570b9d-8e4e-41c9-ac32-1facff05e898" idref="51268d70-24eb-4e49-9aa7-f3b43e1c8ecd" insertOutput="0" keyboard_shortcut="" name="  --version" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+tapullcsv --version</command>
+<command cwd="%D" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/script_add.png" id="795edf7b-3fed-446e-a46f-3f506743d047" idref="51268d70-24eb-4e49-9aa7-f3b43e1c8ecd" insertOutput="0" keyboard_shortcut="" name="--append [current .tex]" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+talauncher --app=tapullcsv_gui -- --append %f</command>
+<command cwd="%D" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/application_osx_terminal.png" id="92726d45-43a0-486d-97f3-a282da2e965e" idref="51268d70-24eb-4e49-9aa7-f3b43e1c8ecd" insertOutput="0" keyboard_shortcut="" name="[current .tex]" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+talauncher --app=tapullcsv_gui -- %f</command>
+<command cwd="%p" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/weather_sun.png" id="92c0086d-e831-4dab-9276-69c827fcb21a" idref="51268d70-24eb-4e49-9aa7-f3b43e1c8ecd" insertOutput="0" keyboard_shortcut="" name="  README" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="no-console" showParsedOutputList="0">
+talauncher --app=tapullcsv_gui --docs</command>
+<command cwd="" doNotOpenOutputWindow="0" env="" icon="chrome://komodo/content/icons/help.png" id="cf5ee60e-a934-40d8-a0ea-7fe9afa49bed" idref="51268d70-24eb-4e49-9aa7-f3b43e1c8ecd" insertOutput="0" keyboard_shortcut="" name="  --help" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+tapullcsv --help</command>
+<command cwd="" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/weather_sun.png" id="2c5ff2d0-80a5-4af8-8041-581c553fd28f" idref="57cbb098-e1de-4ec7-9f41-bf4dd9a1d413" insertOutput="0" keyboard_shortcut="" name="  README" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="no-console" showParsedOutputList="0">
+talauncher --app=talatextract_gui --docs</command>
+<command cwd="%D" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/wrench_orange.png" id="50c4c2d7-6811-48c7-acf2-6b9e64a65ac6" idref="57cbb098-e1de-4ec7-9f41-bf4dd9a1d413" insertOutput="0" keyboard_shortcut="" name="*  dump matches" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+talauncher --app=talatextract_gui --  --dump-matches %f</command>
+<command cwd="%D" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/bug_edit.png" id="60980df3-077d-47ce-8e05-46ea431c7b97" idref="57cbb098-e1de-4ec7-9f41-bf4dd9a1d413" insertOutput="0" keyboard_shortcut="" name="* enforce-order [current .tex]" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+talauncher --app=talatextract_gui -- --enforce-order --context=%(ask:how many lines of context?:3) %f</command>
+<command cwd="" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/anchor.png" id="81a613cf-c534-4b5a-bca6-131606e78751" idref="57cbb098-e1de-4ec7-9f41-bf4dd9a1d413" insertOutput="0" keyboard_shortcut="" name="  --version" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+talatextract --version</command>
+<command cwd="%D" doNotOpenOutputWindow="0" env="" id="aa20e489-757f-40bf-a804-9d8450368ddd" idref="57cbb098-e1de-4ec7-9f41-bf4dd9a1d413" insertOutput="0" keyboard_shortcut="" name="[current .tex]" operateOnSelection="0" parseOutput="1" parseRegex="(?P&lt;content&gt;.+?):\s(?P&lt;line&gt;\d+)" runIn="command-output-window" showParsedOutputList="0">
+talauncher --app=talatextract_gui -- %f</command>
+<command cwd="%D" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/bug_edit.png" id="c9e5cae1-69f5-449a-b35d-b5fde7f98d7f" idref="57cbb098-e1de-4ec7-9f41-bf4dd9a1d413" insertOutput="0" keyboard_shortcut="" name="* [current .tex]" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+talauncher --app=talatextract_gui -- --context=%(ask:how many lines of context?:3) %f</command>
+<command cwd="" doNotOpenOutputWindow="0" env="" icon="chrome://komodo/content/icons/help.png" id="fd9948d2-9d58-4baa-8303-fe631c0339f1" idref="57cbb098-e1de-4ec7-9f41-bf4dd9a1d413" insertOutput="0" keyboard_shortcut="" name="  --help" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+talatextract --help</command>
+<snippet icon="chrome://famfamfamsilk/skin/icons/text_indent_remove.png" id="00ffeefa-52e0-4261-8ed4-4477380cf863" idref="79db4cb0-ce5b-4341-a938-fcdde8577a68" indent_relative="false" keyboard_shortcut="" name="DUMMY_END_TAG" set_selection="false">
+%TECHARTS_DUMMY_END_TAG!@#_currentPos!@#_anchor</snippet>
+<snippet icon="chrome://famfamfamsilk/skin/icons/delete.png" id="8045aaf8-fa91-4314-983b-9b0d2bc2a2b3" idref="79db4cb0-ce5b-4341-a938-fcdde8577a68" indent_relative="false" keyboard_shortcut="" name="DISABLED_TAG" set_selection="false">
+%TECHARTS_DISABLED_TAG!@#_currentPos!@#_anchor</snippet>
+<snippet icon="chrome://komodo/content/icons/toggle-info.png" id="d27e6a9a-a840-48c3-af37-70275153433e" idref="79db4cb0-ce5b-4341-a938-fcdde8577a68" indent_relative="false" keyboard_shortcut="" name="DUMMY_ITEM_TAG" set_selection="false">
+%TECHARTS_DUMMY_ITEM_TAG-([[%ask:Please enter item number or letter:1]])!@#_currentPos!@#_anchor</snippet>
+<snippet icon="chrome://famfamfamsilk/skin/icons/text_indent.png" id="e016e923-e077-4daf-94ea-26991bd2f219" idref="79db4cb0-ce5b-4341-a938-fcdde8577a68" indent_relative="false" keyboard_shortcut="Ctrl+Alt+B" name="DUMMY_BEGIN_TAG" set_selection="false">
+%TECHARTS_DUMMY_BEGIN_TAG!@#_currentPos!@#_anchor</snippet>
+<command cwd="" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/anchor.png" id="13df5d3b-2b73-47b4-af46-425c553f8f29" idref="93dc04eb-50ab-4d27-8dbc-3b80097eff16" insertOutput="0" keyboard_shortcut="" name="  --version" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+tamasteralloc --version</command>
+<command cwd="%D" doNotOpenOutputWindow="0" env="" id="3020e7de-4c64-4a58-b7ea-95cb77f109cd" idref="93dc04eb-50ab-4d27-8dbc-3b80097eff16" insertOutput="0" keyboard_shortcut="" name="[current .tex]" operateOnSelection="0" parseOutput="1" parseRegex="^\s\s(?P&lt;line&gt;\d+).*?\|\s(?P&lt;content&gt;.+?)\s*$" runIn="command-output-window" showParsedOutputList="0">
+tamasteralloc %f</command>
+<command cwd="%D" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/application_form.png" id="3f651eac-1072-4366-9249-9620888935f1" idref="93dc04eb-50ab-4d27-8dbc-3b80097eff16" insertOutput="0" keyboard_shortcut="" name="--next-master [current .tex]" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+tamasteralloc --next-master=%(ask:Please enter next master number:12345) --out=%(ask:Please enter output file:%b-new.tex) %f</command>
+<command cwd="%D" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/application_form.png" id="520a9f60-5ccf-4d09-8788-5f836c25c11b" idref="93dc04eb-50ab-4d27-8dbc-3b80097eff16" insertOutput="0" keyboard_shortcut="" name="--fix [current .tex]" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+tamasteralloc --fix --out=%(ask:Please enter output file:%b-fixed.tex) %f</command>
+<command cwd="%p" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/weather_sun.png" id="d979d9ae-7daf-4853-9710-ffcf658a1bf3" idref="93dc04eb-50ab-4d27-8dbc-3b80097eff16" insertOutput="0" keyboard_shortcut="" name="  README" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="no-console" showParsedOutputList="0">
+talauncher --app=tamasteralloc_gui --docs</command>
+<command cwd="" doNotOpenOutputWindow="0" env="" icon="chrome://komodo/content/icons/help.png" id="e154c312-7c12-4493-ad67-dc1d79e375b0" idref="93dc04eb-50ab-4d27-8dbc-3b80097eff16" insertOutput="0" keyboard_shortcut="" name="  --help" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+tamasteralloc --help</command>
+<command cwd="" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/asterisk_orange.png" id="1e17862a-57df-4c1c-8ebe-f275283c5f49" idref="c8ea868b-ace5-46b7-a97b-3722a8ca7c75" insertOutput="0" keyboard_shortcut="" name="Version / About" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+perldoc Tarp</command>
+<folder id="49988b2b-58b4-499f-893c-78451a8ca559" idref="c8ea868b-ace5-46b7-a97b-3722a8ca7c75" name="GenTex">
+</folder>
+<folder id="51268d70-24eb-4e49-9aa7-f3b43e1c8ecd" idref="c8ea868b-ace5-46b7-a97b-3722a8ca7c75" name="PullCSV">
+</folder>
+<folder id="57cbb098-e1de-4ec7-9f41-bf4dd9a1d413" idref="c8ea868b-ace5-46b7-a97b-3722a8ca7c75" name="LaTeXtract">
+</folder>
+<folder id="79db4cb0-ce5b-4341-a938-fcdde8577a68" idref="c8ea868b-ace5-46b7-a97b-3722a8ca7c75" name=" TECHARTS TAGS">
+</folder>
+<folder id="93dc04eb-50ab-4d27-8dbc-3b80097eff16" idref="c8ea868b-ace5-46b7-a97b-3722a8ca7c75" name="MasterAlloc">
+</folder>
+<folder id="dbfcd4b3-8b47-4b9b-88d6-0eb0581e2e16" idref="c8ea868b-ace5-46b7-a97b-3722a8ca7c75" name="LaTeXcombine">
+</folder>
+<file id="f31a306f-bf6f-4a91-a2f5-9f61e5ea4dea" idref="c8ea868b-ace5-46b7-a97b-3722a8ca7c75" name="README" url="README">
+</file>
+<command cwd="%D" doNotOpenOutputWindow="0" env="" id="4101d912-f416-4a53-a5f2-340baab2db5d" idref="daf3594c-72c4-4812-bca1-bcc5dae2e866" insertOutput="0" keyboard_shortcut="" name="tapullsolns [current file]" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+tapullsolns %f</command>
+<command cwd="" doNotOpenOutputWindow="0" env="" id="6218cb5c-da05-4099-a562-213c6e7cd683" idref="daf3594c-72c4-4812-bca1-bcc5dae2e866" insertOutput="0" keyboard_shortcut="" name="tapullsolns --help" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+tapullsolns --help</command>
+<command cwd="" doNotOpenOutputWindow="0" env="" id="cf55d0d7-9226-49b2-af1f-7a829229cc1f" idref="daf3594c-72c4-4812-bca1-bcc5dae2e866" insertOutput="0" keyboard_shortcut="" name="tapullsolns --version" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+tapullsolns --version</command>
+<command cwd="" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/weather_sun.png" id="1436fbfe-cb0f-4a13-86dd-4f7e81bd195d" idref="dbfcd4b3-8b47-4b9b-88d6-0eb0581e2e16" insertOutput="0" keyboard_shortcut="" name="  README" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="no-console" showParsedOutputList="0">
+talauncher --app=talatexcombine_gui --docs</command>
+<command cwd="" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/anchor.png" id="24682953-9f1c-4814-9d77-b70d34fcb3e0" idref="dbfcd4b3-8b47-4b9b-88d6-0eb0581e2e16" insertOutput="0" keyboard_shortcut="" name="  --version" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+talatexcombine --version</command>
+<command cwd="" doNotOpenOutputWindow="0" env="" icon="chrome://komodo/content/icons/help.png" id="84bd9cf9-9870-4455-80ff-7064aed0201d" idref="dbfcd4b3-8b47-4b9b-88d6-0eb0581e2e16" insertOutput="0" keyboard_shortcut="" name="  --help" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+talatexcombine --help</command>
+<command cwd="%D" doNotOpenOutputWindow="0" env="" icon="chrome://famfamfamsilk/skin/icons/application_form_edit.png" id="d702a333-a551-497f-ac92-d4f2e728e465" idref="dbfcd4b3-8b47-4b9b-88d6-0eb0581e2e16" insertOutput="0" keyboard_shortcut="" name="[current .pklist]" operateOnSelection="0" parseOutput="0" parseRegex="" runIn="command-output-window" showParsedOutputList="0">
+talauncher --app=talatexcombine_gui -- %f</command>
+<preference-set idref="c8ea868b-ace5-46b7-a97b-3722a8ca7c75">
+  <string id="import_exclude_matches">*.*~;*.bak;*.tmp;CVS;.#*;*.pyo;*.pyc;.svn;_svn;*%*;tmp*.html;.DS_Store</string>
+  <string id="import_include_matches"></string>
+  <boolean id="import_live">0</boolean>
+  <boolean id="import_recursive">0</boolean>
+  <string id="import_type">makeFlat</string>
+</preference-set>
+</project>

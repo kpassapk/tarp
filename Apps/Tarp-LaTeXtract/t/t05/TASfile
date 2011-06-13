@@ -1,0 +1,28 @@
+myEntry = \
+    $BOOK$$CHAPTER$$SECTION$ \
+    $BOOK$$CHAPTER$pr$PROJ_NUMBER$$PROJ_LETTER$
+
+myEntry::BOOK = foo|4c
+
+myEntry::CHAPTER = \d\d
+
+myEntry::SECTION = \d\d
+
+myEntry::PROJ_NUMBER = \d # The "2" in "pr2a"
+
+myEntry::PROJ_LETTER = [a-z] # The "a" in "pr2a"
+
+beginTag = begin
+
+endTag = end
+
+itemTag[0] = <illegal>-$ITM$
+itemTag[1] = $ITM$
+itemTag[2] = $ITM$
+itemTag[3] = $ITM$
+
+sequenceRestart = sequence
+
+title = title\:\s+$TITLE$
+
+title::TITLE = \w+

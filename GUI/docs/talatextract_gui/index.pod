@@ -1,0 +1,138 @@
+=head1 Running LaTeXtract in Komodo
+
+As with all Tarp scripts, C<talatextract> is run in Komodo as an external
+command; double clicking one of the icons in the C<LaTeXtract> folder in the
+C<Tarp Toolkit> project will run the script with certain command-line
+options. Only a few of the most common options are available through Komodo;
+use the program directly from the command line for other combinations. 
+
+In order to use this script from Komodo (with the exception of C<README>,
+C<--version> and C<--help>), a C<.tex> must be open and visible in the Komodo
+workspace, and there must be a Tarp Style (C<TAS>) file called C<TASfile>, C<TASfile.txt> or C<TASfile.tas>
+in the same directory as the C<.tex> file.
+
+=head2 Options
+
+=for html <center><img src="images/options.png"></center>
+
+=over
+
+=item [current .tex]
+
+Equivalent to running the following in a command prompt:
+
+    talatextract file.tex
+
+where C<file.tex> is the name of the currently open file.  The script is run
+in the directory where the current file resides.  If successful, a list of
+exercises will be shown in the "Command Output" pane in Komodo.
+
+Use this command if you have a C<TAS> file called C<TASfile>, C<TASfile.txt>
+or C<TASfile.tas> in the same directory as the currently open file.
+
+=item README,
+
+Displays this help file.
+
+=item --version
+
+Equivalent to running the following in a command prompt:
+
+    talatextract --version
+
+=item --help
+
+Equivalent to running the following in a command prompt:
+
+    talatextract --help
+
+=back
+
+=head2 TAS Entries
+
+The starter TAS files provided as well as the C<Tarp::LaTeXtract>
+documentation contain all the information you should need
+about the following C<TAS> tags used by this program:
+
+=over
+
+=item *
+
+beginTag
+
+=item *
+
+endTag
+
+=item *
+
+exTag
+
+=item *
+
+partTag
+
+=item *
+
+subPartTag
+
+=item *
+
+sequenceRestart
+
+=back
+
+=head2 Output
+
+Output of this program is usually for diagnostic purposes: it helps the user
+modify either the input file or the C<TAS> file until exercises are correctly
+identified.  You can therefore think of this script as a "test" for whether
+the file is in the right format to be processed by other Toolkit scripts.
+
+The following kinds of output are shown in the "Command Output" pane while running
+LaTeXtract:
+
+=over
+
+=item *
+
+"Helpful" error messages:
+
+These will appear if there is a weird or unexpected tag in your file that the
+program can't understand, and it wants you (the user) to go and do something about
+it.  It will show a few "good" tags and then the bad one.  You can double click
+on the warning messages to go to the relevant line.
+
+An example of this output:
+
+=for html <center><img src="images/errormessage.png"></center>
+
+=item *
+
+Line numbers
+
+If the program is successful a bunch of line numbers will be displayed, first
+for each numbering sequence and then for each exercise, as follows:
+
+=for html <center><img src="images/rawoutput.png"></center>
+
+Here we can see that there are two numbering sequences in the file; the second
+numbering sequence takes up lines 784 to 2097.  The first exercise, C<01>, takes
+up lines 803 to 838, which encompasses the line ranges for C<01a> and C<01b>. This is
+called "raw" output, and is not double clickable.  In order to make this list
+double clickable, we switch to "parsed" output, as described below.
+
+To the far right of the "Command Output" pane there is an icon of a bulleted list,
+with a tooltip that says "Toggle Raw/Parsed Output View".  When clicked, the
+original list of line numbers changes into the following:
+
+=for html <center><img src="images/parsedoutput.png"></center>
+
+The "Line" column contains the line numbers at the start of each exercise's range;
+the "Content" column contains the exercise.  Double clicking on a row will take
+open the right file in the Workspace and highlight the exercise line.  This is
+useful for checking that each exercise is where the program thinks it is.
+
+=back
+
+=cut

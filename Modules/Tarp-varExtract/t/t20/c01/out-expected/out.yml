@@ -1,0 +1,23 @@
+---
+00:
+  CHAP_TITLE: 'Differential Equations'
+01:
+  SECT_TITLE: 'Modeling with Differential Equations'
+02:
+  SECT_TITLE: "Direction Fields and Euler's Method"
+03:
+  SECT_TITLE: 'Separable Equations'
+03ap01:
+  PROJ_TITLE: 'How Fast Does a Tank Drain?'
+03ap02:
+  PROJ_TITLE: 'Which Is Faster, Going Up or Coming Down?'
+04:
+  SECT_TITLE: 'Exponential Growth and Decay'
+04AP:
+  PROJ_TITLE: 'Calculus and Baseball'
+05:
+  SECT_TITLE: 'The Logistic Equation'
+06:
+  SECT_TITLE: 'Predator-Prey Systems'
+fps: {}
+r: {}

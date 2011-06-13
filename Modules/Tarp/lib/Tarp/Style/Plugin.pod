@@ -1,0 +1,56 @@
+=pod
+
+=head1 NAME
+
+Tarp::Style::Plugin -- how Tarp::Style plugins work
+
+=head1 DESCRIPTION
+
+This document is a guide to writing plugins for Tarp::Style.
+
+=head2 C<< Tarp::Style->import >>
+
+Tarp::Style provides an import method, which takes a list of plugins (modules)
+to be loaded. The plugin mechanism is similar to that used by C<Module::Starter>
+in that the given modules are arranged in an I<is-a> chain. Like
+Module::Starter, Tarp::Style subclasses the last plugin given, which subclasses
+the second-to-last, up to the first plugin given, which is the base class.
+Unlike Module::Starter, however, the first plugin always inherits
+Tarp::Style::Base. Also, the import() method can be called repeatedly to add
+more and more plugins to the C<is-a> chain. The default chain is imported by
+'using' Tarp::Style:
+
+    use Tarp::Style;
+    
+    # inheritance chain:
+    # (bottom) Tarp::Style::Base --> Tarp::Style (top)
+
+    Tarp::Style->import( "Foo::Style" );
+    
+    # (b) Tarp::Style::Base --> Foo::Style --> Tarp::Style (t)
+    
+    Tarp::Style->import( "Bar::Style" );
+    
+    # (b) Tarp::Style::Base --> Foo::Style --> Bar::Style --> Tarp::Style (t)
+
+Because of the inheritance mechanism, any methods exposed by the plugins are
+available to the Tarp::Style object.
+
+Another feature of Tarp::Style plugins is that you can load a I<specialization>
+of a style plugin by importing it in the same call.  For example,
+Tarp::Style::ITM::NLR is a specialization of Tarp::Style::ITM that deals
+only with (Number/Letter/Roman) lists.  This is imported as,
+
+    Tarp::Style->import( "Tarp::Stle::ITM", "Tarp::Style::ITM::NLR" );
+
+Once imported as shown, subsequent imports of "Tarp::Style::ITM" will be ignored.
+This allows you to set the numbering style globally.
+
+When a new Tarp::Style object is created with new(), the object "remembers" the
+class that was next to last in the inheritance chain (just below Tarp::Style).
+This is to ensure that no imports are performed between the invocation of a new
+object and calls to load(), save(), loadString() and saveString() that may be
+affected by loading a style plugin.
+
+
+=cut

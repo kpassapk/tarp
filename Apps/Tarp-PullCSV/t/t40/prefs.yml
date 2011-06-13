@@ -1,0 +1,8 @@
+---
+pullCSV:
+    col:
+        - master
+        - book;myBook
+        - chapter;myChapter
+        - section;foo,bar
+        - exercise

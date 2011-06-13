@@ -1,0 +1,43 @@
+Tarp-LaTeXcombine
+
+This application reorders and merges one or more TeX files into a chunk
+file and a skeleton file.
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Makefile.PL
+	make
+	make test
+	make install
+
+SUPPORT AND DOCUMENTATION
+
+After installing, you can find documentation for this module with the
+perldoc command.
+
+    perldoc Tarp::LaTeXcombine
+
+You can also look for information at:
+
+    RT, CPAN's request tracker
+        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Tarp-LaTeXcombine
+
+    AnnoCPAN, Annotated CPAN documentation
+        http://annocpan.org/dist/Tarp-LaTeXcombine
+
+    CPAN Ratings
+        http://cpanratings.perl.org/d/Tarp-LaTeXcombine
+
+    Search CPAN
+        http://search.cpan.org/dist/Tarp-LaTeXcombine
+
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2008 Kyle Passarelli
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+

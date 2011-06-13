@@ -1,0 +1,101 @@
+#!/usr/bin/perl -w
+
+use strict;
+use warnings;
+
+=head1 NAME
+
+talatextract - Extract item data from TeX file
+
+=cut
+
+use Tarp::LaTeXtract::App;
+
+Tarp::LaTeXtract::App->run();
+
+=head1 SYNOPSIS
+
+talatextract [gen-tas] | [options] file.tex
+
+Options:
+
+    --tas=style.tas     Set name of Tarp Style (TAS) file to use.
+    --enforce-order     Enforce order of items in levels 2+
+    --relax             Don't be so pedantic about checking tags
+    --extract-seq=n     Only extract sequence 'n' (default -1, or all sequences)
+    --context=n         Write 'n' lines of context (default is n=3)
+    --double-clickable  Put absolute filenames in warnings
+    --dump-matches      Dump match information to [file]-matches.txt
+    --help              Show this message.
+    --version           Display version information.
+
+Examples:
+
+    talatextract --gen-tas                  Create a compliant .tas file
+
+    talatextract --tas=4c3.tas file.tex     Extract lists in file.tex
+
+=head1 DESCRIPTION
+
+C<talatextract.pl> is a command-line interface to the Tarp::LaTeXtract module,
+which extracts line number ranges for item lists in LaTeX. This command-line
+interface is designed to help the user edit C<LaTeX> and C<TAS> files in order
+to get them to a LaTeXtractable form. The output produced by this program is
+therefore only useful for diagnostic purposes: other programs are based onthe
+same C<Tarp::LaTeXtract> module but provide more functionality.  
+
+=head1 OUTPUT
+
+When running talatextract you get two types of output:
+
+=over
+
+=item *
+
+An Enumerated Item List
+
+Here the program has successfully matched a series of C<beginTag>s, C<endTag>s
+and C<itemTag>s to determine where each enumerated item begins and ends. When
+the program finishes it prints a list line numbers:
+
+    seq0: 1 101
+    01: 42 45
+    02: 47 49
+    ...
+
+The first line indicates that there is one numbering sequence (no
+C<sequenceRestart> tag was encountered), and that it corresponds to the entire
+file (lines 1 through 101). The following lines contain an item number and the
+lines that it encompasses in the file. The first number is where the item tag
+was found, and the second number is the line before the next item number or
+C<endTag>.
+
+If no tags were matched, you would get output that looks like this:
+
+    seq0: 1 101
+
+=item *
+
+Diagnostic Error Messages
+
+If tags were matched in an unexpected order, or if there are items missing from
+the enumerated list, an error is printed.  To help you determine what is going
+on, and decide whether you need to adjust the C<TAS> file or the source file
+itself, a diagnostic message is printed.  Typically it looks something like
+this:
+
+    LaTeXtract didn't like a tag in in/in.tex.
+    Succesful matches prior to tag error: 
+    (1) itemTag[1][0] { ITM => 2 } at in/in.tex line 9
+    (2) beginTag at in/in.tex line 10
+    (3) itemTag[2][0] { ITM => a } at in/in.tex line 12
+    ERROR: Unexpected tag: found c, expected b, stopped at in/in.tex line 15
+
+An error message complaining about an unexpected tag is printed last.  The
+previous lines contain "context" of what was going on when the error ocurred.
+By default three lines of context are printed; you can increase this by using
+the --context option.
+
+=back
+
+=cut

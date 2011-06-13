@@ -1,0 +1,53 @@
+Preamble
+
+
+%TCIMACRO{\TeXButton{setRM}{\renewcommand{\RM}{1}}}%
+%BeginExpansion
+\renewcommand{\RM}{1}%
+%EndExpansion
+%TCIMACRO{\TeXButton{set page2}{\setcounter{page}{2}}}%
+%BeginExpansion
+\setcounter{page}{2}%
+%EndExpansion
+%TCIMACRO{%
+%\TeXButton{s2col}{\setlength{\columnsep}{24pt}
+%\advance \leftskip by -165pt
+%\advance\hsize by 165pt
+%\advance\linewidth by 165pt
+%\begin{multicols}{2}}}%
+%BeginExpansion
+\setlength{\columnsep}{24pt}
+\advance \leftskip by -165pt
+\advance\hsize by 165pt
+\advance\linewidth by 165pt
+\begin{multicols}{2}%
+%EndExpansion
+
+
+\begin{ExerciseList}
+
+\item[\hfill 1.]
+
+TCIMACRO
+ANSWER
+boo.tex answer 1 seq1
+EndExpansion
+
+\end{ExerciseList}
+
+
+%TCIMACRO{%
+%\TeXButton{e2col}{\end{multicols}
+%\advance \leftskip by 165pt
+%\advance\hsize by -165pt
+%\advance\linewidth by -165pt}}%
+%BeginExpansion
+\end{multicols}
+\advance \leftskip by 165pt
+\advance\hsize by -165pt
+\advance\linewidth by -165pt%
+%EndExpansion
+
+\end{document}
+
+

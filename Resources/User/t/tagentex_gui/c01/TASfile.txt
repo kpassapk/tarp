@@ -1,0 +1,23 @@
+filename = $BOOK$$CHAP$$SECT$
+    filename::BOOK = wad
+    filename::CHAP = \d{2}
+    filename::SECT = \d{2}
+
+texVars = $CHAP$ $SECT$
+    texVars::CHAP = \d+
+    texVars::SECT = \d+
+
+beginTag = begin
+
+endTag   = end
+
+itemTag[0] = <illegal>-$ITM$
+itemTag[1] = $ITM$
+itemTag[2] = $ITM$
+itemTag[3] = $ITM$
+
+sequenceRestart = 
+
+masterRef = ms$MASTER$\.tex
+
+masterRef::MASTER = \d{5}[a-z]?
