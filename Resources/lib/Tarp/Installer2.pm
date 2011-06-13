@@ -4,8 +4,8 @@ use strict;
 use warnings;
 
 use File::Copy;
-use File::Spec; # for catfile();
-use File::HomeDir;
+use File::Spec; # for catfile()
+use File::HomeDir; # for my_desktop()
 
 my %fields = (
     buildTool   => "make",
@@ -153,7 +153,7 @@ MSG
             print "\n";
             push @$$taskRec, ( $rc == 0 ? "ok " : "not ok " ) . $task;
             
-            last TASK if              $rc && $i == MAKEMAKE; # perl Makefile.pl must suceed 
+            last TASK if              $rc && $i == MAKEMAKE; # perl Makefile.pl must succeed 
             last TASK if ! $self->install && $i == MAKETEST;
             next TASK if     $self->force && $i == MAKETEST; # continue if tests failed
             last TASK if $rc; # skip all remaining tasks given non-zero return code
@@ -191,10 +191,10 @@ MSG
     print "\tTarget: $target\n\n";
     
     # Here we are hoping root has File::Copy::Recursive installed.
-    my @cmd = ( $self->{_sudo_} . "perl",
-        " -e \"use File::Copy::Recursive qw/dircopy/; dircopy( 'GUI', '$target' )\"" );
+    my @cmd = ( $self->{_sudo_} . "ls", " -l" );
+#        " -e \"use File::Copy::Recursive qw/dircopy/; dircopy( 'GUI', '$target' )\"" );
 
-    system( @cmd ) == 0 or die "system @cmd failed: $?";
+    system( "@cmd" ) == 0 or die "system @cmd failed: $?";
     
     # if this is Windows, put links on the desktop.    
     if ( $^O eq "MSWin32" ) {

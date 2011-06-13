@@ -1,17 +1,17 @@
 Read 'CHAPT-CONFIG.yml'
 
 Copying pickup files...
-Copied '/home/kyle/Tarp/Scripts/solutions-starter/t/ignorecase/pk/3bar Files/3bar0102.tex' to '3bar0102.tex'
-Copied '/home/kyle/Tarp/Scripts/solutions-starter/t/ignorecase/pk/3bar Files/3BAR0101.tex' to '3bar0101.tex'
-Copied '/home/kyle/Tarp/Scripts/solutions-starter/t/ignorecase/pk/3foo Files/3foo0102.tex' to '3foo0102.tex'
-Copied '/home/kyle/Tarp/Scripts/solutions-starter/t/ignorecase/pk/3foo Files/3FOO0101.tex' to '3foo0101.tex'
+Copied '/Users/kyle/Tarp/Scripts/solutions-starter/t/ignorecase/pk/3bar Files/3BAR0101.tex' to '3bar0101.tex'
+Copied '/Users/kyle/Tarp/Scripts/solutions-starter/t/ignorecase/pk/3bar Files/3bar0102.tex' to '3bar0102.tex'
+Copied '/Users/kyle/Tarp/Scripts/solutions-starter/t/ignorecase/pk/3foo Files/3FOO0101.tex' to '3foo0101.tex'
+Copied '/Users/kyle/Tarp/Scripts/solutions-starter/t/ignorecase/pk/3foo Files/3foo0102.tex' to '3foo0102.tex'
 4 file(s) copied
 
 Getting titles...
-Found manuscript master file '4foo0100.tex' in '/home/kyle/Tarp/Scripts/solutions-starter/t/ignorecase/man'
-4foo0102.tex: SECT_TITLE
+Found manuscript master file '4foo0100.tex' in '/Users/kyle/Tarp/Scripts/solutions-starter/t/ignorecase/man'
 4foo0100.tex: CHAP_TITLE
 4foo0101.tex: SECT_TITLE
+4foo0102.tex: SECT_TITLE
 Updating CHAPT-CONFIG.yml
 
 Pickups Per Section:

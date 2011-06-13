@@ -1,9 +1,18 @@
 #!perl
 
+BEGIN {
+    use Cwd;
+    our $directory = cwd;
+    use File::Spec;
+    our $libDir = File::Spec->catfile( $directory, "..", "Resources", "lib" );    
+}
+
+use lib $libDir;
 use strict;
-use File::Copy::Recursive qw/dircopy pathrmdir/;
 use File::Copy;
 use Test::More tests => 4;
+use File::Copy::Recursive qw/dircopy pathrmdir/;
+
 
 mkdir "t/tut";
 

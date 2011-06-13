@@ -1,13 +1,18 @@
 #!perl
 
-use Test::More tests => 1;
-use File::Copy qw/move/;
-use File::Copy::Recursive qw/dircopy/;
-use File::Find;
-
 BEGIN {
+	use Test::More tests => 1;
 	use_ok( 'Tarp::Plugins' );
+    use Cwd;
+    our $directory = cwd;
+    use File::Spec;
+    our $libDir = File::Spec->catfile( $directory, "..", "Resources", "lib" );    
 }
+
+use lib $libDir;
+use File::Copy qw/move/;
+use File::Find;
+use File::Copy::Recursive qw/dircopy/;
 
 dircopy "lib", "t/plugins";
 

@@ -13,7 +13,6 @@ WriteMakefile(
         'Test::More'                => 0,
         'Test::Differences'         => 0.4,
         'Text::CSV'                 => 1.10,
-        'File::Copy::Recursive'     => 0.37,
         'YAML::Tiny'                => 0,
     },
     PREREQ_FATAL        => 1,

@@ -87,13 +87,13 @@ REQUIREMENTS
 
     *   Third Party Perl Modules:
 
+        "File::HomeDir"
+            Available from CPAN and included in ActivePerl.
+
         "Text::CSV"
             Available from CPAN or through ActiveState's Perl Package
             Manager (ppm). See your Perl distribution's manual pages for
             help on installing Perl modules.
-
-        "File::Copy::Recursive"
-            Available from CPAN and ppm.
 
         "YAML::Tiny"
             Available from CPAN and ppm.
@@ -112,6 +112,7 @@ REQUIREMENTS
             to make sure you have it though.
 
         "Test::POD"
+        
         "Test::POD::Coverage"
 
 GETTING HELP

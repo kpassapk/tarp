@@ -139,7 +139,7 @@ BEGIN {
     use Cwd;
     our $directory = cwd;
     use File::Spec;
-    our $libDir = File::Spec->catfile( $directory, "Resources", "Installer", "lib" );    
+    our $libDir = File::Spec->catfile( $directory, "Resources", "lib" );    
 }
 
 use lib $libDir;

@@ -1003,7 +1003,6 @@ sub itemOnLine {
 
     $l = $x->lines( "01a", 0 );
     $l = $x->lines( 0 );
-    $l = $x->lines();
 
 Returns a hashref holding the a copy of the item data for the C< $iseq >
 numbering sequence. The structure is
