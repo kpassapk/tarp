@@ -88,7 +88,7 @@ copy( "c05/out/dataout.csv", "c05/out/dataout.old" );
 
 $t->case(); # c05
 
-copy( "c05/out/dataout.old", "c05/out/dataout.csv" );
+move( "c05/out/dataout.old", "c05/out/dataout.csv" );
 
 move( "prefs.yml", "toolPrefs.yml" );
 

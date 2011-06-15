@@ -191,8 +191,7 @@ MSG
     print "\tTarget: $target\n\n";
     
     # Here we are hoping root has File::Copy::Recursive installed.
-    my @cmd = ( $self->{_sudo_} . "ls", " -l" );
-#        " -e \"use File::Copy::Recursive qw/dircopy/; dircopy( 'GUI', '$target' )\"" );
+    my @cmd = ( $self->{_sudo_} . "perl", "-IResources/lib -e \"use File::Copy::Recursive qw/dircopy/; dircopy( 'GUI', '$target' )\"" );
 
     system( "@cmd" ) == 0 or die "system @cmd failed: $?";
     
