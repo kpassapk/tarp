@@ -58,7 +58,7 @@ sub _init {
         $buildTool,
         "$buildTool test",
         "$_sudo_$buildTool install",
-        "$buildTool clean"
+        "$_sudo_$buildTool realclean"
     );
     
     $self->{_sudo_} = $_sudo_;
@@ -83,8 +83,9 @@ sub installUserData {
     die $@ if $@;
     
     print "\n***** Installing User Files\n\n";
-    
-    my $destDir = Tarp::Config->ResourceDir( 0 );
+
+    my $destDir = 0;
+    $destDir = Tarp::Config->ResourceDir( 0 );
 
     print "\tSource: Resources/User\n";
     print "\tTarget: $destDir\n\n";

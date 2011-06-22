@@ -80,6 +80,7 @@ my $exp = [
 is_deeply( $tas->{foo}, $exp, "Data structure ok" );
 
 my $ierp = $tas->interpolate( "foo" );
+
 # use Data::Dumper;
 # print Dumper $ierp;
 my $ierpExp = [
@@ -136,9 +137,6 @@ foo::b::d= 1
 END_OF_TAS
 ), "read string" );
 
-#use Data::Dump qw/dump/;
-#print dump [ $tas->entries() ];
-
 is_deeply( [ $tas->entries() ], ["foo", "foo::b", "foo::b::d"], "three level entries" );
 
 ok( ! Tarp::TAS->readString( <<END_OF_TAS
@@ -160,9 +158,6 @@ entry[1] = value
 END_OF_TAS
 ), "entry ends with subscript" ) or diag $tas->errStr();
 
-
-#use Data::Dumper;
-# print Dumper $tas;
 ok( exists $tas->{entry_1_}, "exists entry_1_" );
 
 eval { $tas->entries() };

@@ -18,6 +18,7 @@ use warnings;
 use Carp;
 use Data::Dump qw/dump/;
 use Storable qw/dclone/;
+
 use Tarp::TAS;
 use Tarp::TAS::Spec;
 
@@ -292,15 +293,15 @@ sub values {
     }
     
     if ( @vals ) {
+        # Storing new values.  Must process variables.
 
-        # get a list of variables contained in the new values.
         my %ev;
         for ( @vals ) {
             my @vs = $self->varsIn( $_ );
             @ev{ @vs } = map { [ ".+", {} ] } @vs;
         }
 
-        my ( $p, $e ) = $entry =~ /(.*)::(.*)/ ? ( $1, $2 ) : ( '', $entry );
+        my ( $p, $e ) = $entry =~ /(.*)::(\w+)/ ? ( $1, $2 ) : ( '', $entry );
         # warn "*** $entry: $p $e";
         if ( ! $vs ) {
             # does not exist.  add only if last good path is the parent of the
@@ -334,11 +335,10 @@ sub values {
 
         $self->_loadVars( [ $tas ] );
     } else {
-        # since we return an array which can possibly be empty,
-        # we cannot use the return value to determine if an entry exists.
-        # We raise an exception here and use exists() to determine
-        # if an entry exists.
-        croak $tas->errStr() unless $vs;
+        if ( ! $vs ) {
+            my $a = ();
+            return $a;
+        }
     }
 
     my @v = @$vs;
@@ -431,9 +431,12 @@ sub qr {
         return @$saved;
     }
     
-    # Otherwise construct the qr and save it.
+    # Otherwise construct the qr and save it
 
     my @qrs = @{ $self->_get_qr( $entry ) };
+
+    # Top level entries can have EXACT and CSENS
+    
     my $vr = $self->{_TAS}->values( $entry )->[-1];
     if ( $vr->{EXACT} && $vr->{EXACT}->[0] ) {
         @qrs = map { '^' . $_ . '$' } @qrs;
@@ -443,6 +446,7 @@ sub qr {
     } else {
         @qrs = map { "(?i-xsm:$_)" } @qrs;
     }
+    
     # Finally construct the regexp    
     @qrs = map { qr/$_/ } @qrs;
     $self->{_qrs}->{$entry} = \@qrs;
@@ -459,39 +463,49 @@ sub _get_qr {
     # Interpolate variables using the WORD, EXACT and CSENS sub values,
     # and return interpolated string in regexp format.
 
-    my @vals = $self->values( $fqe );
-    my @vars = $self->vars( $fqe );
-   
-    # remove double quotes
+    my @vals = @{ $self->{_TAS}->values( $fqe ) };
+    my @vars = keys %{ $vals[-1] };
+    pop @vals;
+    
+    # Remove double quotes
     for ( @vals ) {
         s/^"(.*)"$/$1/;
     }
-    
-   if ( @vars ) {
-       my %qrvars;
-       foreach my $v ( @vars ) {
-           my $qrs = $self->_get_qr( $v, "$entry\::" );
-           push @$qrs, {};
-           $qrvars{$v} = $qrs;
-        }
-        
-        return $self->{_TAS}->interpolateValues(
-            [ @vals, \%qrvars ] );
-    
-    }
 
-    return \@vals unless $path;
-    # Then bracket in \b if ::WORD is set
-    my $vr = $self->{_TAS}->values( $fqe )->[-1];
-    if ( $vr->{WORD} && $vr->{WORD}->[0] ) {
-        @vals = map { '\b' . $_ . '\b' } @vals;
+    # Sub in variables recursively
+
+    my %qrvars;    
+    foreach my $v( @vars ) {
+        next if $v =~ /^_/ || $v eq 'WORD' || $v eq 'CSENS';
+        my $qrs = $self->_get_qr( $v, "$fqe\::" );
+        push @$qrs, {};
+        $qrvars{$v} = $qrs;
     }
-    if ( ! $vr->{CSENS} || $vr->{CSENS}->[0] ) {
-        @vals = map { "(?-xism:(?<$entry>$_))" } @vals;
+    
+    # Replace values with interpolated values
+    @vals = @{ $self->{_TAS}->interpolateValues( [ @vals, \%qrvars ] ) };
+    
+    if ( $path ) {
+        # For non top level entries, use CSENS and WORD to modify the regex
+        # and set named capture buffers
+        # ::WORD  - bracket in \b
+        # ::CSENS - (?i-xsm) flag
+
+        my $vr = $self->{_TAS}->values( $fqe )->[-1];
+        if ( $vr->{WORD} && $vr->{WORD}->[0] ) {
+            @vals = map { '\b' . $_ . '\b' } @vals;
+        }
+        if ( ! $vr->{CSENS} || $vr->{CSENS}->[0] ) {
+            @vals = map { "(?-xism:(?<$entry>$_))" } @vals;
+        } else {
+            @vals = map { "(?i-xsm:(?<$entry>$_))" } @vals;
+        }
+        return \@vals;
+
     } else {
-        @vals = map { "(?i-xsm:(?<$entry>$_))" } @vals;
+        # Top level entry
+        return \@vals;
     }
-    return \@vals;
 }
 
 sub xform {

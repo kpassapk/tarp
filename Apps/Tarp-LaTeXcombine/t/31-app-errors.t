@@ -82,7 +82,7 @@ chdir ( "t/t31" ) or die "Could not open t/t31: $!";
 my @all = qw/ --tas=..\/TASfile.txt --silent /;
 @ARGV = ( @all, qw/--pk=foo;in\/foo.tex --chunk=out\/dataout.chunk --skel=out\/dataout.skel datain.pklist/ );
 
-runTest(); # c01
+runTest(); # c01: not found
 
 # App.pm wipes out ARGV, so we have to reset it
 @ARGV = ( @all, qw/ --pk=foo;in\/foo.tex --chunk=out\/dataout.chunk --skel=out\/dataout.skel datain.pklist/ );
@@ -95,7 +95,10 @@ runTest(); # c03
 
 @ARGV = ( @all, qw/ --pk=foo;in\/foo.tex --chunk=out\/dataout.chunk --skel=out\/dataout.skel datain.pklist/ );
 
-runTest(); # c04
+runTest(); # c04: no error
+
+unlink "c04/out/dataout.chunk" or die "Could not remove c04/out/dataout.chunk: $!, stopped";
+unlink "c04/out/dataout.skel" or die "Could not remove c04/out/dataout.skel: $!, stopped";
 
 @ARGV = ( @all, qw/--pk=foo;in\/foo.tex  datain.pklist/ );
 

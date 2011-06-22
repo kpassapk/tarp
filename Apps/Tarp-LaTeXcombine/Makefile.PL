@@ -16,6 +16,5 @@ WriteMakefile(
         'Test::More'      => 0,
     },
     EXE_FILES           => [ 'bin/talatexcombine' ],
-    dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
-    clean               => { FILES => 'Tarp-LaTeXcombine-*' },
+    realclean           => { FILES => '*.kpf' }
 );

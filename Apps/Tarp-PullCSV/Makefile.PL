@@ -13,6 +13,5 @@ WriteMakefile(
         'Tarp::Itexam' => 0.8,
     },
     EXE_FILES           =>  [ 'bin/tapullcsv' ],
-    dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
-    clean               => { FILES => 'Tarp-PullCSV-*' },
+    realclean	  => { FILES => '*.kpf' }
 );

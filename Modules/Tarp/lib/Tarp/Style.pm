@@ -378,8 +378,8 @@ Returns a true value if "entry" exists, false otherwise.
     $hlp->values( "foo", qw/a b$c$/ );
 
 Sets or gets the values for entry "foo". Sub entries are added if the new values
-contain variables. The sub entries have a value of '.+' If the entry does not
-exist, an exception is raised. Use exists() to find out if an entry exists or
+contain variables, and have a default value of '.+' If the entry does not
+exist, an empty array is returned. Use exists() to find out if an entry exists or
 not.
 
 =head2 interpolate

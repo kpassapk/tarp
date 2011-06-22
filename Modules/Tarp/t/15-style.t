@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 
 use strict;
-use Test::More tests => 58;
+use Test::More tests => 60;
 use Tarp::Style;
 use Tarp::Test::Files;
 
@@ -134,6 +134,17 @@ like( $sty->errStr(), qr/does not end with a newline/, "Trailing newline" );
 ok( $sty->load( "minimal.tas" ), "Minimal file load" );
 
 ok( $sty->load( "good.tas" ), "good.tas" );
+
+# Test the files from t10
+
+ok( $sty->load( "foo.tas" ), "foo.tas from t10 loads" );
+
+my @qrs = $sty->qr( "foo" );
+
+is( @qrs + 0, 6, "qrs has six entries" );
+
+# Test a couple of files with errors, compare the error message with
+# what we were expecting
 
 ok( ! $sty->load( "bad.tas" ), "bad.tas" );
 

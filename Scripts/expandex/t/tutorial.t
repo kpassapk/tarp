@@ -4,20 +4,10 @@ use strict;
 use File::Copy;
 use Test::More tests => 9;
 
-BEGIN {
-    use Cwd;
-    our $directory = cwd;
-    use File::Spec;
-    our $libDir = File::Spec->catfile( $directory, "..", "Resources", "lib" );    
-}
-
-use File::Copy::Recursive qw/dircopy pathrmdir/;
-
 mkdir "t/tut";
 
 diag "Testing expandex.pl with tutorial files";
 
-# dircopy $tut_dir,    "t/tut" or die "Could not copy $tut_dir to t: $!, stopped";
 copy "expandex.pl",  "t/tut" or die "could not copy expandex.pl to t/tut: $!, stopped";
 copy "expandex.tas", "t/tut" or die "could not copy expandex.tas to t/tut: $!, stopped";
 
@@ -30,6 +20,8 @@ chdir "t/tut" or die "Could not chdir to t/tut: $!, stopped";
 
 ok( ! -e "6et0101-new.tex", "section 01 file does not exist" );
 ok( ! -e "6et0102-new.tex", "section 02 file does not exist" );
+
+# Test standard output
 
 system( "perl expandex.pl 2>&1 1>tmpfile" ) == 0
     or die "system expandex.pl failed: $?";

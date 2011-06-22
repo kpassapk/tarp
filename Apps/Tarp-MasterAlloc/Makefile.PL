@@ -14,6 +14,5 @@ WriteMakefile(
         'Tarp::Itexam'  => 0.8,
         'Test::More'    => 0,
     },
-    dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
-    clean               => { FILES => 'Tarp-MasterAlloc-*' },
+    realclean	  => { FILES => '*.kpf' },
 );
