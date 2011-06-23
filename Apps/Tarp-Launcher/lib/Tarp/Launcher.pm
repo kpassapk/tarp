@@ -8,11 +8,11 @@ Tarp::Launcher - launch installed TarpToolkit scripts
 
 =head1 VERSION
 
-Version 0.992
+Version 0.994
 
 =cut
 
-our $VERSION = '0.992';
+our $VERSION = '0.994';
 
 my $Debugging = '';
 

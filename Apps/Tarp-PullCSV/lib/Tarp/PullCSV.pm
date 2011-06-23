@@ -14,11 +14,11 @@ Tarp::PullCSV - get exercise data as (csv) table
 
 =head1 VERSION
 
-Version 0.992
+Version 0.994
 
 =cut
 
-our $VERSION = '0.992';
+our $VERSION = '0.994';
 
 
 =head1 SYNOPSIS

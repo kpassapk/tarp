@@ -20,11 +20,11 @@ Tarp::GenTex - generate a .tex file by merging .chunk and .skel files
 
 =head1 VERSION
 
-Version 0.992
+Version 0.994
 
 =cut
 
-our $VERSION = '0.992';
+our $VERSION = '0.994';
 
 =head1 DESCRIPTION
 

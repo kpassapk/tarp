@@ -6,11 +6,11 @@ Tarp::Itexam - get exercise attributes from exercise lists in LaTeX files
 
 =head1 VERSION
 
-Version 0.992
+Version 0.994
 
 =cut
 
-our $VERSION = '0.992';
+our $VERSION = '0.994';
 
 =head1 SYNOPSIS
 

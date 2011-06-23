@@ -18,11 +18,11 @@ Tarp::MasterAlloc - Allocate new master numbers and fix errors in manuscript fil
 
 =head1 VERSION
 
-Version 0.992
+Version 0.994
 
 =cut
 
-our $VERSION = '0.992';
+our $VERSION = '0.994';
 
 =head1 DESCRIPTION
 
