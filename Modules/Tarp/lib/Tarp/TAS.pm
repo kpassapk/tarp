@@ -651,11 +651,7 @@ sub varsIn {
             push @vars, $1;
         }
     }
-#    if ( ! @vars ) {
-#        while ( $str =~ /\(\?\<(\w+)\>.*?\)/g ) {
-#            push @vars, $1;
-#        }        
-#    }
+
     @vars;
 }
 

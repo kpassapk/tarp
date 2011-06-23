@@ -1,0 +1,16 @@
+# one should be equivalent of eight regular expressions
+# a.c
+# a.d
+# b.c
+# b.d
+# c.a
+# c.b
+# d.a
+# d.b
+
+one = $two$
+
+one::two = $three$
+
+one::two::three = a
+

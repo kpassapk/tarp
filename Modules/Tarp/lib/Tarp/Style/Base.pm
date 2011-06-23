@@ -464,9 +464,10 @@ sub _get_qr {
     # and return interpolated string in regexp format.
 
     my @vals = @{ $self->{_TAS}->values( $fqe ) };
-    my @vars = keys %{ $vals[-1] };
+    my $vrec = $vals[-1];
     pop @vals;
-    
+    my @vars = keys %$vrec;
+
     # Remove double quotes
     for ( @vals ) {
         s/^"(.*)"$/$1/;
@@ -483,7 +484,7 @@ sub _get_qr {
     }
     
     # Replace values with interpolated values
-    @vals = @{ $self->{_TAS}->interpolateValues( [ @vals, \%qrvars ] ) };
+    my @qrlist = @{ $self->{_TAS}->interpolateValues( [ @vals, \%qrvars ] ) };
     
     if ( $path ) {
         # For non top level entries, use CSENS and WORD to modify the regex
@@ -491,20 +492,22 @@ sub _get_qr {
         # ::WORD  - bracket in \b
         # ::CSENS - (?i-xsm) flag
 
-        my $vr = $self->{_TAS}->values( $fqe )->[-1];
-        if ( $vr->{WORD} && $vr->{WORD}->[0] ) {
-            @vals = map { '\b' . $_ . '\b' } @vals;
+        my $word = $vrec->{WORD} && $vrec->{WORD}->[0];
+        my $csens = ! $vrec->{CSENS} || $vrec->{CSENS}->[0];
+        
+        if ( $word ) {
+            @qrlist = map { '\b' . $_ . '\b' } @qrlist;
         }
-        if ( ! $vr->{CSENS} || $vr->{CSENS}->[0] ) {
-            @vals = map { "(?-xism:(?<$entry>$_))" } @vals;
+        if ( $csens ) {
+            @qrlist = map { "(?-xism:(?<$entry>$_))" } @qrlist;
         } else {
-            @vals = map { "(?i-xsm:(?<$entry>$_))" } @vals;
+            @qrlist = map { "(?i-xsm:(?<$entry>$_))" } @qrlist;
         }
-        return \@vals;
+        return \@qrlist;
 
     } else {
         # Top level entry
-        return \@vals;
+        return \@qrlist;
     }
 }
 

@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 
 use strict;
-use Test::More tests => 60;
+use Test::More tests => 63;
 use Tarp::Style;
 use Tarp::Test::Files;
 
@@ -142,6 +142,17 @@ ok( $sty->load( "foo.tas" ), "foo.tas from t10 loads" );
 my @qrs = $sty->qr( "foo" );
 
 is( @qrs + 0, 6, "qrs has six entries" );
+
+# Test qr with two variable levels
+
+ok( $sty->load( "lev3.tas" ), "lev3.tas load" );
+
+@qrs = $sty->qr( "one" );
+
+is( @qrs + 0, 1, "lev3.tas entry one has eight regular expressions" );
+
+like( 'a', ( $sty->qr("one") )[0], "match three levels down" );
+
 
 # Test a couple of files with errors, compare the error message with
 # what we were expecting
